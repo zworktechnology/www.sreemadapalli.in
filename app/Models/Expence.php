@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Expence extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'date',
+        'amount',
+        'note',
+        'soft_delete',
+        'employee_id'
+    ];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class, 'employee_id');
+    }
+}

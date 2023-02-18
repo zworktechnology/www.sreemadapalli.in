@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Dinner extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'date',
+        'invoice_no',
+        'delivery_boy',
+        'bill_amount',
+        'delivery_amount',
+        'payment_amount',
+        'payment_method',
+        'soft_delete',
+        'payment_status',
+        'customer_id'
+    ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
+}
