@@ -199,6 +199,34 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    <thead style="background: lightgrey">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Date</th>
+                                            <th>Brak Fast</th>
+                                            <th>Lunch</th>
+                                            <th>Dinner</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1 - 1 - 2023</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

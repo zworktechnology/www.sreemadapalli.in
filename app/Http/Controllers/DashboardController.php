@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountOpen;
 use App\Models\BreakFast;
 use App\Models\Dinner;
 use App\Models\Expence;
@@ -14,22 +15,17 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $today = Carbon::now()->format('Y-m-d'); 
-        $breakfast_amount_pending = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('payment_amount');
-        $lunch_amount_pending = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('payment_amount');
-        $dinner_amount_pending = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('payment_amount');
-        $breakfast_amount_paid = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('payment_amount');
-        $lunch_amount_paid = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('payment_amount');
-        $dinner_amount_paid = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('payment_amount');
-        $breakfast_total_amount = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('payment_amount');
-        $lunch_total_amount = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('payment_amount');
-        $dinner_total_amount = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('payment_amount');
-        $breakfast_total_count = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->count();
-        $lunch_total_count = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->count();
-        $dinner_total_count = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->count();
-        $expence_total_amount = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
-        $income_total_amount = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+        $today = Carbon::now()->format('Y-m-d');
+        $breakfast_data_ps_pending = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Payed')->sum('bill_amount');
+        $lunch_data_ps_pending = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Payed')->sum('bill_amount');
+        $dinner_data_ps_pending = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Payed')->sum('bill_amount');
+        $breakfast_data_pm_wallet = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Wallet')->where('payment_status', '=', 'Payed')->sum('bill_amount');
+        $lunch_data_pm_wallet = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Wallet')->where('payment_status', '=', 'Payed')->sum('bill_amount');
+        $dinner_data_pm_wallet = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Wallet')->where('payment_status', '=', 'Payed')->sum('bill_amount');
+        $opening = AccountOpen::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+        $expense = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+        $payment = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
 
-        return view('home', compact('breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'breakfast_total_count', 'lunch_total_count', 'dinner_total_count', 'expence_total_amount', 'income_total_amount'));
+        return view('home', compact('today', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending', 'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet', 'opening', 'expense', 'payment'));
     }
 }

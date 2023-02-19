@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Dashbaord</h4>
+                            <h4 class="mb-sm-0 font-size-18">Dashbaord - {{ date('d.m.Y', strtotime($today)) }}</h4>
                         </div>
                     </div>
                     <div class="col-6" style="display: flex;">
@@ -34,8 +34,123 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
-
-                <!-- end row -->
+                <div style="display: flex;">
+                    <div class="col-xl-6" style="padding-right: 10px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Cash on Hand</h5>
+                                                </td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">G Pay</h5>
+                                                </td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Phone Pe</h5>
+                                                </td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Card</h5>
+                                                </td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Pending Bills Amount</h5>
+                                                </td>
+                                                <td>{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Wallet ( G Pay - HDFC )</h5>
+                                                </td>
+                                                <td>{{ $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Other Cash</h5>
+                                                </td>
+                                                <td>{{ $payment }}</td>
+                                            </tr>
+                                            <tr style="color: red;">
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Grand Total</h5>
+                                                </td>
+                                                <td>{{ 0 + 0 + 0 + 0 + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet + $payment }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6" style="padding-left: 10px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Opening</h5>
+                                                </td>
+                                                <td>{{ $opening }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Sales</h5>
+                                                </td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Total</h5>
+                                                </td>
+                                                <td>{{ $opening + 0}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Expense</h5>
+                                                </td>
+                                                <td>{{ $expense }}</td>
+                                            </tr>
+                                            <tr style="color: red;">
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1" >Grand Total</h5>
+                                                </td>
+                                                <td>{{ (($opening + 0) - $expense) }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap mb-0">
+                                        <tr style="color: red;">
+                                            <th scope="col">Over All</th>
+                                            <th scope="col">{{ (0 + 0 + 0 + 0 + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet + $payment) - (($opening + 0) - $expense) }}</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
             </div>
             <!-- container-fluid -->
         </div>
