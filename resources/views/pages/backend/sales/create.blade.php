@@ -81,9 +81,9 @@
                     </div>
                     <div class="row mb-4 col-6 ">
                         <label for="payment_method" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Via <span style="color: red;">*</span></label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Via</label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="payment_method" required>
+                            <select class="form-control" name="payment_method">
                                 <option value="" disabled selected hidden class="text-muted">
                                     Enter Your</option>
                                 <option value="Wallet" class="text-muted">Wallet</option>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: flex;">
+                <div style="display: flex;" hidden>
                     <div class="row mb-4 col-6 ">
                         <label for="payment_amount" class="col-sm-3 col-form-label">
                             Payment Amount <span style="color: red;">*</span></label>

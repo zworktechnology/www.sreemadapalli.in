@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountCloseController;
 use App\Http\Controllers\AccountOpenController;
 use App\Http\Controllers\BreakFastController;
 use Illuminate\Support\Facades\Route;
@@ -70,12 +71,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
         // VIEW
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer/view/{id}', [CustomerController::class, 'view'])->name('customer.view');
-        // BREAK FAST VIEW
-        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer/breakfast/view/{id}', [CustomerController::class, 'breakfastview'])->name('customer.breafast.view');
-        // LUNCH VIEW
-        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer/lunch/view/{id}', [CustomerController::class, 'lunchview'])->name('customer.lunch.view');
-        // DINNER VIEW
-        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer/dinner/view/{id}', [CustomerController::class, 'dinnerview'])->name('customer.dinner.view');
         // UPDATE
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
         // DELETE
@@ -192,6 +187,24 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/accountopen/delete/{id}', [AccountOpenController::class, 'delete'])->name('accountopen.delete');
         // DESTROY
         Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/accountopen/destroy/{id}', [AccountOpenController::class, 'destroy'])->name('accountopen.destroy');
+    });
+
+    // ACCOUNT CLOSE CONTROLLER
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        // INDEX
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/accountclose', [AccountCloseController::class, 'index'])->name('accountclose.index');
+        // CREATE
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/accountclose/create', [AccountCloseController::class, 'create'])->name('accountclose.create');
+        // STORE
+        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/accountclose/store', [AccountCloseController::class, 'store'])->name('accountclose.store');
+        // EDIT
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/accountclose/edit/{id}', [AccountCloseController::class, 'edit'])->name('accountclose.edit');
+        // UPDATE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/accountclose/update/{id}', [AccountCloseController::class, 'update'])->name('accountclose.update');
+        // DELETE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/accountclose/delete/{id}', [AccountCloseController::class, 'delete'])->name('accountclose.delete');
+        // DESTROY
+        Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/accountclose/destroy/{id}', [AccountCloseController::class, 'destroy'])->name('accountclose.destroy');
     });
 
      // SALES CONTROLLER

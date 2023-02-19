@@ -14,7 +14,13 @@
                 <li class="{{ Route::is('accountopen.index','accountopen.create','accountopen.edit') ? 'mm-active' : '' }}">
                     <a href="{{ route('accountopen.index') }}">
                         <i class="dripicons-dot"></i>
-                        <span key="t-dashboards">Account Open</span>
+                        <span key="t-dashboards">Open Account</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('accountclose.index','accountclose.create','accountclose.edit') ? 'mm-active' : '' }}">
+                    <a href="{{ route('accountclose.index') }}">
+                        <i class="dripicons-dot"></i>
+                        <span key="t-dashboards">Close Account</span>
                     </a>
                 </li>
                 <li class="{{ Route::is('employee.index','employee.create','employee.edit','employee.view') ? 'mm-active' : '' }}">

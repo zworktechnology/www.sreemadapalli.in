@@ -21,7 +21,12 @@ class AccountCloseController extends Controller
         $data = new AccountClose();
 
         $data->date = $request->get('date');
-        $data->amount = $request->get('amount');
+        $data->case_on_hand = $request->get('case_on_hand');
+        $data->g_pay = $request->get('g_pay');
+        $data->phone_pay = $request->get('phone_pay');
+        $data->card = $request->get('card');
+        $data->other_case = $request->get('other_case');
+        $data->sales_amount = $request->get('sales_amount');
 
         $data->save();
 
@@ -40,8 +45,12 @@ class AccountCloseController extends Controller
         $data = AccountClose::findOrFail($id);
 
         $data->date = $request->get('date');
-        $data->amount = $request->get('amount');
-
+        $data->case_on_hand = $request->get('case_on_hand');
+        $data->g_pay = $request->get('g_pay');
+        $data->phone_pay = $request->get('phone_pay');
+        $data->card = $request->get('card');
+        $data->other_case = $request->get('other_case');
+        $data->sales_amount = $request->get('sales_amount');
         $data->update();
 
         return redirect()->route('accountclose.index')->with('update', 'AccountClose record detail successfully changed !');

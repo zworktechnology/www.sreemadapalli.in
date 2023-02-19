@@ -35,74 +35,6 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="row" hidden>
-                            <div class="col-md-4">
-                                <a href="{{ route('customer.breafast.view', ['id' => $data->id]) }}">
-                                    <div class="card mini-stats-wid">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="flex-grow-1">
-                                                    <p class="text-muted fw-medium mb-2">Break Fast</p>
-                                                    <h4 class="mb-0" style="color: black;">{{ $breakfast_total_amount }}</h4>
-                                                </div>
-
-                                                <div class="flex-shrink-0 align-self-center">
-                                                    <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
-                                                        <span class="avatar-title" style="background-color: red !important">
-                                                            <i class="bx bx-check-circle font-size-24"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="{{ route('customer.lunch.view', ['id' => $data->id]) }}">
-                                    <div class="card mini-stats-wid">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="flex-grow-1">
-                                                    <p class="text-muted fw-medium mb-2">Lunch</p>
-                                                    <h4 class="mb-0" style="color: black;">{{ $lunch_total_amount }}</h4>
-                                                </div>
-
-                                                <div class="flex-shrink-0 align-self-center">
-                                                    <div class="avatar-sm mini-stat-icon rounded-circle bg-primary">
-                                                        <span class="avatar-title" style="background-color: green !important">
-                                                            <i class="bx bx-check-circle font-size-24"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="{{ route('customer.dinner.view', ['id' => $data->id]) }}">
-                                    <div class="card mini-stats-wid">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="flex-grow-1">
-                                                    <p class="text-muted fw-medium mb-2">Dinner</p>
-                                                    <h4 class="mb-0" style="color: black;">{{ $dinner_total_amount }}</h4>
-                                                </div>
-
-                                                <div class="flex-shrink-0 align-self-center">
-                                                    <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
-                                                        <span class="avatar-title" style="background-color: yellow !important">
-                                                            <i class="bx bx-check-circle font-size-24"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="card mini-stats-wid">
@@ -171,10 +103,10 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-8">
                         <div class="card">
                             <div class="card-body">
-                                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                <table class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: lightgrey">
                                         <tr>
                                             <th>ID</th>
@@ -199,29 +131,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-4">
                         <div class="card">
                             <div class="card-body">
-                                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                <table class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: lightgrey">
                                         <tr>
                                             <th>ID</th>
                                             <th>Date</th>
-                                            <th>Brak Fast</th>
-                                            <th>Lunch</th>
-                                            <th>Dinner</th>
-                                            <th>Total</th>
+                                            <th>Amount</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($payment as $keydata => $payments)
                                         <tr>
-                                            <td>1</td>
-                                            <td>1 - 1 - 2023</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>3</td>
+                                            <td>{{ ++$keydata }}</td>
+                                            <td>{{ date('d - m - Y', strtotime($payments->date)) }}</td>
+                                            <td>{{ $payments->amount }}</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

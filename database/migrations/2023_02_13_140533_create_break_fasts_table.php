@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('bill_amount');
             $table->string('delivery_boy');
             $table->string('payment_status');
-            $table->string('payment_method');
+            $table->string('payment_method')->nullable();
             $table->string('delivery_amount');
             $table->string('payment_amount');
             $table->boolean('soft_delete')->default(0);
