@@ -11,19 +11,33 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-5">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0 font-size-18">Dashbaord - {{ date('d.m.Y', strtotime($today)) }}</h4>
                         </div>
                     </div>
-                    <div class="col-6" style="display: flex;">
-                        <div class="row mb-4 col-10 ">
+                    <div class="col-7" style="display: flex;">
+                        <div class="row mb-4 col-5">
                             <div class="col-sm-12">
                                 <input type="date" class="form-control" name="from_date" placeholder="Enter Your " required>
                             </div>
                         </div>
                         <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
                             <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
+                        </div>
+                        <div>
+                            <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open Account</button>
+
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                @include('pages.backend.accountopen.create')
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropclose">Close Account</button>
+
+                            <div class="modal fade" id="staticBackdropclose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                @include('pages.backend.accountclose.create')
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +141,7 @@
                                             </tr>
                                             <tr style="color: red;">
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" >Grand Total</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Grand Total</h5>
                                                 </td>
                                                 <td>{{ (($opening + $sales_amount) - $expense) }}</td>
                                             </tr>

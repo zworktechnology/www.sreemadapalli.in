@@ -11,13 +11,13 @@
                         <span key="t-dashboards">Dashboards</span>
                     </a>
                 </li>
-                <li class="{{ Route::is('accountopen.index','accountopen.create','accountopen.edit') ? 'mm-active' : '' }}">
+                <li class="{{ Route::is('accountopen.index','accountopen.create','accountopen.edit') ? 'mm-active' : '' }}" hidden>
                     <a href="{{ route('accountopen.index') }}">
                         <i class="dripicons-dot"></i>
                         <span key="t-dashboards">Open Account</span>
                     </a>
                 </li>
-                <li class="{{ Route::is('accountclose.index','accountclose.create','accountclose.edit') ? 'mm-active' : '' }}">
+                <li class="{{ Route::is('accountclose.index','accountclose.create','accountclose.edit') ? 'mm-active' : '' }}" hidden>
                     <a href="{{ route('accountclose.index') }}">
                         <i class="dripicons-dot"></i>
                         <span key="t-dashboards">Close Account</span>
@@ -26,7 +26,7 @@
                 <li class="{{ Route::is('employee.index','employee.create','employee.edit','employee.view') ? 'mm-active' : '' }}">
                     <a href="{{ route('employee.index') }}">
                         <i class="dripicons-dot"></i>
-                        <span key="t-dashboards">Staff Member</span>
+                        <span key="t-dashboards">Staff & Sales Member</span>
                     </a>
                 </li>
                 <li class="{{ Route::is('customer.index','customer.create','customer.edit','customer.view','customer.breafast.view','customer.lunch.view','customer.dinner.view') ? 'mm-active' : '' }}">
