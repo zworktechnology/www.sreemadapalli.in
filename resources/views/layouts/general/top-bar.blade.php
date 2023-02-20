@@ -4,18 +4,18 @@
             <div class="navbar-brand-box">
                 <a href="#" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
                     </span>
                 </a>
                 <a href="#" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
                     </span>
                 </a>
             </div>
