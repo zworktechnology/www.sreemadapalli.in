@@ -492,7 +492,7 @@
 
                                                     <div class="col-sm-4">
                                                         <div class="lgx-counter-area">
-                                                            <img src="assets/img/about-icon5.png" alt="teacher icon" />
+                                                            <img src="frontend_styles/img/about-icon5.png" alt="teacher icon" />
                                                             <div class="counter-text">
                                                                 <span class="lgx-counter">600</span>
                                                                 <small>Skilled Teachers</small>

@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
-                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
+                            <button type="button">Search</button>
                         </div>
                         <div>
                             <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open Account</button>
