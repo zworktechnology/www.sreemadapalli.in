@@ -12,7 +12,7 @@
                                         <h2 class="heading-title">About Us</h2>
                                     </div>
                                     <ul class="breadcrumb">
-                                        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                                        <li><a href="{{ route('index') }}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
                                         </li>
                                         <li class="active">About</li>
                                     </ul>
@@ -94,7 +94,7 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="about-top-single">
-                                            <a href="#"><img src="assets/img/about-icon.png" alt="about-icon"></a>
+                                            <a href="#"><img src="frontend_styles/img/about-icon.png" alt="about-icon"></a>
                                             <h3 class="title"><a href="#">Hotal</a></h3>
                                             <p>Beetroot water spinach okra
                                                 water chestnut ricebean pea.</p>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="about-top-single">
-                                            <a href="#"><img src="assets/img/about-icon2.png" alt="about-icon"></a>
+                                            <a href="#"><img src="frontend_styles/img/about-icon2.png" alt="about-icon"></a>
                                             <h3 class="title"><a href="#">Outdoor
                                                     Caterers</a></h3>
                                             <p>Beetroot water spinach okra
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="about-top-single">
-                                            <a href="#"><img src="assets/img/about-icon3.png" alt="about-icon"></a>
+                                            <a href="#"><img src="frontend_styles/img/about-icon3.png" alt="about-icon"></a>
                                             <h3 class="title"><a href="#">Service
                                                     Apartments</a></h3>
                                             <p>Beetroot water spinach okra

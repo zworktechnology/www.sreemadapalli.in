@@ -13,7 +13,7 @@
                                         <h2 class="heading-title">Menu</h2>
                                     </div>
                                     <ul class="breadcrumb">
-                                        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                                        <li><a href="="{{ route('index') }}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
                                         </li>
                                         <li class="active">Offerd Menu</li>
                                     </ul>
@@ -53,7 +53,7 @@
 
                                     <div id="breakfast" class="cat-main breakfast">
                                         <figure class="cat-maintitle-area">
-                                            <img src="assets/img/menu/inner-feature.jpg" alt="Items">
+                                            <img src="frontend_styles/img/menu/inner-feature.jpg" alt="Items">
                                             <figcaption>
                                                 <h2 class="cat-maintitle">Breakfast</h2>
                                             </figcaption>
@@ -78,7 +78,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
                                                                 </figure>
@@ -96,7 +96,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
                                                                 </figure>
@@ -114,7 +114,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
                                                                 </figure>
@@ -132,7 +132,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
                                                                 </figure>
@@ -169,7 +169,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -188,7 +188,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -207,7 +207,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -226,7 +226,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -245,7 +245,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -264,7 +264,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -283,7 +283,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -302,7 +302,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -321,7 +321,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -340,7 +340,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -379,7 +379,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -398,7 +398,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -417,7 +417,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -436,7 +436,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -455,7 +455,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -494,7 +494,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -513,7 +513,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -532,7 +532,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -551,7 +551,7 @@
                                                         <div class="lgx-item-card">
                                                             <a href="#">
                                                                 <figure>
-                                                                    <img src="assets/images/Services/Food/menu.jfif"
+                                                                    <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                         alt="course">
                                                                     <figcaption>
                                                                     </figcaption>
@@ -575,7 +575,7 @@
 
                                     <div id="lunch" class="cat-main lunch">
                                         <figure class="cat-maintitle-area">
-                                            <img src="assets/img/menu/inner-feature2.jpg" alt="Items">
+                                            <img src="frontend_styles/img/menu/inner-feature2.jpg" alt="Items">
                                             <figcaption>
                                                 <h2 class="cat-maintitle">Lunch</h2>
                                             </figcaption>
@@ -598,7 +598,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -616,7 +616,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -634,7 +634,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -652,7 +652,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -688,7 +688,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -706,7 +706,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -724,7 +724,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -742,7 +742,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -760,7 +760,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -778,7 +778,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -796,7 +796,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -814,7 +814,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -850,7 +850,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -868,7 +868,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -886,7 +886,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -904,7 +904,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -922,7 +922,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -940,7 +940,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -977,7 +977,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -995,7 +995,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -1013,7 +1013,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -1031,7 +1031,7 @@
                                                     <div class="lgx-item-card">
                                                         <a href="#">
                                                             <figure>
-                                                                <img src="assets/images/Services/Food/menu.jfif" alt="course">
+                                                                <img src="frontend_styles/images/Services/Food/menu.jfif" alt="course">
                                                                 <figcaption>
                                                                 </figcaption>
                                                             </figure>
@@ -1054,7 +1054,7 @@
                                     <div id="dinner" class="cat-main
                                                 dinner">
                                         <figure class="cat-maintitle-area">
-                                            <img src="assets/img/menu/inner-feature2.jpg" alt="Items">
+                                            <img src="frontend_styles/img/menu/inner-feature2.jpg" alt="Items">
                                             <figcaption>
                                                 <h2 class="cat-maintitle">Dinner</h2>
                                             </figcaption>
@@ -1081,7 +1081,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1100,7 +1100,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1119,7 +1119,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1138,7 +1138,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1157,7 +1157,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1176,7 +1176,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1195,7 +1195,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1214,7 +1214,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1233,7 +1233,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1252,7 +1252,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1292,7 +1292,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1311,7 +1311,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1330,7 +1330,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1349,7 +1349,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1368,7 +1368,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1387,7 +1387,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1406,7 +1406,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1425,7 +1425,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1464,7 +1464,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1483,7 +1483,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1502,7 +1502,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1522,7 +1522,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1561,7 +1561,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1580,7 +1580,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1599,7 +1599,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1638,7 +1638,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1657,7 +1657,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1676,7 +1676,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1695,7 +1695,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1735,7 +1735,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1754,7 +1754,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1773,7 +1773,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1792,7 +1792,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1818,7 +1818,7 @@
                                     <div id="pickle" class="cat-main
                                                 pickle">
                                         <figure class="cat-maintitle-area">
-                                            <img src="assets/img/menu/inner-feature2.jpg" alt="Items">
+                                            <img src="frontend_styles/img/menu/inner-feature2.jpg" alt="Items">
                                             <figcaption>
                                                 <h2 class="cat-maintitle">Pickle Varieties</h2>
                                             </figcaption>
@@ -1845,7 +1845,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1865,7 +1865,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1884,7 +1884,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1903,7 +1903,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1922,7 +1922,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1941,7 +1941,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1960,7 +1960,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1979,7 +1979,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -1998,7 +1998,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2023,7 +2023,7 @@
 
                                     <div id="podi" class="cat-main podi">
                                         <figure class="cat-maintitle-area">
-                                            <img src="assets/img/menu/inner-feature2.jpg" alt="Items">
+                                            <img src="frontend_styles/img/menu/inner-feature2.jpg" alt="Items">
                                             <figcaption>
                                                 <h2 class="cat-maintitle">Podi Varieties</h2>
                                             </figcaption>
@@ -2050,7 +2050,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2069,7 +2069,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2088,7 +2088,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2108,7 +2108,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2127,7 +2127,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2147,7 +2147,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2166,7 +2166,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2185,7 +2185,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2205,7 +2205,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2224,7 +2224,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2243,7 +2243,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2262,7 +2262,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2281,7 +2281,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2300,7 +2300,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2319,7 +2319,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2338,7 +2338,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2363,7 +2363,7 @@
 
                                     <div id="sweet" class="cat-main sweet">
                                         <figure class="cat-maintitle-area">
-                                            <img src="assets/img/menu/inner-feature2.jpg" alt="Items">
+                                            <img src="frontend_styles/img/menu/inner-feature2.jpg" alt="Items">
                                             <figcaption>
                                                 <h2 class="cat-maintitle">Sweet & Snacks</h2>
                                             </figcaption>
@@ -2390,7 +2390,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2409,7 +2409,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2428,7 +2428,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2447,7 +2447,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2466,7 +2466,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2485,7 +2485,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2504,7 +2504,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2523,7 +2523,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2542,7 +2542,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2561,7 +2561,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2580,7 +2580,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2599,7 +2599,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2618,7 +2618,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2637,7 +2637,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2656,7 +2656,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2675,7 +2675,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2694,7 +2694,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2713,7 +2713,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2732,7 +2732,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>
@@ -2751,7 +2751,7 @@
                                                             <div class="lgx-item-card">
                                                                 <a href="#">
                                                                     <figure>
-                                                                        <img src="assets/images/Services/Food/menu.jfif"
+                                                                        <img src="frontend_styles/images/Services/Food/menu.jfif"
                                                                             alt="course">
                                                                         <figcaption>
                                                                         </figcaption>

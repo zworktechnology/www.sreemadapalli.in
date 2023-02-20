@@ -15,7 +15,7 @@
                                 <ul class="list-unstyled lgx-address-info">
                                     <li><i class="fa fa-phone"></i>+91 90251 66000</li>
                                     <li>
-                                        <i class="fa fa-envelope"></i><a href="/cdn-cgi/l/email-protection"
+                                        <i class="fa fa-envelope"></i><a href="mailto:info@sreemadapalli.com"
                                             class="__cf_email__"
                                             data-cfemail="bed1d8d8d7dddbfedbdacbdddfcad7d1d0ced2cbcd90ddd1d3">info@sreemadapalli.com</a>
                                     </li>
@@ -25,10 +25,10 @@
                             <div class="lgx-footer-single">
                                 <h2 class="title">Quick Links</h2>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Menu</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{{ route('index') }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li><a href="{{ route('menu') }}">Menu</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                             <div class="lgx-footer-single">

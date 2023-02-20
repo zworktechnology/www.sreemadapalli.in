@@ -26,13 +26,14 @@ use App\Http\Controllers\SalesController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/index', function () {
-    return view('pages.frontend.index');
-});
+Route::get('/', function () {return view('pages.frontend.index');})->name('index');
+Route::get('/about-us', function () {return view('pages.frontend.about');})->name('about');
+Route::get('/menu', function () {return view('pages.frontend.menuitems');})->name('menu');
+Route::get('/contact', function () {return view('pages.frontend.contact');})->name('contact');
 
 Auth::routes();
 

@@ -63,7 +63,7 @@
                                 </button>
                                 <div class="lgx-logo">
                                     <!--lgx-logo-default lgx-logo-fixed lgx-logo-white lgx-logo-black-->
-                                    <a href="index6.html" class="lgx-scroll">
+                                    <a href="{{ route('index') }}" class="lgx-scroll">
                                         <img src="assets/images/logo.png" alt="Restaura Logo"
                                             style="height: 40px; width: 160px; margin-top: 15px;">
                                     </a>
@@ -71,15 +71,15 @@
                             </div>
                             <div id="navbar" class="navbar-collapse collapse lgx-collapse">
                                 <ul class="nav navbar-nav lgx-nav">
-                                    <li><a class="lgx-scroll" href="index.html">Home</a></li>
+                                    <li><a class="lgx-scroll" href="{{ route('index') }}">Home</a></li>
                                     <li>
-                                        <a class="lgx-scroll active" href="about.html">About</a>
+                                        <a class="lgx-scroll active" href="{{ route('about') }}">About</a>
                                     </li>
                                     <li>
-                                        <a class="lgx-scroll" href="menuitems.html">Menu</a>
+                                        <a class="lgx-scroll" href="{{ route('menu') }}">Menu</a>
                                     </li>
                                     <li>
-                                        <a class="lgx-scroll" href="contact.html">Contact</a>
+                                        <a class="lgx-scroll" href="{{ route('contact') }}">Contact</a>
                                     </li>
                                     <li>
                                         <a class="lgx-scroll btn lgx-btn"

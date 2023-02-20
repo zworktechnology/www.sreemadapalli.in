@@ -13,7 +13,7 @@
                                 <div class="col-sm-12g">
                                     <div class="slider-text-single">
                                         <figure>
-                                            <img src="assets/images/banner/vegetarian-indian-dishes.jpg"
+                                            <img src="frontend_styles/images/banner/vegetarian-indian-dishes.jpg"
                                                 alt="slide" />
                                             <figcaption>
                                                 <div class="lgx-container">
@@ -23,7 +23,7 @@
                                                         <h3 class="subtitle lgx-delay lgx-bounceInRight">Sree Madapalli</h3>
                                                         <h2 class="title lgx-delay lgx-bounceInRight">Divine Taste</h2>
                                                         <div class="btn-area lgx-delay lgx-bounceInRight">
-                                                            <a class="btn lgx-btn" href="#"><span>About Us</span></a>
+                                                            <a class="btn lgx-btn" href="{{ route('about') }}"><span>About Us</span></a>
                                                         </div>
                                                     </div>
                                                         </div>
@@ -42,7 +42,7 @@
                                 <div class="col-sm-12g">
                                     <div class="slider-text-single">
                                         <figure>
-                                            <img src="assets/images/banner/360_F_262996566_6eHSDcCytKBbsQJg3wSeNtKH3wGiAjc6.jpg"
+                                            <img src="frontend_styles/images/banner/360_F_262996566_6eHSDcCytKBbsQJg3wSeNtKH3wGiAjc6.jpg"
                                                 alt="slide" />
                                             <figcaption>
                                                 <div class="lgx-container">
@@ -52,7 +52,7 @@
                                                         <h3 class="subtitle lgx-delay lgx-rotateIn">Sree Madapalli</h3>
                                                         <h2 class="title lgx-delay lgx-rotateIn">Divine Taste</h2>
                                                         <div class="btn-area lgx-delay lgx-rotateIn">
-                                                            <a class="btn lgx-btn" href="#"><span>About US</span></a>
+                                                            <a class="btn lgx-btn" href="{{ route('about') }}"><span>About US</span></a>
                                                         </div>
                                                     </div>
                                                         </div>
@@ -100,7 +100,7 @@
                                             Aenean are ultricies mi vitae est tristique senectus et netus et malesuada
                                             placerat leo.
                                         </p>
-                                        <a class="btn lgx-btn lgx-btn-simple" href="about.html"><span>Read
+                                        <a class="btn lgx-btn lgx-btn-simple" href="{{ route('about') }}"><span>Read
                                                 More</span></a>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@
                                 <div class="lgx-video-area-bg lgx-video-trans">
                                     <figure>
                                         <a href="javascript:void(0)"><img
-                                                src="assets/images/about-us.jpg"
+                                                src="frontend_styles/images/about-us.jpg"
                                                 alt="Special Food"></a>
                                     </figure>
                                 </div>
@@ -157,7 +157,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/breakfast.webp" alt="course">
+                                                    <img src="frontend_styles/images/Services/breakfast.webp" alt="course">
                                                     <figcaption>
 
                                                     </figcaption>
@@ -180,7 +180,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/lunch.jpg" alt="course">
+                                                    <img src="frontend_styles/images/Services/lunch.jpg" alt="course">
                                                     <figcaption>
 
                                                     </figcaption>
@@ -203,7 +203,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/dinner.jpg" alt="course">
+                                                    <img src="frontend_styles/images/Services/dinner.jpg" alt="course">
                                                     <figcaption>
 
                                                     </figcaption>
@@ -226,7 +226,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/Pickle Varieties.jpg" alt="course">
+                                                    <img src="frontend_styles/images/Services/Pickle Varieties.jpg" alt="course">
                                                     <figcaption>
 
                                                     </figcaption>
@@ -249,7 +249,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/Podi Varieties.jfif" alt="course">
+                                                    <img src="frontend_styles/images/Services/Podi Varieties.jfif" alt="course">
                                                     <figcaption>
 
                                                     </figcaption>
@@ -272,7 +272,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/Outdoor Caterers.webp"
+                                                    <img src="frontend_styles/images/Services/Outdoor Caterers.webp"
                                                         alt="course">
                                                     <figcaption>
 
@@ -296,7 +296,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/2BHK & 3BHK Service Apartments.jpg"
+                                                    <img src="frontend_styles/images/Services/2BHK & 3BHK Service Apartments.jpg"
                                                         alt="course">
                                                     <figcaption>
 
@@ -320,7 +320,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/Sweets.jpg" alt="course">
+                                                    <img src="frontend_styles/images/Services/Sweets.jpg" alt="course">
                                                     <figcaption>
 
                                                     </figcaption>
@@ -343,7 +343,7 @@
                                         <div class="lgx-single-menu-another">
                                             <a href="#">
                                                 <figure>
-                                                    <img src="assets/images/Services/snacks.jpg" alt="course">
+                                                    <img src="frontend_styles/images/Services/snacks.jpg" alt="course">
                                                     <figcaption>
 
                                                     </figcaption>
@@ -472,7 +472,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-4">
                                                         <div class="lgx-counter-area">
-                                                            <img src="assets/img/about-icon3.png" alt="teacher icon" />
+                                                            <img src="frontend_styles/img/about-icon3.png" alt="teacher icon" />
                                                             <div class="counter-text">
                                                                 <span class="lgx-counter">12</span>
                                                                 <small>Year of Experience</small>
@@ -482,7 +482,7 @@
 
                                                     <div class="col-sm-4">
                                                         <div class="lgx-counter-area">
-                                                            <img src="assets/img/about-icon4.png" alt="teacher icon" />
+                                                            <img src="frontend_styles/img/about-icon4.png" alt="teacher icon" />
                                                             <div class="counter-text">
                                                                 <span class="lgx-counter">7896</span>
                                                                 <small>Regular Students</small>
@@ -548,7 +548,7 @@
                                             nulla non nibh aliquet rhoncus. Donec at tempus felis.
                                         </p>
                                         <div class="author">
-                                            <img src="assets/img/testimonials/author1.jpg" alt="author" />
+                                            <img src="frontend_styles/img/testimonials/author1.jpg" alt="author" />
                                             <h4><a href="#"></a>Jonathon Doe</h4>
                                             <div class="rate">
                                                 <i class="fa fa-star active"></i>
@@ -573,7 +573,7 @@
                                             nulla non nibh aliquet rhoncus. Donec at tempus felis.
                                         </p>
                                         <div class="author">
-                                            <img src="assets/img/testimonials/author1.jpg" alt="author" />
+                                            <img src="frontend_styles/img/testimonials/author1.jpg" alt="author" />
                                             <h4><a href="#"></a>Jonathon Doe</h4>
                                             <div class="rate">
                                                 <i class="fa fa-star active"></i>
@@ -598,7 +598,7 @@
                                             nulla non nibh aliquet rhoncus. Donec at tempus felis.
                                         </p>
                                         <div class="author">
-                                            <img src="assets/img/testimonials/author1.jpg" alt="author" />
+                                            <img src="frontend_styles/img/testimonials/author1.jpg" alt="author" />
                                             <h4><a href="#"></a>Jonathon Doe</h4>
                                             <div class="rate">
                                                 <i class="fa fa-star active"></i>

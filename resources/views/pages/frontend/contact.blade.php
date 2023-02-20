@@ -11,7 +11,7 @@
                                         <h2 class="heading-title">Contact us</h2>
                                     </div>
                                     <ul class="breadcrumb">
-                                        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                                        <li><a href="="{{ route('index') }}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
                                         </li>
                                         <li class="active">Contact</li>
                                     </ul>
