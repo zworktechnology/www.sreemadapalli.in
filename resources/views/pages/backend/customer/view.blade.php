@@ -14,7 +14,7 @@
                             <h4 class="mb-sm-0 font-size-18">Customer - {{ $data->name }}</h4>
                         </div>
                     </div>
-                
+
                     <div class="col-8" style="display: flex;">
                         <div class="row mb-4 col-4">
                             <div class="col-sm-12">
@@ -30,11 +30,11 @@
                         <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
                             <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="customer_datearr">Search</button>
                         </div>
-                        <div class="row mb-4 col-4" style="margin-left: 10px;">
-                            <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter"><button type="button" class="btn btn-success w-md ">Export as PDF</button></a>
-                            <a   style="display:none" class="filter"><button type="button" class="btn btn-success w-md ">Export as PDF</button></a>
+                        <div class="row mb-4 col-4">
+                            <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter"><button type="button" class="btn btn-success w-md">Export as PDF</button></a>
+                            <a style="display:none" class="filter"><button type="button" class="btn btn-success w-md ">Export as PDF</button></a>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="row">
@@ -110,9 +110,6 @@
                     <div class="col-8">
                         <div class="card">
                             <div class="card-body">
-                                
-                                
-                               
                                 <table class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: lightgrey">
                                         <tr>
@@ -124,7 +121,7 @@
                                             <th>Total</th>
                                         </tr>
                                     </thead>
-                                    
+
                                     <tbody id="customer_index">
                                     @foreach ($Custumer_index_array as $index => $Custumer_index_arr)
                                         <tr>
@@ -138,9 +135,9 @@
                                     @endforeach
                                     </tbody>
                                     <tbody id="filter_array">
-                                    
+
                                     </tbody>
-                                    
+
                                 </table>
                             </div>
                         </div>
@@ -175,7 +172,7 @@
 
         @include('layouts.general.footer')
 
-        
+
 <script>
     $(document.body).on("click", "#customer_datearr", function() {
 
@@ -192,13 +189,13 @@
             alert('Select To Date');
         }
 
-        
-        
+
+
         if(from_date != ""){
-            if(to_date != ""){   
-                
-                
-                
+            if(to_date != ""){
+
+
+
 
 
 
@@ -213,7 +210,7 @@
                     },
                     dataType: 'json',
                     success: function(response) {
-                        
+
                         $('#customer_index').empty();
                         $('#filter_array').html('');
 
@@ -247,7 +244,7 @@
 
                                 $('#filter_array').append(row);
                         }
-                        
+
                     }
                 });
             }
@@ -257,13 +254,13 @@
 
 
     $(document.body).on("click", ".filter", function() {
-   
+
         var from_date = $('#from_date').val();
         var to_date = $('#to_date').val();
         var customer_id = $('#customer_ids').val();
 
-        
-   
+
+
                 $.ajax({
                     url: '/filtercustomerorders/',
                     type: 'get',
@@ -273,10 +270,10 @@
                         customer_id: customer_id
                     },
                     dataType: 'json'
-                        
-                    
+
+
                 });
-                
+
     });
 
 </script>
