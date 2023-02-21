@@ -10,52 +10,50 @@
 
         <div class="page-content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Dashbaord - {{ date('d.m.Y', strtotime($today)) }}</h4>
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Dashbaord - {{ date('d.m.Y', strtotime($today)) }}</h4>
+                        <div class="page-title-right">
+                            <div style="display: flex;">
+                                <div style="margin-right: 10px;">
+                                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required>
+                                </div>
+                                <div style="margin-right: 10px;">
+                                    <button type="button" class="btn btn-success w-md">Search</button>
+                                </div>
+                                @if (count($opendate) >= 1)
+                                @else
+                                <div>
+                                    <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open Account</button>
+
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        @include('pages.backend.accountopen.create')
+                                    </div>
+                                </div>
+                                @endif
+                                @if (count($determinationdate) >= 1)
+                                @else
+                                <div>
+                                    <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropdeter">Determination</button>
+
+                                    <div class="modal fade" id="staticBackdropdeter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        @include('pages.backend.determination.create')
+                                    </div>
+                                </div>
+                                @endif
+                                @if (count($closedate) >= 1)
+                                @else
+                                <div>
+                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropclose">Close Account</button>
+
+                                    <div class="modal fade" id="staticBackdropclose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        @include('pages.backend.accountclose.create')
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                    <div class="col-9" style="display: flex;">
-                        <div class="row mb-4 col-5">
-                            <div class="col-sm-12">
-                                <input type="date" class="form-control" name="from_date" placeholder="Enter Your " required>
-                            </div>
-                        </div>
-                        <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
-                            <button type="button" class="btn btn-success w-md">Search</button>
-                        </div>
-                        @if (count($opendate) >= 1)
-                        @else
-                        <div>
-                            <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open Account</button>
-
-                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                @include('pages.backend.accountopen.create')
-                            </div>
-                        </div>
-                        @endif
-                        @if (count($determinationdate) >= 1)
-                        @else
-                        <div>
-                            <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropdeter">Determination</button>
-
-                            <div class="modal fade" id="staticBackdropdeter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                @include('pages.backend.determination.create')
-                            </div>
-                        </div>
-                        @endif
-                        @if (count($closedate) >= 1)
-                        @else
-                        <div>
-                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropclose">Close Account</button>
-
-                            <div class="modal fade" id="staticBackdropclose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                @include('pages.backend.accountclose.create')
-                            </div>
-                        </div>
-                    </div>
-                    @endif
                 </div>
                 @if (\Session::has('add'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -254,7 +252,8 @@
                                                 <td>X</td>
                                                 <td>{{ $determinations->count_5 }}</td>
                                                 <td>{{ $determinations->total_5 }}</td>
-                                            </tr><tr>
+                                            </tr>
+                                            <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1">2</h5>
                                                 </td>

@@ -12,11 +12,19 @@
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0 font-size-18">Sales</h4>
                         <div class="page-title-right">
-                            <div>
-                                <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
+                            <div style="display: flex;">
+                                <div style="margin-right: 10px;">
+                                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required>
+                                </div>
+                                <div style="margin-right: 10px;">
+                                    <button type="button" class="btn btn-success w-md">Search</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
 
-                                <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
-                                    @include('pages.backend.sales.create')
+                                    <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
+                                        @include('pages.backend.sales.create')
+                                    </div>
                                 </div>
                             </div>
                         </div>
