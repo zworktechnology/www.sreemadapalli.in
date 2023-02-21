@@ -8,27 +8,17 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-5">
-                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Sales</h4>
-                        </div>
-                    </div>
-                    <div class="col-5" style="display: flex;">
-                        <div class="row mb-4 col-10 ">
-                            <div class="col-sm-12">
-                                <input type="date" class="form-control" name="from_date" placeholder="Enter Your " required>
-                            </div>
-                        </div>
-                        <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
-                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <button style="margin-left: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Sales</h4>
+                        <div class="page-title-right">
+                            <div>
+                                <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
 
-                        <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
-                            @include('pages.backend.sales.create')
+                                <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
+                                    @include('pages.backend.sales.create')
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
