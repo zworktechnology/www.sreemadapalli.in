@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\Expence;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class EmployeeController extends Controller
 {
@@ -41,11 +42,12 @@ class EmployeeController extends Controller
 
     public function view($id)
     {
+        $today = Carbon::now()->format('Y-m-d');
         $data = Employee::findOrFail($id);
         $expence = Expence::where('employee_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
         $expence_total_amount = Expence::where('employee_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('amount');
 
-        return view('pages.backend.employee.view', compact('data', 'expence', 'expence_total_amount'));
+        return view('pages.backend.employee.view', compact('today', 'data', 'expence', 'expence_total_amount'));
     }
 
     public function edit($id)

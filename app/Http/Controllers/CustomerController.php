@@ -46,6 +46,8 @@ class CustomerController extends Controller
 
     public function view($id)
     {
+        $today = Carbon::now()->format('Y-m-d');
+
         $data = Customer::findOrFail($id);
         $breakfast_amount_pending = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '=', 'Pending')->sum('bill_amount');
         $breakfast_amount_paid = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Pending')->sum('bill_amount');
@@ -62,8 +64,6 @@ class CustomerController extends Controller
 
         $payment = Payment::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
         $payment_total_amount = Payment::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('amount');
-
-
 
         // Datewise Customer's order
         $GetBreakfastData = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
@@ -94,7 +94,6 @@ class CustomerController extends Controller
 
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
 
-
             $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $CustomersLunchAmt = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
@@ -111,15 +110,12 @@ class CustomerController extends Controller
 
         }
 
-
-        return view('pages.backend.customer.view', compact('data', 'breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'payment', 'payment_total_amount', 'Custumer_index_array'));
+        return view('pages.backend.customer.view', compact('today', 'data', 'breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'payment', 'payment_total_amount', 'Custumer_index_array'));
     }
 
 
     public function export_customerorder_pdf($id)
     {
-
-
         $GetBreakfastData = BreakFast::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->get();
         $Breakfast_Date_arr = [];
         foreach ($GetBreakfastData as $key => $GetBreakfastDatas) {
@@ -149,9 +145,9 @@ class CustomerController extends Controller
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
 
 
-            $CustomersBreakfastAmt = BreakFast::where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
-            $CustomersLunchAmt = Lunch::where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
-            $CustomersDinnerAmt = Dinner::where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersLunchAmt = Lunch::where('customer_id', '=', $id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersDinnerAmt = Dinner::where('customer_id', '=', $id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
 
             $Custumer_pdf_array[] = array(
