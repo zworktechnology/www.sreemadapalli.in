@@ -95,9 +95,9 @@ class CustomerController extends Controller
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
 
 
-            $CustomersBreakfastAmt = BreakFast::where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
-            $CustomersLunchAmt = Lunch::where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
-            $CustomersDinnerAmt = Dinner::where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersLunchAmt = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
 
             $Custumer_index_array[] = array(
@@ -116,9 +116,9 @@ class CustomerController extends Controller
     }
 
 
-    public function export_customerorder_pdf($id) 
+    public function export_customerorder_pdf($id)
     {
-        
+
 
         $GetBreakfastData = BreakFast::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->get();
         $Breakfast_Date_arr = [];
@@ -258,7 +258,7 @@ class CustomerController extends Controller
             $LunchAmount = Lunch::where('date', '=', $merging_Datearray)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $DinnerAmount = Dinner::where('date', '=', $merging_Datearray)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $TotalCustomerAmount = $BreakfastAmount + $LunchAmount + $DinnerAmount;
-            
+
 
             $Custumer_filter_array[] = array(
                 'date' => date('d-m-Y', strtotime($merging_Datearray)),
@@ -327,7 +327,7 @@ class CustomerController extends Controller
             $CustomersLunchAmt = Lunch::where('date', '=', $merging_Datearray)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $CustomersDinnerAmt = Dinner::where('date', '=', $merging_Datearray)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
-            
+
 
             $Custumer_pdf_array[] = array(
                 'date' => date('d-m-Y', strtotime($merging_Datearray)),
@@ -338,7 +338,7 @@ class CustomerController extends Controller
             );
         }
 
-        
+
 
 
         $customerdata = Customer::findOrFail($customer_id);
