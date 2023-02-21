@@ -16,7 +16,7 @@
                         <div class="page-title-right">
                             <div style="display: flex;">
                                 <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required>
+                                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                                 </div>
                                 <div style="margin-right: 10px;">
                                     <button type="button" class="btn btn-success w-md">Search</button>
