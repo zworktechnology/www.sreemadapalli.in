@@ -33,7 +33,7 @@ class SalesController extends Controller
         $dinner_data_pm_wallet = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Wallet')->where('payment_status', '=', 'Payed')->sum('bill_amount');
         $dinner_data_ps_pending = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Payed')->sum('bill_amount');
 
-        $customer = Customer::where('soft_delete', '!=', 1)->get();
+        $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         return view('pages.backend.sales.index', compact('breakfast_data', 'lunch_data', 'dinner_data', 'today', 'customer',
         'breakfast_data_total', 'breakfast_data_pm_cash', 'breakfast_data_pm_wallet', 'breakfast_data_ps_pending', 'lunch_data_total', 'lunch_data_pm_cash',

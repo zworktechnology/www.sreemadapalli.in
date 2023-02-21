@@ -14,7 +14,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $data = Customer::where('soft_delete', '!=', 1)->get();
+        $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         return view('pages.backend.customer.index', compact('data'));
     }
 

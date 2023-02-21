@@ -13,7 +13,7 @@ class ExpenceController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $data = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
-        $employee = Employee::where('soft_delete', '!=', 1)->get();
+        $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         return view('pages.backend.expence.index', compact('data', 'today', 'employee'));
     }

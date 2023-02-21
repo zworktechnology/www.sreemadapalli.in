@@ -57,7 +57,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1">Cash on Hand</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="">Cash on Hand</h5>
                                                 </td>
                                                 <td>{{ $case_on_hand }}</td>
                                             </tr>
@@ -99,7 +99,7 @@
                                             </tr>
                                             <tr style="color: red;">
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1">Grand Total</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Total</h5>
                                                 </td>
                                                 <td>{{ $case_on_hand + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet + $payment + $other_case }}</td>
                                             </tr>
@@ -141,7 +141,7 @@
                                             </tr>
                                             <tr style="color: red;">
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1">Grand Total</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Total</h5>
                                                 </td>
                                                 <td>{{ (($opening + $sales_amount) - $expense) }}</td>
                                             </tr>
