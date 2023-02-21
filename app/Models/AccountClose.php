@@ -13,6 +13,7 @@ class AccountClose extends Model
         'date',
         'case_on_hand',
         'g_pay',
+        'g_pay_business',
         'phone_pay',
         'card',
         'other_case',

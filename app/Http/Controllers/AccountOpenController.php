@@ -25,7 +25,7 @@ class AccountOpenController extends Controller
 
         $data->save();
 
-        return redirect()->route('accountopen.index')->with('add', 'Successful addition of a new accountopen record !');
+        return redirect()->route('home')->with('add', 'Successful addition of a new accountopen record !');
     }
 
     public function edit($id)

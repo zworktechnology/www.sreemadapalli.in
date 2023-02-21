@@ -11,12 +11,12 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-3">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0 font-size-18">Dashbaord - {{ date('d.m.Y', strtotime($today)) }}</h4>
                         </div>
                     </div>
-                    <div class="col-7" style="display: flex;">
+                    <div class="col-9" style="display: flex;">
                         <div class="row mb-4 col-5">
                             <div class="col-sm-12">
                                 <input type="date" class="form-control" name="from_date" placeholder="Enter Your " required>
@@ -33,6 +33,13 @@
                             </div>
                         </div>
                         <div>
+                            <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropdeter">Determination</button>
+
+                            <div class="modal fade" id="staticBackdropdeter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                @include('pages.backend.determination.create')
+                            </div>
+                        </div>
+                        <div>
                             <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropclose">Close Account</button>
 
                             <div class="modal fade" id="staticBackdropclose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -41,6 +48,13 @@
                         </div>
                     </div>
                 </div>
+                @if (\Session::has('add'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="mdi mdi-check-all me-2"></i>
+                    {!! \Session::get('add') !!}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 @if (\Session::has('update'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="mdi mdi-bullseye-arrow me-2"></i>
@@ -59,13 +73,25 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="">Cash on Hand</h5>
                                                 </td>
-                                                <td>{{ $case_on_hand }}</td>
+                                                <td>{{ $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Pending Bills</h5>
+                                                </td>
+                                                <td>{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1">G Pay</h5>
                                                 </td>
                                                 <td>{{ $g_pay }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">G-Pay Business</h5>
+                                                </td>
+                                                <td>{{ $g_pay_business }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -81,18 +107,6 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1">Pending Bills Amount</h5>
-                                                </td>
-                                                <td>{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1">Wallet ( G Pay - HDFC )</h5>
-                                                </td>
-                                                <td>{{ $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
                                                     <h5 class="font-size-13 text-truncate mb-1">Other Cash</h5>
                                                 </td>
                                                 <td>{{ $payment + $other_case }}</td>
@@ -101,15 +115,13 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1">Total</h5>
                                                 </td>
-                                                <td>{{ $case_on_hand + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet + $payment + $other_case }}</td>
+                                                <td>{{ ($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6" style="padding-left: 10px;">
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -131,7 +143,7 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1">Total</h5>
                                                 </td>
-                                                <td>{{ $opening + 0}}</td>
+                                                <td>{{ $opening + $sales_amount }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -156,8 +168,109 @@
                                     <table class="table align-middle table-nowrap mb-0">
                                         <tr style="color: red;">
                                             <th scope="col">Over All</th>
-                                            <th scope="col">{{ ($case_on_hand + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet + $payment + $other_case) - (($opening + $sales_amount) - $expense) }}</th>
+                                            <th scope="col">{{ (($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case) - (($opening + $sales_amount) - $expense) }}</th>
                                         </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6" style="padding-left: 10px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap mb-0">
+                                        <tbody>
+                                            @foreach ($determination as $determinations)
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">2000</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_2000 }}</td>
+                                                <td>{{ $determinations->total_2000 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">500</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_500 }}</td>
+                                                <td>{{ $determinations->total_500 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">200</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_200 }}</td>
+                                                <td>{{ $determinations->total_200 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">100</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_100 }}</td>
+                                                <td>{{ $determinations->total_100 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">50</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_50 }}</td>
+                                                <td>{{ $determinations->total_50 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">20</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_20 }}</td>
+                                                <td>{{ $determinations->total_20 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">10</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_10 }}</td>
+                                                <td>{{ $determinations->total_10 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">5</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_5 }}</td>
+                                                <td>{{ $determinations->total_5 }}</td>
+                                            </tr><tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">2</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_2 }}</td>
+                                                <td>{{ $determinations->total_2 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">1</h5>
+                                                </td>
+                                                <td>X</td>
+                                                <td>{{ $determinations->count_1 }}</td>
+                                                <td>{{ $determinations->total_1 }}</td>
+                                            </tr>
+                                            <tr style="color: red;">
+                                                <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1">Total</h5>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>{{ $determinations->total_2000 + $determinations->total_500 + $determinations->total_200 + $determinations->total_100 + $determinations->total_50 + $determinations->total_20 + $determinations->total_10 + $determinations->total_5 + $determinations->total_2 + $determinations->total_1 }}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

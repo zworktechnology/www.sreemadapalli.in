@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('case_on_hand');
             $table->string('g_pay');
+            $table->string('g_pay_business');
             $table->string('phone_pay');
             $table->string('card');
             $table->string('other_case');

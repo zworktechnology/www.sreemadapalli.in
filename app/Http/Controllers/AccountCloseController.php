@@ -23,6 +23,7 @@ class AccountCloseController extends Controller
         $data->date = $request->get('date');
         $data->case_on_hand = $request->get('case_on_hand');
         $data->g_pay = $request->get('g_pay');
+        $data->g_pay_business = $request->get('g_pay_business');
         $data->phone_pay = $request->get('phone_pay');
         $data->card = $request->get('card');
         $data->other_case = $request->get('other_case');
@@ -30,7 +31,7 @@ class AccountCloseController extends Controller
 
         $data->save();
 
-        return redirect()->route('accountclose.index')->with('add', 'Successful addition of a new accountclose record !');
+        return redirect()->route('home')->with('add', 'Successful addition of a new accountclose record !');
     }
 
     public function edit($id)
@@ -47,6 +48,7 @@ class AccountCloseController extends Controller
         $data->date = $request->get('date');
         $data->case_on_hand = $request->get('case_on_hand');
         $data->g_pay = $request->get('g_pay');
+        $data->g_pay_business = $request->get('g_pay_business');
         $data->phone_pay = $request->get('phone_pay');
         $data->card = $request->get('card');
         $data->other_case = $request->get('other_case');

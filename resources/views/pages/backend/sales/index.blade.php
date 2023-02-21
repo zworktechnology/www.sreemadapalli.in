@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="col-2">
-                        <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
+                        <button style="margin-left: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
 
                         <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
                             @include('pages.backend.sales.create')

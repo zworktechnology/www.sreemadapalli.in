@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChangeProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DeterminationController;
 use App\Http\Controllers\DinnerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ExpenceController;
@@ -210,6 +211,24 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/accountclose/delete/{id}', [AccountCloseController::class, 'delete'])->name('accountclose.delete');
         // DESTROY
         Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/accountclose/destroy/{id}', [AccountCloseController::class, 'destroy'])->name('accountclose.destroy');
+    });
+
+    // DETERMINATION CONTROLLER
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        // INDEX
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/determination', [DeterminationController::class, 'index'])->name('determination.index');
+        // CREATE
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/determination/create', [DeterminationController::class, 'create'])->name('determination.create');
+        // STORE
+        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/determination/store', [DeterminationController::class, 'store'])->name('determination.store');
+        // EDIT
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/determination/edit/{id}', [DeterminationController::class, 'edit'])->name('determination.edit');
+        // UPDATE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/determination/update/{id}', [DeterminationController::class, 'update'])->name('determination.update');
+        // DELETE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/determination/delete/{id}', [DeterminationController::class, 'delete'])->name('determination.delete');
+        // DESTROY
+        Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/determination/destroy/{id}', [DeterminationController::class, 'destroy'])->name('determination.destroy');
     });
 
      // SALES CONTROLLER

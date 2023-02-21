@@ -23,6 +23,12 @@
                         <span key="t-dashboards">Close Account</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('determination.index','determination.create','determination.edit') ? 'mm-active' : '' }}" hidden>
+                    <a href="{{ route('determination.index') }}">
+                        <i class="dripicons-dot"></i>
+                        <span key="t-dashboards">Determination</span>
+                    </a>
+                </li>
                 <li class="menu-title" key="t-menu">Delivery</li>
                 <li class="{{ Route::is('customer.index','customer.create','customer.edit','customer.view','customer.breafast.view','customer.lunch.view','customer.dinner.view') ? 'mm-active' : '' }}">
                     <a href="{{ route('customer.index') }}">
