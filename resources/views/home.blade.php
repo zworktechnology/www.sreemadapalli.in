@@ -25,6 +25,8 @@
                         <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
                             <button type="button" class="btn btn-success w-md">Search</button>
                         </div>
+                        @if (count($opendate) >= 1)
+                        @else
                         <div>
                             <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open Account</button>
 
@@ -32,6 +34,9 @@
                                 @include('pages.backend.accountopen.create')
                             </div>
                         </div>
+                        @endif
+                        @if (count($determinationdate) >= 1)
+                        @else
                         <div>
                             <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropdeter">Determination</button>
 
@@ -39,6 +44,9 @@
                                 @include('pages.backend.determination.create')
                             </div>
                         </div>
+                        @endif
+                        @if (count($closedate) >= 1)
+                        @else
                         <div>
                             <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropclose">Close Account</button>
 
@@ -47,6 +55,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
                 @if (\Session::has('add'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
