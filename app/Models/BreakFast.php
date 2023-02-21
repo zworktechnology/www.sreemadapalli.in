@@ -12,7 +12,7 @@ class BreakFast extends Model
     protected $fillable = [
         'date',
         'invoice_no',
-        'delivery_boy',
+        'delivery_boy_id',
         'bill_amount',
         'delivery_amount',
         'payment_amount',
@@ -25,5 +25,10 @@ class BreakFast extends Model
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id');
+    }
+
+    public function deliveryboy()
+    {
+        return $this->belongsTo(Deliveryboy::class, 'delivery_boy_id');
     }
 }

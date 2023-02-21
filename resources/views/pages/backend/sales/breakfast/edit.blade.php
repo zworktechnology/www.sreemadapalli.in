@@ -68,7 +68,13 @@
                                         <label for="delivery_boy" class="col-sm-3 col-form-label">
                                             Delivery BY <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="delivery_boy" placeholder="Enter Your " value="{{ $data->delivery_boy }}" required>
+                                            <select class="form-control" name="delivery_boy_id" required>
+                                                <option value="" disabled selected hidden class="text-muted">
+                                                    Enter Your</option>
+                                                @foreach ($deliveryboy as $deliveryboys)
+                                                <option value="{{ $deliveryboys->id }}" @if ($deliveryboys->id === $data->delivery_boy_id) selected='selected' @endif>{{ $deliveryboys->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row mb-4">

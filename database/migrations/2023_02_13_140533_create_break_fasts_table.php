@@ -24,7 +24,7 @@ return new class extends Migration
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->string('invoice_no');
             $table->string('bill_amount');
-            $table->string('delivery_boy');
+            $table->unsignedBigInteger('delivery_boy_id');
             $table->string('payment_status');
             $table->string('payment_method')->nullable();
             $table->string('delivery_amount');

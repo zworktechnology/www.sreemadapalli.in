@@ -160,7 +160,7 @@
                                             <td>#{{ $datas->invoice_no }}</td>
                                             <td>{{ $datas->customer->name }}</td>
                                             <td>{{ $datas->bill_amount }}</td>
-                                            <td>{{ $datas->delivery_boy }}</td>
+                                            <td>{{ $datas->deliveryboy->name}}</td>
                                             <td>{{ $datas->payment_status }}</td>
                                             @hasrole('Super-Admin')
                                             <td>
@@ -213,7 +213,7 @@
                                             <td>#{{ $datas->invoice_no }}</td>
                                             <td>{{ $datas->customer->name }}</td>
                                             <td>{{ $datas->bill_amount }}</td>
-                                            <td>{{ $datas->delivery_boy }}</td>
+                                            <td>{{ $datas->deliveryboy->name }}</td>
                                             <td>{{ $datas->payment_status }}</td>
                                             @hasrole('Super-Admin')
                                             <td>
@@ -266,7 +266,7 @@
                                             <td>#{{ $datas->invoice_no }}</td>
                                             <td>{{ $datas->customer->name }}</td>
                                             <td>{{ $datas->bill_amount }}</td>
-                                            <td>{{ $datas->delivery_boy }}</td>
+                                            <td>{{ $datas->deliveryboy->name }}</td>
                                             <td>{{ $datas->payment_status }}</td>
                                             @hasrole('Super-Admin')
                                             <td>

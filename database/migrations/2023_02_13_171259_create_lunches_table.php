@@ -21,7 +21,7 @@ return new class extends Migration
             // Request columns
             $table->string('date');
             $table->string('invoice_no');
-            $table->string('delivery_boy');
+            $table->unsignedBigInteger('delivery_boy_id');
             $table->string('bill_amount');
             $table->string('delivery_amount');
             $table->string('payment_amount');

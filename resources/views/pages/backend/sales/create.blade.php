@@ -16,10 +16,16 @@
                         </div>
                     </div>
                     <div class="row mb-4 col-6 ">
-                        <label for="delivery_boy" class="col-sm-3 col-form-label">
+                        <label for="delivery_boy_id" class="col-sm-3 col-form-label">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery BY <span style="color: red;">*</span></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="delivery_boy" placeholder="Enter Your " required>
+                            <select class="form-control" name="delivery_boy_id" required>
+                                <option value="" disabled selected hidden class="text-muted">
+                                    Enter Your</option>
+                                @foreach ($deliveryboy as $deliveryboys)
+                                <option value="{{ $deliveryboys->id }}">{{ $deliveryboys->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>

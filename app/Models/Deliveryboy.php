@@ -17,4 +17,19 @@ class Deliveryboy extends Model
         'address',
         'soft_delete'
     ];
+
+    public function breakfast()
+    {
+        return $this->hasMany(BreakFast::class, 'delivery_boy_id');
+    }
+
+    public function lunch()
+    {
+        return $this->hasMany(Lunch::class, 'delivery_boy_id');
+    }
+
+    public function dinner()
+    {
+        return $this->hasMany(Dinner::class, 'delivery_boy_id');
+    }
 }
