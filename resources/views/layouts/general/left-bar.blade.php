@@ -36,6 +36,12 @@
                         <span key="t-dashboards">Create New</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('deliveryboy.index','deliveryboy.create','deliveryboy.edit') ? 'mm-active' : '' }}">
+                    <a href="{{ route('deliveryboy.index') }}">
+                        <i class="dripicons-dot"></i>
+                        <span key="t-dashboards">Delivery Boy</span>
+                    </a>
+                </li>
                 <li class="{{ Route::is('sales.index','sales.create','breakfast.edit','lunch.edit','dinner.edit') ? 'mm-active' : '' }}">
                     <a href="{{ route('sales.index') }}">
                         <i class="dripicons-dot"></i>

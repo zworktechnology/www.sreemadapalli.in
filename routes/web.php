@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChangeProfileController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DeliveryboyController;
 use App\Http\Controllers\DeterminationController;
 use App\Http\Controllers\DinnerController;
 use App\Http\Controllers\EmployeeController;
@@ -83,7 +84,24 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
         // DESTROY
         Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/customer/destroy/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
-        
+    });
+
+    // DELIVERY BOY CONTROLLER
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        // INDEX
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/deliveryboy', [DeliveryboyController::class, 'index'])->name('deliveryboy.index');
+        // CREATE
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/deliveryboy/create', [DeliveryboyController::class, 'create'])->name('deliveryboy.create');
+        // STORE
+        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/deliveryboy/store', [DeliveryboyController::class, 'store'])->name('deliveryboy.store');
+        // EDIT
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/deliveryboy/edit/{id}', [DeliveryboyController::class, 'edit'])->name('deliveryboy.edit');
+        // UPDATE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/deliveryboy/update/{id}', [DeliveryboyController::class, 'update'])->name('deliveryboy.update');
+        // DELETE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/deliveryboy/delete/{id}', [DeliveryboyController::class, 'delete'])->name('deliveryboy.delete');
+        // DESTROY
+        Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/deliveryboy/destroy/{id}', [DeliveryboyController::class, 'destroy'])->name('deliveryboy.destroy');
     });
 
 
