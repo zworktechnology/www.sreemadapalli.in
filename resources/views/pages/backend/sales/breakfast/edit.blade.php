@@ -99,22 +99,25 @@
                                         <label for="payment_method" class="col-sm-3 col-form-label">
                                             Payment Via <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" name="payment_method" required>
+                                            <select class="form-control" name="payment_method">
                                                 <option value="" disabled selected hidden class="text-muted">
                                                     Enter Your</option>
-                                                <option value="Wallet" class="text-muted" {{ $data->payment_method == "Wallet" ? 'selected' : '' }}>Wallet</option>
                                                 <option value="Cash" class="text-muted" {{ $data->payment_method == "Cash" ? 'selected' : '' }}>Cash</option>
+                                                <option value="Card" class="text-muted" {{ $data->payment_method == "Card" ? 'selected' : '' }}>Card</option>
+                                                <option value="G-Pay" class="text-muted" {{ $data->payment_method == "G-Pay" ? 'selected' : '' }}>G Pay</option>
+                                                <option value="G-Pay Business" class="text-muted" {{ $data->payment_method == "G-Pay Business" ? 'selected' : '' }}>G-Pay Business</option>
+                                                <option value="Phone Pe" class="text-muted" {{ $data->payment_method == "Phone Pe" ? 'selected' : '' }}>Phone Pe</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row mb-4">
+                                    <div class="row mb-4" hidden>
                                         <label for="delivery_amount" class="col-sm-3 col-form-label">
                                             Delivery Charge <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
                                             <input type="number" class="form-control" name="delivery_amount" placeholder="Enter Your " id="delivery_amount" value="{{ $data->delivery_amount }}" required onchange="totalbreakfast()">
                                         </div>
                                     </div>
-                                    <div class="row mb-4">
+                                    <div class="row mb-4" hidden>
                                         <label for="payment_amount" class="col-sm-3 col-form-label">
                                             Payment Amount <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">

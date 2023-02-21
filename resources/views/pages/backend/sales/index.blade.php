@@ -61,81 +61,73 @@
                 </div>
                 @endif
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Total Delivery Sales</p>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Delivery Count</p>
+                                        <h4 class="mb-0">{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: red !important;">Delivery Bill Amount</p>
                                         <h4 class="mb-0">{{ $breakfast_data_total + $lunch_data_total + $dinner_data_total }}</h4>
                                     </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Cash</p>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Cash</p>
                                         <h4 class="mb-0">{{ $breakfast_data_pm_cash + $lunch_data_pm_cash + $dinner_data_pm_cash }}</h4>
                                     </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Wallet</p>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Wallet</p>
                                         <h4 class="mb-0">{{ $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet }}</h4>
                                     </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: red !important;">Pending</p>
+                                        <h4 class="mb-0">{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Pending</p>
-                                        <h4 class="mb-0">{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</h4>
-                                    </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Delivery Charge</p>
+                                        <h4 class="mb-0">{{ ($breakfast_data_count + $lunch_data_count + $dinner_data_count) * 20 }}</h4>
                                     </div>
                                 </div>
                             </div>
