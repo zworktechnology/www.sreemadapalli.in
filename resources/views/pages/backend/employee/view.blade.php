@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Staff Member - {{ $data->name }}</h4>
+                            <h4 class="mb-sm-0 font-size-18">Staff & Sales - {{ $data->name }}</h4>
                         </div>
                     </div>
                     <div class="col-8" style="display: flex;">
