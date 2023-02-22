@@ -20,21 +20,21 @@ class SalesController extends Controller
         $breakfast_data_total = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $breakfast_data_pm_cash = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Cash')->where('payment_status', '=', 'Payed')->sum('bill_amount');
         $breakfast_data_pm_wallet = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Cash')->where('payment_status', '=', 'Payed')->sum('bill_amount');
-        $breakfast_data_ps_pending = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Payed')->sum('bill_amount');
+        $breakfast_data_ps_pending = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $breakfast_data_count = Count($breakfast_data);
 
         $lunch_data = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $lunch_data_total = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $lunch_data_pm_cash = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Cash')->where('payment_status', '=', 'Payed')->sum('bill_amount');
         $lunch_data_pm_wallet = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Cash')->where('payment_status', '=', 'Payed')->sum('bill_amount');
-        $lunch_data_ps_pending = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Payed')->sum('bill_amount');
+        $lunch_data_ps_pending = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $lunch_data_count = Count($lunch_data);
 
         $dinner_data = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $dinner_data_total = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $dinner_data_pm_cash = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Cash')->where('payment_status', '=', 'Payed')->sum('bill_amount');
         $dinner_data_pm_wallet = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Cash')->where('payment_status', '=', 'Payed')->sum('bill_amount');
-        $dinner_data_ps_pending = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Payed')->sum('bill_amount');
+        $dinner_data_ps_pending = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $dinner_data_count = Count($dinner_data);
 
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();

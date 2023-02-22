@@ -64,15 +64,13 @@
                             <input type="number" class="form-control" name="invoice_no" placeholder="Enter Your " required>
                         </div>
                     </div>
-                    <div class="row mb-4 col-6">
+                    <div class="row mb-4 col-6" hidden>
                         <label for="payment_status" class="col-sm-3 col-form-label">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Status <span style="color: red;">*</span></label>
                         <div class="col-sm-9">
                             <select class="form-control" name="payment_status" required>
-                                <option value="" disabled selected hidden class="text-muted">
+                                <option value="No" selected class="text-muted">
                                     Enter Your</option>
-                                <option value="Payed" class="text-muted">Paid</option>
-                                <option value="Pending" class="text-muted">Pending</option>
                             </select>
                         </div>
                     </div>
@@ -89,7 +87,7 @@
                         <label for="payment_method" class="col-sm-3 col-form-label">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Via</label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="payment_method">
+                            <select class="form-control" name="payment_method" required>
                                 <option value="" disabled selected hidden class="text-muted">
                                     Enter Your</option>
                                 <option value="Cash" class="text-muted">Cash</option>
@@ -98,6 +96,7 @@
                                 <option value="G-Pay Business" class="text-muted">G-Pay Business</option>
                                 <option value="Phone Pe" class="text-muted">Phone Pe</option>
                                 <option value="Paytm" class="text-muted">Paytm</option>
+                                <option value="Pending" class="text-muted">Pending</option>
                             </select>
                         </div>
                     </div>

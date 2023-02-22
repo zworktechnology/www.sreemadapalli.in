@@ -89,13 +89,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row mb-4">
+                                    <div class="row mb-4" hidden>
                                         <label for="payment_status" class="col-sm-3 col-form-label">
                                             Payment Status <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
                                             <select class="form-control" name="payment_status" required>
-                                                <option value="" disabled selected hidden class="text-muted">
-                                                    Enter Your</option>
+                                                <option value="No" selected class="text-muted">Enter Your</option>
                                                 <option value="Payed" class="text-muted" {{ $data->payment_status == "Payed" ? 'selected' : '' }}>Paid</option>
                                                 <option value="Pending" class="text-muted" {{ $data->payment_status == "Pending" ? 'selected' : '' }}>Pending</option>
                                             </select>
@@ -114,6 +113,7 @@
                                                 <option value="G-Pay Business" class="text-muted" {{ $data->payment_method == "G-Pay Business" ? 'selected' : '' }}>G-Pay Business</option>
                                                 <option value="Phone Pe" class="text-muted" {{ $data->payment_method == "Phone Pe" ? 'selected' : '' }}>Phone Pe</option>
                                                 <option value="Paytm" class="text-muted" {{ $data->payment_method == "Paytm" ? 'selected' : '' }}>Paytm</option>
+                                                <option value="Pending" class="text-muted" {{ $data->payment_method == "Pending" ? 'selected' : '' }}>Pending</option>
                                             </select>
                                         </div>
                                     </div>
