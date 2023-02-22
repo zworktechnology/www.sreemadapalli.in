@@ -14,23 +14,27 @@
                             <h4 class="mb-sm-0 font-size-18">Customer - {{ $data->name }}</h4>
                         </div>
                     </div>
+                
                     <div class="col-8" style="display: flex;">
                         <div class="row mb-4 col-4">
                             <div class="col-sm-12">
-                                <input type="date" class="form-control" name="from_date" placeholder="Enter Your " required>
+                                <input type="date" class="form-control" name="from_date" id="from_date" placeholder="Enter Your " required>
                             </div>
                         </div>
                         <div class="row mb-4 col-4" style="margin-left: 5px;">
                             <div class="col-sm-12">
-                                <input type="date" class="form-control" name="to_date" placeholder="Enter Your " required>
+                                <input type="date" class="form-control" name="to_date" id="to_date" placeholder="Enter Your " required>
+                                <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids" value="{{ $data->id }}">
                             </div>
                         </div>
                         <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
-                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
+                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="customer_datearr">Search</button>
                         </div>
-                        <div class="row mb-4 col-2" style="margin-left: 10px;">
-                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Export as PDF</button>
+                        <div class="row mb-4 col-4" style="margin-left: 10px;">
+                            <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter"><button type="button" class="btn btn-success w-md ">Export as PDF</button></a>
+                            <a   style="display:none" class="filter"><button type="button" class="btn btn-success w-md ">Export as PDF</button></a>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -106,6 +110,9 @@
                     <div class="col-8">
                         <div class="card">
                             <div class="card-body">
+                                
+                                
+                               
                                 <table class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: lightgrey">
                                         <tr>
@@ -117,16 +124,23 @@
                                             <th>Total</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    
+                                    <tbody id="customer_index">
+                                    @foreach ($Custumer_index_array as $index => $Custumer_index_arr)
                                         <tr>
-                                            <td>1</td>
-                                            <td>1 - 1 - 2023</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>3</td>
+                                            <td>{{ ++$index }}</td>
+                                            <td>{{ $Custumer_index_arr['date'] }}</td>
+                                            <td>{{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
+                                            <td>{{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
+                                            <td>{{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
+                                            <td>{{ $Custumer_index_arr['TotalAmount'] }}</td>
                                         </tr>
+                                    @endforeach
                                     </tbody>
+                                    <tbody id="filter_array">
+                                    
+                                    </tbody>
+                                    
                                 </table>
                             </div>
                         </div>
@@ -161,6 +175,114 @@
 
         @include('layouts.general.footer')
 
+        
+<script>
+    $(document.body).on("click", "#customer_datearr", function() {
+
+        $('.nofilter').hide();
+        $('.filter').show();
+        var from_date = $('#from_date').val();
+        var to_date = $('#to_date').val();
+        var customer_id = $('#customer_ids').val();
+
+        if(from_date == ""){
+            alert('Select From Date');
+        }
+        if(to_date == ""){
+            alert('Select To Date');
+        }
+
+        
+        
+        if(from_date != ""){
+            if(to_date != ""){   
+                
+                
+                
+
+
+
+                $.ajax({
+                    url: '/getdatewiseCustomerOrders/',
+                    type: 'get',
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        from_date: from_date,
+                        to_date: to_date,
+                        customer_id: customer_id
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        
+                        $('#customer_index').empty();
+                        $('#filter_array').html('');
+
+
+                        console.log(response);
+                        var output = response.length;
+
+                        for (var i = 0; i < output; i++) {
+                            var column_0 = $('<td/>', {
+                                    html: i + 1 ,
+                                });
+                                var column_1 = $('<td/>', {
+                                    html: response[i].date,
+                                });
+                                var column_2 = $('<td/>', {
+                                    html: response[i].BreakfastAmount,
+                                });
+
+                                var column_3 = $('<td/>', {
+                                    html: response[i].LunchAmount,
+                                });
+                                var column_4 = $('<td/>', {
+                                    html: response[i].DinnerAmount,
+                                });
+                                var column_5 = $('<td/>', {
+                                    html: response[i].TotalCustomerAmount,
+                                });
+
+                                var row = $('<tr id=filter_row/>', {}).append(column_0,
+                                    column_1, column_2, column_3, column_4, column_5);
+
+                                $('#filter_array').append(row);
+                        }
+                        
+                    }
+                });
+            }
+        }
+
+    });
+
+
+    $(document.body).on("click", ".filter", function() {
+   
+        var from_date = $('#from_date').val();
+        var to_date = $('#to_date').val();
+        var customer_id = $('#customer_ids').val();
+
+        
+   
+                $.ajax({
+                    url: '/filtercustomerorders/',
+                    type: 'get',
+                    data: {
+                        from_date: from_date,
+                        to_date: to_date,
+                        customer_id: customer_id
+                    },
+                    dataType: 'json'
+                        
+                    
+                });
+                
+    });
+
+</script>
     </div>
 </div>
 @endsection
+
+
+
