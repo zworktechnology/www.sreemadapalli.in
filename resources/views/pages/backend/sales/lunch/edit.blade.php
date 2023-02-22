@@ -113,6 +113,7 @@
                                                 <option value="G-Pay" class="text-muted" {{ $data->payment_method == "G-Pay" ? 'selected' : '' }}>G Pay</option>
                                                 <option value="G-Pay Business" class="text-muted" {{ $data->payment_method == "G-Pay Business" ? 'selected' : '' }}>G-Pay Business</option>
                                                 <option value="Phone Pe" class="text-muted" {{ $data->payment_method == "Phone Pe" ? 'selected' : '' }}>Phone Pe</option>
+                                                <option value="Paytm" class="text-muted" {{ $data->payment_method == "Paytm" ? 'selected' : '' }}>Paytm</option>
                                             </select>
                                         </div>
                                     </div>

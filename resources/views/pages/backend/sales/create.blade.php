@@ -97,6 +97,7 @@
                                 <option value="G-Pay" class="text-muted">G Pay</option>
                                 <option value="G-Pay Business" class="text-muted">G-Pay Business</option>
                                 <option value="Phone Pe" class="text-muted">Phone Pe</option>
+                                <option value="Paytm" class="text-muted">Paytm</option>
                             </select>
                         </div>
                     </div>
