@@ -146,6 +146,7 @@
                                             <th>Amount</th>
                                             <th>Delivery By</th>
                                             <th>Payment Status</th>
+                                            <th>Payment Via</th>
                                             @hasrole('Super-Admin')
                                             <th>Status</th>
                                             <th>Action</th>
@@ -162,6 +163,11 @@
                                             <td>{{ $datas->bill_amount }}</td>
                                             <td>{{ $datas->deliveryboy->name}}</td>
                                             <td>{{ $datas->payment_status }}</td>
+                                            @if ($datas->payment_method == 'Cash')
+                                            <td>{{ $datas->payment_method }}</td>
+                                            @else
+                                            <td>Wallet - {{ $datas->payment_method }}</td>
+                                            @endif
                                             @hasrole('Super-Admin')
                                             <td>
                                                 @if ($datas->soft_delete == 1)
@@ -215,6 +221,11 @@
                                             <td>{{ $datas->bill_amount }}</td>
                                             <td>{{ $datas->deliveryboy->name }}</td>
                                             <td>{{ $datas->payment_status }}</td>
+                                            @if ($datas->payment_method == 'Cash')
+                                            <td>{{ $datas->payment_method }}</td>
+                                            @else
+                                            <td>Wallet - {{ $datas->payment_method }}</td>
+                                            @endif
                                             @hasrole('Super-Admin')
                                             <td>
                                                 @if ($datas->soft_delete == 1)
@@ -268,6 +279,11 @@
                                             <td>{{ $datas->bill_amount }}</td>
                                             <td>{{ $datas->deliveryboy->name }}</td>
                                             <td>{{ $datas->payment_status }}</td>
+                                            @if ($datas->payment_method == 'Cash')
+                                            <td>{{ $datas->payment_method }}</td>
+                                            @else
+                                            <td>Wallet - {{ $datas->payment_method }}</td>
+                                            @endif
                                             @hasrole('Super-Admin')
                                             <td>
                                                 @if ($datas->soft_delete == 1)
