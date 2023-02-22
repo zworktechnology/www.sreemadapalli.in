@@ -711,7 +711,7 @@ body[data-layout=horizontal] .footer {
     }
 
     body.sidebar-enable .vertical-menu {
-        display: block
+        display: block;
     }
 }
 

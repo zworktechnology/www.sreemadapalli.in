@@ -15,7 +15,7 @@
 <script src="{{ asset('assets/js/pages/auth-2-carousel.init.js') }}"></script>
 
 {{-- App js --}}
-<script src="{{ asset('assets/js/app.js') }}"></script>
+<script src="{{ asset('assets/js/apps.js') }}"></script>
 
 {{-- Required datatable js --}}
 <script src="{{ asset('assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
