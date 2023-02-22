@@ -57,11 +57,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: lightgrey">
+                                    <thead style="background: #FFAD4C">
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Sl. No</th>
                                             <th>Name</th>
-                                            <th>Contact Number</th>
+                                            <th>Phone No</th>
                                             @hasrole('Super-Admin')
                                             <th>Status</th>
                                             @endhasrole

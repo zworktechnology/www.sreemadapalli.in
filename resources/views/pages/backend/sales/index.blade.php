@@ -137,13 +137,13 @@
                         <div class="card">
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: lightgrey">
+                                    <thead style="background: #FFAD4C">
                                         <tr>
                                             <th>Session</th>
                                             <th>Date</th>
-                                            <th>Invoice ID</th>
+                                            <th>Bill No</th>
                                             <th>Customer</th>
-                                            <th>Price</th>
+                                            <th>Amount</th>
                                             <th>Delivery By</th>
                                             <th>Payment Status</th>
                                             @hasrole('Super-Admin')

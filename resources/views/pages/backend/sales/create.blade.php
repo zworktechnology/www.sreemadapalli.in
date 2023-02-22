@@ -49,7 +49,7 @@
                         <div class="col-sm-9">
                             <select class="form-control" name="session" required>
                                 <option value="" disabled selected hidden class="text-muted">Enter Your</option>
-                                <option value="Break_Fast" class="text-muted">Break Fast</option>
+                                <option value="Break_Fast" class="text-muted">Breakfast</option>
                                 <option value="Lunch" class="text-muted">Lunch</option>
                                 <option value="Dinner" class="text-muted">Dinner</option>
                             </select>
@@ -71,7 +71,7 @@
                             <select class="form-control" name="payment_status" required>
                                 <option value="" disabled selected hidden class="text-muted">
                                     Enter Your</option>
-                                <option value="Payed" class="text-muted">Payed</option>
+                                <option value="Payed" class="text-muted">Paid</option>
                                 <option value="Pending" class="text-muted">Pending</option>
                             </select>
                         </div>

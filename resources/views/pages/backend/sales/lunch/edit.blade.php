@@ -81,9 +81,9 @@
                                         <label for="session" class="col-sm-3 col-form-label">
                                             Session <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" name="payment_method" required>
+                                            <select class="form-control" name="payment_method" required disabled>
                                                 <option value="" disabled hidden class="text-muted">Enter Your</option>
-                                                <option value="" class="text-muted">Break Fast</option>
+                                                <option value="" class="text-muted">Breakfast</option>
                                                 <option value="" selected class="text-muted">Lunch</option>
                                                 <option value="" class="text-muted">Dinner</option>
                                             </select>
@@ -96,7 +96,7 @@
                                             <select class="form-control" name="payment_status" required>
                                                 <option value="" disabled selected hidden class="text-muted">
                                                     Enter Your</option>
-                                                <option value="Payed" class="text-muted" {{ $data->payment_status == "Payed" ? 'selected' : '' }}>Payed</option>
+                                                <option value="Payed" class="text-muted" {{ $data->payment_status == "Payed" ? 'selected' : '' }}>Paid</option>
                                                 <option value="Pending" class="text-muted" {{ $data->payment_status == "Pending" ? 'selected' : '' }}>Pending</option>
                                             </select>
                                         </div>
