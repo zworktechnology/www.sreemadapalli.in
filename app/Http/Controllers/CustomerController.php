@@ -15,7 +15,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $data = Customer::where('soft_delete', '!=', 1)->get();
+        $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         return view('pages.backend.customer.index', compact('data'));
     }
 
@@ -171,39 +171,6 @@ class CustomerController extends Controller
             'customerdata' => $customerdata,
         ]);
         return $pdf->download('exportpdf.pdf');
-    }
-
-    public function breakfastview($id)
-    {
-        $data = Customer::findOrFail($id);
-        $breakfast = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
-        $breakfast_amount_pending = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('payment_amount');
-        $breakfast_amount_paid = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('payment_amount');
-        $breakfast_total_amount = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('payment_amount');
-
-        return view('pages.backend.customer.breakfast', compact('data', 'breakfast', 'breakfast_amount_pending', 'breakfast_amount_paid', 'breakfast_total_amount'));
-    }
-
-    public function lunchview($id)
-    {
-        $data = Customer::findOrFail($id);
-        $lunch = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
-        $lunch_amount_pending = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('payment_amount');
-        $lunch_amount_paid = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('payment_amount');
-        $lunch_total_amount = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('payment_amount');
-
-        return view('pages.backend.customer.lunch', compact('data', 'lunch', 'lunch_amount_pending', 'lunch_amount_paid', 'lunch_total_amount'));
-    }
-
-    public function dinnerview($id)
-    {
-        $data = Customer::findOrFail($id);
-        $dinner = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
-        $dinner_amount_pending = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('payment_amount');
-        $dinner_amount_paid = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('payment_amount');
-        $dinner_total_amount = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('payment_amount');
-
-        return view('pages.backend.customer.dinner', compact('data', 'dinner', 'dinner_amount_pending', 'dinner_amount_paid', 'dinner_total_amount'));
     }
 
     public function edit($id)

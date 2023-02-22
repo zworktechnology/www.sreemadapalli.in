@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Open Account</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Close Account</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form autocomplete="off" method="POST" action="{{ route('accountclose.store') }}">
@@ -14,11 +14,11 @@
                         <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                     </div>
                 </div>
-                <div class="row mb-4">
+                <div class="row mb-4" hidden>
                     <label for="case_on_hand" class="col-sm-3 col-form-label">
                         Cash on hand <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="case_on_hand" placeholder="Enter Your " required>
+                        <input type="number" class="form-control" name="case_on_hand" placeholder="Enter Your " required value="0">
                     </div>
                 </div>
                 <div class="row mb-4">
@@ -26,6 +26,13 @@
                         G Pay <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
                         <input type="number" class="form-control" name="g_pay" placeholder="Enter Your " required>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="g_pay_business" class="col-sm-3 col-form-label">
+                        G Pay Business<span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" name="g_pay_business" placeholder="Enter Your " required>
                     </div>
                 </div>
                 <div class="row mb-4">

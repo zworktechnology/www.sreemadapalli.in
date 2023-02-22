@@ -10,7 +10,7 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        $data = Employee::where('soft_delete', '!=', 1)->get();
+        $data = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         return view('pages.backend.employee.index', compact('data'));
     }
 
@@ -44,7 +44,7 @@ class EmployeeController extends Controller
         $data = Employee::findOrFail($id);
         $expence = Expence::where('employee_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
         $expence_total_amount = Expence::where('employee_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('amount');
-        
+
         return view('pages.backend.employee.view', compact('data', 'expence', 'expence_total_amount'));
     }
 

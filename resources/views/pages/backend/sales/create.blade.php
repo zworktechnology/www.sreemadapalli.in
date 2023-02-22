@@ -16,8 +16,17 @@
                         </div>
                     </div>
                     <div class="row mb-4 col-6 ">
+                        <label for="delivery_boy" class="col-sm-3 col-form-label">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery BY <span style="color: red;">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="delivery_boy" placeholder="Enter Your " required>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="row mb-4 col-6 ">
                         <label for="customer_id" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer <span style="color: red;">*</span></label>
+                            Customer <span style="color: red;">*</span></label>
                         <div class="col-sm-9">
                             <select class="form-control" name="customer_id" required>
                                 <option value="" disabled selected hidden class="text-muted">
@@ -26,31 +35,6 @@
                                 <option value="{{ $customers->id }}">{{ $customers->name }}</option>
                                 @endforeach
                             </select>
-                        </div>
-                    </div>
-                </div>
-                <div style="display: flex;">
-                    <div class="row mb-4 col-6 ">
-                        <label for="invoice_no" class="col-sm-3 col-form-label">
-                            Invoice No <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" name="invoice_no" placeholder="Enter Your " required>
-                        </div>
-                    </div>
-                    <div class="row mb-4 col-6 ">
-                        <label for="bill_amount" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bill Amount <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Enter Your " required onchange="totalbreakfast()">
-                        </div>
-                    </div>
-                </div>
-                <div style="display: flex;">
-                    <div class="row mb-4 col-6 ">
-                        <label for="delivery_boy" class="col-sm-3 col-form-label">
-                            Delivery BY <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="delivery_boy" placeholder="Enter Your " required>
                         </div>
                     </div>
                     <div class="row mb-4 col-6 ">
@@ -67,9 +51,16 @@
                     </div>
                 </div>
                 <div style="display: flex;">
+                    <div class="row mb-4 col-6 ">
+                        <label for="invoice_no" class="col-sm-3 col-form-label">
+                            Bill No <span style="color: red;">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" name="invoice_no" placeholder="Enter Your " required>
+                        </div>
+                    </div>
                     <div class="row mb-4 col-6">
                         <label for="payment_status" class="col-sm-3 col-form-label">
-                            Payment Status <span style="color: red;">*</span></label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Status <span style="color: red;">*</span></label>
                         <div class="col-sm-9">
                             <select class="form-control" name="payment_status" required>
                                 <option value="" disabled selected hidden class="text-muted">
@@ -79,6 +70,15 @@
                             </select>
                         </div>
                     </div>
+                </div>
+                <div style="display: flex;">
+                    <div class="row mb-4 col-6 ">
+                        <label for="bill_amount" class="col-sm-3 col-form-label">
+                            Bill Amount <span style="color: red;">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Enter Your " required onchange="totalbreakfast()">
+                        </div>
+                    </div>
                     <div class="row mb-4 col-6 ">
                         <label for="payment_method" class="col-sm-3 col-form-label">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Via</label>
@@ -86,8 +86,11 @@
                             <select class="form-control" name="payment_method">
                                 <option value="" disabled selected hidden class="text-muted">
                                     Enter Your</option>
-                                <option value="Wallet" class="text-muted">Wallet</option>
                                 <option value="Cash" class="text-muted">Cash</option>
+                                <option value="Card" class="text-muted">Card</option>
+                                <option value="G-Pay" class="text-muted">G Pay</option>
+                                <option value="G-Pay Business" class="text-muted">G-Pay Business</option>
+                                <option value="Phone Pe" class="text-muted">Phone Pe</option>
                             </select>
                         </div>
                     </div>

@@ -8,27 +8,25 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-5">
-                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Sales</h4>
-                        </div>
-                    </div>
-                    <div class="col-5" style="display: flex;">
-                        <div class="row mb-4 col-10 ">
-                            <div class="col-sm-12">
-                                <input type="date" class="form-control" name="from_date" placeholder="Enter Your " required>
-                            </div>
-                        </div>
-                        <div class="row mb-4 col-2" style="margin-left: 10px; margin-right: 10px;">
-                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Sales</h4>
+                        <div class="page-title-right">
+                            <div style="display: flex;">
+                                <div style="margin-right: 10px;">
+                                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                                </div>
+                                <div style="margin-right: 10px;">
+                                    <button type="button" class="btn btn-success w-md">Search</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
 
-                        <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
-                            @include('pages.backend.sales.create')
+                                    <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
+                                        @include('pages.backend.sales.create')
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -61,81 +59,73 @@
                 </div>
                 @endif
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Total Delivery Sales</p>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Delivery Count</p>
+                                        <h4 class="mb-0">{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: red !important;">Delivery Bill Amount</p>
                                         <h4 class="mb-0">{{ $breakfast_data_total + $lunch_data_total + $dinner_data_total }}</h4>
                                     </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Cash</p>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Cash</p>
                                         <h4 class="mb-0">{{ $breakfast_data_pm_cash + $lunch_data_pm_cash + $dinner_data_pm_cash }}</h4>
                                     </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Wallet</p>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Wallet</p>
                                         <h4 class="mb-0">{{ $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet }}</h4>
                                     </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: red !important;">Pending</p>
+                                        <h4 class="mb-0">{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium">Pending</p>
-                                        <h4 class="mb-0">{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</h4>
-                                    </div>
-
-                                    <div class="flex-shrink-0 align-self-center">
-                                        <div class="mini-stat-icon avatar-sm rounded-circle">
-                                            <span class="avatar-title" style="background-color: black !important">
-                                                <i class="bx bx-copy-alt font-size-24"></i>
-                                            </span>
-                                        </div>
+                                        <p class="text-muted fw-medium" style="color: red !important;">Delivery Charge</p>
+                                        <h4 class="mb-0">{{ ($breakfast_data_count + $lunch_data_count + $dinner_data_count) * 20 }}</h4>
                                     </div>
                                 </div>
                             </div>
