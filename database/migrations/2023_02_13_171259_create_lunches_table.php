@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
 
             // Request columns
+            $table->string('title');
             $table->string('date');
             $table->string('invoice_no');
             $table->unsignedBigInteger('delivery_boy_id');

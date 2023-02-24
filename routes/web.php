@@ -84,6 +84,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
         // DESTROY
         Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/customer/destroy/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+        
     });
 
     // DELIVERY BOY CONTROLLER
@@ -268,6 +269,9 @@ Route::get('/accept/{token}', [InviteController::class, 'accept']);
 //CUSTOMER DATE ARRAY FILTER
 Route::get('/getdatewiseCustomerOrders', [CustomerController::class, 'getdatewiseCustomerOrders']);
 Route::get('/export_customerorder_pdf/{id}', [CustomerController::class, 'export_customerorder_pdf']);
-Route::get('/filtercustomerorders', [CustomerController::class, 'filtercustomerorders']);
+Route::post('/exportfilterpdf', [CustomerController::class, 'exportfilterpdf'])->name('customer.exportfilterpdf'); 
+
+//DAILY DATE ARRAY FILTER
+Route::get('/getDailyBreakfastData', [BreakFastController::class, 'getDailyBreakfastData']);
 
 

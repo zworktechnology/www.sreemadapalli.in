@@ -12,6 +12,8 @@
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0 font-size-18">Customer - {{ $data->name }}</h4>
                         <div class="page-title-right">
+                        <form  autocomplete="off" method="post" action="{{ route('customer.exportfilterpdf') }}">
+                        @csrf
                             <div style="display: flex;">
                                 <div style="margin-right: 10px;">
                                     <input type="date" class="form-control" name="from_date" id="from_date" placeholder="Enter Your " required value="{{ $today }}">
@@ -25,9 +27,10 @@
                                 </div>
                                 <div>
                                     <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter"><button type="button" class="btn btn-success w-md">Export as PDF</button></a>
-                                    <a style="display:none" class="filter"><button type="button" class="btn btn-success w-md ">Export as PDF</button></a>
+                                    <button type="submit" style="display:none" class="btn btn-success w-md filter">Export as PDF</button>
                                 </div>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -162,10 +165,6 @@
                     if (to_date != "") {
 
 
-
-
-
-
                         $.ajax({
                             url: '/getdatewiseCustomerOrders/'
                             , type: 'get'
@@ -220,28 +219,7 @@
             });
 
 
-            $(document.body).on("click", ".filter", function() {
-
-                var from_date = $('#from_date').val();
-                var to_date = $('#to_date').val();
-                var customer_id = $('#customer_ids').val();
-
-
-
-                $.ajax({
-                    url: '/filtercustomerorders/'
-                    , type: 'get'
-                    , data: {
-                        from_date: from_date
-                        , to_date: to_date
-                        , customer_id: customer_id
-                    }
-                    , dataType: 'json'
-
-
-                });
-
-            });
+          
 
         </script>
     </div>

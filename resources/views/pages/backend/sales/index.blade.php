@@ -14,10 +14,10 @@
                         <div class="page-title-right">
                             <div style="display: flex;">
                                 <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                                    <input type="date" class="form-control" name="daily_date" id="daily_date" placeholder="Enter Your " required value="{{ $today }}">
                                 </div>
                                 <div style="margin-right: 10px;">
-                                    <button type="button" class="btn btn-success w-md">Search</button>
+                                    <button type="button" class="btn btn-success w-md" id="daily_datearr">Search</button>
                                 </div>
                                 <div>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
@@ -30,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+
                 @if (\Session::has('add'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="mdi mdi-check-all me-2"></i>
@@ -152,37 +153,37 @@
                                             @endhasrole
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($breakfast_data as $keydata => $datas)
+                                    <tbody id="breakfast_daily">
+                                        @foreach ($daily_Data as $keydata => $outputs)
                                         <tr>
-                                            <td>Break Fast</td>
-                                            <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
-                                            <td>#{{ $datas->invoice_no }}</td>
-                                            <td>{{ $datas->customer->name }}</td>
-                                            <td>{{ $datas->bill_amount }}</td>
-                                            <td>{{ $datas->deliveryboy->name}}</td>
-                                            <td>{{ $datas->payment_status }}</td>
+                                            <td>{{ $outputs['title'] }}</td>
+                                            <td>{{ date('d - m - Y', strtotime($outputs['date'])) }}</td>
+                                            <td>#{{ $outputs['invoice_no'] }}</td>
+                                            <td>{{ $outputs['customer'] }}</td>
+                                            <td>{{ $outputs['bill_amount'] }}</td>
+                                            <td>{{ $outputs['devlivery_by']}}</td>
+                                            <td>{{ $outputs['payment_status'] }}</td>
                                             @hasrole('Super-Admin')
                                             <td>
-                                                @if ($datas->soft_delete == 1)
-                                                <span class="badge bg-danger">Deleted</span>
+                                                @if ($outputs['status'] == 'Deleted')
+                                                <span class="badge bg-danger">{{ $outputs['status'] }}</span>
                                                 @else
-                                                <span class="badge bg-success">Active</span>
+                                                <span class="badge bg-success">{{ $outputs['status'] }}</span>
                                                 @endif
                                             </td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('breakfast.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['date']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
+                                                        <a href="#jobDelete{{ $outputs['date'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
                                                     </li>
                                                 </ul>
                                             </td>
                                             @endhasrole
                                         </tr>
-                                        <div class="modal fade" id="jobDelete{{ $datas->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
+                                        <div class="modal fade" id="jobDelete{{ $outputs['date'] }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">
                                                 <div class="modal-content">
                                                     <div class="modal-body px-4 py-5 text-center">
@@ -194,7 +195,7 @@
                                                         <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the record.</p>
 
                                                         <div class="hstack gap-2 justify-content-center mb-0">
-                                                            <form autocomplete="off" method="POST" action="{{ route('breakfast.delete', ['id' => $datas->id]) }}">
+                                                            <form autocomplete="off" method="POST" action="{{ route('breakfast.delete', ['id' => $outputs['date']]) }}">
                                                                 @method('PUT')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">Yes, Delete</button>
@@ -206,113 +207,12 @@
                                             </div>
                                         </div>
                                         @endforeach
-                                        @foreach ($lunch_data as $keydata => $datas)
-                                        <tr>
-                                            <td>Lunch</td>
-                                            <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
-                                            <td>#{{ $datas->invoice_no }}</td>
-                                            <td>{{ $datas->customer->name }}</td>
-                                            <td>{{ $datas->bill_amount }}</td>
-                                            <td>{{ $datas->deliveryboy->name }}</td>
-                                            <td>{{ $datas->payment_status }}</td>
-                                            @hasrole('Super-Admin')
-                                            <td>
-                                                @if ($datas->soft_delete == 1)
-                                                <span class="badge bg-danger">Deleted</span>
-                                                @else
-                                                <span class="badge bg-success">Active</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <ul class="list-unstyled hstack gap-1 mb-0">
-                                                    <li>
-                                                        <a href="{{ route('lunch.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            @endhasrole
-                                        </tr>
-                                        <div class="modal fade" id="jobDelete{{ $datas->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-sm">
-                                                <div class="modal-content">
-                                                    <div class="modal-body px-4 py-5 text-center">
-                                                        <div class="avatar-sm mb-4 mx-auto">
-                                                            <div class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
-                                                                <i class="mdi mdi-trash-can-outline"></i>
-                                                            </div>
-                                                        </div>
-                                                        <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the record.</p>
+                                        </tbody>
+                                        
+                                        <tbody id="filter_breakfastdaily"></tbody>
 
-                                                        <div class="hstack gap-2 justify-content-center mb-0">
-                                                            <form autocomplete="off" method="POST" action="{{ route('lunch.delete', ['id' => $datas->id]) }}">
-                                                                @method('PUT')
-                                                                @csrf
-                                                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
-                                                            </form>
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Get Back</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                        @foreach ($dinner_data as $keydata => $datas)
-                                        <tr>
-                                            <td>Dinner</td>
-                                            <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
-                                            <td>#{{ $datas->invoice_no }}</td>
-                                            <td>{{ $datas->customer->name }}</td>
-                                            <td>{{ $datas->bill_amount }}</td>
-                                            <td>{{ $datas->deliveryboy->name }}</td>
-                                            <td>{{ $datas->payment_status }}</td>
-                                            @hasrole('Super-Admin')
-                                            <td>
-                                                @if ($datas->soft_delete == 1)
-                                                <span class="badge bg-danger">Deleted</span>
-                                                @else
-                                                <span class="badge bg-success">Active</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <ul class="list-unstyled hstack gap-1 mb-0">
-                                                    <li>
-                                                        <a href="{{ route('dinner.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            @endhasrole
-                                        </tr>
-                                        <div class="modal fade" id="jobDelete{{ $datas->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-sm">
-                                                <div class="modal-content">
-                                                    <div class="modal-body px-4 py-5 text-center">
-                                                        <div class="avatar-sm mb-4 mx-auto">
-                                                            <div class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
-                                                                <i class="mdi mdi-trash-can-outline"></i>
-                                                            </div>
-                                                        </div>
-                                                        <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the record.</p>
 
-                                                        <div class="hstack gap-2 justify-content-center mb-0">
-                                                            <form autocomplete="off" method="POST" action="{{ route('dinner.delete', ['id' => $datas->id]) }}">
-                                                                @method('PUT')
-                                                                @csrf
-                                                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
-                                                            </form>
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Get Back</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </tbody>
+                                   
                                 </table>
                             </div>
                         </div>
@@ -322,6 +222,90 @@
         </div>
 
         @include('layouts.general.footer')
+
+
+<script>
+
+$(document).ready(function () {
+    $('#dataTable').DataTable();
+});
+
+    $(document.body).on("click", "#daily_datearr", function() {
+
+        var daily_date = $('#daily_date').val();
+
+        if (daily_date == "") {
+            alert('Select Date');
+        }
+
+        if (daily_date != "") {
+
+                        $.ajax({
+                            url: '/getDailyBreakfastData/'
+                            , type: 'get'
+                            , data: {
+                                _token: "{{ csrf_token() }}"
+                                , daily_date: daily_date
+                            }
+                            , dataType: 'json'
+                            , success: function(response) {
+
+                                $('#breakfast_daily').empty();
+                                $('#filter_breakfastdaily').html('');
+
+
+                                console.log(response);
+                                var output = response.length;
+
+                                for (var i = 0; i < output; i++) {
+                                    var column_0 = $('<td/>', {
+                                        html: response[i].BreakFast
+                                    , });
+                                    var column_1 = $('<td/>', {
+                                        html: response[i].date
+                                    , });
+                                    var column_2 = $('<td/>', {
+                                        html: '#' + response[i].InvoiceID
+                                    , });
+
+                                    var column_3 = $('<td/>', {
+                                        html: response[i].customername
+                                    , });
+                                    var column_4 = $('<td/>', {
+                                        html: response[i].Price
+                                    , });
+                                    var column_5 = $('<td/>', {
+                                        html: response[i].DeliveryBy
+                                    , });
+                                    var column_6 = $('<td/>', {
+                                        html: response[i].payment_status
+                                    , });
+                                    var column_7 = $('<td/>', {
+                                        html: response[i].status
+                                    , });
+                                    
+
+                                    var row = $('<tr id=filter_breakfast/>', {}).append(column_0
+                                        , column_1, column_2, column_3, column_4, column_5, column_6, column_7);
+
+                                    $('#filter_breakfastdaily').append(row);
+                                }
+
+                            }
+                        });
+
+        }
+
+    });
+</script>
+
+
+
+
+
+
+
+
 
     </div>
 </div>

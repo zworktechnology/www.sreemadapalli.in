@@ -10,6 +10,7 @@ class Dinner extends Model
     use HasFactory;
 
     protected $fillable = [
+        'title',
         'date',
         'invoice_no',
         'delivery_boy_id',
