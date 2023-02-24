@@ -54,7 +54,7 @@
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Sl. No</th>
                                             <th>Date</th>
                                             <th>Amount</th>
                                             <th>Note</th>

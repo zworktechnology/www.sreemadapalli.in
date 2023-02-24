@@ -34,7 +34,7 @@
                                 @if (count($determinationdate) >= 1)
                                 @else
                                 <div>
-                                    <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropdeter">Determination</button>
+                                    <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdropdeter">Denomination</button>
 
                                     <div class="modal fade" id="staticBackdropdeter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         @include('pages.backend.determination.create')
@@ -71,7 +71,7 @@
                 @endif
                 <div style="display: flex;" style="font-weight: bold;">
                     <div class="col-xl-6" style="padding-right: 10px;">
-                        <div class="card" style="background-color: #BFD8D9;">
+                        <div class="card" style="background-color: #ACDDDE;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
@@ -129,7 +129,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card" style="background-color: #D9A5F9;">
+                        <div class="card" style="background-color: #CAF1DE;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card" style="background-color: #FF99EB;">
+                        <div class="card" style="background-color: #E1F8DC;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
@@ -183,7 +183,7 @@
                         </div>
                     </div>
                     <div class="col-xl-6" style="padding-left: 10px;">
-                        <div class="card" style="background-color: #D0C0C0;">
+                        <div class="card" style="background-color: #FEF8DD;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">

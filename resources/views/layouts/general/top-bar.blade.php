@@ -4,18 +4,18 @@
             <div class="navbar-brand-box">
                 <a href="#" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="assets/images/fav-logo.png" alt="" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
                     </span>
                 </a>
                 <a href="#" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="assets/images/fav-logo.png" alt="" height="40">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo2.png') }}" alt="The Forest Group of Schools" height="40">
+                        <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
                     </span>
                 </a>
             </div>
@@ -27,9 +27,9 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ date('d M Y') }}</span>
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry"> | </span>
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ auth()->user()->name }}</span>
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry" style="color:black;">{{ date('d M Y') }}</span>
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry" style="color:black;"> | </span>
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry" style="color:black;">{{ auth()->user()->name }}</span>
                     <span><i class="mdi mdi-arrow-down-bold-hexagon-outline"></i></span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">

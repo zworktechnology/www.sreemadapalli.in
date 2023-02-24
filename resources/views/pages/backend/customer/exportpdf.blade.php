@@ -31,15 +31,15 @@
 <h1>Customer - {{ $customerdata->name }}</h1>
 
 <table id="customers">
-    <thead style="background: lightgrey">
+    <thead style="background: #FFAD4C">
         <tr>
-            <th>ID</th>
+            <th>Sl. No</th>
             <th>Date</th>
             <th>Break Fast</th>
             <th>Lunch</th>
             <th>Dinner</th>
             <th>Total</th>
-        </tr>   
+        </tr>
     </thead>
     <tbody id="customer_index">
         @foreach ($Custumer_pdf_array as $index => $Custumer_pdf_arr)
@@ -53,10 +53,10 @@
             </tr>
         @endforeach
     </tbody>
-  
-  
-  
- 
+
+
+
+
 </table>
 
 </body>

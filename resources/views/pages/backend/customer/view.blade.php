@@ -81,11 +81,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <table class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: lightgrey">
+                                    <thead style="background: #FFAD4C">
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Sl. No</th>
                                             <th>Date</th>
-                                            <th>Brak Fast</th>
+                                            <th>Breakfast</th>
                                             <th>Lunch</th>
                                             <th>Dinner</th>
                                             <th>Total</th>
@@ -116,9 +116,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <table class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: lightgrey">
+                                    <thead style="background: #FFAD4C">
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Sl. No</th>
                                             <th>Date</th>
                                             <th>Amount</th>
                                         </tr>
