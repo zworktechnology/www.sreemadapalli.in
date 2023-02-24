@@ -31,7 +31,7 @@
 <h1>Customer - {{ $customerdata->name }}</h1>
 
 <table id="customers">
-    <thead style="background: #FFAD4C">
+    <thead style="background: #EEBE78">
         <tr>
             <th>Sl. No</th>
             <th>Date</th>

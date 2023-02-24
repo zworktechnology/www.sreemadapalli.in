@@ -172,7 +172,7 @@
     right: 0;
     left: 0;
     z-index: 1002;
-    background-color: #D29E64;
+    background-color: #DDBAC1;
     -webkit-box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
     box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03)
 }
@@ -382,7 +382,7 @@ body[data-topbar=dark] .app-search span {
 }
 
 body[data-sidebar=dark] .navbar-brand-box {
-    background: #D29E64
+    background: #DDBAC1
 }
 
 body[data-sidebar=dark] .logo-dark {
@@ -867,7 +867,7 @@ body[data-layout=horizontal] .footer {
 }
 
 body[data-sidebar=dark] .vertical-menu {
-    background: #D29E64
+    background: #DDBAC1
 }
 
 body[data-sidebar=dark] #sidebar-menu ul li a {

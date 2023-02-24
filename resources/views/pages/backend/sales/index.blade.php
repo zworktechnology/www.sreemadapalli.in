@@ -62,18 +62,6 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #E2CFCF;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Delivery Count</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
                             <div class="card-body" style="background-color: #CADAF1;">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
@@ -120,13 +108,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #93FFFF;">
+                            <div class="card-body" style="background-color: #E2CFCF;">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Delivery Charge</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ ($breakfast_data_count + $lunch_data_count + $dinner_data_count) * 20 }}</h4>
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Delivery Count</p>
+                                        <h4 class="mb-0" style="color: red !important;">{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -138,13 +126,12 @@
                         <div class="card">
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: #FFAD4C">
+                                    <thead style="background: #EEBE78">
                                         <tr>
-                                            <th>Session</th>
-                                            <th>Date</th>
                                             <th>Bill No</th>
                                             <th>Customer</th>
                                             <th>Amount</th>
+                                            <th>Session</th>
                                             <th>Delivery By</th>
                                             <th>Payment Via</th>
                                             @hasrole('Super-Admin')
@@ -156,13 +143,12 @@
                                     <tbody id="breakfast_daily">
                                         @foreach ($daily_Data as $keydata => $outputs)
                                         <tr>
-                                            <td>{{ $outputs['title'] }}</td>
-                                            <td>{{ date('d - m - Y', strtotime($outputs['date'])) }}</td>
-                                            <td>#{{ $outputs['invoice_no'] }}</td>
+                                            <td>{{ $outputs['invoice_no'] }}</td>
                                             <td>{{ $outputs['customer'] }}</td>
                                             <td>{{ $outputs['bill_amount'] }}</td>
+                                            <td>{{ $outputs['title'] }}</td>
                                             <td>{{ $outputs['devlivery_by']}}</td>
-                                            <td>{{ $outputs['payment_status'] }}</td>
+                                            <td>{{ $outputs['payment_method'] }}</td>
                                             @hasrole('Super-Admin')
                                             <td>
                                                 @if ($outputs['status'] == 'Deleted')
@@ -207,12 +193,12 @@
                                             </div>
                                         </div>
                                         @endforeach
-                                        </tbody>
-                                        
-                                        <tbody id="filter_breakfastdaily"></tbody>
+                                    </tbody>
+
+                                    <tbody id="filter_breakfastdaily"></tbody>
 
 
-                                   
+
                                 </table>
                             </div>
                         </div>
@@ -224,80 +210,80 @@
         @include('layouts.general.footer')
 
 
-<script>
+        <script>
+            $(document).ready(function() {
+                $('#dataTable').DataTable();
+            });
 
-$(document).ready(function () {
-    $('#dataTable').DataTable();
-});
+            $(document.body).on("click", "#daily_datearr", function() {
 
-    $(document.body).on("click", "#daily_datearr", function() {
+                var daily_date = $('#daily_date').val();
 
-        var daily_date = $('#daily_date').val();
+                if (daily_date == "") {
+                    alert('Select Date');
+                }
 
-        if (daily_date == "") {
-            alert('Select Date');
-        }
+                if (daily_date != "") {
 
-        if (daily_date != "") {
+                    $.ajax({
+                        url: '/getDailyBreakfastData/'
+                        , type: 'get'
+                        , data: {
+                            _token: "{{ csrf_token() }}"
+                            , daily_date: daily_date
+                        }
+                        , dataType: 'json'
+                        , success: function(response) {
 
-                        $.ajax({
-                            url: '/getDailyBreakfastData/'
-                            , type: 'get'
-                            , data: {
-                                _token: "{{ csrf_token() }}"
-                                , daily_date: daily_date
+                            $('#breakfast_daily').empty();
+                            $('#filter_breakfastdaily').html('');
+
+
+                            console.log(response);
+                            var output = response.length;
+
+                            for (var i = 0; i < output; i++) {
+                                var column_0 = $('<td/>', {
+                                    html: response[i].BreakFast
+                                , });
+                                var column_1 = $('<td/>', {
+                                    html: response[i].date
+                                , });
+                                var column_2 = $('<td/>', {
+                                    html: '#' + response[i].InvoiceID
+                                , });
+
+                                var column_3 = $('<td/>', {
+                                    html: response[i].customername
+                                , });
+                                var column_4 = $('<td/>', {
+                                    html: response[i].Price
+                                , });
+                                var column_5 = $('<td/>', {
+                                    html: response[i].DeliveryBy
+                                , });
+                                var column_6 = $('<td/>', {
+                                    html: response[i].payment_status
+                                , });
+                                var column_7 = $('<td/>', {
+                                    html: response[i].status
+                                , });
+
+
+                                var row = $('<tr id=filter_breakfast/>', {}).append(column_0
+                                    , column_1, column_2, column_3, column_4, column_5, column_6, column_7);
+
+                                $('#filter_breakfastdaily').append(row);
                             }
-                            , dataType: 'json'
-                            , success: function(response) {
 
-                                $('#breakfast_daily').empty();
-                                $('#filter_breakfastdaily').html('');
+                        }
+                    });
 
+                }
 
-                                console.log(response);
-                                var output = response.length;
+            });
 
-                                for (var i = 0; i < output; i++) {
-                                    var column_0 = $('<td/>', {
-                                        html: response[i].BreakFast
-                                    , });
-                                    var column_1 = $('<td/>', {
-                                        html: response[i].date
-                                    , });
-                                    var column_2 = $('<td/>', {
-                                        html: '#' + response[i].InvoiceID
-                                    , });
-
-                                    var column_3 = $('<td/>', {
-                                        html: response[i].customername
-                                    , });
-                                    var column_4 = $('<td/>', {
-                                        html: response[i].Price
-                                    , });
-                                    var column_5 = $('<td/>', {
-                                        html: response[i].DeliveryBy
-                                    , });
-                                    var column_6 = $('<td/>', {
-                                        html: response[i].payment_status
-                                    , });
-                                    var column_7 = $('<td/>', {
-                                        html: response[i].status
-                                    , });
-                                    
-
-                                    var row = $('<tr id=filter_breakfast/>', {}).append(column_0
-                                        , column_1, column_2, column_3, column_4, column_5, column_6, column_7);
-
-                                    $('#filter_breakfastdaily').append(row);
-                                }
-
-                            }
-                        });
-
-        }
-
-    });
-</script>
+        </script>
 
 
 

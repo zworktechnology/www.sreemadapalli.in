@@ -37,8 +37,9 @@ class AccountCloseController extends Controller
     public function edit($id)
     {
         $data = AccountClose::findOrFail($id);
+        $today = Carbon::now()->format('Y-m-d');
 
-        return view('pages.backend.accountclose.edit', compact('data'));
+        return view('pages.backend.accountclose.edit', compact('data', 'today'));
     }
 
     public function update(Request $request, $id)

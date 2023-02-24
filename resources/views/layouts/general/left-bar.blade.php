@@ -11,24 +11,6 @@
                         <span key="t-dashboards">Dashboards</span>
                     </a>
                 </li>
-                <li class="{{ Route::is('accountopen.index','accountopen.create','accountopen.edit') ? 'mm-active' : '' }}" hidden>
-                    <a href="{{ route('accountopen.index') }}">
-                        <i class="dripicons-dot"></i>
-                        <span key="t-dashboards">Open Account</span>
-                    </a>
-                </li>
-                <li class="{{ Route::is('accountclose.index','accountclose.create','accountclose.edit') ? 'mm-active' : '' }}" hidden>
-                    <a href="{{ route('accountclose.index') }}">
-                        <i class="dripicons-dot"></i>
-                        <span key="t-dashboards">Close Account</span>
-                    </a>
-                </li>
-                <li class="{{ Route::is('determination.index','determination.create','determination.edit') ? 'mm-active' : '' }}" hidden>
-                    <a href="{{ route('determination.index') }}">
-                        <i class="dripicons-dot"></i>
-                        <span key="t-dashboards">Determination</span>
-                    </a>
-                </li>
                 <li class="menu-title" key="t-menu">Delivery</li>
                 <li class="{{ Route::is('customer.index','customer.create','customer.edit','customer.view','customer.breafast.view','customer.lunch.view','customer.dinner.view') ? 'mm-active' : '' }}">
                     <a href="{{ route('customer.index') }}">
@@ -39,7 +21,7 @@
                 <li class="{{ Route::is('deliveryboy.index','deliveryboy.create','deliveryboy.edit') ? 'mm-active' : '' }}">
                     <a href="{{ route('deliveryboy.index') }}">
                         <i class="dripicons-dot"></i>
-                        <span key="t-dashboards">Delivery Boy</span>
+                        <span key="t-dashboards">Delivery By</span>
                     </a>
                 </li>
                 <li class="{{ Route::is('sales.index','sales.create','breakfast.edit','lunch.edit','dinner.edit') ? 'mm-active' : '' }}">
@@ -86,6 +68,25 @@
                     <a href="{{ route('settings') }}">
                         <i class="dripicons-dot"></i>
                         <span key="t-dashboards">Password</span>
+                    </a>
+                </li>
+                <li class="menu-title" key="t-menu">Account</li>
+                <li class="{{ Route::is('accountopen.index','accountopen.create','accountopen.edit') ? 'mm-active' : '' }}">
+                    <a href="{{ route('accountopen.index') }}">
+                        <i class="dripicons-dot"></i>
+                        <span key="t-dashboards">Open Account</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('accountclose.index','accountclose.create','accountclose.edit') ? 'mm-active' : '' }}">
+                    <a href="{{ route('accountclose.index') }}">
+                        <i class="dripicons-dot"></i>
+                        <span key="t-dashboards">Close Account</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('determination.index','determination.create','determination.edit') ? 'mm-active' : '' }}">
+                    <a href="{{ route('determination.index') }}">
+                        <i class="dripicons-dot"></i>
+                        <span key="t-dashboards">Determination</span>
                     </a>
                 </li>
             </ul>
