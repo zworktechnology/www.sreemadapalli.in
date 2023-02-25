@@ -108,16 +108,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #E2CFCF;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Delivery Count</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</h4>
+                    <div class="col-md-4 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #E2CFCF;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Delivery Count</p>
+                                            <h4 class="mb-0" style="color: red !important;">{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.deliveryby')
                         </div>
                     </div>
                 </div>

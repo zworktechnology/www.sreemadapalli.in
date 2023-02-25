@@ -86,7 +86,7 @@
                 <li class="{{ Route::is('determination.index','determination.create','determination.edit') ? 'mm-active' : '' }}">
                     <a href="{{ route('determination.index') }}">
                         <i class="dripicons-dot"></i>
-                        <span key="t-dashboards">Determination</span>
+                        <span key="t-dashboards">Denomination</span>
                     </a>
                 </li>
             </ul>
