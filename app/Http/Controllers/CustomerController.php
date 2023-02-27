@@ -49,17 +49,17 @@ class CustomerController extends Controller
         $today = Carbon::now()->format('Y-m-d');
 
         $data = Customer::findOrFail($id);
-        $breakfast_amount_pending = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '=', 'Pending')->sum('bill_amount');
-        $breakfast_amount_paid = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Pending')->sum('bill_amount');
+        $breakfast_amount_pending = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $breakfast_amount_paid = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
         $breakfast_total_amount = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
 
 
-        $lunch_amount_pending = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '=', 'Pending')->sum('bill_amount');
-        $lunch_amount_paid = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Pending')->sum('bill_amount');
+        $lunch_amount_pending = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $lunch_amount_paid = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
         $lunch_total_amount = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
 
-        $dinner_amount_pending = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '=', 'Pending')->sum('bill_amount');
-        $dinner_amount_paid = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_status', '!=', 'Pending')->sum('bill_amount');
+        $dinner_amount_pending = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $dinner_amount_paid = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
         $dinner_total_amount = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
 
         $payment = Payment::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
@@ -211,7 +211,7 @@ class CustomerController extends Controller
     }
 
 
-    
+
 
     public function getdatewiseCustomerOrders(Request $request)
     {
@@ -321,7 +321,7 @@ class CustomerController extends Controller
 
     public function export_customerorder_filter_pdf($id, $from_date, $to_date)
     {
-        
+
         $GetBreakfastData = BreakFast::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->get();
         $Breakfast_Date_arr = [];
         foreach ($GetBreakfastData as $key => $GetBreakfastDatas) {
@@ -380,6 +380,6 @@ class CustomerController extends Controller
 
 
 
-    
+
 
 }
