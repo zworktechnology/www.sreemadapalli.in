@@ -16,11 +16,11 @@
             </thead>
             <tbody id="">
                 <tr>
-                    <td>{{ $card }}</td>
-                    <td>{{ $gpay }}</td>
-                    <td>{{ $gpaybusiness }}</td>
-                    <td>{{ $phonepe }}</td>
-                    <td>{{ $paytm }}</td>
+                    <td>₹ {{ $card }}</td>
+                    <td>₹ {{ $gpay }}</td>
+                    <td>₹ {{ $gpaybusiness }}</td>
+                    <td>₹ {{ $phonepe }}</td>
+                    <td>₹ {{ $paytm }}</td>
                 </tr>
             </tbody>
         </table>

@@ -14,12 +14,12 @@
                         <div class="page-title-right">
                             <div style="display: flex;">
 
-                            
+
                                 <div>
                                     <a href="/zwork-admin/payment">
                                         <button type="button" class="btn btn-success w-md" >Back</button>
                                         </a>
-                                    
+
                                     </div>
                                 </div>
                         </div>
@@ -64,10 +64,7 @@
                                             <th>Customer</th>
                                             <th>Date</th>
                                             <th>Amount</th>
-                                            @hasrole('Super-Admin')
-                                            <th>Status</th>
                                             <th>Action</th>
-                                            @endhasrole
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -76,26 +73,17 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->customer->name }}</td>
                                             <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
-                                            <td>{{ $datas->amount }}</td>
-                                            @hasrole('Super-Admin')
-                                            <td>
-                                                @if ($datas->soft_delete == 1)
-                                                <span class="badge bg-danger">In Active</span>
-                                                @else
-                                                <span class="badge bg-success">Active</span>
-                                                @endif
-                                            </td>
+                                            <td>₹ {{ $datas->amount }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('payment.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('payment.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i> Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
+                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i> Delete</a>
                                                     </li>
                                                 </ul>
                                             </td>
-                                            @endhasrole
                                         </tr>
                                         <div class="modal fade" id="jobDelete{{ $datas->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">

@@ -84,7 +84,7 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->customer->name }}</td>
                                             <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
-                                            <td>{{ $datas->amount }}</td>
+                                            <td>₹ {{ $datas->amount }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>

@@ -73,7 +73,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ $total_bill_amount }}</h4>
+                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_bill_amount }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Cash</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ $total_cash }}</h4>
+                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_cash }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ $total_pending }}</h4>
+                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
                                             <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Wallet</p>
-                                            <h4 class="mb-0" style="color: red !important;">{{ $total_wallet }}</h4>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total_wallet }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@
                                         <tr>
                                             <td>{{ $outputs['invoice_no'] }}</td>
                                             <td>{{ $outputs['customer'] }}</td>
-                                            <td>{{ $outputs['bill_amount'] }}</td>
+                                            <td>₹ {{ $outputs['bill_amount'] }}</td>
                                             <td>{{ $outputs['title'] }}</td>
                                             <td>{{ $outputs['devlivery_by']}}</td>
                                             <td>{{ $outputs['payment_method'] }}</td>

@@ -38,7 +38,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $expence_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">₹ {{ $expence_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ date('d - m - Y', strtotime($expences->date)) }}</td>
-                                            <td>{{ $expences->amount }}</td>
+                                            <td>₹ {{ $expences->amount }}</td>
                                             <td>{{ $expences->note }}</td>
                                         </tr>
                                         @endforeach

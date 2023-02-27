@@ -42,10 +42,10 @@
                                         <tr>
                                             <td>{{ ++$index }}</td>
                                             <td>{{ $Custumer_index_arr['date'] }}</td>
-                                            <td>{{ $Custumer_index_arr['BreakfastAmount'] }}</td>
-                                            <td>{{ $Custumer_index_arr['LunchAmount'] }}</td>
-                                            <td>{{ $Custumer_index_arr['DinnerAmount'] }}</td>
-                                            <td>{{ $Custumer_index_arr['TotalCustomerAmount'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['BreakfastAmount'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['LunchAmount'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['DinnerAmount'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['TotalCustomerAmount'] }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

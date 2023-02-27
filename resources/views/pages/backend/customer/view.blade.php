@@ -24,7 +24,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_total_amount + $lunch_total_amount + $dinner_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_total_amount + $lunch_total_amount + $dinner_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Payed Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Pending Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -108,10 +108,10 @@
                                         <tr>
                                             <td>{{ ++$index }}</td>
                                             <td>{{ $Custumer_index_arr['date'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['TotalAmount'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['TotalAmount'] }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -139,7 +139,7 @@
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ date('d - m - Y', strtotime($payments->date)) }}</td>
-                                            <td>{{ $payments->amount }}</td>
+                                            <td>₹ {{ $payments->amount }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

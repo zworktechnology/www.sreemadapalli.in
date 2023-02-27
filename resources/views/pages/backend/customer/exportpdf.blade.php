@@ -52,10 +52,10 @@
             <tr>
                 <td>{{ ++$index }}</td>
                 <td>{{ $Custumer_pdf_arr['date'] }}</td>
-                <td>{{ $Custumer_pdf_arr['CustomersBreakfastAmt'] }}</td>
-                <td>{{ $Custumer_pdf_arr['CustomersLunchAmt'] }}</td>
-                <td>{{ $Custumer_pdf_arr['CustomersDinnerAmt'] }}</td>
-                <td>{{ $Custumer_pdf_arr['TotalAmount'] }}</td>
+                <td>Rs. {{ $Custumer_pdf_arr['CustomersBreakfastAmt'] }}</td>
+                <td>Rs. {{ $Custumer_pdf_arr['CustomersLunchAmt'] }}</td>
+                <td>Rs. {{ $Custumer_pdf_arr['CustomersDinnerAmt'] }}</td>
+                <td>Rs. {{ $Custumer_pdf_arr['TotalAmount'] }}</td>
             </tr>
             @endforeach
         </tbody>

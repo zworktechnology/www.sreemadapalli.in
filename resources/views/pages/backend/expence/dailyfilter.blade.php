@@ -76,7 +76,7 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->employee->name }}</td>
                                             <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
-                                            <td>{{ $datas->amount }}</td>
+                                            <td>₹ {{ $datas->amount }}</td>
                                             <td>{{ $datas->note }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
