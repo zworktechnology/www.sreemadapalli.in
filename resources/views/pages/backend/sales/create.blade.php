@@ -41,7 +41,7 @@
             </div>
             <div class="row mb-4 col-12 ">
                 <label for="delivery_boy_id" class="col-md-1 col-form-label">
-                    Delivery BY <span style="color: red;">*</span></label>
+                    Delivery By <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-select" name="delivery_boy_id" required>
                         <option value="" disabled selected hidden class="text-muted">
@@ -66,7 +66,7 @@
             </div>
             <div class="row mb-4 col-12 col-md-12">
                 <label for="payment_method" class="col-md-1 col-form-label">
-                    Payment Via</label>
+                    Payment Via <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-control" name="payment_method" required>
                         <option value="" disabled selected hidden class="text-muted">
