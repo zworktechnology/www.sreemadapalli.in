@@ -2,7 +2,6 @@
     <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">Create New Sales</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form autocomplete="off" method="POST" action="{{ route('sales.store') }}">
             @csrf
@@ -87,7 +86,7 @@
                     <label for="payment_status" class="col-md-1 col-form-label">
                         Payment Status <span style="color: red;">*</span></label>
                     <div class="col-9 col-md-2">
-                        <select class="form-control" name="payment_status" required>
+                        <select class="form-control" name="payment_status">
                             <option value="No" selected class="text-muted">
                                 Enter Your</option>
                         </select>
@@ -97,21 +96,18 @@
                     <label for="payment_amount" class="col-sm-3 col-form-label">
                         Payment Amount <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="payment_amount" id="payment_amount_total" placeholder="Enter Your " required>
+                        <input type="number" class="form-control" name="payment_amount" id="payment_amount_total" placeholder="Enter Your " value="00">
                     </div>
                 </div>
                 <div class="row mb-4 col-6 ">
                     <label for="delivery_amount" class="col-sm-3 col-form-label">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery Charge <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="delivery_amount" id="delivery_amount" placeholder="Enter Your " required onchange="totalbreakfast()" value="20">
+                        <input type="number" class="form-control" name="delivery_amount" id="delivery_amount" placeholder="Enter Your " onchange="totalbreakfast()" value="00">
                     </div>
                 </div>
             </div>
-
-            <div>
-                <button type="submit" class="btn btn-success" style="width: 22%;">Save</button>
-            </div>
+            <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>
 </div>
