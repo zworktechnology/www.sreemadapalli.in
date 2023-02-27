@@ -60,43 +60,5 @@ class BreakFastController extends Controller
 
 
 
-    public function getDailyBreakfastData()
-    {
-        $daily_date = request()->get('daily_date');
-
-        $breakfast_data = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
-        foreach ($breakfast_data as $key => $breakfast_data_arr) {
-
-            $customer = Customer::findOrFail($breakfast_data_arr->customer_id);
-            $devlivery_by = Deliveryboy::findOrFail($breakfast_data_arr->delivery_boy_id);
-
-            if($breakfast_data_arr->soft_delete == 1){
-                $status = 'Deleted';
-            }else{
-                $status = 'Active';
-            }
-
-
-            $breakfast_filter_arr[] = array(
-                'BreakFast' => 'BreakFast',
-                'date' => date('d-m-Y', strtotime($daily_date)),
-                'InvoiceID' => $breakfast_data_arr->invoice_no,
-                'customername' => $customer->name,
-                'Price' => $breakfast_data_arr->bill_amount,
-                'DeliveryBy' => $devlivery_by->name,
-                'payment_status' => $breakfast_data_arr->payment_status,
-                'status' => $status
-            );
-
-        }
-
-        if (isset($breakfast_filter_arr) & !empty($breakfast_filter_arr)) {
-            echo json_encode($breakfast_filter_arr);
-        }else{
-            echo json_encode(
-                array('status' => 'false')
-            );
-        }
-
-    }
+   
 }

@@ -18,6 +18,21 @@ class ExpenceController extends Controller
         return view('pages.backend.expence.index', compact('data', 'today', 'employee'));
     }
 
+
+
+    public function dailyfilter(Request $request)
+    {
+        $daily_date = $request->get('date');
+
+        $expense_data = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
+        
+
+
+        return view('pages.backend.expence.dailyfilter', compact('expense_data'));
+    }
+
+
+
     public function store(Request $request)
     {
         $data = new Expence();

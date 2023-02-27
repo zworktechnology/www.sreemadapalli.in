@@ -10,27 +10,11 @@
             <div class="container-fluid">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Customer - {{ $data->name }}</h4>
+                        <h4 class="mb-sm-0 font-size-18">Customer - {{ $customerdata->name }}</h4>
                         <div class="page-title-right">
-                        <form  autocomplete="off" method="post" action="{{ route('customer.getdatewiseCustomerOrders') }}">
-                        @method('PUT')
-                        @csrf
-                            <div style="display: flex;">
-                                <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="from_date" id="from_date" placeholder="Enter Your " required value>
-                                </div>
-                                <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="to_date" id="to_date" placeholder="Enter Your " required >
-                                    <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids" value="{{ $data->id }}">
-                                </div>
-                                <div style="margin-right: 10px;">
-                                <button type="submit"
-                                            class=" bg-black text-white form-control rounded font-bold font-serif shadow-sm shadow-red-300">
-                                                    Search</button>
-                                </div>
-                                
-                            </div>
-                        </form>
+                        <a href="/zwork-admin/customer">
+                                        <button type="button" class="btn btn-success w-md" >Back</button>
+                                        </a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +27,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_total_amount + $lunch_total_amount + $dinner_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">{{ $total_filter_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +39,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Payed Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">{{ $total_paid_amount + $payment_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +51,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Pending Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">{{ $total_pending - $payment_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +64,7 @@
                     <div class="col-8">
                         <div class="card">
                             <div class="py-3 px-2 text-right">
-                                    <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter "><button type="button" class="btn btn-success w-md">Export as PDF</button></a>
+                                    <a href="/export_customerorder_filter_pdf/{{ $customer_id }}/{{ $from_date }}/{{ $to_date }}" class="nofilter "><button type="button" class="btn btn-success w-md">Export as PDF</button></a>
                                     
                             </div>
                             <div class="card-body">
@@ -99,20 +83,18 @@
 
 
                                     <tbody id="customer_index">
-                                        @foreach ($Custumer_index_array as $index => $Custumer_index_arr)
+                                        @foreach ($Custumer_filter_array as $index => $Custumer_index_arr)
                                         <tr>
                                             <td>{{ ++$index }}</td>
                                             <td>{{ $Custumer_index_arr['date'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['TotalAmount'] }}</td>
+                                            <td>{{ $Custumer_index_arr['BreakfastAmount'] }}</td>
+                                            <td>{{ $Custumer_index_arr['LunchAmount'] }}</td>
+                                            <td>{{ $Custumer_index_arr['DinnerAmount'] }}</td>
+                                            <td>{{ $Custumer_index_arr['TotalCustomerAmount'] }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
-                                    <tbody id="filter_array">
-
-                                    </tbody>
+                                    
 
                                 </table>
                             </div>
@@ -130,7 +112,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($payment as $keydata => $payments)
+                                        @foreach ($payment_Arr as $keydata => $payments)
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ date('d - m - Y', strtotime($payments->date)) }}</td>

@@ -70,6 +70,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer', [CustomerController::class, 'index'])->name('customer.index');
+        // FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/customer/getdatewiseCustomerOrders', [CustomerController::class, 'getdatewiseCustomerOrders'])->name('customer.getdatewiseCustomerOrders');
         // CREATE
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer/create', [CustomerController::class, 'create'])->name('customer.create');
         // STORE
@@ -146,6 +148,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/payment', [PaymentController::class, 'index'])->name('payment.index');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/payment/dailyfilter', [PaymentController::class, 'dailyfilter'])->name('payment.dailyfilter');
         // CREATE
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/payment/create', [PaymentController::class, 'create'])->name('payment.create');
         // STORE
@@ -184,6 +188,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/expence', [ExpenceController::class, 'index'])->name('expence.index');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/expence/dailyfilter', [ExpenceController::class, 'dailyfilter'])->name('expence.dailyfilter');
         // CREATE
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/expence/create', [ExpenceController::class, 'create'])->name('expence.create');
         // STORE
@@ -256,6 +262,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
      Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/sales', [SalesController::class, 'index'])->name('sales.index');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/sales/dailyfilter', [SalesController::class, 'dailyfilter'])->name('sales.dailyfilter');
         // CREATE
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/sales/create', [SalesController::class, 'create'])->name('sales.create');
         // STORE
@@ -270,8 +278,9 @@ Route::get('/accept/{token}', [InviteController::class, 'accept']);
 Route::get('/getdatewiseCustomerOrders', [CustomerController::class, 'getdatewiseCustomerOrders']);
 Route::get('/export_customerorder_pdf/{id}', [CustomerController::class, 'export_customerorder_pdf']);
 Route::post('/exportfilterpdf', [CustomerController::class, 'exportfilterpdf'])->name('customer.exportfilterpdf');
+Route::get('/export_customerorder_filter_pdf/{id}/{from_date}/{to_date}', [CustomerController::class, 'export_customerorder_filter_pdf']);
 
 //DAILY DATE ARRAY FILTER
-Route::get('/getDailyBreakfastData', [BreakFastController::class, 'getDailyBreakfastData']);
+Route::get('/getDailyListData', [SalesController::class, 'getDailyListData']);
 
 

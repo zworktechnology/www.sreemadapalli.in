@@ -10,33 +10,18 @@
             <div class="container-fluid">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Expense</h4>
+                        <h4 class="mb-sm-0 font-size-18">Payment</h4>
                         <div class="page-title-right">
                             <div style="display: flex;">
 
-                            <form autocomplete="off" method="POST" action="{{ route('expence.dailyfilter') }}">
-                                    @method('PUT')
-                                    
-                                    @csrf
-                                <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required >
-                                </div>
-                                <div style="margin-right: 10px;">
-                                <button type="submit"
-                                            class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
-                                                    Search</button>
-                                </div>
-                            </form>
-
-
+                            
                                 <div>
-                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
-
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        @include('pages.backend.expence.create')
+                                    <a href="/zwork-admin/payment">
+                                        <button type="button" class="btn btn-success w-md" >Back</button>
+                                        </a>
+                                    
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,14 +57,13 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <table id="expensedatatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                <table id="paymentdatatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #EEBE78">
                                         <tr>
                                             <th>Sl. No</th>
-                                            <th>Employee</th>
+                                            <th>Customer</th>
                                             <th>Date</th>
                                             <th>Amount</th>
-                                            <th>Note</th>
                                             @hasrole('Super-Admin')
                                             <th>Status</th>
                                             <th>Action</th>
@@ -87,13 +71,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $keydata => $datas)
+                                    @foreach ($Payment_data as $keydata => $datas)
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
-                                            <td>{{ $datas->employee->name }}</td>
+                                            <td>{{ $datas->customer->name }}</td>
                                             <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
                                             <td>{{ $datas->amount }}</td>
-                                            <td>{{ $datas->note }}</td>
                                             @hasrole('Super-Admin')
                                             <td>
                                                 @if ($datas->soft_delete == 1)
@@ -105,7 +88,7 @@
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('expence.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('payment.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
@@ -123,10 +106,10 @@
                                                                 <i class="mdi mdi-trash-can-outline"></i>
                                                             </div>
                                                         </div>
-                                                        <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the expence.</p>
+                                                        <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the payment.</p>
 
                                                         <div class="hstack gap-2 justify-content-center mb-0">
-                                                            <form autocomplete="off" method="POST" action="{{ route('expence.delete', ['id' => $datas->id]) }}">
+                                                            <form autocomplete="off" method="POST" action="{{ route('payment.delete', ['id' => $datas->id]) }}">
                                                                 @method('PUT')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">Yes, Delete</button>
@@ -150,7 +133,7 @@
         @include('layouts.general.footer')
         <script>
             $(document).ready(function() {
-                $('#expensedatatable').DataTable();
+                $('#paymentdatatable').DataTable();
             });
 
 

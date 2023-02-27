@@ -11,12 +11,31 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        $today = Carbon::now()->format('Y-m-d');
+        $today = date('Y-m-d');
         $data = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         return view('pages.backend.payment.index', compact('data', 'today', 'customer'));
+
     }
+
+
+
+    public function dailyfilter(Request $request)
+    {
+        $daily_date = $request->get('daily_date');
+
+        $Payment_data = Payment::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
+        
+
+
+        return view('pages.backend.payment.dailyfilter', compact('Payment_data'));
+    }
+
+
+
+
+
 
     public function store(Request $request)
     {
@@ -71,4 +90,7 @@ class PaymentController extends Controller
 
         return redirect()->route('payment.index')->with('destroy', 'Successfully erased the payment record !');
     }
+
+
+
 }
