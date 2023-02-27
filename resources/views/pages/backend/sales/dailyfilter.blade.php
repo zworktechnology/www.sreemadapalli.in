@@ -112,7 +112,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <table id="dailylistdatatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: #EEBE78">
+                                    <thead style="background: #CAF1DE">
                                         <tr>
                                             <th>Bill No</th>
                                             <th>Customer</th>

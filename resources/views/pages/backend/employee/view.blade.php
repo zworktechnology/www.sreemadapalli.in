@@ -52,7 +52,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead>
+                                    <thead style="background: #CBE2DF">
                                         <tr>
                                             <th>Sl. No</th>
                                             <th>Date</th>

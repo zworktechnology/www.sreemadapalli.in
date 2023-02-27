@@ -16,10 +16,10 @@
                         <div class="page-title-right">
                             <div style="display: flex;">
 
-                                <div style="margin-right: 10px;">
+                                <div style="margin-right: 10px;" hidden>
                                     <input type="date" class="form-control" name="dashboarddate" id="dashboarddate" placeholder="Enter Your " required value="{{ $today }}">
                                 </div>
-                                <div style="margin-right: 10px;">
+                                <div style="margin-right: 10px;" hidden>
                                     <button type="button" class="btn btn-success w-md dashboard_search">Search</button>
                                 </div>
 
