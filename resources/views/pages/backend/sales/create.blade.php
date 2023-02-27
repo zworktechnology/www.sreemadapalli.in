@@ -12,7 +12,7 @@
                         <label for="date" class="col-sm-3 col-form-label">
                             Date <span style="color: red;">*</span></label>
                         <div class="col-sm-9">
-                            <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                            <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $date }}">
                         </div>
                     </div>
                     <div class="row mb-4 col-6 ">

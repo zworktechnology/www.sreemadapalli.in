@@ -13,12 +13,22 @@
                         <h4 class="mb-sm-0 font-size-18">Payment</h4>
                         <div class="page-title-right">
                             <div style="display: flex;">
+
+                            <form autocomplete="off" method="POST" action="{{ route('payment.dailyfilter') }}">
+                                    @method('PUT')
+                                    
+                                    @csrf
                                 <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                                    <input type="date" class="form-control" name="daily_date" id="daily_date placeholder="Enter Your " required ">
                                 </div>
                                 <div style="margin-right: 10px;">
-                                    <button type="button" class="btn btn-success w-md">Search</button>
+                                <button type="submit"
+                                            class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                                    Search</button>
                                 </div>
+                            </form>
+
+
                                 <div>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
 
@@ -62,7 +72,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                <table id="paymentdatatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #EEBE78">
                                         <tr>
                                             <th>Sl. No</th>
@@ -136,7 +146,14 @@
         </div>
 
         @include('layouts.general.footer')
+        <script>
+            $(document).ready(function() {
+                $('#paymentdatatable').DataTable();
+            });
 
+
+
+        </script>
     </div>
 </div>
 @endsection

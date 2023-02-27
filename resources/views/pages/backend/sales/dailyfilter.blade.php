@@ -10,67 +10,22 @@
             <div class="container-fluid">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Sales</h4>
+                        <h4 class="mb-sm-0 font-size-18">Sales   -  {{ $date }}</h4>
                         <div class="page-title-right">
                             <div style="display: flex;">
-
-                                    <form autocomplete="off" method="POST" action="{{ route('sales.dailyfilter') }}">
-                                    @method('PUT')
-                                    
-                                    @csrf
-                                        <div style="margin-right: 10px;">
-                                            <input type="date" class="form-control" name="daily_date" id="daily_date" placeholder="Enter Your " required >
-                                        </div>
-                                        <div style="margin-right: 10px;">
-                                            <button type="submit"
-                                            class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
-                                                    Search</button>
-                                            
-                                        </div>
-                                    </form>
-
-
-
                                 <div>
-                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">Create</button>
-
-                                    <div id="exampleModalFullscreen" class="modal fade" tabindex="-1" aria-labelledby="#exampleModalFullscreenLabel" aria-hidden="true">
-                                        @include('pages.backend.sales.create')
-                                    </div>
+                                <a href="/zwork-admin/sales">
+                                    <button type="button" class="btn btn-success w-md" >Back</button>
+                                    </a>
+                                   
                                 </div>
+                            
                             </div>
                         </div>
                     </div>
                 </div>
 
-                @if (\Session::has('add'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-check-all me-2"></i>
-                    {!! \Session::get('add') !!}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                @endif
-                @if (\Session::has('update'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-bullseye-arrow me-2"></i>
-                    {!! \Session::get('update') !!}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                @endif
-                @if (\Session::has('soft_destroy'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-block-helper me-2"></i>
-                    {!! \Session::get('soft_destroy') !!}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                @endif
-                @if (\Session::has('destroy'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <i class="mdi mdi-block-helper me-2"></i>
-                    {!! \Session::get('destroy') !!}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                @endif
+               
                 <div class="row">
                     <div class="col-md-2">
                         <div class="card mini-stats-wid">
@@ -128,7 +83,6 @@
                                         <div class="flex-grow-1">
                                             <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Delivery Count</p>
                                             <h4 class="mb-0" style="color: red !important;">
-                                            <h4 class="mb-0" style="color: red !important;">
                                             <div style="display: none">
                                                 {{ $totalcount = 0 }}
                                             </div>
@@ -138,7 +92,6 @@
                                             @endforeach
                                             {{ $totalcount }}
                                             </h4>
-                                        </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -153,7 +106,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <table id="todaydatatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                <table id="dailylistdatatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #EEBE78">
                                         <tr>
                                             
@@ -170,7 +123,7 @@
                                             @endhasrole
                                         </tr>
                                     </thead>
-                                    <tbody id="today_data">
+                                    <tbody id="breakfast_daily_data">
                                         @foreach ($daily_Data as $keydata => $outputs)
                                         <tr>
                                             
@@ -190,7 +143,8 @@
                                                 @endif
                                             </td>
                                             <td>
-                                            @if ($outputs['title'] == 'Break Fast')
+
+                                                @if ($outputs['title'] == 'Break Fast')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
                                                         <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
@@ -221,7 +175,7 @@
                                             </td>
                                             @endhasrole
                                         </tr>
-                                        <div class="modal fade" id="jobDelete{{ $outputs['id'] }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
+                                        <div class="modal fade" id="jobDelete{{ $outputs['id'] }}" tabindex="-1" aria-labelledby="bfjobDeleteLabel{{ $outputs['id'] }}" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">
                                                 <div class="modal-content">
                                                     <div class="modal-body px-4 py-5 text-center">
@@ -233,6 +187,7 @@
                                                         <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the record.</p>
 
                                                         <div class="hstack gap-2 justify-content-center mb-0">
+
                                                         @if ($outputs['title'] == 'Break Fast')
                                                         <form autocomplete="off" method="POST" action="{{ route('breakfast.delete', ['id' => $outputs['id']]) }}">
                                                         @elseif($outputs['title'] == 'Lunch')
@@ -240,6 +195,7 @@
                                                         @elseif($outputs['title'] == 'Dinner')
                                                         <form autocomplete="off" method="POST" action="{{ route('dinner.delete', ['id' => $outputs['id']]) }}">
                                                         @endif
+                                                            
                                                                 @method('PUT')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">Yes, Delete</button>
@@ -250,10 +206,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                         @endforeach
 
 
-                                    </tbody>
+                                   
+
+</tbody>
 
                                    
 
@@ -277,10 +236,12 @@
 
         <script>
             $(document).ready(function() {
-                $('#todaydatatable').DataTable();
+                $('#dailylistdatatable').DataTable();
             });
 
+           
 
+            
 
         </script>
 

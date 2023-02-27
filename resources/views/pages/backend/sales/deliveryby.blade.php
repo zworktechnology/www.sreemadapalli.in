@@ -1,4 +1,4 @@
-<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-dialog modal-dialog-centered" role="document" id="deliverybyid">
     <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">Delivery By</h5>
@@ -11,14 +11,18 @@
                     <th>Delivery Count</th>
                 </tr>
             </thead>
-            <tbody id="breakfast_daily">
-                @foreach ($deliveryboy as $keydata => $deliveryboys)
-                <tr>
-                    <td>{{ $deliveryboys->name }}</td>
-                    <td>{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</td>
-                </tr>
-                @endforeach
+            <tbody id="">
+                if($deliveryboys_arr != ""){
+                    @foreach ($deliveryboys_arr as $keydata => $deliveryboys_array)
+                    <tr>
+                        <td>{{ $deliveryboys_array['name'] }}</td>
+                        <td>{{ $deliveryboys_array['delivery_count'] }}</td>
+                    </tr>
+                    @endforeach
+                }
+                
             </tbody>
         </table>
     </div>
 </div>
+

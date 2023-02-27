@@ -14,26 +14,13 @@
                         <div class="page-title-right">
                             <div style="display: flex;">
 
-                            <form autocomplete="off" method="POST" action="{{ route('expence.dailyfilter') }}">
-                                    @method('PUT')
-                                    
-                                    @csrf
-                                <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required >
-                                </div>
-                                <div style="margin-right: 10px;">
-                                <button type="submit"
-                                            class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
-                                                    Search</button>
-                                </div>
-                            </form>
-
+                           
 
                                 <div>
-                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
-
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        @include('pages.backend.expence.create')
+                                    <a href="/zwork-admin/expence">
+                                        <button type="button" class="btn btn-success w-md" >Back</button>
+                                        </a>
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +74,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $keydata => $datas)
+                                        @foreach ($expense_data as $keydata => $datas)
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->employee->name }}</td>
