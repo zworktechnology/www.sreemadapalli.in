@@ -69,8 +69,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
-                <div style="display: flex;" style="font-weight: bold;">
-                    <div class="col-xl-6" style="padding-right: 10px;">
+                <div class="row" style="font-weight: bold;">
+                    <div class="col-xl-6 col-12" style="padding-right: 10px;">
                         <div class="card" style="background-color: #ACDDDE;">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6" style="padding-left: 10px;">
+                    <div class="col-xl-6 col-12" style="padding-left: 10px;">
                         <div class="card" style="background-color: #FEF8DD;">
                             <div class="card-body">
                                 <div class="table-responsive">
