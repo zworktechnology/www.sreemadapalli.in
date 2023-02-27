@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-#customers tr:hover {background-color: #ddd;}
+        #customers tr:hover {
+            background-color: #ddd;
+        }
 
-#customers th {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: left;
-  background-color: lightgrey;
-  color: black;
-}
-</style>
+        #customers th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: left;
+            background-color: lightgrey;
+            color: black;
+        }
+
+    </style>
 </head>
 <body>
 
-<h1>Customer - {{ $customerdata->name }}</h1>
+    <h1>Customer - {{ $customerdata->name }}</h1>
 
-<table id="customers">
-    <thead style="background: #EEBE78">
-        <tr>
-            <th>Sl. No</th>
-            <th>Date</th>
-            <th>Break Fast</th>
-            <th>Lunch</th>
-            <th>Dinner</th>
-            <th>Total</th>
-        </tr>
-    </thead>
-    <tbody id="customer_index">
-        @foreach ($Custumer_pdf_array as $index => $Custumer_pdf_arr)
+    <table id="customers">
+        <thead style="background: #EEBE78">
+            <tr>
+                <th>Sl. No</th>
+                <th>Date</th>
+                <th>Break Fast</th>
+                <th>Lunch</th>
+                <th>Dinner</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="customer_index">
+            @foreach ($Custumer_pdf_array as $index => $Custumer_pdf_arr)
             <tr>
                 <td>{{ ++$index }}</td>
                 <td>{{ $Custumer_pdf_arr['date'] }}</td>
@@ -51,15 +57,13 @@
                 <td>{{ $Custumer_pdf_arr['CustomersDinnerAmt'] }}</td>
                 <td>{{ $Custumer_pdf_arr['TotalAmount'] }}</td>
             </tr>
-        @endforeach
-    </tbody>
+            @endforeach
+        </tbody>
 
 
 
 
-</table>
+    </table>
 
 </body>
 </html>
-
-

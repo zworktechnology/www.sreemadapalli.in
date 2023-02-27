@@ -17,15 +17,15 @@
                                 <a href="/zwork-admin/sales">
                                     <button type="button" class="btn btn-success w-md" >Back</button>
                                     </a>
-                                   
+
                                 </div>
-                            
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-               
+
                 <div class="row">
                     <div class="col-md-2">
                         <div class="card mini-stats-wid">
@@ -33,7 +33,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ number_format($total_bill_amount, 2, ',', '.') }}</h4>
+                                        <h4 class="mb-0" style="color: red !important;">{{ $total_bill_amount }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Cash</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ number_format($total_cash, 2, ',', '.') }}</h4>
+                                        <h4 class="mb-0" style="color: red !important;">{{ $total_cash }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Wallet</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ number_format($total_wallet, 2, ',', '.') }}</h4>
+                                        <h4 class="mb-0" style="color: red !important;">{{ $total_wallet }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ number_format($total_pending, 2, ',', '.') }}</h4>
+                                        <h4 class="mb-0" style="color: red !important;">{{ $total_pending }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                                 <table id="dailylistdatatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #EEBE78">
                                         <tr>
-                                            
+
                                             <th>Date</th>
                                             <th>Bill No</th>
                                             <th>Customer</th>
@@ -126,7 +126,7 @@
                                     <tbody id="breakfast_daily_data">
                                         @foreach ($daily_Data as $keydata => $outputs)
                                         <tr>
-                                            
+
                                             <td>{{ $outputs['date'] }}</td>
                                             <td>{{ $outputs['invoice_no'] }}</td>
                                             <td>{{ $outputs['customer'] }}</td>
@@ -195,7 +195,7 @@
                                                         @elseif($outputs['title'] == 'Dinner')
                                                         <form autocomplete="off" method="POST" action="{{ route('dinner.delete', ['id' => $outputs['id']]) }}">
                                                         @endif
-                                                            
+
                                                                 @method('PUT')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">Yes, Delete</button>
@@ -206,15 +206,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         @endforeach
 
 
-                                   
+
 
 </tbody>
 
-                                   
+
 
 
 
@@ -223,7 +223,7 @@
 
 
 
-                               
+
                             </div>
                         </div>
                     </div>
@@ -239,9 +239,9 @@
                 $('#dailylistdatatable').DataTable();
             });
 
-           
 
-            
+
+
 
         </script>
 

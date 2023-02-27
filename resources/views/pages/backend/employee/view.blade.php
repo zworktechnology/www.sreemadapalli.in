@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0 font-size-18">Staff & Sales - {{ $data->name }}</h4>
-                        <div class="page-title-right">
+                        <div class="page-title-right" hidden>
                             <div style="display: flex;">
                                 <div style="margin-right: 10px;">
                                     <input type="date" class="form-control" name="from_date" id="from_date" placeholder="Enter Your " required value="{{ $today }}">
@@ -58,7 +58,6 @@
                                             <th>Date</th>
                                             <th>Amount</th>
                                             <th>Note</th>
-                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,15 +67,6 @@
                                             <td>{{ date('d - m - Y', strtotime($expences->date)) }}</td>
                                             <td>{{ $expences->amount }}</td>
                                             <td>{{ $expences->note }}</td>
-                                            @hasrole('Super-Admin')
-                                            <td>
-                                                @if ($expences->soft_delete == 1)
-                                                <span class="badge bg-danger">In Active</span>
-                                                @else
-                                                <span class="badge bg-success">Active</span>
-                                                @endif
-                                            </td>
-                                            @endhasrole
                                         </tr>
                                         @endforeach
                                     </tbody>

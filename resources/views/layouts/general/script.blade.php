@@ -36,11 +36,11 @@
 <script src="{{ asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
 {{-- Datatable init js --}}
-<!-- <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>-->
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
-<script src="https://cdn.datatables.net/datetime/1.3.0/js/dataTables.dateTime.min.js"></script>
+<script src="https://cdn.datatables.net/datetime/1.3.0/js/dataTables.dateTime.min.js"></script> --}}
 
 <!--tinymce js-->
 <script src="{{ asset('assets/libs/tinymce/tinymce.min.js') }}"></script>

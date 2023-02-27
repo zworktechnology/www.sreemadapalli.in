@@ -8,23 +8,21 @@
             <thead style="background: #EEBE78">
                 <tr>
                     <th>Name</th>
-                    <th>Breakfast</th>
-                    <th>Lunch</th>
-                    <th>Dinner</th>
+                    <th>Delivery Count</th>
                 </tr>
             </thead>
             <tbody id="">
-                if($deliveryboys_arr != ""){
-                    @foreach ($deliveryboys_arr as $keydata => $deliveryboys_array)
-                    <tr>
-                        <td>{{ $deliveryboys_array['name'] }}</td>
-                        <td>{{ $deliveryboys_array['delivery_count'] }}</td>
-                    </tr>
-                    @endforeach
-                }
+                @if($deliveryboys_arr != "")
+                @foreach ($deliveryboys_arr as $keydata => $deliveryboys_array)
+                <tr>
+                    <td>{{ $deliveryboys_array['name'] }}</td>
+                    <td>{{ $deliveryboys_array['delivery_count'] }}</td>
+                </tr>
+                @endforeach
+
+                @endif
 
             </tbody>
         </table>
     </div>
 </div>
-

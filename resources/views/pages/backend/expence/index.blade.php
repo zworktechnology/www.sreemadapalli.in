@@ -13,23 +13,19 @@
                         <h4 class="mb-sm-0 font-size-18">Expense</h4>
                         <div class="page-title-right">
                             <div style="display: flex;">
-
-                            <form autocomplete="off" method="POST" action="{{ route('expence.dailyfilter') }}">
+                                <form autocomplete="off" method="POST" action="{{ route('expence.dailyfilter') }}" style="display: flex;">
                                     @method('PUT')
-                                    
+
                                     @csrf
-                                <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required >
-                                </div>
-                                <div style="margin-right: 10px;">
-                                <button type="submit"
-                                            class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
-                                                    Search</button>
-                                </div>
-                            </form>
-
-
-                                <div>
+                                    <div style="margin-right: 10px;">
+                                        <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required>
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                            Search</button>
+                                    </div>
+                                </form>
+                                <div hidden>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
 
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -69,7 +65,7 @@
                 </div>
                 @endif
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <table id="expensedatatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -80,10 +76,7 @@
                                             <th>Date</th>
                                             <th>Amount</th>
                                             <th>Note</th>
-                                            @hasrole('Super-Admin')
-                                            <th>Status</th>
                                             <th>Action</th>
-                                            @endhasrole
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -94,25 +87,16 @@
                                             <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
                                             <td>{{ $datas->amount }}</td>
                                             <td>{{ $datas->note }}</td>
-                                            @hasrole('Super-Admin')
-                                            <td>
-                                                @if ($datas->soft_delete == 1)
-                                                <span class="badge bg-danger">In Active</span>
-                                                @else
-                                                <span class="badge bg-success">Active</span>
-                                                @endif
-                                            </td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('expence.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('expence.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i> Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
+                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i> Delete</a>
                                                     </li>
                                                 </ul>
                                             </td>
-                                            @endhasrole
                                         </tr>
                                         <div class="modal fade" id="jobDelete{{ $datas->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">
@@ -143,6 +127,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                @include('pages.backend.expence.create')
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,8 +143,6 @@
             $(document).ready(function() {
                 $('#expensedatatable').DataTable();
             });
-
-
 
         </script>
     </div>
