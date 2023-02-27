@@ -8,14 +8,24 @@
             <thead style="background: #EEBE78">
                 <tr>
                     <th>Name</th>
-                    <th>Delivery Count</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
                 </tr>
             </thead>
             <tbody id="breakfast_daily">
                 @foreach ($deliveryboy as $keydata => $deliveryboys)
                 <tr>
                     <td>{{ $deliveryboys->name }}</td>
-                    <td>{{ $breakfast_data_count + $lunch_data_count + $dinner_data_count }}</td>
+                    @if($breakfast_data_count = $deliveryboys->id)
+                    <td>{{ $breakfast_data_count }}</td>
+                    @endif
+                    @if($lunch_data_count = $deliveryboys->id)
+                    <td>{{ $lunch_data_count }}</td>
+                    @endif
+                    @if($dinner_data_count = $deliveryboys->id)
+                    <td>{{ $dinner_data_count }}</td>
+                    @endif
                 </tr>
                 @endforeach
             </tbody>

@@ -19,7 +19,7 @@
                         <label for="delivery_boy_id" class="col-sm-3 col-form-label">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery BY <span style="color: red;">*</span></label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="delivery_boy_id" required>
+                            <select class="form-select js-example-basic-single" name="delivery_boy_id" required>
                                 <option value="" disabled selected hidden class="text-muted">
                                     Enter Your</option>
                                 @foreach ($deliveryboy as $deliveryboys)
@@ -34,7 +34,7 @@
                         <label for="customer_id" class="col-sm-3 col-form-label">
                             Customer <span style="color: red;">*</span></label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="customer_id" required>
+                            <select class="form-control js-example-basic-single" name="customer_id" required>
                                 <option value="" disabled selected hidden class="text-muted">
                                     Enter Your</option>
                                 @foreach ($customer as $customers)

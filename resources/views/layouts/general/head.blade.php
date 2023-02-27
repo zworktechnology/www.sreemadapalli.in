@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 {{-- Title --}}
-<title>Sree Madapalli - Zwork Technology | Delivery & Expense - Custom Software</title>
+<title>Sree Madapalli - Zwork Technology | Delivery & Expense - Custom Softwarek</title>
 
 {{-- App favicon --}}
 <link rel="shortcut icon" href="{{ asset('assets/images/fav-logo.png') }}">
