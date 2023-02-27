@@ -13,7 +13,7 @@
                         <h4 class="mb-sm-0 font-size-18">Customer - {{ $customerdata->name }}</h4>
                         <div class="page-title-right">
                             <a href="/export_customerorder_filter_pdf/{{ $customer_id }}/{{ $from_date }}/{{ $to_date }}" class="nofilter "><button type="button" class="btn btn-success w-md">Export as PDF</button></a>
-                            <a href="{{ route('customer.index') }}">k
+                            <a href="{{ route('customer.index') }}">
                                 <button type="button" class="btn btn-success w-md">Back</button>
                             </a>
                         </div>

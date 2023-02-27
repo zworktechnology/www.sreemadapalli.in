@@ -93,18 +93,6 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #E5FF8E;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Wallet</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ $total_wallet }}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
                             <div class="card-body" style="background-color: #B8FF72;">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
@@ -113,6 +101,23 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #E5FF8E;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Wallet</p>
+                                            <h4 class="mb-0" style="color: red !important;">{{ $total_wallet }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.wallet')
                         </div>
                     </div>
                     <div class="col-md-4 pointer">

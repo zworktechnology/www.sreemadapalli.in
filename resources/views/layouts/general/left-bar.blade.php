@@ -12,7 +12,7 @@
                     </a>
                 </li>
                 <li class="menu-title" key="t-menu">Delivery</li>
-                <li class="{{ Route::is('customer.index','customer.create','customer.edit','customer.view','customer.breafast.view','customer.lunch.view','customer.dinner.view') ? 'mm-active' : '' }}">
+                <li class="{{ Route::is('customer.index','customer.create','customer.edit','customer.view', 'custome.filter', 'customer.breafast.view','customer.lunch.view','customer.dinner.view') ? 'mm-active' : '' }}">
                     <a href="{{ route('customer.index') }}">
                         <i class="mdi mdi-account-tie-outline"></i>
                         <span key="t-dashboards">Create New</span>
@@ -24,7 +24,7 @@
                         <span key="t-dashboards">Delivery By</span>
                     </a>
                 </li>
-                <li class="{{ Route::is('sales.index','sales.create','breakfast.edit','lunch.edit','dinner.edit') ? 'mm-active' : '' }}">
+                <li class="{{ Route::is('sales.index','sales.create','breakfast.edit','lunch.edit','dinner.edit', 'sales.dailyfilter') ? 'mm-active' : '' }}">
                     <a href="{{ route('sales.index') }}">
                         <i class="mdi mdi-credit-card-wireless"></i>
                         <span key="t-dashboards">Daily</span>

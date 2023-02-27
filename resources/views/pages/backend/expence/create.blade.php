@@ -7,6 +7,13 @@
             @csrf
             <div class="modal-body">
                 <div class="row mb-4">
+                    <label for="date" class="col-sm-3 col-form-label">
+                        Date <span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                    </div>
+                </div>
+                <div class="row mb-4">
                     <label for="employee_id" class="col-sm-3 col-form-label">
                         Employee <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
@@ -17,13 +24,6 @@
                             <option value="{{ $employees->id }}">{{ $employees->name }}</option>
                             @endforeach
                         </select>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <label for="date" class="col-sm-3 col-form-label">
-                        Date <span style="color: red;">*</span></label>
-                    <div class="col-sm-9">
-                        <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                     </div>
                 </div>
                 <div class="row mb-4">

@@ -53,18 +53,6 @@
                     </div>
                     <div class="col-md-2">
                         <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #E5FF8E;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Wallet</p>
-                                        <h4 class="mb-0" style="color: red !important;">{{ $total_wallet }}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
                             <div class="card-body" style="background-color: #B8FF72;">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
@@ -73,6 +61,23 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #E5FF8E;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Wallet</p>
+                                            <h4 class="mb-0" style="color: red !important;">{{ $total_wallet }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.wallet')
                         </div>
                     </div>
                     <div class="col-md-4 pointer">
@@ -109,71 +114,55 @@
                                 <table id="dailylistdatatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #EEBE78">
                                         <tr>
-
-                                            <th>Date</th>
                                             <th>Bill No</th>
                                             <th>Customer</th>
                                             <th>Amount</th>
                                             <th>Session</th>
                                             <th>Delivery By</th>
                                             <th>Payment Via</th>
-                                            @hasrole('Super-Admin')
-                                            <th>Status</th>
                                             <th>Action</th>
-                                            @endhasrole
                                         </tr>
                                     </thead>
                                     <tbody id="breakfast_daily_data">
                                         @foreach ($daily_Data as $keydata => $outputs)
                                         <tr>
-
-                                            <td>{{ $outputs['date'] }}</td>
                                             <td>{{ $outputs['invoice_no'] }}</td>
                                             <td>{{ $outputs['customer'] }}</td>
                                             <td>{{ $outputs['bill_amount'] }}</td>
                                             <td>{{ $outputs['title'] }}</td>
                                             <td>{{ $outputs['devlivery_by']}}</td>
                                             <td>{{ $outputs['payment_method'] }}</td>
-                                            @hasrole('Super-Admin')
-                                            <td>
-                                                @if ($outputs['status'] == 'Deleted')
-                                                <span class="badge bg-danger">{{ $outputs['status'] }}</span>
-                                                @else
-                                                <span class="badge bg-success">{{ $outputs['status'] }}</span>
-                                                @endif
-                                            </td>
                                             <td>
 
                                                 @if ($outputs['title'] == 'Break Fast')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
                                                     </li>
                                                 </ul>
                                                 @elseif($outputs['title'] == 'Lunch')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('lunch.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('lunch.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
                                                     </li>
                                                 </ul>
                                                 @elseif($outputs['title'] == 'Dinner')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('dinner.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('dinner.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
                                                     </li>
                                                 </ul>
                                                 @endif
                                             </td>
-                                            @endhasrole
                                         </tr>
                                         <div class="modal fade" id="jobDelete{{ $outputs['id'] }}" tabindex="-1" aria-labelledby="bfjobDeleteLabel{{ $outputs['id'] }}" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">

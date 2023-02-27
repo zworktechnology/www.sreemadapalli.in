@@ -275,7 +275,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::get('/accept/{token}', [InviteController::class, 'accept']);
 
 //CUSTOMER DATE ARRAY FILTER
-Route::get('/getdatewiseCustomerOrders', [CustomerController::class, 'getdatewiseCustomerOrders']);
+Route::get('/getdatewiseCustomerOrders', [CustomerController::class, 'getdatewiseCustomerOrders'])->name('custome.filter');
 Route::get('/export_customerorder_pdf/{id}', [CustomerController::class, 'export_customerorder_pdf']);
 Route::post('/exportfilterpdf', [CustomerController::class, 'exportfilterpdf'])->name('customer.exportfilterpdf');
 Route::get('/export_customerorder_filter_pdf/{id}/{from_date}/{to_date}', [CustomerController::class, 'export_customerorder_filter_pdf']);
