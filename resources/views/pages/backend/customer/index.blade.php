@@ -74,9 +74,13 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas['name'] }}</td>
                                             <td>{{ $datas['contact_number'] }}</td>
-                                            <td>{{ $datas['totalamount'] }}</td>
-                                            <td>{{ $datas['paid'] }}</td>
-                                            <td>{{ $datas['pending'] }}</td>
+                                            <td>₹ {{ $datas['totalamount'] }}</td>
+                                            <td>₹ {{ $datas['paid'] }}</td>
+                                            @if ($datas['pending'] > 0)
+                                            <td style="color: white; background-color: #ff3d3d;">₹ {{ $datas['pending'] }}</td>
+                                            @else
+                                            <td>₹ {{ $datas['pending'] }}</td>
+                                            @endif
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>

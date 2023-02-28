@@ -23,27 +23,21 @@ class CustomerController extends Controller
             $breakfastTotamount = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $lunchTotamount = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
             $dinnerTotamount = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
-            
-
 
             $breakfast_amount_paid = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
             $lunch_amount_paid = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
             $dinner_amount_paid = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
-            
 
-            
             $breakfast_amount_pending = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
             $lunch_amount_pending = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
             $dinner_amount_pending = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
-            
 
-//Total
-            $totalamount = $breakfastTotamount + $lunchTotamount + $dinnerTotamount;
-            $paid = $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid;
-            $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending;
             $payment_total_amount = Payment::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('amount');
 
-            
+            //Total
+            $totalamount = $breakfastTotamount + $lunchTotamount + $dinnerTotamount;
+            $paid = $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount;
+            $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount;
 
             $index_amount_arr[] = array(
                 'name' => $datas->name,
@@ -51,10 +45,9 @@ class CustomerController extends Controller
                 'totalamount' => $totalamount,
                 'paid' => $paid,
                 'pending' => $pending,
-                'payment_total_amount' => $payment_total_amount,
                 'id' => $datas->id,
             );
-            
+
         }
 
         return view('pages.backend.customer.index', compact('data', 'index_amount_arr'));
@@ -133,6 +126,7 @@ class CustomerController extends Controller
 
             return $dateTimestamp1 - $dateTimestamp2;
         });
+
         $Custumer_index_array = [];
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
 
@@ -149,7 +143,6 @@ class CustomerController extends Controller
                 'TotalAmount' => $TotalAmount,
                 'customer_id' => $data->id,
             );
-
         }
 
         return view('pages.backend.customer.view', compact('today', 'data', 'breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'payment', 'payment_total_amount', 'Custumer_index_array'));
