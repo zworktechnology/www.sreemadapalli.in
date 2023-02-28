@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-7">
                         <div class="card">
 
                             <div class="card-body">
@@ -123,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-5">
                         <div class="card">
                             <div class="card-body">
                                 <table id="paymenttable" class="table table-bordered dt-responsive  nowrap w-100">

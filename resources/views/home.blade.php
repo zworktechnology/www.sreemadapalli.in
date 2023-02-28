@@ -12,7 +12,7 @@
             <div class="container-fluid">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Dashbaord - {{ date('d.m.Y', strtotime($today)) }}</h4>
+                        <h4 class="mb-sm-0 font-size-18">Dashboard - {{ date('d.m.Y', strtotime($today)) }}</h4>
                         <div class="page-title-right">
                             <div style="display: flex;">
 

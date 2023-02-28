@@ -16,7 +16,6 @@ class PaymentController extends Controller
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         return view('pages.backend.payment.index', compact('data', 'today', 'customer'));
-
     }
 
 
@@ -26,7 +25,7 @@ class PaymentController extends Controller
         $daily_date = $request->get('daily_date');
 
         $Payment_data = Payment::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
-        
+
 
 
         return view('pages.backend.payment.dailyfilter', compact('Payment_data'));

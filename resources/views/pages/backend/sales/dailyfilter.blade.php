@@ -131,34 +131,38 @@
                                             <td>₹ {{ $outputs['bill_amount'] }}</td>
                                             <td>{{ $outputs['title'] }}</td>
                                             <td>{{ $outputs['devlivery_by']}}</td>
+                                            @if ($outputs['payment_method'] == 'Pending')
+                                            <td style="color: white; background-color: rgba(255, 0, 0, 0.76);">{{ $outputs['payment_method'] }}</td>
+                                            @else
                                             <td>{{ $outputs['payment_method'] }}</td>
+                                            @endif
                                             <td>
 
                                                 @if ($outputs['title'] == 'Break Fast')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
+                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i>Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i>Delete</a>
                                                     </li>
                                                 </ul>
                                                 @elseif($outputs['title'] == 'Lunch')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('lunch.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
+                                                        <a href="{{ route('lunch.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i>Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i>Delete</a>
                                                     </li>
                                                 </ul>
                                                 @elseif($outputs['title'] == 'Dinner')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('dinner.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
+                                                        <a href="{{ route('dinner.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i>Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i>Delete</a>
                                                     </li>
                                                 </ul>
                                                 @endif

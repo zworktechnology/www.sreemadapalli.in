@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">New Delivery Boy</h5>
+            <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">Create New</h5>
         </div>
         <form autocomplete="off" method="POST" action="{{ route('deliveryboy.store') }}">
             @csrf

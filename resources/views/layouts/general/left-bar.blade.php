@@ -8,7 +8,7 @@
                 <li class="{{ Route::is('home') ? 'mm-active' : '' }}">
                     <a href="{{ route('home') }}">
                         <i class="mdi mdi-home-circle-outline"></i>
-                        <span key="t-dashboards">Dashboards</span>
+                        <span key="t-dashboards">Dashboard</span>
                     </a>
                 </li>
                 <li class="menu-title" key="t-menu">Delivery</li>
