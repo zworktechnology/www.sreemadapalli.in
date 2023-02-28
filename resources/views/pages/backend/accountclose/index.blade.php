@@ -61,7 +61,7 @@
                                         <tr>
                                             <th>Sl. No</th>
                                             <th>Date</th>
-                                            <th>Cash on hand</th>
+                                            <th>Paytm</th>
                                             <th>G Pay</th>
                                             <th>G Pay Business</th>
                                             <th>Phone Pe</th>

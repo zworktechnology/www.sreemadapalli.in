@@ -34,6 +34,7 @@ class DashboardController extends Controller
         $card = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('card');
         $other_case = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('other_case');
         $sales_amount = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('sales_amount');
+        $paytm = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('case_on_hand');
 
         $determination = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $total_2000 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_2000');
@@ -56,7 +57,7 @@ class DashboardController extends Controller
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
         'g_pay', 'g_pay_business', 'phone_pay', 'card', 'other_case', 'sales_amount', 'determination',
         'total_2000', 'total_500', 'total_200', 'total_100', 'total_50', 'total_20', 'total_10',
-        'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate'));
+        'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate', 'paytm'));
     }
 
 
@@ -65,7 +66,7 @@ class DashboardController extends Controller
     public function getDashboardData()
     {
         $dashboarddate = request()->get('dashboarddate');
-        
+
         $breakfast_data_ps_pending = BreakFast::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $lunch_data_ps_pending = Lunch::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $dinner_data_ps_pending = Dinner::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
@@ -83,7 +84,7 @@ class DashboardController extends Controller
         $other_case = AccountClose::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->sum('other_case');
         $sales_amount = AccountClose::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->sum('sales_amount');
 
-        
+
         $total_2000 = Determination::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->sum('total_2000');
         $total_500 = Determination::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->sum('total_500');
         $total_200 = Determination::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->sum('total_200');
@@ -95,8 +96,8 @@ class DashboardController extends Controller
         $total_2 = Determination::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->sum('total_2');
         $total_1 = Determination::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->sum('total_1');
 
-            
-        
+
+
 
         // Array Data
 
@@ -125,7 +126,7 @@ class DashboardController extends Controller
                 'p_total' => $p_total,
                 'overall_amt' => $overall_amt,
             );
-        
+
         if (isset($DashboardArray) & !empty($DashboardArray)) {
             echo json_encode($DashboardArray);
         }else{
@@ -143,8 +144,8 @@ class DashboardController extends Controller
     public function getDenomination()
     {
         $dashboarddate = request()->get('dashboarddate');
-        
-        
+
+
         $determination = Determination::where('date', '=', $dashboarddate)->where('soft_delete', '!=', 1)->get();
         foreach ($determination as $key => $determinations) {
 
@@ -175,12 +176,12 @@ class DashboardController extends Controller
                 'all_amount_count' => $all_amount_count
             );
         }
-            
-        
 
 
-            
-        
+
+
+
+
         if (isset($DashboardDenominationArray) & !empty($DashboardDenominationArray)) {
             echo json_encode($DashboardDenominationArray);
         }else{

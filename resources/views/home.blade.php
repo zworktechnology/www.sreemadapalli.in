@@ -118,6 +118,12 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Paytm</h5>
+                                                </td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $paytm }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Other Cash</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $payment + $other_case }}</td>
@@ -126,7 +132,7 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Total</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ ($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ ($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -179,7 +185,7 @@
                                     <table class="table align-middle table-nowrap mb-0">
                                         <tr style="color: red;">
                                             <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over All</th>
-                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ (($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case) - (($opening + $sales_amount) - $expense) }}</th>
+                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ (($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case) - (($opening + $sales_amount) - $expense) }}</th>
                                         </tr>
                                     </table>
                                 </div>

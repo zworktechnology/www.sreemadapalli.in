@@ -10,7 +10,12 @@
             <div class="container-fluid">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Sales   -  {{ $date }}</h4>
+                        <h4 class="mb-sm-0 font-size-18 pointer">
+                            <div data-bs-toggle="modal" data-bs-target="#staticBackdropfull">Sales  -  {{ $date }}</div>
+                        </h4>
+                        <div class="modal fade" id="staticBackdropfull" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.addon.full')
+                        </div>
                         <div class="page-title-right">
                             <div style="display: flex;">
                                 <div>

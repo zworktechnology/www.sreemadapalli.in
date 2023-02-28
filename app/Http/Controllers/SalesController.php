@@ -466,7 +466,8 @@ class SalesController extends Controller
         'dinner_data_count', 'date', 'total_bill_amount', 'total_cash', 'total_wallet', 'total_pending', 'deliveryboys_arr',
         'walletcard', 'walletgpay', 'walletgpaybusiness', 'walletphonepe', 'walletpaytm', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending',
         'breakfast_data_pm_cash', 'lunch_data_pm_cash', 'dinner_data_pm_cash',
-        'total_total', 'breakfast_data_pm_total', 'lunch_data_pm_total', 'dinner_data_pm_total'));
+        'total_total', 'breakfast_data_pm_total', 'lunch_data_pm_total', 'dinner_data_pm_total',
+        'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet'));
     }
 
 

@@ -30,9 +30,9 @@
                                                 <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $data->date }}">
                                             </div>
                                         </div>
-                                        <div class="row mb-4" hidden>
+                                        <div class="row mb-4">
                                             <label for="case_on_hand" class="col-sm-3 col-form-label">
-                                                Cash on hand <span style="color: red;">*</span></label>
+                                                Paytm <span style="color: red;">*</span></label>
                                             <div class="col-sm-9">
                                                 <input type="number" class="form-control" name="case_on_hand" placeholder="Enter Your " required value="{{ $data->case_on_hand }}">
                                             </div>
