@@ -73,8 +73,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
-                <div style="display: flex;" style="font-weight: bold;">
-                    <div class="col-xl-6" style="padding-right: 10px;">
+                <div class="row" style="font-weight: bold;">
+                    <div class="col-xl-6 col-12" style="padding-right: 10px;">
                         <div class="card" style="background-color: #ACDDDE;">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -84,49 +84,49 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Cash on Hand</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="cash_on_hand">{{ $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Pending Bills</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="pending_bill">{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">G Pay</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="gpay">{{ $g_pay }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $g_pay }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">G-Pay Business</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="gpaybusiness">{{ $g_pay_business }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $g_pay_business }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Phone Pe</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="phonepay">{{ $phone_pay }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $phone_pay }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Card</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="debitorcredit_card">{{ $card }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $card }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Other Cash</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="other_cash">{{ $payment + $other_case }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $payment + $other_case }}</td>
                                             </tr>
                                             <tr style="color: red;">
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Total</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total_amount">{{ ($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ ($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -142,31 +142,31 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Opening</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="opening">{{ $opening }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $opening }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Sales</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="sales_amount">{{ $sales_amount }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $sales_amount }}</td>
                                             </tr>
                                             <tr style="color: red;">
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Total</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="totalopening_sales">{{ $opening + $sales_amount }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $opening + $sales_amount }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Expense</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="expenseamt">{{ $expense }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $expense }}</td>
                                             </tr>
                                             <tr style="color: red;">
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Total</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="p_total">{{ (($opening + $sales_amount) - $expense) }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ (($opening + $sales_amount) - $expense) }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -179,14 +179,14 @@
                                     <table class="table align-middle table-nowrap mb-0">
                                         <tr style="color: red;">
                                             <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over All</th>
-                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;" class="overall_amt">{{ (($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case) - (($opening + $sales_amount) - $expense) }}</th>
+                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">{{ (($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $payment + $other_case) - (($opening + $sales_amount) - $expense) }}</th>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6" style="padding-left: 10px;">
+                    <div class="col-xl-6 col-12" style="padding-left: 10px;">
                         <div class="card" style="background-color: #FEF8DD;">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -195,83 +195,83 @@
                                             @foreach ($determination as $determinations)
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">2000</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 2000</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count2000">{{ $determinations->count_2000 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total2000">{{ $determinations->total_2000 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_2000 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_2000 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">500</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 500</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count500">{{ $determinations->count_500 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total500">{{ $determinations->total_500 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_500 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_500 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">200</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 200</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count200">{{ $determinations->count_200 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total200">{{ $determinations->total_200 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_200 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_200 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">100</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 100</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count100">{{ $determinations->count_100 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total100">{{ $determinations->total_100 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_100 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_100 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">50</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 50</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count50">{{ $determinations->count_50 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total50">{{ $determinations->total_50 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_50 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_50 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">20</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 20</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count20">{{ $determinations->count_20 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total20">{{ $determinations->total_20 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_20 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_20 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">10</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 10</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count10">{{ $determinations->count_10 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total10">{{ $determinations->total_10 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_10 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_10 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">5</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 5</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count5">{{ $determinations->count_5 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total5">{{ $determinations->total_5 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_5 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_5 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">2</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 2</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count2">{{ $determinations->count_2 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total2">{{ $determinations->total_2 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_2 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_2 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">1</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 1</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">X</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="count1">{{ $determinations->count_1 }}</td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="total1">{{ $determinations->total_1 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_1 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_1 }}</td>
                                             </tr>
                                             <tr style="color: red;">
                                                 <td>
@@ -279,7 +279,7 @@
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;"></td>
                                                 <td style="font-weight: bold;font-size: 16px !important;"></td>
-                                                <td style="font-weight: bold;font-size: 16px !important;" class="all_amount_count">{{ $determinations->total_2000 + $determinations->total_500 + $determinations->total_200 + $determinations->total_100 + $determinations->total_50 + $determinations->total_20 + $determinations->total_10 + $determinations->total_5 + $determinations->total_2 + $determinations->total_1 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->total_2000 + $determinations->total_500 + $determinations->total_200 + $determinations->total_100 + $determinations->total_50 + $determinations->total_20 + $determinations->total_10 + $determinations->total_5 + $determinations->total_2 + $determinations->total_1 }}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>

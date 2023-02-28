@@ -13,7 +13,7 @@
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0 font-size-18">Customer</h4>
                             <div class="page-title-right">
-                                <div>
+                                <div hidden>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
 
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -53,7 +53,7 @@
                 </div>
                 @endif
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -62,9 +62,6 @@
                                             <th>Sl. No</th>
                                             <th>Name</th>
                                             <th>Phone No</th>
-                                            @hasrole('Super-Admin')
-                                            <th>Status</th>
-                                            @endhasrole
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -74,28 +71,17 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->name }}</td>
                                             <td>{{ $datas->contact_number }}</td>
-                                            @hasrole('Super-Admin')
-                                            <td>
-                                                @if ($datas->soft_delete == 1)
-                                                <span class="badge bg-danger">In Active</span>
-                                                @else
-                                                <span class="badge bg-success">Active</span>
-                                                @endif
-                                            </td>
-                                            @endhasrole
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('customer.view', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-pink"><i class="mdi mdi-card-account-details-star-outline"></i></a>
-                                                    </li>
-                                                    @hasrole('Super-Admin')
-                                                    <li>
-                                                        <a href="{{ route('customer.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                                        <a href="{{ route('customer.view', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-pink"><i class="mdi mdi-card-account-details-star-outline"></i> View</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i></a>
+                                                        <a href="{{ route('customer.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i> Edit</a>
                                                     </li>
-                                                    @endhasrole
+                                                    <li>
+                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i> Delete</a>
+                                                    </li>
                                                 </ul>
                                             </td>
                                         </tr>
@@ -125,6 +111,13 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                @include('pages.backend.customer.create')
                             </div>
                         </div>
                     </div>

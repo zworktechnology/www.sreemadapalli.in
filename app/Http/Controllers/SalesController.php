@@ -14,8 +14,34 @@ class SalesController extends Controller
 {
     public function index()
     {
-        
+
         $daily_date = date('Y-m-d');
+        $today = Carbon::now()->format('Y-m-d');
+
+        $cardb = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+        $cardl = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+        $cardd = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+        $card = $cardb + $cardl + $cardd;
+
+        $gpayb = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+        $gpayl = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+        $gpayd = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+        $gpay = $gpayb + $gpayl + $gpayd;
+
+        $gpaybusinessb = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+        $gpaybusinessl = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+        $gpaybusinessd = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+        $gpaybusiness = $gpaybusinessb + $gpaybusinessl + $gpaybusinessd;
+
+        $phonepeb = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+        $phonepel = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+        $phoneped = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+        $phonepe = $phonepeb + $phonepel + $phoneped;
+
+        $paytmb = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+        $paytml = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+        $paytmd = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+        $paytm = $paytmb + $paytml + $paytmd;
 
         $breakfast_data = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
         $Breakfast_datearray = [];
@@ -91,15 +117,15 @@ class SalesController extends Controller
                 ->where('date', '=', $daily_date)
                 ->where('soft_delete', '!=', 1)
                 ->where('payment_method', '=', 'Cash')
-                ->sum('bill_amount');  
+                ->sum('bill_amount');
 
         $dinner_data_pm_cash = Lunch::where('title', '=', 'Dinner')
                 ->where('date', '=', $daily_date)
                 ->where('soft_delete', '!=', 1)
                 ->where('payment_method', '=', 'Cash')
-                ->sum('bill_amount'); 
+                ->sum('bill_amount');
 
-        $total_cash = $breakfast_data_pm_cash + $lunch_data_pm_cash + $dinner_data_pm_cash;   
+        $total_cash = $breakfast_data_pm_cash + $lunch_data_pm_cash + $dinner_data_pm_cash;
 
 
 
@@ -149,8 +175,8 @@ class SalesController extends Controller
 
 
 
-        
-        
+
+
         $deliveryboy = Deliveryboy::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $deliveryboys_arr = [];
         $total_delivery_count = 0;
@@ -166,7 +192,7 @@ class SalesController extends Controller
                                                     ->where('delivery_boy_id', '=', $deliveryboys->id)->get()->all();
 
             $delivery_count = Count($breakfast_data_count) + Count($lunch_data_ps_count) + Count($dinner_data_ps_count);
-            
+
             $deliveryboys_arr[] = array(
                 'name' => $deliveryboys->name,
                 'delivery_count' => $delivery_count
@@ -177,9 +203,9 @@ class SalesController extends Controller
         $date = date('d-m-Y', strtotime($daily_date));
 
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
-        
 
-        return view('pages.backend.sales.index', compact('daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count', 'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customer'));
+
+        return view('pages.backend.sales.index', compact('today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count', 'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customer', 'card', 'gpay', 'gpaybusiness', 'phonepe', 'paytm'));
     }
 
 
@@ -191,7 +217,32 @@ class SalesController extends Controller
     public function dailyfilter(Request $request)
     {
         $daily_date = $request->get('daily_date');
-        
+
+        $cardb = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+        $cardl = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+        $cardd = Dinner::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+        $card = $cardb + $cardl + $cardd;
+
+        $gpayb = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+        $gpayl = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+        $gpayd = Dinner::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+        $gpay = $gpayb + $gpayl + $gpayd;
+
+        $gpaybusinessb = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+        $gpaybusinessl = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+        $gpaybusinessd = Dinner::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+        $gpaybusiness = $gpaybusinessb + $gpaybusinessl + $gpaybusinessd;
+
+        $phonepeb = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+        $phonepel = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+        $phoneped = Dinner::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+        $phonepe = $phonepeb + $phonepel + $phoneped;
+
+        $paytmb = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+        $paytml = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+        $paytmd = Dinner::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+        $paytm = $paytmb + $paytml + $paytmd;
+
 
         $breakfast_data = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
         $Breakfast_datearray = [];
@@ -254,7 +305,7 @@ class SalesController extends Controller
         }
 
 
-        
+
             // Total Cash
         $breakfast_data_pm_cash = BreakFast::where('title', '=', 'Break Fast')
             ->where('date', '=', $daily_date)
@@ -266,13 +317,13 @@ class SalesController extends Controller
                     ->where('date', '=', $daily_date)
                     ->where('soft_delete', '!=', 1)
                     ->where('payment_method', '=', 'Cash')
-                    ->sum('bill_amount');  
+                    ->sum('bill_amount');
 
         $dinner_data_pm_cash = Lunch::where('title', '=', 'Dinner')
                     ->where('date', '=', $daily_date)
                     ->where('soft_delete', '!=', 1)
                     ->where('payment_method', '=', 'Cash')
-                    ->sum('bill_amount'); 
+                    ->sum('bill_amount');
 
 
 
@@ -320,8 +371,8 @@ class SalesController extends Controller
         $total_pending = $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending;
 
 
-        
-        
+
+
         $deliveryboy = Deliveryboy::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $deliveryboys_arr = [];
         $total_delivery_count = 0;
@@ -337,7 +388,7 @@ class SalesController extends Controller
                                                     ->where('delivery_boy_id', '=', $deliveryboys->id)->get()->all();
 
             $delivery_count = Count($breakfast_data_count) + Count($lunch_data_ps_count) + Count($dinner_data_ps_count);
-            
+
             $deliveryboys_arr[] = array(
                 'name' => $deliveryboys->name,
                 'delivery_count' => $delivery_count
@@ -347,9 +398,9 @@ class SalesController extends Controller
         }
 
         $date = date('d-m-Y', strtotime($daily_date));
-        
 
-        return view('pages.backend.sales.dailyfilter', compact('daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count', 'date', 'total_bill_amount', 'total_cash', 'total_wallet', 'total_pending', 'deliveryboys_arr'));
+
+        return view('pages.backend.sales.dailyfilter', compact('daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count', 'date', 'total_bill_amount', 'total_cash', 'total_wallet', 'total_pending', 'deliveryboys_arr', 'card', 'gpay', 'gpaybusiness', 'phonepe', 'paytm'));
     }
 
 
@@ -430,7 +481,7 @@ class SalesController extends Controller
 
 
 
-  
+
 
 
 

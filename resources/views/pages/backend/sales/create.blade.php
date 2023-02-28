@@ -1,127 +1,113 @@
 <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Sales</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">Create New Sales</h5>
         </div>
         <form autocomplete="off" method="POST" action="{{ route('sales.store') }}">
             @csrf
-            <div class="modal-body col-12">
-                <div style="display: flex;">
-                    <div class="row mb-4 col-6 ">
-                        <label for="date" class="col-sm-3 col-form-label">
-                            Date <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $date }}">
-                        </div>
-                    </div>
-                    <div class="row mb-4 col-6 ">
-                        <label for="delivery_boy_id" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery BY <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <select class="form-select js-example-basic-single" name="delivery_boy_id" required>
-                                <option value="" disabled selected hidden class="text-muted">
-                                    Enter Your</option>
-                                @foreach ($deliveryboy as $deliveryboys)
-                                <option value="{{ $deliveryboys->id }}">{{ $deliveryboys->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+            <div class="row mb-4 col-12 ">
+                <label for="date" class="col-md-1 col-form-label">
+                    Date <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2">
+                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                </div>
+            </div>
+            <div class="row mb-4 col-12 ">
+                <label for="customer_id" class="col-md-1 col-form-label">
+                    Customer <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2">
+                    <select class="form-control" name="customer_id" required>
+                        <option value="" disabled selected hidden class="text-muted">
+                            Enter Your</option>
+                        @foreach ($customer as $customers)
+                        <option value="{{ $customers->id }}">{{ $customers->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-4 col-12 ">
+                <label for="invoice_no" class="col-md-1 col-form-label">
+                    Bill No <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2">
+                    <input type="number" class="form-control" name="invoice_no" placeholder="Enter Your " required>
+                </div>
+            </div>
+            <div class="row mb-4 col-12 ">
+                <label for="bill_amount" class="col-md-1 col-form-label">
+                    Bill Amount <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2">
+                    <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Enter Your " required onchange="totalbreakfast()">
+                </div>
+            </div>
+            <div class="row mb-4 col-12 ">
+                <label for="delivery_boy_id" class="col-md-1 col-form-label">
+                    Delivery By <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2">
+                    <select class="form-select" name="delivery_boy_id" required>
+                        <option value="" disabled selected hidden class="text-muted">
+                            Enter Your</option>
+                        @foreach ($deliveryboy as $deliveryboys)
+                        <option value="{{ $deliveryboys->id }}">{{ $deliveryboys->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-4 col-12 ">
+                <label for="session" class="col-md-1 col-form-label">
+                    Session <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2">
+                    <select class="form-control" name="session" required>
+                        <option value="" disabled selected hidden class="text-muted">Enter Your</option>
+                        <option value="Break_Fast" class="text-muted">Breakfast</option>
+                        <option value="Lunch" class="text-muted">Lunch</option>
+                        <option value="Dinner" class="text-muted">Dinner</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-4 col-12 col-md-12">
+                <label for="payment_method" class="col-md-1 col-form-label">
+                    Payment Via <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2">
+                    <select class="form-control" name="payment_method" required>
+                        <option value="" disabled selected hidden class="text-muted">
+                            Enter Your</option>
+                        <option value="Cash" class="text-muted">Cash</option>
+                        <option value="Card" class="text-muted">Card</option>
+                        <option value="G-Pay" class="text-muted">G Pay</option>
+                        <option value="G-Pay Business" class="text-muted">G-Pay Business</option>
+                        <option value="Phone Pe" class="text-muted">Phone Pe</option>
+                        <option value="Paytm" class="text-muted">Paytm</option>
+                        <option value="Pending" class="text-muted">Pending</option>
+                    </select>
+                </div>
+            </div>
+            <div style="display: flex;" hidden>
+                <div class="row mb-4 col-12">
+                    <label for="payment_status" class="col-md-1 col-form-label">
+                        Payment Status <span style="color: red;">*</span></label>
+                    <div class="col-9 col-md-2">
+                        <select class="form-control" name="payment_status">
+                            <option value="No" selected class="text-muted">
+                                Enter Your</option>
+                        </select>
                     </div>
                 </div>
-                <div style="display: flex;">
-                    <div class="row mb-4 col-6 ">
-                        <label for="customer_id" class="col-sm-3 col-form-label">
-                            Customer <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <select class="form-control js-example-basic-single" name="customer_id" required>
-                                <option value="" disabled selected hidden class="text-muted">
-                                    Enter Your</option>
-                                @foreach ($customer as $customers)
-                                <option value="{{ $customers->id }}">{{ $customers->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-4 col-6 ">
-                        <label for="session" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Session <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="session" required>
-                                <option value="" disabled selected hidden class="text-muted">Enter Your</option>
-                                <option value="Break_Fast" class="text-muted">Breakfast</option>
-                                <option value="Lunch" class="text-muted">Lunch</option>
-                                <option value="Dinner" class="text-muted">Dinner</option>
-                            </select>
-                        </div>
+                <div class="row mb-4 col-6 ">
+                    <label for="payment_amount" class="col-sm-3 col-form-label">
+                        Payment Amount <span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" name="payment_amount" id="payment_amount_total" placeholder="Enter Your " value="00">
                     </div>
                 </div>
-                <div style="display: flex;">
-                    <div class="row mb-4 col-6 ">
-                        <label for="invoice_no" class="col-sm-3 col-form-label">
-                            Bill No <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" name="invoice_no" placeholder="Enter Your " required>
-                        </div>
-                    </div>
-                    <div class="row mb-4 col-6" hidden>
-                        <label for="payment_status" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Status <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="payment_status" required>
-                                <option value="No" selected class="text-muted">
-                                    Enter Your</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div style="display: flex;">
-                    <div class="row mb-4 col-6 ">
-                        <label for="bill_amount" class="col-sm-3 col-form-label">
-                            Bill Amount <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Enter Your " required onchange="totalbreakfast()">
-                        </div>
-                    </div>
-                    <div class="row mb-4 col-6 ">
-                        <label for="payment_method" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Via</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="payment_method" required>
-                                <option value="" disabled selected hidden class="text-muted">
-                                    Enter Your</option>
-                                <option value="Cash" class="text-muted">Cash</option>
-                                <option value="Card" class="text-muted">Card</option>
-                                <option value="G-Pay" class="text-muted">G Pay</option>
-                                <option value="G-Pay Business" class="text-muted">G-Pay Business</option>
-                                <option value="Phone Pe" class="text-muted">Phone Pe</option>
-                                <option value="Paytm" class="text-muted">Paytm</option>
-                                <option value="Pending" class="text-muted">Pending</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div style="display: flex;" hidden>
-                    <div class="row mb-4 col-6 ">
-                        <label for="payment_amount" class="col-sm-3 col-form-label">
-                            Payment Amount <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" name="payment_amount" id="payment_amount_total" placeholder="Enter Your " required>
-                        </div>
-                    </div>
-                    <div class="row mb-4 col-6 ">
-                        <label for="delivery_amount" class="col-sm-3 col-form-label">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery Charge <span style="color: red;">*</span></label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" name="delivery_amount" id="delivery_amount" placeholder="Enter Your " required onchange="totalbreakfast()" value="20">
-                        </div>
+                <div class="row mb-4 col-6 ">
+                    <label for="delivery_amount" class="col-sm-3 col-form-label">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery Charge <span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" name="delivery_amount" id="delivery_amount" placeholder="Enter Your " onchange="totalbreakfast()" value="00">
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success">Save</button>
-            </div>
+            <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>
 </div>

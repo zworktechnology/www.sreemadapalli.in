@@ -16,7 +16,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="2000" class="col-sm-4 col-form-label">
-                        2000 <span style="color: red;">*</span></label>
+                        ₹ 2000 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_2000" id="count_2000" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="500" class="col-sm-4 col-form-label">
-                        500 <span style="color: red;">*</span></label>
+                        ₹ 500 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_500" id="count_500" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="200" class="col-sm-4 col-form-label">
-                        200 <span style="color: red;">*</span></label>
+                        ₹ 200 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_200" id="count_200" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="100" class="col-sm-4 col-form-label">
-                        100 <span style="color: red;">*</span></label>
+                        ₹ 100 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_100" id="count_100" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="50" class="col-sm-4 col-form-label">
-                        50 <span style="color: red;">*</span></label>
+                        ₹ 50 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_50" id="count_50" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="20" class="col-sm-4 col-form-label">
-                        20 <span style="color: red;">*</span></label>
+                        ₹ 20 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_20" id="count_20" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="10" class="col-sm-4 col-form-label">
-                        10 <span style="color: red;">*</span></label>
+                        ₹ 10 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_10" id="count_10" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="5" class="col-sm-4 col-form-label">
-                        5 <span style="color: red;">*</span></label>
+                        ₹ 5 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_5" id="count_5" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="2" class="col-sm-4 col-form-label">
-                        2 <span style="color: red;">*</span></label>
+                        ₹ 2 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_2" id="count_2" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="1" class="col-sm-4 col-form-label">
-                        1 <span style="color: red;">*</span></label>
+                        ₹ 1 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" name="count_1" id="count_1" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>

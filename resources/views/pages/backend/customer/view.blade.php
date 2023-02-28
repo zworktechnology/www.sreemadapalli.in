@@ -12,25 +12,6 @@
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0 font-size-18">Customer - {{ $data->name }}</h4>
                         <div class="page-title-right">
-                        <form  autocomplete="off" method="post" action="{{ route('customer.getdatewiseCustomerOrders') }}">
-                        @method('PUT')
-                        @csrf
-                            <div style="display: flex;">
-                                <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="from_date" id="from_date" placeholder="Enter Your " required value>
-                                </div>
-                                <div style="margin-right: 10px;">
-                                    <input type="date" class="form-control" name="to_date" id="to_date" placeholder="Enter Your " required >
-                                    <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids" value="{{ $data->id }}">
-                                </div>
-                                <div style="margin-right: 10px;">
-                                <button type="submit"
-                                            class=" bg-black text-white form-control rounded font-bold font-serif shadow-sm shadow-red-300">
-                                                    Search</button>
-                                </div>
-                                
-                            </div>
-                        </form>
                         </div>
                     </div>
                 </div>
@@ -43,7 +24,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_total_amount + $lunch_total_amount + $dinner_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_total_amount + $lunch_total_amount + $dinner_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +36,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Payed Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +48,7 @@
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Pending Amount</p>
-                                                <h4 class="mb-0" style="color: red !important;">{{ $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount }}</h4>
+                                                <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -76,16 +57,40 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Filter</h4>
+                        <div class="page-title-right">
+                            <div class="py-3 px-2 text-right" style="display: flex;">
+                                <form autocomplete="off" method="post" action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                    @method('PUT')
+                                    @csrf
+                                    <div style="display: flex;">
+                                        <div style="margin-right: 10px;">
+                                            <input type="date" class="form-control" name="from_date" id="from_date" placeholder="Enter Your " required value="2023-01-01">
+                                        </div>
+                                        <div style="margin-right: 10px;">
+                                            <input type="date" class="form-control" name="to_date" id="to_date" placeholder="Enter Your " required value="{{ $today }}">
+                                            <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids" value="{{ $data->id }}">
+                                        </div>
+                                        <div style="margin-right: 10px;">
+                                            <button type="submit" class="btn btn-success w-md">
+                                                Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter "><button type="button" class="btn btn-success w-md">Export as PDF</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-8">
                         <div class="card">
-                            <div class="py-3 px-2 text-right">
-                                    <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter "><button type="button" class="btn btn-success w-md">Export as PDF</button></a>
-                                    
-                            </div>
+
                             <div class="card-body">
-                                
-                                <table id="customer_datatable"class="table table-bordered dt-responsive  nowrap w-100">
+
+                                <table id="customer_datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #EEBE78">
                                         <tr>
                                             <th>Sl. No</th>
@@ -103,10 +108,10 @@
                                         <tr>
                                             <td>{{ ++$index }}</td>
                                             <td>{{ $Custumer_index_arr['date'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
-                                            <td>{{ $Custumer_index_arr['TotalAmount'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
+                                            <td>₹ {{ $Custumer_index_arr['TotalAmount'] }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -121,7 +126,7 @@
                     <div class="col-4">
                         <div class="card">
                             <div class="card-body">
-                                <table id="paymenttable"class="table table-bordered dt-responsive  nowrap w-100">
+                                <table id="paymenttable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #EEBE78">
                                         <tr>
                                             <th>Sl. No</th>
@@ -134,7 +139,7 @@
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ date('d - m - Y', strtotime($payments->date)) }}</td>
-                                            <td>{{ $payments->amount }}</td>
+                                            <td>₹ {{ $payments->amount }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -157,10 +162,8 @@
                 $('#paymenttable').DataTable();
             });
 
-
-
         </script>
-        
+
     </div>
 </div>
 @endsection

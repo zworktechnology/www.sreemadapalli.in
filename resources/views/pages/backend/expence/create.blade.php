@@ -1,12 +1,18 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">New Expense</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">New Expense</h5>
         </div>
         <form autocomplete="off" method="POST" action="{{ route('expence.store') }}">
             @csrf
             <div class="modal-body">
+                <div class="row mb-4">
+                    <label for="date" class="col-sm-3 col-form-label">
+                        Date <span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                    </div>
+                </div>
                 <div class="row mb-4">
                     <label for="employee_id" class="col-sm-3 col-form-label">
                         Employee <span style="color: red;">*</span></label>
@@ -18,13 +24,6 @@
                             <option value="{{ $employees->id }}">{{ $employees->name }}</option>
                             @endforeach
                         </select>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <label for="date" class="col-sm-3 col-form-label">
-                        Date <span style="color: red;">*</span></label>
-                    <div class="col-sm-9">
-                        <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                     </div>
                 </div>
                 <div class="row mb-4">

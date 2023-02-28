@@ -1,8 +1,7 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">New Delivery Boy</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">New Delivery Boy</h5>
         </div>
         <form autocomplete="off" method="POST" action="{{ route('deliveryboy.store') }}">
             @csrf
@@ -16,7 +15,7 @@
                 </div>
                 <div class="row mb-4">
                     <label for="contact_number" class="col-sm-3 col-form-label">
-                        Phone Number <span style="color: red;">*</span></label>
+                        Phone No <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
                         <input type="number" class="form-control" name="contact_number" placeholder="Enter Your " required>
                     </div>
