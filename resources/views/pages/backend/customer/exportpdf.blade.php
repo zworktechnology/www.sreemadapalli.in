@@ -30,11 +30,42 @@
             color: black;
         }
 
+        .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
     </style>
 </head>
 <body>
 
     <h1>Customer - {{ $customerdata->name }}</h1>
+                
+    
+    <div class="card">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
+                    <h4 class="mb-0" style="color: red !important;">₹ {{ $total_amount }}</h4> 
+                </div>
+                <div class="col-md-4">
+                    <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
+                    <h4 class="mb-0" style="color: red !important;">₹ {{ $total_amount }}</h4> 
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <table id="customers">
         <thead style="background: #EEBE78">
