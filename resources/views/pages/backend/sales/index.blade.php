@@ -67,40 +67,55 @@
                 </div>
                 @endif
                 <div class="row">
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #CADAF1;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_bill_amount }}</h4>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdroptotal">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #CADAF1;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Amount</p>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total_total }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="staticBackdroptotal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.addon.total')
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #FFEE93;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Cash</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_cash }}</h4>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropcash">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #FFEE93;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Cash</p>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total_cash }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="staticBackdropcash" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.addon.cash')
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #B8FF72;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdroppending">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #B8FF72;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending</p>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="modal fade" id="staticBackdroppending" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.addon.pending')
                         </div>
                     </div>
                     <div class="col-md-2 pointer">
@@ -117,7 +132,7 @@
                             </div>
                         </div>
                         <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            @include('pages.backend.sales.wallet')
+                            @include('pages.backend.sales.addon.wallet')
                         </div>
                     </div>
                     <div class="col-md-4 pointer">
@@ -145,7 +160,7 @@
                             </div>
                         </div>
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            @include('pages.backend.sales.deliveryby')
+                            @include('pages.backend.sales.addon.deliveryby')
                         </div>
                     </div>
                 </div>
@@ -175,19 +190,19 @@
                                             <td>{{ $outputs['devlivery_by']}}</td>
 
                                             @if ($outputs['payment_method'] == 'Cash')
-                                            <td style="color: white; background-color: #589b31;"><img src="{{ asset('assets/images/cash.jpg') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #589b31;"><img src="{{ asset('assets/images/cash.jpg') }}" style="width: 15px; height: 15px;" /> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'G-Pay Business')
-                                            <td style="color: white; background-color: #fbbb04;"><img src="{{ asset('assets/images/gpayb.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #fbbb04;"><img src="{{ asset('assets/images/gpayb.png') }}" style="width: 15px; height: 15px;" /> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'G-Pay')
-                                            <td style="color: white; background-color: #fbbb04;"><img src="{{ asset('assets/images/gpay.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #fbbb04;"><img src="{{ asset('assets/images/gpay.png') }}" style="width: 15px; height: 15px;" /> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'Phone Pe')
-                                            <td style="color: white; background-color: #5f259f;"><img src="{{ asset('assets/images/phonepay.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #5f259f;"><img src="{{ asset('assets/images/phonepay.png') }}" style="width: 15px; height: 15px;" /> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'Paytm')
-                                            <td style="color: white; background-color: #01aef0;"><img src="{{ asset('assets/images/paytm.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #01aef0;"><img src="{{ asset('assets/images/paytm.png') }}" style="width: 15px; height: 15px;" /> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'Card')
-                                            <td style="color: white; background-color: #9ab3c3;"><img src="{{ asset('assets/images/card.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #9ab3c3;"><img src="{{ asset('assets/images/card.png') }}" style="width: 15px; height: 15px;" /> {{ $outputs['payment_method'] }}</td>
                                             @else
-                                            <td style="color: white; background-color: #ff3d3d;"><img src="{{ asset('assets/images/pending.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #ff3d3d;"><img src="{{ asset('assets/images/pending.png') }}" style="width: 15px; height: 15px;" /> {{ $outputs['payment_method'] }}</td>
                                             @endif
 
                                             <td>

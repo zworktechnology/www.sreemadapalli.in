@@ -27,40 +27,55 @@
 
 
                 <div class="row">
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #CADAF1;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Amount</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_bill_amount }}</h4>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdroptotal">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #CADAF1;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Amount</p>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total_total }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="staticBackdroptotal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.addon.total')
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #FFEE93;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Cash</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_cash }}</h4>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropcash">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #FFEE93;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Cash</p>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total_cash }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="staticBackdropcash" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.addon.cash')
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #B8FF72;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdroppending">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #B8FF72;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending</p>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="modal fade" id="staticBackdroppending" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            @include('pages.backend.sales.addon.pending')
                         </div>
                     </div>
                     <div class="col-md-2 pointer">
@@ -77,7 +92,7 @@
                             </div>
                         </div>
                         <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            @include('pages.backend.sales.wallet')
+                            @include('pages.backend.sales.addon.wallet')
                         </div>
                     </div>
                     <div class="col-md-4 pointer">
@@ -88,14 +103,16 @@
                                         <div class="flex-grow-1">
                                             <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Delivery Count</p>
                                             <h4 class="mb-0" style="color: red !important;">
-                                            <div style="display: none">
-                                                {{ $totalcount = 0 }}
-                                            </div>
-                                            @foreach ($deliveryboys_arr as $deliveryboys_a)
+                                                <h4 class="mb-0" style="color: red !important;">
                                                     <div style="display: none">
-                                                {{ $totalcount += $deliveryboys_a['delivery_count'] }}</div>
-                                            @endforeach
-                                            {{ $totalcount }}
+                                                        {{ $totalcount = 0 }}
+                                                    </div>
+                                                    @foreach ($deliveryboys_arr as $deliveryboys_a)
+                                                    <div style="display: none">
+                                                        {{ $totalcount += $deliveryboys_a['delivery_count'] }}</div>
+                                                    @endforeach
+                                                    {{ $totalcount }}
+                                                </h4>
                                             </h4>
                                         </div>
                                     </div>
@@ -103,7 +120,7 @@
                             </div>
                         </div>
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            @include('pages.backend.sales.deliveryby')
+                            @include('pages.backend.sales.addon.deliveryby')
                         </div>
                     </div>
                 </div>
