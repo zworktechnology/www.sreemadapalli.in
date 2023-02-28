@@ -9,13 +9,13 @@
                 <tr>
                     <th>Name</th>
                     <th>Delivery Count</th>
-                    <th>Card</th>
-                    <th>G-pay</th>
-                    <th>G-Pay Business</th>
-                    <th>Phonepe</th>
-                    <th>Paytm</th>
-                    <th>Pending</th>
-                    <th>Cash</th>
+                    <th><img src="{{ asset('assets/images/cash.jpg') }}" style="width: 15px; height: 15px;"/> Cash</th>
+                    <th><img src="{{ asset('assets/images/pending.png') }}" style="width: 15px; height: 15px;"/> Pending</th>
+                    <th><img src="{{ asset('assets/images/gpay.png') }}" style="width: 15px; height: 15px;"/> G-pay</th>
+                    <th><img src="{{ asset('assets/images/gpayb.png') }}" style="width: 15px; height: 15px;"/> G-Pay Business</th>
+                    <th><img src="{{ asset('assets/images/phonepay.png') }}" style="width: 15px; height: 15px;"/> Phonepe</th>
+                    <th><img src="{{ asset('assets/images/paytm.png') }}" style="width: 15px; height: 15px;"/> Paytm</th>
+                    <th><img src="{{ asset('assets/images/card.png') }}" style="width: 15px; height: 15px;"/> Card</th>
                 </tr>
             </thead>
             <tbody id="">
@@ -24,13 +24,13 @@
                 <tr>
                     <td>{{ $deliveryboys_array['name'] }}</td>
                     <td>{{ $deliveryboys_array['delivery_count'] }}</td>
-                    <td>{{ $deliveryboys_array['card'] }}</td>
+                    <td>{{ $deliveryboys_array['cash'] }}</td>
+                    <td>{{ $deliveryboys_array['pending'] }}</td>
                     <td>{{ $deliveryboys_array['gpay'] }}</td>
                     <td>{{ $deliveryboys_array['gpaybusiness'] }}</td>
                     <td>{{ $deliveryboys_array['phonepe'] }}</td>
                     <td>{{ $deliveryboys_array['paytm'] }}</td>
-                    <td>{{ $deliveryboys_array['pending'] }}</td>
-                    <td>{{ $deliveryboys_array['cash'] }}</td>
+                    <td>{{ $deliveryboys_array['card'] }}</td>
                 </tr>
                 @endforeach
 

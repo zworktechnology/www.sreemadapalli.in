@@ -41,7 +41,7 @@
                                         <label for="customer_id" class="col-sm-3 col-form-label">
                                             Customer <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" name="customer_id" required>
+                                            <select class="form-control js-example-basic-single" name="customer_id" required>
                                                 <option value="" disabled selected hidden class="text-muted">
                                                     Enter Your</option>
                                                 @foreach ($customer as $customers)
@@ -68,7 +68,7 @@
                                         <label for="delivery_boy" class="col-sm-3 col-form-label">
                                             Delivery BY <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" name="delivery_boy_id" required>
+                                            <select class="form-control js-example-basic-single" name="delivery_boy_id" required>
                                                 <option value="" disabled selected hidden class="text-muted">
                                                     Enter Your</option>
                                                 @foreach ($deliveryboy as $deliveryboys)
@@ -81,7 +81,7 @@
                                         <label for="session" class="col-sm-3 col-form-label">
                                             Session <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" name="payment_method" required disabled>
+                                            <select class="form-control js-example-basic-single" name="payment_method" required disabled>
                                                 <option value="" disabled hidden class="text-muted">Enter Your</option>
                                                 <option value="Break_Fast" selected class="text-muted">Breakfast</option>
                                                 <option value="Lunch" class="text-muted">Lunch</option>
@@ -93,7 +93,7 @@
                                         <label for="payment_status" class="col-sm-3 col-form-label">
                                             Payment Status <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" name="payment_status" required>
+                                            <select class="form-control " name="payment_status" required>
                                                 <option value="No" selected class="text-muted">Enter Your</option>
                                                 <option value="Payed" class="text-muted" {{ $data->payment_status == "Payed" ? 'selected' : '' }}>Paid</option>
                                                 <option value="Pending" class="text-muted" {{ $data->payment_status == "Pending" ? 'selected' : '' }}>Pending</option>
@@ -104,16 +104,16 @@
                                         <label for="payment_method" class="col-sm-3 col-form-label">
                                             Payment Via <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" name="payment_method">
+                                            <select class="form-control js-example-basic-single" name="payment_method">
                                                 <option value="" disabled selected hidden class="text-muted">
                                                     Enter Your</option>
-                                                <option value="Cash" class="text-muted" {{ $data->payment_method == "Cash" ? 'selected' : '' }}>Cash</option>
-                                                <option value="Card" class="text-muted" {{ $data->payment_method == "Card" ? 'selected' : '' }}>Card</option>
-                                                <option value="G-Pay" class="text-muted" {{ $data->payment_method == "G-Pay" ? 'selected' : '' }}>G Pay</option>
-                                                <option value="G-Pay Business" class="text-muted" {{ $data->payment_method == "G-Pay Business" ? 'selected' : '' }}>G-Pay Business</option>
-                                                <option value="Phone Pe" class="text-muted" {{ $data->payment_method == "Phone Pe" ? 'selected' : '' }}>Phone Pe</option>
-                                                <option value="Paytm" class="text-muted" {{ $data->payment_method == "Paytm" ? 'selected' : '' }}>Paytm</option>
-                                                <option value="Pending" class="text-muted" {{ $data->payment_method == "Pending" ? 'selected' : '' }}>Pending</option>
+                                                    <option value="Cash" class="text-muted" {{ $data->payment_method == "Cash" ? 'selected' : '' }}>Cash</option>
+                                                    <option value="Pending" class="text-muted" {{ $data->payment_method == "Pending" ? 'selected' : '' }}>Pending</option>
+                                                    <option value="G-Pay" class="text-muted" {{ $data->payment_method == "G-Pay" ? 'selected' : '' }}>G Pay</option>
+                                                    <option value="G-Pay Business" class="text-muted" {{ $data->payment_method == "G-Pay Business" ? 'selected' : '' }}>G-Pay Business</option>
+                                                    <option value="Phone Pe" class="text-muted" {{ $data->payment_method == "Phone Pe" ? 'selected' : '' }}>Phone Pe</option>
+                                                    <option value="Paytm" class="text-muted" {{ $data->payment_method == "Paytm" ? 'selected' : '' }}>Paytm</option>
+                                                    <option value="Card" class="text-muted" {{ $data->payment_method == "Card" ? 'selected' : '' }}>Card</option>
                                             </select>
                                         </div>
                                     </div>

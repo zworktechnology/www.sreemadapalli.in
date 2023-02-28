@@ -173,21 +173,23 @@
                                             <td>₹ {{ $outputs['bill_amount'] }}</td>
                                             <td>{{ $outputs['title'] }}</td>
                                             <td>{{ $outputs['devlivery_by']}}</td>
+
                                             @if ($outputs['payment_method'] == 'Cash')
-                                            <td style="color: white; background-color: #589b31;">{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #589b31;"><img src="{{ asset('assets/images/cash.jpg') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'G-Pay Business')
-                                            <td style="color: white; background-color: #fbbb04;">{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #fbbb04;"><img src="{{ asset('assets/images/gpayb.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'G-Pay')
-                                            <td style="color: white; background-color: #fbbb04;">{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #fbbb04;"><img src="{{ asset('assets/images/gpay.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'Phone Pe')
-                                            <td style="color: white; background-color: #5f259f;">{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #5f259f;"><img src="{{ asset('assets/images/phonepay.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'Paytm')
-                                            <td style="color: white; background-color: #01aef0;">{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #01aef0;"><img src="{{ asset('assets/images/paytm.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
                                             @elseif ($outputs['payment_method'] == 'Card')
-                                            <td style="color: white; background-color: #9ab3c3;">{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #9ab3c3;"><img src="{{ asset('assets/images/card.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
                                             @else
-                                            <td style="color: white; background-color: #ff3d3d;">{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #ff3d3d;"><img src="{{ asset('assets/images/pending.png') }}" style="width: 15px; height: 15px;"/> {{ $outputs['payment_method'] }}</td>
                                             @endif
+
                                             <td>
                                                 @if ($outputs['title'] == 'Break Fast')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">

@@ -17,7 +17,7 @@
                     <label for="employee_id" class="col-sm-3 col-form-label">
                         Employee <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <select class="form-control" name="employee_id" required>
+                        <select class="form-control js-example-basic-single" name="employee_id" required>
                             <option value="" disabled selected hidden class="text-muted">
                                 Enter Your</option>
                             @foreach ($employee as $employees)
