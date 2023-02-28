@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="card mini-stats-wid">
-                                    <div class="card-body" style="background-color: #D9A5F9;">
+                                    <div class="card-body" style="background-color: #C1D1DB;">
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
                                                 <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
@@ -35,7 +35,7 @@
                                     <div class="card-body" style="background-color: #FFE972;">
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
-                                                <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Payed Amount</p>
+                                                <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Paid Amount</p>
                                                 <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount }}</h4>
                                             </div>
                                         </div>
@@ -85,13 +85,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-7">
                         <div class="card">
 
                             <div class="card-body">
 
                                 <table id="customer_datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: #EEBE78">
+                                    <thead style="background: #CAF1DE">
                                         <tr>
                                             <th>Sl. No</th>
                                             <th>Date</th>
@@ -123,11 +123,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-5">
                         <div class="card">
                             <div class="card-body">
                                 <table id="paymenttable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: #EEBE78">
+                                    <thead style="background: #CAF1DE">
                                         <tr>
                                             <th>Sl. No</th>
                                             <th>Date</th>

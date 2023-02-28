@@ -16,7 +16,28 @@ class CustomerController extends Controller
     public function index()
     {
         $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
-        return view('pages.backend.customer.index', compact('data'));
+
+        foreach ($data as $datas) {
+            
+            $breakfast_amount_pending = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $lunch_amount_pending = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $dinner_amount_pending = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending;
+
+            $breakfast_amount_paid = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+            $lunch_amount_paid = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+            $dinner_amount_paid = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+            $paid = $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid;
+
+            $breakfast_total_amount = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $lunch_total_amount = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $dinner_total_amount = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $amount = $breakfast_total_amount + $lunch_total_amount + $dinner_total_amount;
+
+            $payment_total_amount = Payment::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('amount');
+        }
+
+        return view('pages.backend.customer.index', compact('data', 'pending', 'paid', 'amount', 'payment_total_amount'));
     }
 
     public function store(Request $request)
@@ -49,6 +70,7 @@ class CustomerController extends Controller
         $today = Carbon::now()->format('Y-m-d');
 
         $data = Customer::findOrFail($id);
+
         $breakfast_amount_pending = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $breakfast_amount_paid = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
         $breakfast_total_amount = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('bill_amount');

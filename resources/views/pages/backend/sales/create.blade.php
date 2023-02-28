@@ -16,7 +16,7 @@
                 <label for="customer_id" class="col-md-1 col-form-label">
                     Customer <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <select class="form-control" name="customer_id" required>
+                    <select class="form-control js-example-basic-single" name="customer_id" required>
                         <option value="" disabled selected hidden class="text-muted">
                             Enter Your</option>
                         @foreach ($customer as $customers)
@@ -43,7 +43,7 @@
                 <label for="delivery_boy_id" class="col-md-1 col-form-label">
                     Delivery By <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <select class="form-select" name="delivery_boy_id" required>
+                    <select class="form-select js-example-basic-single" name="delivery_boy_id" required>
                         <option value="" disabled selected hidden class="text-muted">
                             Enter Your</option>
                         @foreach ($deliveryboy as $deliveryboys)
@@ -56,7 +56,7 @@
                 <label for="session" class="col-md-1 col-form-label">
                     Session <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <select class="form-control" name="session" required>
+                    <select class="form-control js-example-basic-single" name="session" required>
                         <option value="" disabled selected hidden class="text-muted">Enter Your</option>
                         <option value="Break_Fast" class="text-muted">Breakfast</option>
                         <option value="Lunch" class="text-muted">Lunch</option>
@@ -68,16 +68,16 @@
                 <label for="payment_method" class="col-md-1 col-form-label">
                     Payment Via <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <select class="form-control" name="payment_method" required>
+                    <select class="form-control js-example-basic-single" name="payment_method" required>
                         <option value="" disabled selected hidden class="text-muted">
                             Enter Your</option>
                         <option value="Cash" class="text-muted">Cash</option>
-                        <option value="Card" class="text-muted">Card</option>
+                        <option value="Pending" class="text-muted">Pending</option>
                         <option value="G-Pay" class="text-muted">G Pay</option>
                         <option value="G-Pay Business" class="text-muted">G-Pay Business</option>
                         <option value="Phone Pe" class="text-muted">Phone Pe</option>
                         <option value="Paytm" class="text-muted">Paytm</option>
-                        <option value="Pending" class="text-muted">Pending</option>
+                        <option value="Card" class="text-muted">Card</option>
                     </select>
                 </div>
             </div>

@@ -25,7 +25,7 @@
                             <div class="card-body">
 
                                 <table id="customer_datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: #EEBE78">
+                                    <thead style="background: #CAF1DE">
                                         <tr>
                                             <th>Sl. No</th>
                                             <th>Date</th>

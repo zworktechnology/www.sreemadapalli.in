@@ -112,7 +112,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <table id="dailylistdatatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: #EEBE78">
+                                    <thead style="background: #CAF1DE">
                                         <tr>
                                             <th>Bill No</th>
                                             <th>Customer</th>
@@ -131,34 +131,48 @@
                                             <td>₹ {{ $outputs['bill_amount'] }}</td>
                                             <td>{{ $outputs['title'] }}</td>
                                             <td>{{ $outputs['devlivery_by']}}</td>
-                                            <td>{{ $outputs['payment_method'] }}</td>
+                                            @if ($outputs['payment_method'] == 'Cash')
+                                            <td style="color: white; background-color: #589b31;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'G-Pay Business')
+                                            <td style="color: white; background-color: #fbbb04;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'G-Pay')
+                                            <td style="color: white; background-color: #fbbb04;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'Phone Pe')
+                                            <td style="color: white; background-color: #5f259f;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'Paytm')
+                                            <td style="color: white; background-color: #01aef0;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'Card')
+                                            <td style="color: white; background-color: #9ab3c3;">{{ $outputs['payment_method'] }}</td>
+                                            @else
+                                            <td style="color: white; background-color: #ff3d3d;">{{ $outputs['payment_method'] }}</td>
+                                            @endif
                                             <td>
 
                                                 @if ($outputs['title'] == 'Break Fast')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
+                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i>Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i>Delete</a>
                                                     </li>
                                                 </ul>
                                                 @elseif($outputs['title'] == 'Lunch')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('lunch.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
+                                                        <a href="{{ route('lunch.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i>Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i>Delete</a>
                                                     </li>
                                                 </ul>
                                                 @elseif($outputs['title'] == 'Dinner')
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('dinner.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"> Edit</i></a>
+                                                        <a href="{{ route('dinner.edit', ['id' => $outputs['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i>Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"> Delete</i></a>
+                                                        <a href="#jobDelete{{ $outputs['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i>Delete</a>
                                                     </li>
                                                 </ul>
                                                 @endif
