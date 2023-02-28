@@ -14,14 +14,14 @@
                 </tr>
             </thead>
             <tbody id="">
-                if($deliveryboys_arr != ""){
+                
                     @foreach ($deliveryboys_arr as $keydata => $deliveryboys_array)
                     <tr>
                         <td>{{ $deliveryboys_array['name'] }}</td>
                         <td>{{ $deliveryboys_array['delivery_count'] }}</td>
                     </tr>
                     @endforeach
-                }
+                
 
             </tbody>
         </table>

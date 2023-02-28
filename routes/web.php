@@ -283,4 +283,8 @@ Route::get('/export_customerorder_filter_pdf/{id}/{from_date}/{to_date}', [Custo
 //DAILY DATE ARRAY FILTER
 Route::get('/getDailyListData', [SalesController::class, 'getDailyListData']);
 
+//DASHBOARD ARRAY FILTER
+Route::get('/getDashboardData', [DashboardController::class, 'getDashboardData']);
+Route::get('/getDenomination', [DashboardController::class, 'getDenomination']);
+
 
