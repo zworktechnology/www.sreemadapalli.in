@@ -74,6 +74,8 @@
                                             <td>{{ $datas['contact_number'] }}</td>
                                             @if ($datas['pending'] > 0)
                                             <td style="color: white; background-color: #ff3d3d;">₹ {{ $datas['pending'] }}</td>
+                                            @elseif ($datas['pending'] < 0)
+                                            <td style="color: white; background-color: #589b31;">₹ {{ $datas['pending'] }}</td>
                                             @else
                                             <td>₹ {{ $datas['pending'] }}</td>
                                             @endif
