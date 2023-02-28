@@ -62,8 +62,6 @@
                                             <th>Sl. No</th>
                                             <th>Name</th>
                                             <th>Phone No</th>
-                                            <th>Total Amount</th>
-                                            <th>Paid Amount</th>
                                             <th>Pending Amount</th>
                                             <th>Action</th>
                                         </tr>
@@ -74,8 +72,6 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas['name'] }}</td>
                                             <td>{{ $datas['contact_number'] }}</td>
-                                            <td>₹ {{ $datas['totalamount'] }}</td>
-                                            <td>₹ {{ $datas['paid'] }}</td>
                                             @if ($datas['pending'] > 0)
                                             <td style="color: white; background-color: #ff3d3d;">₹ {{ $datas['pending'] }}</td>
                                             @else
