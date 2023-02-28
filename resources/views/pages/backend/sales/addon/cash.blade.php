@@ -10,6 +10,7 @@
                     <th>Breakfast</th>
                     <th>Lunch</th>
                     <th>Dinner</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody id="">
@@ -17,6 +18,7 @@
                     <td>₹ {{ $breakfast_data_pm_cash }}</td>
                     <td>₹ {{ $lunch_data_pm_cash }}</td>
                     <td>₹ {{ $dinner_data_pm_cash }}</td>
+                    <td>₹ {{ $total_cash }}</td>
                 </tr>
             </tbody>
         </table>

@@ -128,6 +128,11 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                @include('pages.backend.expence.create')
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="card mini-stats-wid">
                                 <div class="card-body" style="background-color: #B8FF72;">
@@ -138,11 +143,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                @include('pages.backend.expence.create')
                             </div>
                         </div>
                     </div>

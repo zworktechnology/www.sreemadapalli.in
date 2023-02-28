@@ -12,6 +12,7 @@
                     <th>G-Pay Business</th>
                     <th>Phone Pe</th>
                     <th>Paytm</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody id="">
@@ -21,6 +22,7 @@
                     <td>₹ {{ $walletgpaybusiness }}</td>
                     <td>₹ {{ $walletphonepe }}</td>
                     <td>₹ {{ $walletpaytm }}</td>
+                    <td>₹ {{ $total_wallet }}</td>
                 </tr>
             </tbody>
         </table>

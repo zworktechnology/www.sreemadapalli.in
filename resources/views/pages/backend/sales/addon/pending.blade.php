@@ -10,6 +10,7 @@
                     <th>Breakfast</th>
                     <th>Lunch</th>
                     <th>Dinner</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody id="">
@@ -17,6 +18,7 @@
                     <td>₹ {{ $breakfast_data_ps_pending }}</td>
                     <td>₹ {{ $lunch_data_ps_pending }}</td>
                     <td>₹ {{ $dinner_data_ps_pending }}</td>
+                    <td>₹ {{ $total_pending }}</td>
                 </tr>
             </tbody>
         </table>
