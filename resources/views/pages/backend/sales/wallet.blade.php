@@ -5,7 +5,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <table class="table table-bordered dt-responsive  nowrap w-100">
-            <thead style="background: #EEBE78">
+            <thead style="background: #CAF1DE">
                 <tr>
                     <th>Card</th>
                     <th>G-Pay</th>

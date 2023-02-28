@@ -5,17 +5,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <table class="table table-bordered dt-responsive  nowrap w-100">
-            <thead style="background: #EEBE78">
+            <thead style="background: #CAF1DE">
                 <tr>
                     <th>Name</th>
                     <th>Delivery Count</th>
                     <th><img src="{{ asset('assets/images/cash.jpg') }}" style="width: 15px; height: 15px;"/> Cash</th>
                     <th><img src="{{ asset('assets/images/pending.png') }}" style="width: 15px; height: 15px;"/> Pending</th>
-                    <th><img src="{{ asset('assets/images/gpay.png') }}" style="width: 15px; height: 15px;"/> G-pay</th>
-                    <th><img src="{{ asset('assets/images/gpayb.png') }}" style="width: 15px; height: 15px;"/> G-Pay Business</th>
-                    <th><img src="{{ asset('assets/images/phonepay.png') }}" style="width: 15px; height: 15px;"/> Phonepe</th>
-                    <th><img src="{{ asset('assets/images/paytm.png') }}" style="width: 15px; height: 15px;"/> Paytm</th>
-                    <th><img src="{{ asset('assets/images/card.png') }}" style="width: 15px; height: 15px;"/> Card</th>
+                    <th><img src="{{ asset('assets/images/gpay.png') }}" style="width: 35px; height: 15px;"/></th>
+                    <th><img src="{{ asset('assets/images/gpayb.png') }}" style="width: 20px; height: 20px;"/></th>
+                    <th><img src="{{ asset('assets/images/phonepay.png') }}" style="width: 20px; height: 20px;"/></th>
+                    <th><img src="{{ asset('assets/images/paytm.png') }}" style="width: 35px; height: 20px;"/></th>
+                    <th><img src="{{ asset('assets/images/card.png') }}" style="width: 20px; height: 20px;"/></th>
                 </tr>
             </thead>
             <tbody id="">
