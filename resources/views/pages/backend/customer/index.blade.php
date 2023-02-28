@@ -62,6 +62,9 @@
                                             <th>Sl. No</th>
                                             <th>Name</th>
                                             <th>Phone No</th>
+                                            <th>Total Amount</th>
+                                            <th>Paid Amount</th>
+                                            <th>Pending Amount</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -71,6 +74,9 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->name }}</td>
                                             <td>{{ $datas->contact_number }}</td>
+                                            <td>{{ $amount }}</td>
+                                            <td>{{ $paid + $payment_total_amount }}</td>
+                                            <td>{{ $pending - $payment_total_amount }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>

@@ -35,7 +35,7 @@
                                     <div class="card-body" style="background-color: #FFE972;">
                                         <div class="d-flex">
                                             <div class="flex-grow-1">
-                                                <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Payed Amount</p>
+                                                <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Paid Amount</p>
                                                 <h4 class="mb-0" style="color: red !important;">₹ {{ $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount }}</h4>
                                             </div>
                                         </div>
