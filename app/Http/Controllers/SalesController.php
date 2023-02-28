@@ -103,7 +103,7 @@ class SalesController extends Controller
                 ->where('soft_delete', '!=', 1)
                 ->where('payment_method', '=', 'Cash')
                 ->sum('bill_amount');
-        $dinner_data_pm_cash = Lunch::where('title', '=', 'Dinner')
+        $dinner_data_pm_cash = Dinner::where('title', '=', 'Dinner')
                 ->where('date', '=', $daily_date)
                 ->where('soft_delete', '!=', 1)
                 ->where('payment_method', '=', 'Cash')

@@ -13,9 +13,10 @@ class ExpenceController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $data = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
+        $total = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
         $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
-        return view('pages.backend.expence.index', compact('data', 'today', 'employee'));
+        return view('pages.backend.expence.index', compact('data', 'today', 'employee', 'total'));
     }
 
 
@@ -25,7 +26,7 @@ class ExpenceController extends Controller
         $daily_date = $request->get('date');
 
         $expense_data = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
-        
+
 
 
         return view('pages.backend.expence.dailyfilter', compact('expense_data'));
