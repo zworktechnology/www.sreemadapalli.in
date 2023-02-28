@@ -131,10 +131,20 @@
                                             <td>₹ {{ $outputs['bill_amount'] }}</td>
                                             <td>{{ $outputs['title'] }}</td>
                                             <td>{{ $outputs['devlivery_by']}}</td>
-                                            @if ($outputs['payment_method'] == 'Pending')
-                                            <td style="color: white; background-color: rgba(255, 0, 0, 0.76);">{{ $outputs['payment_method'] }}</td>
+                                            @if ($outputs['payment_method'] == 'Cash')
+                                            <td style="color: white; background-color: #589b31;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'G-Pay Business')
+                                            <td style="color: white; background-color: #fbbb04;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'G-Pay')
+                                            <td style="color: white; background-color: #fbbb04;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'Phone Pe')
+                                            <td style="color: white; background-color: #5f259f;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'Paytm')
+                                            <td style="color: white; background-color: #01aef0;">{{ $outputs['payment_method'] }}</td>
+                                            @elseif ($outputs['payment_method'] == 'Card')
+                                            <td style="color: white; background-color: #9ab3c3;">{{ $outputs['payment_method'] }}</td>
                                             @else
-                                            <td>{{ $outputs['payment_method'] }}</td>
+                                            <td style="color: white; background-color: #ff3d3d;">{{ $outputs['payment_method'] }}</td>
                                             @endif
                                             <td>
 
