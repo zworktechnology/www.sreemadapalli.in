@@ -74,12 +74,12 @@
             text-align: center;
             background-color: #f1f1f1;
         }
-        
+
     </style>
 </head>
 <body>
     <h5>{{ $customerdata->name }}</h5>
-    <table id="customers">
+    <table>
         <thead>
             <tr>
                 <th style="background-color: #C1D1DB;">Total Amount</th>
