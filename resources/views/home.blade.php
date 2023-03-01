@@ -90,13 +90,13 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Cash on Hand</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1 }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $totaldeterminationdate }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Pending Bills</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $total_pending }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -138,7 +138,7 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Total</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ ($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $total_card_one }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -166,7 +166,7 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Total</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $opening + $sales_amount }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $open_sales }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -178,7 +178,7 @@
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Total</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ (($opening + $sales_amount) - $expense) }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $open_sales_exp }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -191,7 +191,7 @@
                                     <table class="table align-middle table-nowrap mb-0">
                                         <tr style="color: red;">
                                             <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over All</th>
-                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ (($opening + $sales_amount) - $expense) - (($total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1) + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case) }}</th>
+                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ $over_all }}</th>
                                         </tr>
                                     </table>
                                 </div>

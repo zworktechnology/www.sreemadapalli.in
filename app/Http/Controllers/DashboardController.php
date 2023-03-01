@@ -53,11 +53,26 @@ class DashboardController extends Controller
         $closedate = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->get('id');
         $determinationdate = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get('id');
 
+        $opendate = AccountOpen::where('date', '=', $today)->where('soft_delete', '!=', 1)->get('id');
+        $closedate = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->get('id');
+        $determinationdate = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get('id');
+
+
+        $open_sales = $opening + $sales_amount;
+        $open_sales_exp = (($opening + $sales_amount) - $expense);
+
+        $totaldeterminationdate = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
+        $total_pending = $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending;
+        $total_card_one = $totaldeterminationdate + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
+
+        $over_all = $open_sales_exp - $total_card_one;
+
         return view('home', compact('today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
         'g_pay', 'g_pay_business', 'phone_pay', 'card', 'other_case', 'sales_amount', 'determination',
         'total_2000', 'total_500', 'total_200', 'total_100', 'total_50', 'total_20', 'total_10',
-        'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate', 'paytm'));
+        'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate', 'paytm',
+        'open_sales', 'open_sales_exp', 'totaldeterminationdate', 'total_pending', 'total_card_one',  'over_all'));
     }
 
 
@@ -100,11 +115,22 @@ class DashboardController extends Controller
         $closedate = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->get('id');
         $determinationdate = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get('id');
 
+
+        $open_sales = $opening + $sales_amount;
+        $open_sales_exp = (($opening + $sales_amount) - $expense);
+
+        $totaldeterminationdate = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
+        $total_pending = $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending;
+        $total_card_one = $totaldeterminationdate + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
+
+        $over_all = $open_sales_exp - $total_card_one;
+
         return view('homefilter', compact('today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
         'g_pay', 'g_pay_business', 'phone_pay', 'card', 'other_case', 'sales_amount', 'determination',
         'total_2000', 'total_500', 'total_200', 'total_100', 'total_50', 'total_20', 'total_10',
-        'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate', 'paytm'));
+        'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate', 'paytm',
+        'open_sales', 'open_sales_exp', 'totaldeterminationdate', 'total_pending', 'total_card_one',  'over_all'));
     }
 
 }
