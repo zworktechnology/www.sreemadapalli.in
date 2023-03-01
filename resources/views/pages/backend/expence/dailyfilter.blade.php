@@ -10,12 +10,9 @@
             <div class="container-fluid">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Expense</h4>
+                        <h4 class="mb-sm-0 font-size-18">Expense - {{ date('d - M - Y', strtotime($daily_date)) }}</h4>
                         <div class="page-title-right">
                             <div style="display: flex;">
-
-
-
                                 <div>
                                     <a href="/zwork-admin/expence">
                                         <button type="button" class="btn btn-success w-md" >Back</button>
@@ -56,6 +53,18 @@
                 </div>
                 @endif
                 <div class="row">
+                    <div class="col-12">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body" style="background-color: #e5ff8e;">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence</p>
+                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">

@@ -16,12 +16,18 @@
                         <div class="page-title-right">
                             <div style="display: flex;">
 
-                                <div style="margin-right: 10px;" hidden>
-                                    <input type="date" class="form-control" name="dashboarddate" id="dashboarddate" placeholder="Enter Your " required value="{{ $today }}">
-                                </div>
-                                <div style="margin-right: 10px;" hidden>
-                                    <button type="button" class="btn btn-success w-md dashboard_search">Search</button>
-                                </div>
+                                <form autocomplete="off" method="POST" action="{{ route('filterindex') }}" style="display: flex;">
+                                    @method('PUT')
+
+                                    @csrf
+                                    <div style="margin-right: 10px;">
+                                        <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required value="{{ $today }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                            Search</button>
+                                    </div>
+                                </form>
 
 
 
