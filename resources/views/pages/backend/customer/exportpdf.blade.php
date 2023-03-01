@@ -6,7 +6,7 @@
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
-            padding-top:20px;
+            padding-top: 20px;
         }
 
         #customers td,
@@ -33,86 +33,71 @@
 
 
         * {
-  box-sizing: border-box;
-}
+            box-sizing: border-box;
+        }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 30%;
-  padding: 0 10px;
-}
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 30%;
+            padding: 0 10px;
+        }
 
-/* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            margin: 0 -5px;
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
 
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
 
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        
     </style>
 </head>
 <body>
-
-    <h1>Customer - {{ $customerdata->name }}</h1>
-                
-    
-    
-            <div class="row">
-                <div class="column">
-                    <div class="card" style="background-color: #C1D1DB;">
-                            <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
-                            <h4 class="mb-0" style="color: red !important;">{{ $total_amount }}</h4>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="card" style="background-color: #FFE972;">
-                            <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Paid Amount</p>
-                            <h4 class="mb-0" style="color: red !important;">{{ $total_paid + $payment_total_amount }}</h4>
-                    </div>
-                </div>
-  
-                <div class="column">
-                    <div class="card" style="background-color: #D8E79D;">
-                            <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Pending Amount</p>
-                            <h4 class="mb-0" style="color: red !important;">{{ $total_pending - $payment_total_amount }}</h4>
-                    </div>
-                </div>
-            </div>
-  
- 
-   
-    
-    
-
-
+    <h5>{{ $customerdata->name }}</h5>
+    <table id="customers">
+        <thead>
+            <tr>
+                <th style="background-color: #C1D1DB;">Total Amount</th>
+                <th style="background-color: #FFE972;">Paid Amount</th>
+                <th style="background-color: #D8E79D;">Pending Amount</th>
+            </tr>
+        </thead>
+        <tbody id="customer_index">
+            <tr>
+                <td style="background-color: #C1D1DB;">Rs. {{ $total_amount }}</td>
+                <td style="background-color: #FFE972;">Rs. {{ $total_paid + $payment_total_amount }}</td>
+                <td style="background-color: #D8E79D;">Rs. {{ $total_pending - $payment_total_amount }}</td>
+            </tr>
+        </tbody>
+    </table>
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
-                <th>Sl. No</th>
                 <th>Date</th>
                 <th>Break Fast</th>
                 <th>Lunch</th>
@@ -123,7 +108,6 @@ body {
         <tbody id="customer_index">
             @foreach ($Custumer_pdf_array as $index => $Custumer_pdf_arr)
             <tr>
-                <td>{{ ++$index }}</td>
                 <td>{{ $Custumer_pdf_arr['date'] }}</td>
                 <td>Rs. {{ $Custumer_pdf_arr['CustomersBreakfastAmt'] }}</td>
                 <td>Rs. {{ $Custumer_pdf_arr['CustomersLunchAmt'] }}</td>
@@ -132,11 +116,6 @@ body {
             </tr>
             @endforeach
         </tbody>
-
-
-
-
     </table>
-
 </body>
 </html>
