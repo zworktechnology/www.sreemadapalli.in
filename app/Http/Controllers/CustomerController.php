@@ -16,6 +16,7 @@ class CustomerController extends Controller
     public function index()
     {
         $today = date('Y-m-d');
+        $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $index_amount_arr = [];
 
@@ -51,7 +52,7 @@ class CustomerController extends Controller
 
         }
 
-        return view('pages.backend.customer.index', compact('data', 'index_amount_arr', 'today'));
+        return view('pages.backend.customer.index', compact('data', 'index_amount_arr', 'today', 'customer'));
     }
 
     public function store(Request $request)
