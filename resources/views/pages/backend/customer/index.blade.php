@@ -128,6 +128,11 @@
                                 @include('pages.backend.customer.create')
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-body">
+                                @include('pages.backend.payment.create')
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

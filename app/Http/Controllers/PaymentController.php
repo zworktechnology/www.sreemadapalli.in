@@ -46,7 +46,7 @@ class PaymentController extends Controller
 
         $data->save();
 
-        return redirect()->route('payment.index')->with('add', 'Successful addition of a new payment record !');
+        return redirect()->route('payment.index');
     }
 
     public function edit($id)
