@@ -171,7 +171,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-8">
+                    <div class="col-12 col-md-9">
                         <div class="card">
                             <div class="card-body">
                                 <table id="todaydatatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -279,7 +279,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                         <div class="card">
                             <div class="card-body">
                                 @include('pages.backend.sales.create')
