@@ -6,6 +6,7 @@
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            padding-top:20px;
         }
 
         #customers td,
@@ -26,22 +27,49 @@
             padding-top: 10px;
             padding-bottom: 10px;
             text-align: left;
-            background-color: lightgrey;
+            background-color: #CAF1DE;
             color: black;
         }
 
-        .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
+
+        * {
+  box-sizing: border-box;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-  padding: 2px 16px;
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 30%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
 }
 
     </style>
@@ -51,24 +79,38 @@
     <h1>Customer - {{ $customerdata->name }}</h1>
                 
     
-    <div class="card">
-        <div class="container">
+    
             <div class="row">
-                <div class="col-md-4">
-                    <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
-                    <h4 class="mb-0" style="color: red !important;">₹ {{ $total_amount }}</h4> 
+                <div class="column">
+                    <div class="card" style="background-color: #C1D1DB;">
+                            <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
+                            <h4 class="mb-0" style="color: red !important;">{{ $total_amount }}</h4>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Total Amount</p>
-                    <h4 class="mb-0" style="color: red !important;">₹ {{ $total_amount }}</h4> 
+
+                <div class="column">
+                    <div class="card" style="background-color: #FFE972;">
+                            <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Paid Amount</p>
+                            <h4 class="mb-0" style="color: red !important;">{{ $total_paid + $payment_total_amount }}</h4>
+                    </div>
+                </div>
+  
+                <div class="column">
+                    <div class="card" style="background-color: #D8E79D;">
+                            <p class="text-muted fw-medium mb-2" style="color: black !important; font-weight: bold;">Pending Amount</p>
+                            <h4 class="mb-0" style="color: red !important;">{{ $total_pending - $payment_total_amount }}</h4>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+  
+ 
+   
+    
+    
 
 
     <table id="customers">
-        <thead style="background: #EEBE78">
+        <thead style="background: #CAF1DE">
             <tr>
                 <th>Sl. No</th>
                 <th>Date</th>

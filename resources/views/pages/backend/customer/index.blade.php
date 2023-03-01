@@ -69,29 +69,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $keydata => $datas)
+                                        @foreach ($index_amount_arr as $keydata => $datas)
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
-                                            <td>{{ $datas->name }}</td>
-                                            <td>{{ $datas->contact_number }}</td>
-                                            <td>{{ $amount }}</td>
-                                            <td>{{ $paid + $payment_total_amount }}</td>
-                                            <td>{{ $pending - $payment_total_amount }}</td>
+                                            <td>{{ $datas['name'] }}</td>
+                                            <td>{{ $datas['contact_number'] }}</td>
+                                            <td>{{ $datas['totalamount'] }}</td>
+                                            <td>{{ $datas['paid'] }}</td>
+                                            <td>{{ $datas['pending'] }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>
-                                                        <a href="{{ route('customer.view', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-pink"><i class="mdi mdi-card-account-details-star-outline"></i> View</a>
+                                                        <a href="{{ route('customer.view', ['id' => $datas['id']]) }}" class="btn btn-sm btn-soft-pink"><i class="mdi mdi-card-account-details-star-outline"></i> View</a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ route('customer.edit', ['id' => $datas->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i> Edit</a>
+                                                        <a href="{{ route('customer.edit', ['id' => $datas['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i> Edit</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#jobDelete{{ $datas->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i> Delete</a>
+                                                        <a href="#jobDelete{{ $datas['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i> Delete</a>
                                                     </li>
                                                 </ul>
                                             </td>
                                         </tr>
-                                        <div class="modal fade" id="jobDelete{{ $datas->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
+                                        <div class="modal fade" id="jobDelete{{ $datas['id'] }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">
                                                 <div class="modal-content">
                                                     <div class="modal-body px-4 py-5 text-center">
@@ -103,7 +103,7 @@
                                                         <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the customer.</p>
 
                                                         <div class="hstack gap-2 justify-content-center mb-0">
-                                                            <form autocomplete="off" method="POST" action="{{ route('customer.delete', ['id' => $datas->id]) }}">
+                                                            <form autocomplete="off" method="POST" action="{{ route('customer.delete', ['id' => $datas['id']]) }}">
                                                                 @method('PUT')
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-danger">Yes, Delete</button>
