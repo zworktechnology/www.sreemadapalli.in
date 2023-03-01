@@ -6,19 +6,19 @@
         <form autocomplete="off" method="POST" action="{{ route('sales.store') }}">
             @csrf
             <div class="row mb-4 col-12 ">
-                <label for="date" class="col-md-1 col-form-label">
+                <label for="date" class="col-md-1 col-form-label" hidden>
                     Date <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                 </div>
             </div>
             <div class="row mb-4 col-12 ">
-                <label for="customer_id" class="col-md-1 col-form-label">
+                <label for="customer_id" class="col-md-1 col-form-label" hidden>
                     Customer <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-control js-example-basic-single" name="customer_id" required>
                         <option value="" disabled selected hidden class="text-muted">
-                            Enter Your</option>
+                            Select Customer</option>
                         @foreach ($customer as $customers)
                         <option value="{{ $customers->id }}">{{ $customers->name }}</option>
                         @endforeach
@@ -26,26 +26,26 @@
                 </div>
             </div>
             <div class="row mb-4 col-12 ">
-                <label for="invoice_no" class="col-md-1 col-form-label">
+                <label for="invoice_no" class="col-md-1 col-form-label" hidden>
                     Bill No <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <input type="number" class="form-control" name="invoice_no" placeholder="Enter Your " required>
+                    <input type="number" class="form-control" name="invoice_no" placeholder="Bill No" required>
                 </div>
             </div>
             <div class="row mb-4 col-12 ">
-                <label for="bill_amount" class="col-md-1 col-form-label">
+                <label for="bill_amount" class="col-md-1 col-form-label" hidden>
                     Bill Amount <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Enter Your " required onchange="totalbreakfast()">
+                    <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Bill Amount" required onchange="totalbreakfast()">
                 </div>
             </div>
             <div class="row mb-4 col-12 ">
-                <label for="delivery_boy_id" class="col-md-1 col-form-label">
+                <label for="delivery_boy_id" class="col-md-1 col-form-label" hidden>
                     Delivery By <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-select js-example-basic-single" name="delivery_boy_id" required>
                         <option value="" disabled selected hidden class="text-muted">
-                            Enter Your</option>
+                            Delivery By</option>
                         @foreach ($deliveryboy as $deliveryboys)
                         <option value="{{ $deliveryboys->id }}">{{ $deliveryboys->name }}</option>
                         @endforeach
@@ -53,11 +53,11 @@
                 </div>
             </div>
             <div class="row mb-4 col-12 ">
-                <label for="session" class="col-md-1 col-form-label">
+                <label for="session" class="col-md-1 col-form-label" hidden>
                     Session <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-control js-example-basic-single" name="session" required>
-                        <option value="" disabled selected hidden class="text-muted">Enter Your</option>
+                        <option value="" disabled selected hidden class="text-muted">Select Session</option>
                         <option value="Break_Fast" class="text-muted">Breakfast</option>
                         <option value="Lunch" class="text-muted">Lunch</option>
                         <option value="Dinner" class="text-muted">Dinner</option>
@@ -65,12 +65,11 @@
                 </div>
             </div>
             <div class="row mb-4 col-12 col-md-12">
-                <label for="payment_method" class="col-md-1 col-form-label">
+                <label for="payment_method" class="col-md-1 col-form-label" hidden>
                     Payment Via <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-control js-example-basic-single" name="payment_method" required>
-                        <option value="" disabled selected hidden class="text-muted">
-                            Enter Your</option>
+                        <option value="" disabled selected hidden class="text-muted">Select Payment Via</option>
                         <option value="Cash" class="text-muted">Cash</option>
                         <option value="Pending" class="text-muted">Pending</option>
                         <option value="G-Pay" class="text-muted">G Pay</option>
