@@ -65,7 +65,7 @@ class DashboardController extends Controller
         $total_pending = $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending;
         $total_card_one = $totaldeterminationdate + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
 
-        if ($total_card_one < 0) {
+        if ($open_sales_exp < 0) {
             $over_all = $open_sales_exp + $total_card_one;
         } else {
             $over_all = $open_sales_exp - $total_card_one;
@@ -127,7 +127,7 @@ class DashboardController extends Controller
         $total_pending = $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending;
         $total_card_one = $totaldeterminationdate + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
 
-        if ($total_card_one < 0) {
+        if ($open_sales_exp < 0) {
             $over_all = $open_sales_exp + $total_card_one;
         } else {
             $over_all = $open_sales_exp - $total_card_one;
