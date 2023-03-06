@@ -37,7 +37,7 @@
                                                 <option value="" disabled selected hidden class="text-muted">
                                                     Enter Your</option>
                                                 @foreach ($employee as $employees)
-                                                <option value="{{ $employees->id }}" @if ($employees->id === $data->employee_id) selected='selected' @endif>{{ $employees->name }}</option>
+                                                <option value="{{ $employees->id }}" @if ($employees->id === $data->employee_id) selected='selected' @endif>{{ $employees->name }} - ({{ $employees->contact_number }})</option>
                                                 @endforeach
                                             </select>
                                         </div>

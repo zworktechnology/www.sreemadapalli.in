@@ -20,7 +20,7 @@
                         <option value="" disabled selected hidden class="text-muted">
                             Select Customer</option>
                         @foreach ($customer as $customers)
-                        <option value="{{ $customers->id }}">{{ $customers->name }}</option>
+                        <option value="{{ $customers->id }}">{{ $customers->name }} - ({{ $customers->contact_number }})</option>
                         @endforeach
                     </select>
                 </div>

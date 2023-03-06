@@ -10,8 +10,8 @@ class DeterminationController extends Controller
 {
     public function index()
     {
-        $data = Determination::where('soft_delete', '!=', 1)->get();
         $today = Carbon::now()->format('Y-m-d');
+        $data = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
 
         return view('pages.backend.determination.index', compact('data', 'today'));
     }

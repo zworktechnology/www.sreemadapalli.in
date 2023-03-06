@@ -59,7 +59,6 @@
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #F4EA8F">
                                         <tr>
-                                            <th>Sl. No</th>
                                             <th>Date</th>
                                             <th>2000</th>
                                             <th>500</th>
@@ -78,18 +77,17 @@
                                     <tbody>
                                         @foreach ($data as $keydata => $datas)
                                         <tr>
-                                            <td>{{ ++$keydata }}</td>
                                             <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
-                                            <td>2000 * {{ $datas->count_2000 }} = {{ $datas->total_2000 }}</td>
-                                            <td>500 * {{ $datas->count_500 }} = {{ $datas->total_500 }}</td>
-                                            <td>200 * {{ $datas->count_200 }} = {{ $datas->total_200 }}</td>
-                                            <td>100 * {{ $datas->count_100 }} = {{ $datas->total_100 }}</td>
-                                            <td>50 * {{ $datas->count_50 }} = {{ $datas->total_50 }}</td>
-                                            <td>20 * {{ $datas->count_20 }} = {{ $datas->total_20 }}</td>
-                                            <td>10 * {{ $datas->count_10 }} = {{ $datas->total_10 }}</td>
-                                            <td>5 * {{ $datas->count_5 }} = {{ $datas->total_5 }}</td>
-                                            <td>2 * {{ $datas->count_2 }} = {{ $datas->total_2 }}</td>
-                                            <td>1 * {{ $datas->count_1 }} = {{ $datas->total_1 }}</td>
+                                            <td>{{ $datas->count_2000 }} = {{ $datas->total_2000 }}</td>
+                                            <td>{{ $datas->count_500 }} = {{ $datas->total_500 }}</td>
+                                            <td>{{ $datas->count_200 }} = {{ $datas->total_200 }}</td>
+                                            <td>{{ $datas->count_100 }} = {{ $datas->total_100 }}</td>
+                                            <td>{{ $datas->count_50 }} = {{ $datas->total_50 }}</td>
+                                            <td>{{ $datas->count_20 }} = {{ $datas->total_20 }}</td>
+                                            <td>{{ $datas->count_10 }} = {{ $datas->total_10 }}</td>
+                                            <td>{{ $datas->count_5 }} = {{ $datas->total_5 }}</td>
+                                            <td>{{ $datas->count_2 }} = {{ $datas->total_2 }}</td>
+                                            <td>{{ $datas->count_1 }} = {{ $datas->total_1 }}</td>
                                             <td hidden>{{ $datas->total }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
