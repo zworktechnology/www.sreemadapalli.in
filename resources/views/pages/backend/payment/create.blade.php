@@ -27,6 +27,13 @@
                     </div>
                 </div>
                 <div class="row mb-4">
+                    <label class="col-md-3 col-form-label">
+                        Contact No</label>
+                    <div class="col-sm-9 text-muted">
+                        <input type="number" class="form-control not-allowed" placeholder="Customer Phone number" style="background-color: #e4e7eb">
+                    </div>
+                </div>
+                <div class="row mb-4">
                     <label for="amount" class="col-sm-3 col-form-label">
                         Amount <span style="color: red;">*</span></label>
                     <div class="col-sm-9">

@@ -20,9 +20,16 @@
                         <option value="" disabled selected hidden class="text-muted">
                             Select Customer</option>
                         @foreach ($customer as $customers)
-                        <option value="{{ $customers->id }}">{{ $customers->name }} - ({{ $customers->contact_number }})</option>
+                        <option value="{{ $customers->id }}">{{ $customers->name }}</option>
                         @endforeach
                     </select>
+                </div>
+            </div>
+            <div class="row mb-4 col-12 ">
+                <label class="col-md-1 col-form-label" hidden>
+                    Contact Number <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2 text-muted">
+                    <input type="number" class="form-control not-allowed" placeholder="Customer Phone number" style="background-color: #e4e7eb">
                 </div>
             </div>
             <div class="row mb-4 col-12 ">
