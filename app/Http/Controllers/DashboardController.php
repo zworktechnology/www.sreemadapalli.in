@@ -66,9 +66,9 @@ class DashboardController extends Controller
         $total_card_one = $totaldeterminationdate + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
 
         if ($open_sales_exp < 0) {
-            $over_all = $open_sales_exp + $total_card_one;
+            $over_all = $total_card_one + $open_sales_exp;
         } else {
-            $over_all = $open_sales_exp - $total_card_one;
+            $over_all = $total_card_one - $open_sales_exp;
         }
 
         return view('home', compact('today', 'breakfast_data_ps_pending',
@@ -128,9 +128,9 @@ class DashboardController extends Controller
         $total_card_one = $totaldeterminationdate + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
 
         if ($open_sales_exp < 0) {
-            $over_all = $open_sales_exp + $total_card_one;
+            $over_all = $total_card_one + $open_sales_exp;
         } else {
-            $over_all = $open_sales_exp - $total_card_one;
+            $over_all = $total_card_one - $open_sales_exp;
         }
 
         return view('homefilter', compact('today', 'breakfast_data_ps_pending',

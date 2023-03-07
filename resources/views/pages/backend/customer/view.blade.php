@@ -126,6 +126,11 @@
                     <div class="col-5">
                         <div class="card">
                             <div class="card-body">
+                                @include('pages.backend.payment.create')
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
                                 <table id="paymenttable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #CAF1DE">
                                         <tr>

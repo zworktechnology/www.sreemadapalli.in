@@ -46,7 +46,7 @@ class PaymentController extends Controller
 
         $data->save();
 
-        return redirect()->route('payment.index');
+        return redirect()->back();
     }
 
     public function edit($id)

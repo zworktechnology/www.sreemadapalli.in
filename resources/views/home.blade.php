@@ -185,13 +185,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card" style="background-color: #E1F8DC;">
+                        <div class="card" style="background-color: gray;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
                                         <tr style="color: red;">
                                             <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over All</th>
+                                            @if ($over_all > 0)
+                                            <th scope="col" style="font-weight: bold;font-size: 16px !important; color: green !important">₹ {{ $over_all }}</th>
+                                            @else
                                             <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ $over_all }}</th>
+                                            @endif
                                         </tr>
                                     </table>
                                 </div>
