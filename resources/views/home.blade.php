@@ -29,9 +29,7 @@
                                     </div>
                                 </form>
 
-
-
-                                @if (count($opendate) >= 1)
+                                @if (count($opendate) >= 5)
                                 @else
                                 <div>
                                     <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open Account</button>
@@ -185,7 +183,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card" style="background-color: gray;">
+                        <div class="card" style="background-color: #E7E7E7;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">

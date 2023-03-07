@@ -183,7 +183,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card" style="background-color: gray;">
+                        <div class="card" style="background-color: #E7E7E7;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
