@@ -83,6 +83,7 @@ class CustomerController extends Controller
     public function view($id)
     {
         $today = Carbon::now()->format('Y-m-d');
+        $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         $data = Customer::findOrFail($id);
 
@@ -147,7 +148,7 @@ class CustomerController extends Controller
             );
         }
 
-        return view('pages.backend.customer.view', compact('today', 'data', 'breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'payment', 'payment_total_amount', 'Custumer_index_array'));
+        return view('pages.backend.customer.view', compact('today', 'customer', 'data', 'breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'payment', 'payment_total_amount', 'Custumer_index_array'));
     }
 
 
