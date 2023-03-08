@@ -217,7 +217,7 @@ class SalesController extends Controller
         $date = date('d-m-Y', strtotime($daily_date));
 
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
-        $customer_mobile = Customer::where('soft_delete', '!=', 1)->orderBy('contact_number')->get()->all();
+        $customer_mobile = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
 
         return view('pages.backend.sales.index', compact('today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',

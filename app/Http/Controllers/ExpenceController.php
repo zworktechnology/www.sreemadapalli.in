@@ -15,7 +15,7 @@ class ExpenceController extends Controller
         $data = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
         $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
-        $employee_mobile = Employee::where('soft_delete', '!=', 1)->orderBy('contact_number')->get()->all();
+        $employee_mobile = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         return view('pages.backend.expence.index', compact('data', 'today', 'employee', 'total', 'employee_mobile'));
     }
