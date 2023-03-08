@@ -463,7 +463,19 @@ class CustomerController extends Controller
 
 
 
+    public function getphoneno($customer_id)
+    {
+        $customerdata = Customer::findOrFail($customer_id);
+        $userData['data'] = $customerdata;
+        echo json_encode($userData);
+    }
 
+    public function getcustomerId($phoneno)
+    {
+        $customermobiledata = Customer::where('contact_number', '=', $phoneno)->first();
+        $userData['data'] = $customermobiledata;
+        echo json_encode($userData);
+    }
 
 
 

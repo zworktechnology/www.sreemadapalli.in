@@ -17,8 +17,8 @@
                     <label for="customer_id" class="col-sm-3 col-form-label">
                         Customer <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <select class="form-control js-example-basic-single" name="customer_id" required>
-                            <option value="" disabled selected hidden class="text-muted">
+                        <select class="form-control js-example-basic-single customer_id" name="customer_id" id="customer_id" required>
+                            <option value=""  selected class="text-muted">
                                 Enter Your</option>
                             @foreach ($customer as $customers)
                             <option value="{{ $customers->id }}">{{ $customers->name }}</option>
@@ -29,8 +29,8 @@
                 <div class="row mb-4">
                     <label class="col-md-3 col-form-label">
                         Contact No</label>
-                    <div class="col-sm-9 text-muted">
-                        <input type="number" class="form-control not-allowed" placeholder="Customer Phone number" style="background-color: #e4e7eb">
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control phoneno" value="" name="phoneno" id="phoneno" placeholder="Customer Phone number" style="background-color: #e4e7eb">
                     </div>
                 </div>
                 <div class="row mb-4">
@@ -47,3 +47,59 @@
         </form>
     </div>
 </div>
+
+
+<script>
+
+$(document).ready(function(){
+    $('.customer_id').on("select2:select", function(e) { 
+        //alert($(this).val());
+        var customer_id = $(this).val();
+//alert(customer_id);
+                $.ajax({
+                    url: '/getphoneno/' + customer_id,
+                    type: 'get',
+                    dataType: 'json',
+                    success: function(response) {
+                        
+                        
+                        var len = response['data'];
+                        $('.phoneno').val('');
+                        $('.phoneno').val(response['data'].contact_number);
+                        
+                    }
+                });
+    });
+});
+
+$(document).on("keyup", 'input.phoneno', function() {
+    var phoneno = this.value;
+    if (phoneno.length > 10) {
+        alert('More than 10 Numbers');
+        $('.phoneno').val('');
+    }
+
+
+    if (phoneno.length == 10) {
+                $.ajax({
+                    url: '/getcustomerId/' + phoneno,
+                    type: 'get',
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response);
+                        
+                        
+                        $('.customer_id').val('');
+                        var len = response['data'];
+                        
+                        $('.customer_id').val(response['data'].id);
+                        $('.customer_id').select2().trigger('change');
+
+                        
+                    }
+                });
+    }
+
+});
+
+</script>

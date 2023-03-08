@@ -283,6 +283,13 @@ Route::get('/export_customerorder_filter_pdf/{id}/{from_date}/{to_date}', [Custo
 //DAILY DATE ARRAY FILTER
 Route::get('/getDailyListData', [SalesController::class, 'getDailyListData']);
 
+//GET CUSTOMER AND PHONENO
+Route::get('/getphoneno/{id}', [CustomerController::class, 'getphoneno']);
+Route::get('/getcustomerId/{phoneno}', [CustomerController::class, 'getcustomerId']);
+//GET EMPLOYEE AND PHONENO
+Route::get('/getemployeephoneno/{id}', [EmployeeController::class, 'getemployeephoneno']);
+Route::get('/getemployeeId/{phoneno}', [EmployeeController::class, 'getemployeeId']);
+
 //DASHBOARD ARRAY FILTER
 Route::put('/getDashboardData', [DashboardController::class, 'filterindex'])->name('filterindex');
 

@@ -90,4 +90,18 @@ class EmployeeController extends Controller
 
         return redirect()->route('employee.index')->with('destroy', 'Successfully erased the employee !');
     }
+
+    public function getemployeephoneno($employee_id)
+    {
+        $employeedata = Employee::findOrFail($employee_id);
+        $userData['data'] = $employeedata;
+        echo json_encode($userData);
+    }
+
+    public function getemployeeId($phoneno)
+    {
+        $employeemobiledata = Employee::where('contact_number', '=', $phoneno)->first();
+        $userData['data'] = $employeemobiledata;
+        echo json_encode($userData);
+    }
 }
