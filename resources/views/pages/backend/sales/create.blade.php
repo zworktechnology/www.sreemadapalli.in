@@ -1,18 +1,18 @@
 <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" hidden>
             <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">Create New Sales</h5>
         </div>
         <form autocomplete="off" method="POST" action="{{ route('sales.store') }}">
             @csrf
-            <div class="row mb-4 col-12 ">
+            <div class="row mb-2 col-12 ">
                 <label for="date" class="col-md-1 col-form-label" hidden>
                     Date <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                 </div>
             </div>
-            <div class="row mb-4 col-12 ">
+            <div class="row mb-2 col-12 ">
                 <label for="customer_id" class="col-md-1 col-form-label" hidden>
                     Customer <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
@@ -25,7 +25,7 @@
                     </select>
                 </div>
             </div>
-            <div class="row mb-4 col-12 ">
+            <div class="row mb-2 col-12 ">
                 <label class="col-md-1 col-form-label" hidden>
                     Contact Number <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
@@ -33,29 +33,26 @@
                         <option value="" selected  class="text-muted">
                             Select Mobile</option>
                         @foreach ($customer_mobile as $customer_mobiles)
-                        <option value="{{ $customer_mobiles->contact_number }}">{{ $customer_mobiles->contact_number }} - {{ $customer_mobiles->name }}</option>
+                        <option value="{{ $customer_mobiles->contact_number }}">{{ $customer_mobiles->contact_number }}</option>
                         @endforeach
-                    </select> 
-                
-                
-                    
+                    </select>
                 </div>
             </div>
-            <div class="row mb-4 col-12 ">
+            <div class="row mb-2 col-12 ">
                 <label for="invoice_no" class="col-md-1 col-form-label" hidden>
                     Bill No <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <input type="number" class="form-control" name="invoice_no" placeholder="Bill No" required>
                 </div>
             </div>
-            <div class="row mb-4 col-12 ">
+            <div class="row mb-2 col-12 ">
                 <label for="bill_amount" class="col-md-1 col-form-label" hidden>
                     Bill Amount <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Bill Amount" required onchange="totalbreakfast()">
                 </div>
             </div>
-            <div class="row mb-4 col-12 ">
+            <div class="row mb-2 col-12 ">
                 <label for="delivery_boy_id" class="col-md-1 col-form-label" hidden>
                     Delivery By <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
@@ -68,7 +65,7 @@
                     </select>
                 </div>
             </div>
-            <div class="row mb-4 col-12 ">
+            <div class="row mb-2 col-12 ">
                 <label for="session" class="col-md-1 col-form-label" hidden>
                     Session <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
@@ -145,7 +142,7 @@
 
 
 $(document).ready(function(){
-    $('.customer_id').on("select2:select", function(e) { 
+    $('.customer_id').on("select2:select", function(e) {
         //alert($(this).val());
         var customer_id = $(this).val();
 //alert(customer_id);
@@ -154,13 +151,13 @@ $(document).ready(function(){
                     type: 'get',
                     dataType: 'json',
                     success: function(response) {
-                        
+
                         $('.phoneno').val('');
                         var len = response['data'];
-                        
+
                         $('.phoneno').val(response['data'].contact_number);
                         $('.phoneno').select2().trigger('change');
-                        
+
                     }
                 });
     });
@@ -168,7 +165,7 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-    $('.phoneno').on("select2:select", function(e) { 
+    $('.phoneno').on("select2:select", function(e) {
         var phoneno = $(this).val();
 
                 $.ajax({
@@ -177,15 +174,15 @@ $(document).ready(function(){
                     dataType: 'json',
                     success: function(response) {
                         console.log(response);
-                        
-                        
+
+
                         $('.customer_id').val('');
                         var len = response['data'];
-                        
+
                         $('.customer_id').val(response['data'].id);
                         $('.customer_id').select2().trigger('change');
 
-                        
+
                     }
                 });
 
@@ -194,7 +191,7 @@ $(document).ready(function(){
 
 
 
-  
+
 
 
 

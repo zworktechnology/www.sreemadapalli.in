@@ -128,20 +128,20 @@
                             <div class="card-body">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
-                                        <div class="modal-header">
+                                        <div class="modal-header" hidden>
                                             <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">New Payment</h5>
                                         </div>
                                         <form autocomplete="off" method="POST" action="{{ route('payment.store') }}">
                                             @csrf
                                             <div class="modal-body">
-                                                <div class="row mb-4">
+                                                <div class="row mb-2">
                                                     <label for="date" class="col-sm-3 col-form-label">
                                                         Date <span style="color: red;">*</span></label>
                                                     <div class="col-sm-9">
                                                         <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                                                     </div>
                                                 </div>
-                                                <div class="row mb-4">
+                                                <div class="row mb-2">
                                                     <label for="customer_id" class="col-sm-3 col-form-label">
                                                         Customer <span style="color: red;">*</span></label>
                                                     <div class="col-sm-9">
