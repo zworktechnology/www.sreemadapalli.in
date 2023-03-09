@@ -19,8 +19,8 @@
                     <select class="form-control js-example-basic-single customer_id" name="customer_id" id="customer_id" required>
                         <option value="" selected  class="text-muted">
                             Select Customer</option>
-                        @foreach ($customer as $customers)
-                        <option value="{{ $customers->id }}">{{ $customers->name }}</option>
+                        @foreach ($customerarr as $customers)
+                        <option value="{{ $customers['id'] }}">{{ $customers['name'] }} - {{ $customers['pending'] }}</option>
                         @endforeach
                     </select>
                 </div>

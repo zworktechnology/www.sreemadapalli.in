@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\BreakFast;
+use App\Models\Lunch;
+use App\Models\Dinner;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -14,9 +17,25 @@ class PaymentController extends Controller
         $today = date('Y-m-d');
         $data = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+        $customerarr = [];
+        foreach ($customer as $key => $customer_arr) {
+
+            $breakfast_amount_pending = BreakFast::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $lunch_amount_pending = Lunch::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $dinner_amount_pending = Dinner::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+
+            $payment_total_amount = Payment::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->sum('amount');
+            $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount;
+
+            $customerarr[] = array(
+                'name' => $customer_arr->name,
+                'pending' => $pending,
+                'id' => $customer_arr->id,
+            );
+        }
         $customer_mobile = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
-        return view('pages.backend.payment.index', compact('data', 'today', 'customer', 'customer_mobile'));
+        return view('pages.backend.payment.index', compact('data', 'today', 'customerarr', 'customer_mobile'));
     }
 
 

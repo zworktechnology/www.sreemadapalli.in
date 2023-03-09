@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\Deliveryboy;
 use App\Models\Dinner;
 use App\Models\Lunch;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -217,11 +218,29 @@ class SalesController extends Controller
         $date = date('d-m-Y', strtotime($daily_date));
 
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+        $customerarr = [];
+        foreach ($customer as $key => $customer_arr) {
+
+            $breakfast_amount_pending = BreakFast::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $lunch_amount_pending = Lunch::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $dinner_amount_pending = Dinner::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+
+            $payment_total_amount = Payment::where('customer_id', '=', $customer_arr->id)->where('soft_delete', '!=', 1)->sum('amount');
+            $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount;
+
+            $customerarr[] = array(
+                'name' => $customer_arr->name,
+                'pending' => $pending,
+                'id' => $customer_arr->id,
+            );
+        }
+
+
         $customer_mobile = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
 
         return view('pages.backend.sales.index', compact('today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
-        'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customer',
+        'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customerarr',
         'walletcard', 'walletgpay', 'walletgpaybusiness', 'walletphonepe',
         'walletpaytm', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending',
         'breakfast_data_pm_cash', 'lunch_data_pm_cash', 'dinner_data_pm_cash',
