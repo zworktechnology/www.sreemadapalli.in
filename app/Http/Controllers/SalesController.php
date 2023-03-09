@@ -217,6 +217,7 @@ class SalesController extends Controller
         $date = date('d-m-Y', strtotime($daily_date));
 
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+        $customer_mobile = Customer::where('soft_delete', '!=', 1)->orderBy('contact_number')->get()->all();
 
 
         return view('pages.backend.sales.index', compact('today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
@@ -225,7 +226,7 @@ class SalesController extends Controller
         'walletpaytm', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending',
         'breakfast_data_pm_cash', 'lunch_data_pm_cash', 'dinner_data_pm_cash',
         'total_total', 'breakfast_data_pm_total', 'lunch_data_pm_total', 'dinner_data_pm_total',
-        'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet'));
+        'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet', 'customer_mobile'));
     }
 
 

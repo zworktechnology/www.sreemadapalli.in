@@ -30,7 +30,16 @@
                     <label class="col-md-3 col-form-label">
                         Contact No</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control phoneno" value="" name="phoneno" id="phoneno" placeholder="Customer Phone number" style="background-color: #e4e7eb">
+                        
+                    <select class="form-control js-example-basic-single phoneno" name="phoneno" id="phoneno" required>
+                        <option value="" selected  class="text-muted">
+                            Select Mobile</option>
+                        @foreach ($customer_mobile as $customer_mobiles)
+                        <option value="{{ $customer_mobiles->contact_number }}">{{ $customer_mobiles->contact_number }} - {{ $customer_mobiles->name }}</option>
+                        @endforeach
+                    </select> 
+                    
+                    
                     </div>
                 </div>
                 <div class="row mb-4">
@@ -62,25 +71,22 @@ $(document).ready(function(){
                     dataType: 'json',
                     success: function(response) {
                         
-                        
-                        var len = response['data'];
                         $('.phoneno').val('');
+                        var len = response['data'];
+                        
                         $('.phoneno').val(response['data'].contact_number);
+                        $('.phoneno').select2().trigger('change');
                         
                     }
                 });
     });
 });
 
-$(document).on("keyup", 'input.phoneno', function() {
-    var phoneno = this.value;
-    if (phoneno.length > 10) {
-        alert('More than 10 Numbers');
-        $('.phoneno').val('');
-    }
 
+$(document).ready(function(){
+    $('.phoneno').on("select2:select", function(e) { 
+        var phoneno = $(this).val();
 
-    if (phoneno.length == 10) {
                 $.ajax({
                     url: '/getcustomerId/' + phoneno,
                     type: 'get',
@@ -98,8 +104,10 @@ $(document).on("keyup", 'input.phoneno', function() {
                         
                     }
                 });
-    }
 
+    });
 });
+
+
 
 </script>
