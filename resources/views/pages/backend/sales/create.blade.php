@@ -20,7 +20,11 @@
                         <option value="" selected  class="text-muted">
                             Select Customer</option>
                         @foreach ($customerarr as $customers)
-                        <option value="{{ $customers['id'] }}">{{ $customers['name'] }} - {{ $customers['pending'] }}</option>
+                        @if ($customers['pending'] > 0)
+                        <option value="{{ $customers['id'] }}">{{ $customers['name'] }} ( Pending  - ₹ {{ $customers['pending'] }} )</option>
+                        @else
+                        <option value="{{ $customers['id'] }}">{{ $customers['name'] }}</option>
+                        @endif
                         @endforeach
                     </select>
                 </div>
