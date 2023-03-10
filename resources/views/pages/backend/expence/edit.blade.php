@@ -56,6 +56,16 @@
                                             <input type="number" class="form-control" name="amount" placeholder="Enter Your " required value="{{ $data->amount }}">
                                         </div>
                                     </div>
+                                    <div class="row mb-2">
+                                        <label for="status" class="col-sm-3 col-form-label">
+                                            Status <span style="color: red;">*</span></label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control js-example-basic-single" name="status" required>
+                                                <option value="Pending" class="text-muted" {{ $data->status == "Pending" ? 'selected' : '' }}>Pending</option>
+                                                <option value="Paid" class="text-muted" {{ $data->status == "Paid" ? 'selected' : '' }}>Paid</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="row mb-4">
                                         <label for="note" class="col-sm-3 col-form-label">
                                             Note <span style="color: red;">*</span></label>

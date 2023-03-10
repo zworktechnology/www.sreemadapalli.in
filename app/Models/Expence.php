@@ -12,6 +12,7 @@ class Expence extends Model
     protected $fillable = [
         'date',
         'amount',
+        'status',
         'note',
         'soft_delete',
         'employee_id'

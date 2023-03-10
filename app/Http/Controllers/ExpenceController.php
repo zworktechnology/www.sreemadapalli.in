@@ -16,25 +16,21 @@ class ExpenceController extends Controller
         $total = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
         $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $employee_mobile = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+        $total_pending = Expence::where('date', '=', $today)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');
+        $total_paid = Expence::where('date', '=', $today)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
 
-        return view('pages.backend.expence.index', compact('data', 'today', 'employee', 'total', 'employee_mobile'));
+
+        return view('pages.backend.expence.index', compact('data', 'today', 'employee', 'total', 'employee_mobile', 'total_pending', 'total_paid'));
     }
-
-
 
     public function dailyfilter(Request $request)
     {
         $daily_date = $request->get('date');
-
         $expense_data = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('amount');
 
-
-
         return view('pages.backend.expence.dailyfilter', compact('expense_data', 'total', 'daily_date'));
     }
-
-
 
     public function store(Request $request)
     {
@@ -44,6 +40,7 @@ class ExpenceController extends Controller
         $data->amount = $request->get('amount');
         $data->employee_id = $request->get('employee_id');
         $data->note = $request->get('note');
+        $data->status = $request->get('status');
 
         $data->save();
 
@@ -66,6 +63,7 @@ class ExpenceController extends Controller
         $data->amount = $request->get('amount');
         $data->employee_id = $request->get('employee_id');
         $data->note = $request->get('note');
+        $data->status = $request->get('status');
 
         $data->update();
 

@@ -48,6 +48,16 @@
                         <input type="number" class="form-control" name="amount" placeholder="Enter Your " required>
                     </div>
                 </div>
+                <div class="row mb-2">
+                    <label for="status" class="col-sm-3 col-form-label">
+                        Status <span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control js-example-basic-single" name="status" required>
+                            <option value="Pending" selected class="text-muted">Pending</option>
+                            <option value="Paid" class="text-muted">Paid</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="row mb-4">
                     <label for="note" class="col-sm-3 col-form-label">
                         Note</label>
