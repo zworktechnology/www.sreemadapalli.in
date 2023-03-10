@@ -13,7 +13,41 @@ class DeterminationController extends Controller
         $today = Carbon::now()->format('Y-m-d');
         $data = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
 
-        return view('pages.backend.determination.index', compact('data', 'today'));
+        $total_2000 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_2000');
+        $total_500 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_500');
+        $total_200 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_200');
+        $total_100 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_100');
+        $total_50 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_50');
+        $total_20 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_20');
+        $total_10 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_10');
+        $total_5 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_5');
+        $total_2 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_2');
+        $total_1 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_1');
+
+        $total = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
+
+        return view('pages.backend.determination.index', compact('data', 'today', 'total'));
+    }
+
+    public function dailyfilter(Request $request)
+    {
+        $daily_date = $request->get('date');
+        $data = Determination::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
+
+        $total_2000 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_2000');
+        $total_500 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_500');
+        $total_200 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_200');
+        $total_100 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_100');
+        $total_50 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_50');
+        $total_20 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_20');
+        $total_10 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_10');
+        $total_5 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_5');
+        $total_2 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_2');
+        $total_1 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_1');
+
+        $total = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
+
+        return view('pages.backend.determination.dailyfilter', compact('data', 'daily_date', 'total'));
     }
 
     public function store(Request $request)

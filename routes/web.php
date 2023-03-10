@@ -208,6 +208,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/accountopen', [AccountOpenController::class, 'index'])->name('accountopen.index');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/accountopen/dailyfilter', [AccountOpenController::class, 'dailyfilter'])->name('accountopen.dailyfilter');
         // CREATE
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/accountopen/create', [AccountOpenController::class, 'create'])->name('accountopen.create');
         // STORE
@@ -226,6 +228,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/accountclose', [AccountCloseController::class, 'index'])->name('accountclose.index');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/accountclose/dailyfilter', [AccountCloseController::class, 'dailyfilter'])->name('accountclose.dailyfilter');
         // CREATE
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/accountclose/create', [AccountCloseController::class, 'create'])->name('accountclose.create');
         // STORE
@@ -244,6 +248,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/determination', [DeterminationController::class, 'index'])->name('determination.index');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/determination/dailyfilter', [DeterminationController::class, 'dailyfilter'])->name('determination.dailyfilter');
         // CREATE
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/determination/create', [DeterminationController::class, 'create'])->name('determination.create');
         // STORE
@@ -292,5 +298,3 @@ Route::get('/getemployeeId/{phoneno}', [EmployeeController::class, 'getemployeeI
 
 //DASHBOARD ARRAY FILTER
 Route::put('/getDashboardData', [DashboardController::class, 'filterindex'])->name('filterindex');
-
-

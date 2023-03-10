@@ -11,9 +11,20 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Open Account</h4>
+                            <h4 class="mb-sm-0 font-size-18">Open Account - {{ date('d M Y', strtotime($today)) }}</h4>
                             <div class="page-title-right">
-                                <div>
+                                <div style="display: flex;">
+                                    <form autocomplete="off" method="POST" action="{{ route('accountopen.dailyfilter') }}" style="display: flex;">
+                                        @method('PUT')
+                                        @csrf
+                                        <div style="margin-right: 10px;">
+                                            <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required value="{{ $today }}">
+                                        </div>
+                                        <div style="margin-right: 10px;">
+                                            <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                                Search</button>
+                                        </div>
+                                    </form>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
 
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -52,6 +63,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
+
+                <div class="col-md-12">
+                    <div class="card mini-stats-wid">
+                        <div class="card-body" style="background-color: #B8FF72;">
+                            <div class="d-flex">
+                                <div class="flex-grow-1">
+                                    <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Opening</p>
+                                    <h4 class="mb-0" style="color: red !important;">₹ {{ $total }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -60,7 +85,6 @@
                                     <thead style="background: #F4EA8F">
                                         <tr>
                                             <th>Sl. No</th>
-                                            <th>Date</th>
                                             <th>Amount</th>
                                             <th>Action</th>
                                         </tr>
@@ -69,7 +93,6 @@
                                         @foreach ($data as $keydata => $datas)
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
-                                            <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
                                             <td>{{ $datas->amount }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">

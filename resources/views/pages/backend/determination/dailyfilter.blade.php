@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Denomination - {{ date('d M Y', strtotime($today)) }}</h4>
+                            <h4 class="mb-sm-0 font-size-18">Denomination  - {{ date('d M Y', strtotime($daily_date)) }}</h4>
                             <div class="page-title-right">
                                 <div style="display: flex;">
                                     <form autocomplete="off" method="POST" action="{{ route('determination.dailyfilter') }}" style="display: flex;">
@@ -19,18 +19,13 @@
 
                                         @csrf
                                         <div style="margin-right: 10px;">
-                                            <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required value="{{ $today }}">
+                                            <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required value="{{ $daily_date }}">
                                         </div>
                                         <div style="margin-right: 10px;">
                                             <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                                 Search</button>
                                         </div>
                                     </form>
-                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
-
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        @include('pages.backend.determination.create')
-                                    </div>
                                 </div>
                             </div>
                         </div>

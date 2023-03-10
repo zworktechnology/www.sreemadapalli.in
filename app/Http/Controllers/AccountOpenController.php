@@ -10,10 +10,20 @@ class AccountOpenController extends Controller
 {
     public function index()
     {
-        $data = AccountOpen::where('soft_delete', '!=', 1)->get();
         $today = Carbon::now()->format('Y-m-d');
+        $data = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
+        $total = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $today)->sum('amount');
 
-        return view('pages.backend.accountopen.index', compact('data', 'today'));
+        return view('pages.backend.accountopen.index', compact('data', 'today', 'total'));
+    }
+
+    public function dailyfilter(Request $request)
+    {
+        $daily_date = $request->get('date');
+        $data = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
+        $total = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->sum('amount');
+
+        return view('pages.backend.accountopen.dailyfilter', compact('data', 'daily_date', 'total'));
     }
 
     public function store(Request $request)

@@ -29,7 +29,7 @@
                                     </div>
                                 </form>
 
-                                @if (count($opendate) >= 5)
+                                @if (count($opendate) >= 1)
                                 @else
                                 <div>
                                     <button style="margin-right: 10px;" type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open Account</button>

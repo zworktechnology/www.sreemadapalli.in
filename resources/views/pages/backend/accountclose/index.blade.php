@@ -11,9 +11,21 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Close Account</h4>
+                            <h4 class="mb-sm-0 font-size-18">Close Account - {{ date('d M Y', strtotime($today)) }}</h4>
                             <div class="page-title-right">
-                                <div>
+                                <div style="display: flex;">
+                                    <form autocomplete="off" method="POST" action="{{ route('accountclose.dailyfilter') }}" style="display: flex;">
+                                        @method('PUT')
+    
+                                        @csrf
+                                        <div style="margin-right: 10px;">
+                                            <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required value="{{ $today }}">
+                                        </div>
+                                        <div style="margin-right: 10px;">
+                                            <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                                Search</button>
+                                        </div>
+                                    </form>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
 
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -60,7 +72,6 @@
                                     <thead style="background: #F4EA8F">
                                         <tr>
                                             <th>Sl. No</th>
-                                            <th>Date</th>
                                             <th>Paytm</th>
                                             <th>G Pay</th>
                                             <th>G Pay Business</th>
@@ -75,7 +86,6 @@
                                         @foreach ($data as $keydata => $datas)
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
-                                            <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
                                             <td>{{ $datas->case_on_hand }}</td>
                                             <td>{{ $datas->g_pay }}</td>
                                             <td>{{ $datas->g_pay_business }}</td>

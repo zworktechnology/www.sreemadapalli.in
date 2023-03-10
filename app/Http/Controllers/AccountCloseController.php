@@ -10,10 +10,18 @@ class AccountCloseController extends Controller
 {
     public function index()
     {
-        $data = AccountClose::where('soft_delete', '!=', 1)->get();
         $today = Carbon::now()->format('Y-m-d');
+        $data = AccountClose::where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
 
         return view('pages.backend.accountclose.index', compact('data', 'today'));
+    }
+
+    public function dailyfilter(Request $request)
+    {
+        $daily_date = $request->get('date');
+        $data = AccountClose::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
+
+        return view('pages.backend.accountclose.dailyfilter', compact('data', 'daily_date'));
     }
 
     public function store(Request $request)

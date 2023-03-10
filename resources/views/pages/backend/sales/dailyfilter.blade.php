@@ -18,6 +18,19 @@
                         </div>
                         <div class="page-title-right">
                             <div style="display: flex;">
+                                <form autocomplete="off" method="POST" action="{{ route('sales.dailyfilter') }}" style="display: flex;">
+                                    @method('PUT')
+
+                                    @csrf
+                                    <div style="margin-right: 10px;">
+                                        <input type="date" class="form-control" name="daily_date" id="daily_date" placeholder="Enter Your " required>
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                            Search</button>
+
+                                    </div>
+                                </form>
                                 <div>
                                 <a href="/zwork-admin/sales">
                                     <button type="button" class="btn btn-success w-md" >Back</button>

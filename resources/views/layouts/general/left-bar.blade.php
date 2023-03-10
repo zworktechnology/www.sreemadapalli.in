@@ -30,7 +30,7 @@
                         <span key="t-dashboards">Daily</span>
                     </a>
                 </li>
-                <li class="{{ Route::is('payment.index','payment.create','payment.edit') ? 'mm-active' : '' }}">
+                <li class="{{ Route::is('payment.index','payment.create','payment.edit','payment.dailyfilter') ? 'mm-active' : '' }}">
                     <a href="{{ route('payment.index') }}">
                         <i class="mdi mdi-currency-brl"></i>
                         <span key="t-dashboards">Payment</span>
@@ -43,10 +43,29 @@
                         <span key="t-dashboards">Create New</span>
                     </a>
                 </li>
-                <li class="{{ Route::is('expence.index','expence.create','expence.edit') ? 'mm-active' : '' }}">
+                <li class="{{ Route::is('expence.index','expence.create','expence.edit','expence.dailyfilter') ? 'mm-active' : '' }}">
                     <a href="{{ route('expence.index') }}">
                         <i class="mdi mdi-contactless-payment-circle-outline"></i>
                         <span key="t-dashboards">Daily</span>
+                    </a>
+                </li>
+                <li class="menu-title" key="t-menu">Account</li>
+                <li class="{{ Route::is('accountopen.index','accountopen.create','accountopen.edit', 'accountopen.dailyfilter') ? 'mm-active' : '' }}">
+                    <a href="{{ route('accountopen.index') }}">
+                        <i class="mdi mdi-folder-open-outline"></i>
+                        <span key="t-dashboards">Open Account</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('accountclose.index','accountclose.create','accountclose.edit', 'accountclose.dailyfilter') ? 'mm-active' : '' }}">
+                    <a href="{{ route('accountclose.index') }}">
+                        <i class="mdi mdi-close-network-outline"></i>
+                        <span key="t-dashboards">Close Account</span>
+                    </a>
+                </li>
+                <li class="{{ Route::is('determination.index','determination.create','determination.edit', 'determination.dailyfilter') ? 'mm-active' : '' }}">
+                    <a href="{{ route('determination.index') }}">
+                        <i class="mdi mdi-cash-100"></i>
+                        <span key="t-dashboards">Denomination</span>
                     </a>
                 </li>
                 @hasrole('Super-Admin')
@@ -68,25 +87,6 @@
                     <a href="{{ route('settings') }}">
                         <i class="mdi mdi-form-textbox-password"></i>
                         <span key="t-dashboards">Password</span>
-                    </a>
-                </li>
-                <li class="menu-title" key="t-menu">Account</li>
-                <li class="{{ Route::is('accountopen.index','accountopen.create','accountopen.edit') ? 'mm-active' : '' }}">
-                    <a href="{{ route('accountopen.index') }}">
-                        <i class="mdi mdi-folder-open-outline"></i>
-                        <span key="t-dashboards">Open Account</span>
-                    </a>
-                </li>
-                <li class="{{ Route::is('accountclose.index','accountclose.create','accountclose.edit') ? 'mm-active' : '' }}">
-                    <a href="{{ route('accountclose.index') }}">
-                        <i class="mdi mdi-close-network-outline"></i>
-                        <span key="t-dashboards">Close Account</span>
-                    </a>
-                </li>
-                <li class="{{ Route::is('determination.index','determination.create','determination.edit') ? 'mm-active' : '' }}">
-                    <a href="{{ route('determination.index') }}">
-                        <i class="mdi mdi-cash-100"></i>
-                        <span key="t-dashboards">Denomination</span>
                     </a>
                 </li>
             </ul>

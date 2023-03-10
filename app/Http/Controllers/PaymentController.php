@@ -48,7 +48,7 @@ class PaymentController extends Controller
 
 
 
-        return view('pages.backend.payment.dailyfilter', compact('Payment_data'));
+        return view('pages.backend.payment.dailyfilter', compact('daily_date', 'Payment_data'));
     }
 
 
