@@ -28,8 +28,10 @@ class ExpenceController extends Controller
         $daily_date = $request->get('date');
         $expense_data = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('amount');
+        $total_pending = Expence::where('date', '=', $daily_date)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');
+        $total_paid = Expence::where('date', '=', $daily_date)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
 
-        return view('pages.backend.expence.dailyfilter', compact('expense_data', 'total', 'daily_date'));
+        return view('pages.backend.expence.dailyfilter', compact('expense_data', 'total', 'daily_date', 'total_pending', 'total_paid'));
     }
 
     public function store(Request $request)

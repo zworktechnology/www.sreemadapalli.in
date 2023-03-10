@@ -63,9 +63,35 @@
             </div>
             @endif
             <div class="row">
+                <div style="display: flex;">
+                    <div class="col-md-6" style="margin-right: 5px;">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body" style="background-color: #B8FF72;">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence -- Pending</p>
+                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body" style="background-color: #01aef0;">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence -- Paid</p>
+                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_paid }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-12">
                     <div class="card mini-stats-wid">
-                        <div class="card-body" style="background-color: #e5ff8e;">
+                        <div class="card-body" style="background-color: #9ab3c3;">
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence</p>
@@ -85,6 +111,7 @@
                                         <th>Employee</th>
                                         <th>Date</th>
                                         <th>Amount</th>
+                                        <th>Status</th>
                                         <th>Note</th>
                                         <th>Action</th>
                                     </tr>
@@ -96,6 +123,11 @@
                                         <td>{{ $datas->employee->name }}</td>
                                         <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
                                         <td>₹ {{ $datas->amount }}</td>
+                                        @if ( $datas->status == 'Pending')
+                                        <td style="background-color: red; color: white;">{{ $datas->status }}</td>
+                                        @else
+                                        <td style="background-color: green; color: white;">{{ $datas->status }}</td>
+                                        @endif
                                         <td>{{ $datas->note }}</td>
                                         <td>
                                             <ul class="list-unstyled hstack gap-1 mb-0">
