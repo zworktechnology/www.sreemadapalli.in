@@ -5,7 +5,7 @@
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title" key="t-menu">Menu</li>
-                <li class="{{ Route::is('home') ? 'mm-active' : '' }}">
+                <li class="{{ Route::is('home','filterindex') ? 'mm-active' : '' }}">
                     <a href="{{ route('home') }}">
                         <i class="mdi mdi-home-circle-outline"></i>
                         <span key="t-dashboards">Dashboard</span>

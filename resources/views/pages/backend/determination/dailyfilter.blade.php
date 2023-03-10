@@ -26,6 +26,11 @@
                                                 Search</button>
                                         </div>
                                     </form>
+                                    <div>
+                                        <a href="{{ route('determination.index') }}">
+                                            <button type="button" class="btn btn-success w-md">Back</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

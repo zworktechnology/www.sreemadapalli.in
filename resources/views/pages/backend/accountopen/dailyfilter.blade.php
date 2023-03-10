@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Open Account  - {{ date('d M Y', strtotime($daily_date)) }}</h4>
+                            <h4 class="mb-sm-0 font-size-18">Open Account - {{ date('d M Y', strtotime($daily_date)) }}</h4>
                             <div class="page-title-right">
                                 <div style="display: flex;">
                                     <form autocomplete="off" method="POST" action="{{ route('accountopen.dailyfilter') }}" style="display: flex;">
@@ -25,6 +25,11 @@
                                                 Search</button>
                                         </div>
                                     </form>
+                                    <div>
+                                        <a href="{{ route('accountopen.index') }}">
+                                            <button type="button" class="btn btn-success w-md">Back</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
