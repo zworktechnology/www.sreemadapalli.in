@@ -75,12 +75,20 @@
             background-color: #f1f1f1;
         }
 
+        .logoname {
+            display: flex;
+        }
+
     </style>
 </head>
 <body>
-    <div style="display: flex">
-        <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
-        <h5>{{ $customerdata->name }}</h5>
+    <div class="logoname">
+        <div>
+            <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
+        </div>
+        <div>
+            <h5>{{ $customerdata->name }}</h5>
+        </div>
     </div>
     <table id="customers">
         <thead style="background: #CAF1DE">
