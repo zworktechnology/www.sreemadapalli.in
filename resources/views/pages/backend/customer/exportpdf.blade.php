@@ -78,16 +78,10 @@
     </style>
 </head>
 <body>
-    <h5>{{ $customerdata->name }}</h5>
-    <table id="customers">
-        <thead>
-            <tr>
-                <th style="background-color: #C1D1DB;">Total Amount - Rs. {{ $total_amount }}</th>
-                <th style="background-color: #FFE972;">Paid Amount - Rs. {{ $total_paid + $payment_total_amount }}</th>
-                <th style="background-color: #D8E79D;">Pending Amount - Rs. {{ $total_pending - $payment_total_amount }}</th>
-            </tr>
-        </thead>
-    </table>
+    <div style="display: flex">
+        <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
+        <h5>{{ $customerdata->name }}</h5>
+    </div>
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
@@ -109,6 +103,15 @@
             </tr>
             @endforeach
         </tbody>
+    </table>
+    <table id="customers">
+        <thead>
+            <tr>
+                <th style="background-color: #C1D1DB;">Total Amount - Rs. {{ $total_amount }}</th>
+                <th style="background-color: #FFE972;">Paid Amount - Rs. {{ $total_paid + $payment_total_amount }}</th>
+                <th style="background-color: #D8E79D;">Pending Amount - Rs. {{ $total_pending - $payment_total_amount }}</th>
+            </tr>
+        </thead>
     </table>
 </body>
 </html>
