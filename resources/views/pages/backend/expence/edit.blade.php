@@ -61,16 +61,16 @@
                                             Status <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
                                             <select class="form-control js-example-basic-single" name="status" required>
-                                                <option value="Pending" class="text-muted" {{ $data->status == "Pending" ? 'selected' : '' }}>Pending</option>
-                                                <option value="Paid" class="text-muted" {{ $data->status == "Paid" ? 'selected' : '' }}>Paid</option>
+                                                <option value="Pending" class="text-muted" {{ $data->status == "Pending" ? 'selected' : '' }}>.....</option>
+                                                <option value="Paid" class="text-muted" {{ $data->status == "Paid" ? 'selected' : '' }}>Case</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
                                         <label for="note" class="col-sm-3 col-form-label">
-                                            Note <span style="color: red;">*</span></label>
+                                            Note</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="note" placeholder="Enter Your " required value="{{ $data->note }}">
+                                            <input type="text" class="form-control" name="note" placeholder="Enter Your " value="{{ $data->note }}">
                                         </div>
                                     </div>
                                     <div class="row justify-content-end">

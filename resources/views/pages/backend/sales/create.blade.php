@@ -20,11 +20,7 @@
                         <option value="" selected  class="text-muted">
                             Select Customer</option>
                         @foreach ($customerarr as $customers)
-                        @if ($customers['pending'] > 0)
-                        <option value="{{ $customers['id'] }}">{{ $customers['name'] }} ( Pending  - ₹ {{ $customers['pending'] }} )</option>
-                        @else
                         <option value="{{ $customers['id'] }}">{{ $customers['name'] }}</option>
-                        @endif
                         @endforeach
                     </select>
                 </div>
@@ -125,24 +121,6 @@
             </div>
             <button type="submit" class="btn btn-success">Save</button>
         </form>
-
-
-
-            <div class="row customer_pending" style="display:none;">
-                <div class="col-md-2 pointer"style="padding-top: 10px;">
-                    
-                        <div class=" mini-stats-wid">
-                            <div class="card-body" style="background-color: red;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: white !important; font-weight: bold;">Pending Amount</p>
-                                        <h4 class="mb-0 pendingamount" style="color: white !important;"></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
     </div>
 </div>
 
@@ -212,7 +190,7 @@ $(document).ready(function(){
 
                         $('.customer_id').val('');
                         var output = response.length;
-                        
+
 
                         for (var i = 0; i < output; i++) {
                             $('.customer_id').val(response[i].id);
@@ -226,7 +204,7 @@ $(document).ready(function(){
                             }
                         }
 
-                        
+
 
 
                     }

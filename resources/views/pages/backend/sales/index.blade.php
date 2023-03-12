@@ -32,7 +32,7 @@
 
                                     </div>
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                             @include('pages.backend.sales.addon.wallet')
                         </div>
                     </div>
-                    <div class="col-md-4 pointer">
+                    <div class="col-md-2 pointer">
                         <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <div class="card mini-stats-wid">
                                 <div class="card-body" style="background-color: #E2CFCF;">
@@ -151,7 +151,7 @@
                                                     <div style="display: none">
                                                         {{ $totalcount += $deliveryboys_a['delivery_count'] }}</div>
                                                     @endforeach
-                                                    {{ $totalcount }}
+                                                    {{ $total_delivey_count }}
                                                 </h4>
                                             </h4>
                                         </div>
@@ -161,6 +161,20 @@
                         </div>
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             @include('pages.backend.sales.addon.deliveryby')
+                        </div>
+                    </div>
+                    <div class="col-md-2 pointer">
+                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #f0e659c2;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending Amount</p>
+                                            <h4 class="mb-0 pendingamount" style="color: red !important;">₹ </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -291,7 +305,7 @@
             $(document).ready(function() {
                 $('#todaydatatable').DataTable();
             });
-            
+
 
         </script>
 

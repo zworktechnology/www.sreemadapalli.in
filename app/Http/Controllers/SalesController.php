@@ -239,13 +239,19 @@ class SalesController extends Controller
         $customer_mobile = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
 
+        $breakfast_data_count1 = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('delivery_boy_id', '!=', 3)->get()->all();
+        $lunch_data_count1 = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('delivery_boy_id', '!=', 3)->get()->all();
+        $dinner_data_count1 = Dinner::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('delivery_boy_id', '!=', 3)->get()->all();
+
+        $total_delivey_count = Count($breakfast_data_count1) + Count($lunch_data_count1) + Count($dinner_data_count1);
+
         return view('pages.backend.sales.index', compact('today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
         'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customerarr',
         'walletcard', 'walletgpay', 'walletgpaybusiness', 'walletphonepe',
         'walletpaytm', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending',
         'breakfast_data_pm_cash', 'lunch_data_pm_cash', 'dinner_data_pm_cash',
         'total_total', 'breakfast_data_pm_total', 'lunch_data_pm_total', 'dinner_data_pm_total',
-        'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet', 'customer_mobile'));
+        'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet', 'customer_mobile', 'total_delivey_count'));
     }
 
 
