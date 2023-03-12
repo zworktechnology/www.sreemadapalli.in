@@ -164,18 +164,20 @@
                         </div>
                     </div>
                     <div class="col-md-2 pointer">
-                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
-                            <div class="card mini-stats-wid">
-                                <div class="card-body" style="background-color: #f0e659c2;">
-                                    <div class="d-flex">
-                                        <div class="flex-grow-1">
-                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending Amount</p>
-                                            <h4 class="mb-0 pendingamount" style="color: red !important;">₹ </h4>
+                        <a href="{{ route('customer.index') }}">
+                            <div data-bs-toggle="modal">
+                                <div class="card mini-stats-wid">
+                                    <div class="card-body" style="background-color: #f0e659c2;">
+                                        <div class="d-flex">
+                                            <div class="flex-grow-1">
+                                                <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Pending Amount</p>
+                                                <h4 class="mb-0 pendingamount" style="color: red !important;">₹ </h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
@@ -305,7 +307,6 @@
             $(document).ready(function() {
                 $('#todaydatatable').DataTable();
             });
-
 
         </script>
 

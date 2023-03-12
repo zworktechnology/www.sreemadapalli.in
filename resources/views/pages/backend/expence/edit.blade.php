@@ -62,7 +62,7 @@
                                         <div class="col-sm-9">
                                             <select class="form-control js-example-basic-single" name="status" required>
                                                 <option value="Pending" class="text-muted" {{ $data->status == "Pending" ? 'selected' : '' }}>.....</option>
-                                                <option value="Paid" class="text-muted" {{ $data->status == "Paid" ? 'selected' : '' }}>Case</option>
+                                                <option value="Paid" class="text-muted" {{ $data->status == "Paid" ? 'selected' : '' }}>Cash</option>
                                             </select>
                                         </div>
                                     </div>

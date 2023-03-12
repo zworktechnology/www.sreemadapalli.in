@@ -82,18 +82,11 @@
     <table id="customers">
         <thead>
             <tr>
-                <th style="background-color: #C1D1DB;">Total Amount</th>
-                <th style="background-color: #FFE972;">Paid Amount</th>
-                <th style="background-color: #D8E79D;">Pending Amount</th>
+                <th style="background-color: #C1D1DB;">Total Amount - Rs. {{ $total_amount }}</th>
+                <th style="background-color: #FFE972;">Paid Amount - Rs. {{ $total_paid + $payment_total_amount }}</th>
+                <th style="background-color: #D8E79D;">Pending Amount - Rs. {{ $total_pending - $payment_total_amount }}</th>
             </tr>
         </thead>
-        <tbody id="customer_index">
-            <tr>
-                <td style="background-color: #C1D1DB;">Rs. {{ $total_amount }}</td>
-                <td style="background-color: #FFE972;">Rs. {{ $total_paid + $payment_total_amount }}</td>
-                <td style="background-color: #D8E79D;">Rs. {{ $total_pending - $payment_total_amount }}</td>
-            </tr>
-        </tbody>
     </table>
     <table id="customers">
         <thead style="background: #CAF1DE">

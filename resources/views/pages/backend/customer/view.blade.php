@@ -122,35 +122,6 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-body">
-                            <h4 class="mb-sm-0 font-size-18 py-1"> RECENT ORDER</h4>
-                                <table id="" class="table table-bordered dt-responsive  nowrap w-100">
-                                    <thead style="background: #CAF1DE">
-                                        <tr>
-                                            
-                                            <th>Date</th>
-                                            <th>Breakfast</th>
-                                            <th>Lunch</th>
-                                            <th>Dinner</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach ($Custumer_recent_array as $index => $Custumer_recent_arr)
-                                        <tr>
-                                            
-                                            <td>{{ $Custumer_recent_arr['date'] }}</td>
-                                            <td>₹ {{ $Custumer_recent_arr['CustomersBreakfastAmt'] }}</td>
-                                            <td>₹ {{ $Custumer_recent_arr['CustomersLunchAmt'] }}</td>
-                                            <td>₹ {{ $Custumer_recent_arr['CustomersDinnerAmt'] }}</td>
-                                            <td>₹ {{ $Custumer_recent_arr['TotalAmount'] }}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-5">
                         <div class="card">
