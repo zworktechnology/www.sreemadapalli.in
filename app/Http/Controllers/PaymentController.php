@@ -35,7 +35,9 @@ class PaymentController extends Controller
         }
         $customer_mobile = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
-        return view('pages.backend.payment.index', compact('data', 'today', 'customerarr', 'customer_mobile'));
+        $total = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+
+        return view('pages.backend.payment.index', compact('data', 'today', 'customerarr', 'customer_mobile', 'total'));
     }
 
 

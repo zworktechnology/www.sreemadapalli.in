@@ -131,6 +131,18 @@
                                 @include('pages.backend.payment.create')
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body" style="background-color: #B8FF72;">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Over All</p>
+                                            <h4 class="mb-0" style="color: red !important;">₹ {{ $total }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
