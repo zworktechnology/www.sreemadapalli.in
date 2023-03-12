@@ -183,7 +183,13 @@ class CustomerController extends Controller
 
         $uniquearray = array_unique($merging_Arr);
         $reverse = array_reverse( $uniquearray );
-        $secondLast = $reverse[1];
+        $today = date("Y-m-d");
+        if($reverse[0] == $today){
+            $secondLast = $reverse[1];
+        }else if($reverse[0] != $today){
+            $secondLast = $reverse[0];
+        }
+        
        
 
         
