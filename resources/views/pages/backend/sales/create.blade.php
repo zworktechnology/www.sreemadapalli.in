@@ -125,6 +125,24 @@
             </div>
             <button type="submit" class="btn btn-success">Save</button>
         </form>
+
+
+
+            <div class="row customer_pending" style="display:none;">
+                <div class="col-md-2 pointer"style="padding-top: 10px;">
+                    
+                        <div class=" mini-stats-wid">
+                            <div class="card-body" style="background-color: red;">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: white !important; font-weight: bold;">Pending Amount</p>
+                                        <h4 class="mb-0 pendingamount" style="color: white !important;"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
     </div>
 </div>
 
@@ -156,11 +174,23 @@ $(document).ready(function(){
                     dataType: 'json',
                     success: function(response) {
 
+                        console.log(response);
                         $('.phoneno').val('');
-                        var len = response['data'];
+                        var output = response.length;
+                        for (var i = 0; i < output; i++) {
+                            $('.phoneno').val(response[i].contact_number);
+                            $('.phoneno').select2().trigger('change');
+                            $('.pendingamount').html('₹ ' + response[i].pending);
 
-                        $('.phoneno').val(response['data'].contact_number);
-                        $('.phoneno').select2().trigger('change');
+                            if(response[i].pending > 0){
+                                $('.customer_pending').show();
+                            }else{
+                                $('.customer_pending').hide();
+                            }
+                        }
+
+                        //$('.phoneno').val(response['data'].contact_number);
+                        //$('.phoneno').select2().trigger('change');
 
                     }
                 });
@@ -181,10 +211,22 @@ $(document).ready(function(){
 
 
                         $('.customer_id').val('');
-                        var len = response['data'];
+                        var output = response.length;
+                        
 
-                        $('.customer_id').val(response['data'].id);
-                        $('.customer_id').select2().trigger('change');
+                        for (var i = 0; i < output; i++) {
+                            $('.customer_id').val(response[i].id);
+                            $('.customer_id').select2().trigger('change');
+                            $('.pendingamount').html('₹ ' + response[i].pending);
+
+                            if(response[i].pending > 0){
+                                $('.customer_pending').show();
+                            }else{
+                                $('.customer_pending').hide();
+                            }
+                        }
+
+                        
 
 
                     }
