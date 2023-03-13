@@ -148,7 +148,7 @@
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
                                         <tbody>
-                                            <tr>
+                                            <tr data-bs-toggle="modal" data-bs-target="#staticBackdropopeningdetails" class="pointer">
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Opening</h5>
                                                 </td>
@@ -180,6 +180,9 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div class="modal fade" id="staticBackdropopeningdetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    @include('opening')
                                 </div>
                             </div>
                         </div>
