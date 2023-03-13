@@ -54,7 +54,7 @@
                     <div class="col-sm-9">
                         <select class="form-control js-example-basic-single" name="status" required>
                             <option value="Pending" selected class="text-muted">.....</option>
-                            <option value="Paid" class="text-muted">Case</option>
+                            <option value="Paid" class="text-muted">Cash</option>
                         </select>
                     </div>
                 </div>
