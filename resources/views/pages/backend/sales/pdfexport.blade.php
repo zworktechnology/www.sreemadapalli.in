@@ -109,11 +109,11 @@
         <tbody id="customer_index">
             @foreach ($daily_Data as $keydata => $outputs)
             <tr>
-                <td>{{ $outputs['invoice_no'] }}</td>
-                <td>{{ $outputs['customer'] }}</td>
-                <td>{{ $outputs['title'] }}</td>
-                <td>{{ $outputs['payment_method'] }}</td>
-                <td>₹ {{ $outputs['bill_amount'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['invoice_no'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['customer'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['title'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['payment_method'] }}</td>
+                <td style="font-size: 12px;">Rs. {{ $outputs['bill_amount'] }}</td>
             </tr>
             @endforeach
         </tbody>
