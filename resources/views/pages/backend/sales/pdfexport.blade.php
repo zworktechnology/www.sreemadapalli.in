@@ -90,6 +90,8 @@
     <table id="customers">
         <thead>
             <tr>
+                <th style="background-color: #E5FF8E;">Date - Rs. {{ $today }}</th>
+                <th style="background-color: #E2CFCF;">Total - Rs. {{ $total_total }}</th>
                 <th style="background-color: #C1D1DB;">Cash - Rs. {{ $total_cash }}</th>
                 <th style="background-color: #FFE972;">Pending - Rs. {{ $total_pending }}</th>
                 <th style="background-color: #D8E79D;">Wallet - Rs. {{ $total_wallet }}</th>

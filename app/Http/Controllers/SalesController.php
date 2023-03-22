@@ -774,6 +774,8 @@ class SalesController extends Controller
             'total_pending' => $total_pending,
             'total_wallet' => $total_wallet,
             'daily_Data' => $daily_Data,
+            'today' => $today,
+            'total_total' => $total_total,
         ]);
 
         return $pdf->download('todaysales.pdf');
