@@ -10,6 +10,7 @@ use App\Models\Lunch;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use PDF;
 
 class SalesController extends Controller
 {
