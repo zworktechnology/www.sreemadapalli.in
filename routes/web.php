@@ -298,3 +298,5 @@ Route::get('/getemployeeId/{phoneno}', [EmployeeController::class, 'getemployeeI
 
 //DASHBOARD ARRAY FILTER
 Route::put('/getDashboardData', [DashboardController::class, 'filterindex'])->name('filterindex');
+
+Route::get('/pdf_export', [SalesController::class, 'pdf_export']);
