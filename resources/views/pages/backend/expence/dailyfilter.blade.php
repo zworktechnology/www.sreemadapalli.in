@@ -24,10 +24,6 @@
                                             Search</button>
                                     </div>
                                 </form>
-                                <a href="/pdfexportexpencebydate" class="nofilter" style="margin-right: 10px;">
-                                    <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
-                                        Export as PDF</button>
-                                </a>
                                 <div>
                                     <a href="/zwork-admin/expence">
                                         <button type="button" class="btn btn-success w-md">Back</button>
