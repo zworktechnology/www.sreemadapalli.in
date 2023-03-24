@@ -90,11 +90,11 @@
     <table id="customers">
         <thead>
             <tr>
-                <th style="background-color: #E5FF8E;"></th>
-                <th style="background-color: #C1D1DB;">Cash - </th>
-                <th style="background-color: #FFE972;">Pending - </th>
-                <th style="background-color: #D8E79D;">Wallet - </th>
-                <th style="background-color: #E2CFCF;">Total - </th>
+                <th style="background-color: #E5FF8E;">{{ $date }}</th>
+                <th style="background-color: #C1D1DB;">Cash - {{ $cash }}</th>
+                <th style="background-color: #FFE972;">Pending - {{ $pending }}</th>
+                <th style="background-color: #D8E79D;">Wallet - {{ $wallet }}</th>
+                <th style="background-color: #E2CFCF;">Total - {{ $total }}</th>
             </tr>
         </thead>
     </table>
@@ -109,13 +109,15 @@
             </tr>
         </thead>
         <tbody id="customer_index">
+        @foreach ($daily_Data as $keydata => $outputs)
             <tr>
-                <td style="font-size: 12px;">Raja</td>
-                <td style="font-size: 12px;">10 - Pending</td>
-                <td style="font-size: 12px;">10 - Payed</td>
-                <td style="font-size: 12px;">20 - Payed</td>
-                <td style="font-size: 12px;">40</td>
+                <td style="font-size: 12px;">{{ $outputs['customer'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['breakfast_data'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['lunch_data'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['dinner_data'] }}</td>
+                <td style="font-size: 12px;">{{ $outputs['bill_amount'] }}</td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </body>

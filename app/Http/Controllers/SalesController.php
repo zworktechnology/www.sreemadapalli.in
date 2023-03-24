@@ -779,11 +779,126 @@ class SalesController extends Controller
             'total_total' => $total_total,
         ]);
 
-        return $pdf->download('todaysales.pdf');
+        return $pdf->download('pdfexport.pdf');
     }
 
-    public function pdfbyname()
+    public function pdfbyname($date)
     {
-        return view('pages.backend.sales.pdfbyname');
+
+
+        $breakfast_data = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->get();
+        $Breakfast_datearray = [];
+        foreach ($breakfast_data as $key => $breakfast_data_arr) {
+            $Breakfast_datearray[] = $breakfast_data_arr;
+        }
+
+        $lunch_data = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->get();
+        $Lunch_datearray = [];
+        foreach ($lunch_data as $key => $lunch_data_arr) {
+            $Lunch_datearray[] = $lunch_data_arr;
+        }
+
+
+        $dinner_data = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->get();
+        $Dinner_datearray = [];
+        foreach ($dinner_data as $key => $dinner_data_arr) {
+            $Dinner_datearray[] = $dinner_data_arr;
+        }
+
+
+        $output = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
+
+        $daily_Data = [];
+        $total_bill_amount = 0;
+        foreach ($output as $key => $output_arr) {
+
+            $total_bill_amount += $output_arr->bill_amount;
+            $customer = Customer::findOrFail($output_arr->customer_id);
+
+
+            $breakfast_data = BreakFast::where('title', '=', 'Break Fast')
+                    ->where('date', '=', $date)
+                    ->where('soft_delete', '!=', 1)
+                    ->where('customer_id', '=', $output_arr->customer_id)
+                    ->sum('bill_amount');
+            $lunch_data = Lunch::where('title', '=', 'Lunch')
+                    ->where('date', '=', $date)
+                    ->where('soft_delete', '!=', 1)
+                    ->where('customer_id', '=', $output_arr->customer_id)
+                    ->sum('bill_amount');
+            $dinner_data = Dinner::where('title', '=', 'Dinner')
+                    ->where('date', '=', $date)
+                    ->where('soft_delete', '!=', 1)
+                    ->where('customer_id', '=', $output_arr->customer_id)
+                    ->sum('bill_amount');
+
+
+               
+            
+            $daily_Data[] = array(
+                
+                'date' => date('d-m-Y', strtotime($output_arr->date)),
+                
+                'customer' => $customer->name,
+                'bill_amount' => $output_arr->bill_amount,
+                'breakfast_data' => $breakfast_data,
+                'lunch_data' => $lunch_data,
+                'dinner_data' => $dinner_data,
+                
+            );
+        }
+
+
+            $cardb = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+            $cardl = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+            $cardd = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
+            $card = $cardb + $cardl + $cardd;
+
+            $gpayb = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+            $gpayl = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+            $gpayd = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay')->sum('bill_amount');
+            $gpay = $gpayb + $gpayl + $gpayd;
+
+            $gpaybusinessb = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+            $gpaybusinessl = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+            $gpaybusinessd = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'G-Pay Business')->sum('bill_amount');
+            $gpaybusiness = $gpaybusinessb + $gpaybusinessl + $gpaybusinessd;
+
+            $phonepeb = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+            $phonepel = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+            $phoneped = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Phone Pe')->sum('bill_amount');
+            $phonepe = $phonepeb + $phonepel + $phoneped;
+
+            $paytmb = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+            $paytml = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+            $paytmd = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Paytm')->sum('bill_amount');
+            $paytm = $paytmb + $paytml + $paytmd;
+
+            $cashb = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Cash')->sum('bill_amount');
+            $cashl = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Cash')->sum('bill_amount');
+            $cashd = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Cash')->sum('bill_amount');
+            $cash = $cashb + $cashl + $cashd;
+
+            $pendingb = BreakFast::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $pendingl = Lunch::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $pendingd = Dinner::where('date', '=', $date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $pending = $pendingb + $pendingl + $pendingd;
+
+            $wallet = $card + $gpay + $gpaybusiness + $phonepe + $paytm + $paytm; 
+            $total = $wallet + $cash + $pending;
+
+
+            $pdf = Pdf::loadView('pages.backend.sales.pdfbyname', [
+                'daily_Data' => $daily_Data,
+                'date' => $date,
+                'wallet' => $wallet,
+                'cash' => $cash,
+                'pending' => $pending,
+                'total' => $total,
+            ]);
+    
+            return $pdf->download('pdfbyname.pdf');
+
+        //return view('pages.backend.sales.pdfbyname', compact('daily_Data', 'date', 'wallet', 'cash', 'pending', 'total'));
     }
 }

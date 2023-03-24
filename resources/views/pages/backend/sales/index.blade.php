@@ -36,7 +36,7 @@
                                     <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                         Export as PDF</button>
                                 </a>
-                                <a href="/pdfbyname" class="nofilter ">
+                                <a href="/pdfbyname/{{ $today }}" class="nofilter ">
                                     <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                         Export by Name</button>
                                 </a>
