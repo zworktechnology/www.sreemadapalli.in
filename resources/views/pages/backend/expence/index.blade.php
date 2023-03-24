@@ -24,6 +24,10 @@
                                         <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                             Search</button>
                                     </div>
+                                    <a href="/pdfexportexpence" class="nofilter ">
+                                        <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                            Export as PDF</button>
+                                    </a>
                                 </form>
                                 <div hidden>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
@@ -72,7 +76,7 @@
                                     <thead style="background: #CBE2DF">
                                         <tr>
                                             <th>Sl. No</th>
-                                            <th>Employee</th>
+                                            <th>Name</th>
                                             <th>Date</th>
                                             <th>Amount</th>
                                             <th>Status</th>

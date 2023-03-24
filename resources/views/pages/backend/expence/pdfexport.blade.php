@@ -91,31 +91,30 @@
         <thead>
             <tr>
                 <th style="background-color: #E5FF8E;">{{ date('d M Y', strtotime($today)) }}</th>
-                <th style="background-color: #C1D1DB;">Cash - {{ $total_cash }}</th>
-                <th style="background-color: #FFE972;">Pending - {{ $total_pending }}</th>
-                <th style="background-color: #D8E79D;">Wallet - {{ $total_wallet }}</th>
-                <th style="background-color: #E2CFCF;">Total - {{ $total_total }}</th>
+                <th style="background-color: #E2CFCF;">Total - {{ $total_pending }}</th>
+                <th style="background-color: #C1D1DB;">Cash - {{ $total_paid }}</th>
+                <th style="background-color: #FFE972;">Over All - {{ $total }}</th>
             </tr>
         </thead>
     </table>
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
-                <th>Bill No</th>
-                <th>Customer</th>
-                <th>Session</th>
-                <th>Payment Via</th>
+                <th>Name</th>
                 <th>Amount</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody id="customer_index">
-            @foreach ($daily_Data as $keydata => $outputs)
+            @foreach ($data as $keydata => $datas)
             <tr>
-                <td style="font-size: 12px;">{{ $outputs['invoice_no'] }}</td>
-                <td style="font-size: 12px;">{{ $outputs['customer'] }}</td>
-                <td style="font-size: 12px;">{{ $outputs['title'] }}</td>
-                <td style="font-size: 12px;">{{ $outputs['payment_method'] }}</td>
-                <td style="font-size: 12px;">Rs. {{ $outputs['bill_amount'] }}</td>
+                <td style="font-size: 12px;">{{ $datas->employee->name }}</td>
+                <td style="font-size: 12px;">Rs. {{ $datas->amount }}</td>
+                @if ( $datas->status == 'Pending')
+                <td style="font-size: 12px;">.....</td>
+                @else
+                <td style="font-size: 12px;">Cash</td>
+                @endif
             </tr>
             @endforeach
         </tbody>

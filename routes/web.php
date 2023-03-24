@@ -300,3 +300,7 @@ Route::get('/getemployeeId/{phoneno}', [EmployeeController::class, 'getemployeeI
 Route::put('/getDashboardData', [DashboardController::class, 'filterindex'])->name('filterindex');
 
 Route::get('/pdf_export', [SalesController::class, 'pdf_export']);
+
+Route::get('/pdfexportexpence', [ExpenceController::class, 'pdfexportexpence']);
+
+Route::get('/pdfexportexpencebydate', [ExpenceController::class, 'pdfexportexpencebydate']);

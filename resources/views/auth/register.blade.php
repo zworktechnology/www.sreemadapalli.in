@@ -17,13 +17,13 @@
                                             <div class="text-center">
                                                 <h4 class="mb-3"><i
                                                         class="bx bxs-quote-alt-left text-dark h1 align-middle me-3"></i><span
-                                                        class="text-dark">Design & Develop</span> By</h4>
+                                                        class="text-dark">Design & Developed</span> By</h4>
                                                 <div dir="ltr">
                                                     <div class="owl-carousel owl-theme auth-review-carousel"
                                                         id="auth-review-carousel">
                                                         <div class="item">
                                                             <div class="py-3">
-                                                                <p class="font-size-16 mb-4">Zwork Technologies, Coimbatore, Tamilnadu, India. | Custom Software</p>
+                                                                <p class="font-size-16 mb-4">Zwork Technology, Coimbatore & Tiruchirappalli | Custom Software</p>
                                                             </div>
                                                         </div>
                                                     </div>
