@@ -64,7 +64,7 @@
             @endif
             <div class="row">
                 <div style="display: flex;">
-                    <div class="col-md-6" style="margin-right: 5px;">
+                    <div class="col-md-4" style="margin-right: 5px;">
                         <div class="card mini-stats-wid">
                             <div class="card-body" style="background-color: #B8FF72;">
                                 <div class="d-flex">
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card mini-stats-wid">
                             <div class="card-body" style="background-color: #01aef0;">
                                 <div class="d-flex">
@@ -88,14 +88,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="card mini-stats-wid">
-                        <div class="card-body" style="background-color: #9ab3c3;">
-                            <div class="d-flex">
-                                <div class="flex-grow-1">
-                                    <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence</p>
-                                    <h4 class="mb-0" style="color: red !important;">₹ {{ $total }}</h4>
+                    <div class="col-md-4">
+                        <div class="card mini-stats-wid">
+                            <div class="card-body" style="background-color: #9ab3c3;">
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence</p>
+                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total }}</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                                 <thead style="background: #EEBE78">
                                     <tr>
                                         <th>Sl. No</th>
-                                        <th>Employee</th>
+                                        <th>Name</th>
                                         <th>Date</th>
                                         <th>Amount</th>
                                         <th>Status</th>

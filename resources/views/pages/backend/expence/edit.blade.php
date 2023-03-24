@@ -31,7 +31,7 @@
                                     @csrf
                                     <div class="row mb-4">
                                         <label for="employee_id" class="col-sm-3 col-form-label">
-                                            Customer <span style="color: red;">*</span></label>
+                                            Name <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
                                             <select class="form-control js-example-basic-single" name="employee_id" required>
                                                 <option value="" disabled selected hidden class="text-muted">
