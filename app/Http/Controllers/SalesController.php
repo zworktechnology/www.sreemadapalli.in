@@ -780,4 +780,9 @@ class SalesController extends Controller
 
         return $pdf->download('todaysales.pdf');
     }
+
+    public function pdfbyname()
+    {
+        return view('pages.backend.sales.pdfbyname');
+    }
 }

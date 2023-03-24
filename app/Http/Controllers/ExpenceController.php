@@ -114,29 +114,5 @@ class ExpenceController extends Controller
 
         return $pdf->download('expence_pdfexport.pdf');
     }
-
-    public function pdfexportexpencebydate(Request $request)
-    {
-        $today = $request->get('date');
-        $data = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
-        $total = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
-        $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
-        $employee_mobile = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
-        $total_pending = Expence::where('date', '=', $today)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');
-        $total_paid = Expence::where('date', '=', $today)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
-
-
-        $pdf = Pdf::loadView('pages.backend.expence.pdfexport', [
-            'today' => $today,
-            'total_pending' => $total_pending,
-            'total_paid' => $total_paid,
-            'total' => $total,
-            'data' => $data,
-        ]);
-
-        return $pdf->download('expence_pdfexport_bydate.pdf');
-    }
-
-
 }
 

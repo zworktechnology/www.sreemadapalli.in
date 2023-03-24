@@ -301,6 +301,6 @@ Route::put('/getDashboardData', [DashboardController::class, 'filterindex'])->na
 
 Route::get('/pdf_export', [SalesController::class, 'pdf_export']);
 
-Route::get('/pdfexportexpence', [ExpenceController::class, 'pdfexportexpence']);
+Route::get('/pdfbyname', [SalesController::class, 'pdfbyname']);
 
-Route::get('/pdfexportexpencebydate', [ExpenceController::class, 'pdfexportexpencebydate']);
+Route::get('/pdfexportexpence', [ExpenceController::class, 'pdfexportexpence']);

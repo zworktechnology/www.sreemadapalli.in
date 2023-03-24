@@ -32,9 +32,13 @@
 
                                     </div>
                                 </form>
-                                <a href="/pdf_export" class="nofilter ">
+                                <a href="/pdf_export" class="nofilter " style="margin-right: 10px;">
                                     <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                         Export as PDF</button>
+                                </a>
+                                <a href="/pdfbyname" class="nofilter ">
+                                    <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                        Export by Name</button>
                                 </a>
                             </div>
                         </div>
