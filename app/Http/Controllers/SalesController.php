@@ -487,6 +487,7 @@ class SalesController extends Controller
 
         $date = date('d-m-Y', strtotime($daily_date));
 
+       
 
         return view('pages.backend.sales.dailyfilter', compact('daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count',
         'dinner_data_count', 'date', 'total_bill_amount', 'total_cash', 'total_wallet', 'total_pending', 'deliveryboys_arr',

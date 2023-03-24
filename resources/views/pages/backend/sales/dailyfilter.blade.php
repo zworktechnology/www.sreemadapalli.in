@@ -30,6 +30,9 @@
                                             Search</button>
 
                                     </div>
+                                    <div style="margin-right: 10px;">
+                                    <input type="button" class="dailyexcelexport px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300 btn btn-success w-md" value="EXCEL Export"/>
+                                    </div>
                                 </form>
                                 <div>
                                 <a href="/zwork-admin/sales">
@@ -145,7 +148,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body dailyFilterData">
                                 <table id="dailylistdatatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #CAF1DE">
                                         <tr>
@@ -278,7 +281,10 @@
             });
 
 
-
+//$(".dailyexcelexport").click(function (e) {
+ //   window.open('data:application/vnd.ms-excel,' +  encodeURIComponent($('.dailyFilterData').html()));
+ //   e.preventDefault();
+//});  
 
 
         </script>
