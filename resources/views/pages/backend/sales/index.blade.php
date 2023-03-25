@@ -183,7 +183,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 pointer">
-                        <a href="{{ route('customer.index') }}">
+                        <a href="javascript:void(0)">
                             <div data-bs-toggle="modal">
                                 <div class="card mini-stats-wid">
                                     <div class="card-body" style="background-color: #f0e659c2;">
