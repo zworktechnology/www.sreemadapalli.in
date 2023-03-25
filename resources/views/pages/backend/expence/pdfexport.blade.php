@@ -82,18 +82,23 @@
     </style>
 </head>
 <body>
-    <div class="logoname">
-        <div>
-            <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
-        </div>
-    </div>
+    <table style="margin-bottom: 10px;">
+        <thead>
+            <tr>
+                <th><img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40"></th>
+                <th><p>-----------------------</p></th>
+                <th style="margin: 20px;">Expence</th>
+                <th><p>-----------------------</p></th>
+                <th style="margin: 20px;">{{ date('d M Y', strtotime($today)) }}</th>
+            </tr>
+        </thead>
+    </table>
     <table id="customers">
         <thead>
             <tr>
-                <th style="background-color: #E5FF8E;">{{ date('d M Y', strtotime($today)) }}</th>
-                <th style="background-color: #E2CFCF;">Total - {{ $total_pending }}</th>
-                <th style="background-color: #C1D1DB;">Cash - {{ $total_paid }}</th>
-                <th style="background-color: #FFE972;">Over All - {{ $total }}</th>
+                <th>Total - Rs. <span style="color: red;">{{ $total_pending }}</span></th>
+                <th>Cash - Rs. <span style="color: red;">{{ $total_paid }}</span></th>
+                <th>Over All - Rs. <span style="color: red;">{{ $total }}</span></th>
             </tr>
         </thead>
     </table>

@@ -474,7 +474,7 @@ class SalesController extends Controller
         'walletcard', 'walletgpay', 'walletgpaybusiness', 'walletphonepe', 'walletpaytm', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending',
         'breakfast_data_pm_cash', 'lunch_data_pm_cash', 'dinner_data_pm_cash',
         'total_total', 'breakfast_data_pm_total', 'lunch_data_pm_total', 'dinner_data_pm_total',
-        'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet'));
+        'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet', 'daily_date'));
     }
 
     public function store(Request $request)

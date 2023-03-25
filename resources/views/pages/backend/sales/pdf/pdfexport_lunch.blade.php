@@ -86,9 +86,9 @@
         <thead>
             <tr>
                 <th><img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40"></th>
-                <th><p>------------------</p></th>
+                <th><p>-----------------------</p></th>
                 <th style="margin: 20px;">Lunch</th>
-                <th><p>------------------</p></th>
+                <th><p>-----------------------</p></th>
                 <th style="margin: 20px;">{{ date('d M Y', strtotime($date)) }}</th>
             </tr>
         </thead>

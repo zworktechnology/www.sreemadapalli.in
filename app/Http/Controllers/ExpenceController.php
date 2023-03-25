@@ -27,6 +27,7 @@ class ExpenceController extends Controller
     public function dailyfilter(Request $request)
     {
         $daily_date = $request->get('date');
+        
         $expense_data = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('amount');
         $total_pending = Expence::where('date', '=', $daily_date)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');

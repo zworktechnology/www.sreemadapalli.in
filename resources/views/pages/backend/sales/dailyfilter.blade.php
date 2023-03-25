@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0 font-size-18 pointer">
-                            <div data-bs-toggle="modal" data-bs-target="#staticBackdropfull">Sales  -  {{ $date }}</div>
+                            <div data-bs-toggle="modal" data-bs-target="#staticBackdropfull">Sales  -  {{ date('d-m-Y', strtotime($daily_date)) }}</div>
                         </h4>
                         <div class="modal fade" id="staticBackdropfull" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             @include('pages.backend.sales.addon.full')
@@ -23,7 +23,7 @@
 
                                     @csrf
                                     <div style="margin-right: 10px;">
-                                        <input type="date" class="form-control" name="daily_date" id="daily_date" placeholder="Enter Your " required value="{{ $date }}">
+                                        <input type="date" class="form-control" name="daily_date" id="daily_date" placeholder="Enter Your " required value="{{ $daily_date }}">
                                     </div>
                                     <div style="margin-right: 10px;">
                                         <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
@@ -36,19 +36,19 @@
                                     <button class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300" style="border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
                                         Export as</button>
                                 </a>
-                                <a href="/pdf_export/{{ $date }}" class="nofilter ">
+                                <a href="/pdf_export/{{ $daily_date }}" class="nofilter ">
                                     <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
                                         All</button>
                                 </a>
-                                <a href="/pdfbybreakfast/{{ $date }}" class="nofilter ">
+                                <a href="/pdfbybreakfast/{{ $daily_date }}" class="nofilter ">
                                     <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
                                         Break Fast</button>
                                 </a>
-                                <a href="/pdfbylunch/{{ $date }}" class="nofilter ">
+                                <a href="/pdfbylunch/{{ $daily_date }}" class="nofilter ">
                                     <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
                                         Lunch</button>
                                 </a>
-                                <a href="/pdfbydinner/{{ $date }}" class="nofilter " style="margin-right: 10px;">
+                                <a href="/pdfbydinner/{{ $daily_date }}" class="nofilter " style="margin-right: 10px;">
                                     <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300" style="border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
                                         Dinner</button>
                                 </a>
