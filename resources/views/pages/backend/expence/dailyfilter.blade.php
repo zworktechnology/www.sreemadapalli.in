@@ -73,7 +73,7 @@
                             <div class="card-body" style="background-color: #B8FF72;">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence -- Pending</p>
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Expence - Gpay</p>
                                         <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                             <div class="card-body" style="background-color: #01aef0;">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence -- Paid</p>
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Expence - Cash</p>
                                         <h4 class="mb-0" style="color: red !important;">₹ {{ $total_paid }}</h4>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                             <div class="card-body" style="background-color: #9ab3c3;">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total Expence</p>
+                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total</p>
                                         <h4 class="mb-0" style="color: red !important;">₹ {{ $total }}</h4>
                                     </div>
                                 </div>
