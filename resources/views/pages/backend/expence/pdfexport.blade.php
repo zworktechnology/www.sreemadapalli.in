@@ -121,7 +121,7 @@
                 @else
                 <td style="font-size: 12px;">Cash</td>
                 @endif
-                <td style="font-size: 12px;">Rs. {{ $datas->note }}</td>
+                <td style="font-size: 12px;">{{ $datas->note }}</td>
             </tr>
             @endforeach
         </tbody>
