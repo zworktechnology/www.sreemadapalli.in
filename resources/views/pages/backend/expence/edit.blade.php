@@ -61,7 +61,7 @@
                                             Status <span style="color: red;">*</span></label>
                                         <div class="col-sm-9">
                                             <select class="form-control js-example-basic-single" name="status" required>
-                                                <option value="Pending" class="text-muted" {{ $data->status == "Pending" ? 'selected' : '' }}>.....</option>
+                                                <option value="Pending" class="text-muted" {{ $data->status == "Pending" ? 'selected' : '' }}>G-pay</option>
                                                 <option value="Paid" class="text-muted" {{ $data->status == "Paid" ? 'selected' : '' }}>Cash</option>
                                             </select>
                                         </div>

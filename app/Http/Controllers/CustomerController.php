@@ -149,11 +149,6 @@ class CustomerController extends Controller
         }
 
 
-
-
-// Get Customers Recent Order
-
-        
         $BreakfastData = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
         $Breakfast_arr = [];
         foreach ($BreakfastData as $key => $BreakfastDatas) {
@@ -173,7 +168,7 @@ class CustomerController extends Controller
         }
 
         $merging_Arr = array_merge($Breakfast_arr, $Lunch_arr, $Dinner_arr);
-        
+
         usort($merging_Arr, function ($a, $b) {
             $dateTimestamp1 = strtotime($a);
             $dateTimestamp2 = strtotime($b);
@@ -189,17 +184,17 @@ class CustomerController extends Controller
         }else if($reverse[0] != $today){
             $secondLast = $reverse[0];
         }
-        
-       
 
-        
+
+
+
         $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $CustomersLunchAmt = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
-        
+
         $Custumer_recent_array = [];
-        
+
 
                 $Custumer_recent_array[] = array(
                     'date' => date('d-m-Y', strtotime($secondLast)),
@@ -208,12 +203,11 @@ class CustomerController extends Controller
                     'CustomersDinnerAmt' => $CustomersDinnerAmt,
                     'TotalAmount' => $TotalAmount,
                 );
-           
-        
+
+
 
         return view('pages.backend.customer.view', compact('today', 'customer', 'data', 'breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'payment', 'payment_total_amount', 'Custumer_index_array', 'Custumer_recent_array'));
     }
-
 
     public function export_customerorder_pdf($id)
     {
@@ -544,7 +538,7 @@ class CustomerController extends Controller
             'pending' => $pending
         );
 
-        
+
         echo json_encode($customer_Arr);
     }
 
@@ -565,7 +559,7 @@ class CustomerController extends Controller
             'contact_number' => $customermobiledata->contact_number,
             'pending' => $pending
         );
-        
+
         echo json_encode($customer_Arr);
     }
 

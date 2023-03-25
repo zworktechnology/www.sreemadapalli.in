@@ -82,19 +82,24 @@
     </style>
 </head>
 <body>
-    <div class="logoname">
+    <div class="logoname" style="display: flex; justify-content: space-between;">
         <div>
             <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
         </div>
+        <div>
+            <h4 style="color: red;">All</h4>
+        </div>
+        <div>
+            <h4 style="color: red;">{{ date('d M Y', strtotime($date)) }}</h4>
+        </div>
     </div>
-    <table id="customers">
+    <table id="customers" style="margin-bottom: 20px;">
         <thead>
             <tr>
-                <th style="background-color: #E5FF8E;">{{ date('d M Y', strtotime($today)) }}</th>
-                <th style="background-color: #C1D1DB;">Cash - {{ $total_cash }}</th>
-                <th style="background-color: #FFE972;">Pending - {{ $total_pending }}</th>
-                <th style="background-color: #D8E79D;">Wallet - {{ $total_wallet }}</th>
-                <th style="background-color: #E2CFCF;">Total - {{ $total_total }}</th>
+                <th>Cash - {{ $total_cash }}</th>
+                <th>Pending - {{ $total_pending }}</th>
+                <th>Wallet - {{ $total_wallet }}</th>
+                <th>Total - {{ $total_total }}</th>
             </tr>
         </thead>
     </table>

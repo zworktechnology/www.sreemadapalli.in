@@ -299,8 +299,14 @@ Route::get('/getemployeeId/{phoneno}', [EmployeeController::class, 'getemployeeI
 //DASHBOARD ARRAY FILTER
 Route::put('/getDashboardData', [DashboardController::class, 'filterindex'])->name('filterindex');
 
-Route::get('/pdf_export', [SalesController::class, 'pdf_export']);
-
-Route::get('/pdfbyname/{date}', [SalesController::class, 'pdfbyname']);
-
 Route::get('/pdfexportexpence', [ExpenceController::class, 'pdfexportexpence']);
+
+// SALES CONTROLLER // PDF EXPORT THE RECORD
+Route::get('/pdf_export/{date}', [SalesController::class, 'pdf_export']);
+// SALES CONTROLLER // PDF EXPORT BY BREAKFAST
+Route::get('/pdfbybreakfast/{date}', [SalesController::class, 'pdfbybreafast']);
+// SALES CONTROLLER // PDF EXPORT BY LUNCH
+Route::get('/pdfbylunch/{date}', [SalesController::class, 'pdfbylunch']);
+// SALES CONTROLLER // PDF EXPORT BY DINNER
+Route::get('/pdfbydinner/{date}', [SalesController::class, 'pdfbydinner']);
+

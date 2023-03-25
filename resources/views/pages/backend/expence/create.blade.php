@@ -53,7 +53,7 @@
                         Status <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
                         <select class="form-control js-example-basic-single" name="status" required>
-                            <option value="Pending" selected class="text-muted">.....</option>
+                            <option value="Pending" selected class="text-muted">G-pay</option>
                             <option value="Paid" class="text-muted">Cash</option>
                         </select>
                     </div>

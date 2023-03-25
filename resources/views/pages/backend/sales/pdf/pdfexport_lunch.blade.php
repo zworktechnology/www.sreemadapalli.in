@@ -82,40 +82,58 @@
     </style>
 </head>
 <body>
-    <div class="logoname">
+    <div class="logoname" style="display: flex; justify-content: space-between;">
         <div>
             <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
         </div>
+        <div>
+            <h4 style="color: red;">Lunch</h4>
+        </div>
+        <div>
+            <h4 style="color: red;">{{ date('d M Y', strtotime($date)) }}</h4>
+        </div>
     </div>
-    <table id="customers">
+    <table id="customers" style="margin-bottom: 20px;">
         <thead>
             <tr>
-                <th style="background-color: #E5FF8E;">{{ $date }}</th>
-                <th style="background-color: #C1D1DB;">Cash - {{ $cash }}</th>
-                <th style="background-color: #FFE972;">Pending - {{ $pending }}</th>
-                <th style="background-color: #D8E79D;">Wallet - {{ $wallet }}</th>
-                <th style="background-color: #E2CFCF;">Total - {{ $total }}</th>
+                <th>Cash - Rs. {{ $cash }}</th>
+                <th>Pending - Rs. {{ $pending }}</th>
+                <th>Wallet - Rs. {{ $wallet }}</th>
+                <th>Total - Rs. {{ $total }}</th>
             </tr>
         </thead>
     </table>
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
-                <th>Customer</th>
-                <th>Break Fast</th>
-                <th>Lunch</th>
-                <th>Dinner</th>
-                <th>Total</th>
+                <th>Customer Name</th>
+                <th>Cash</th>
+                <th>Pending</th>
+                <th>Wallet</th>
             </tr>
         </thead>
         <tbody id="customer_index">
-        @foreach ($daily_Data as $keydata => $outputs)
+            @foreach ($data as $keydata => $data)
             <tr>
-                <td style="font-size: 12px;">{{ $outputs['customer'] }}</td>
-                <td style="font-size: 12px;">{{ $outputs['breakfast_data'] }}</td>
-                <td style="font-size: 12px;">{{ $outputs['lunch_data'] }}</td>
-                <td style="font-size: 12px;">{{ $outputs['dinner_data'] }}</td>
-                <td style="font-size: 12px;">{{ $outputs['bill_amount'] }}</td>
+                <td style="font-size: 12px;">{{ $data->customer->name }}</td>
+
+                @if ($data->payment_method == 'Cash')
+                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                @else
+                <td style="font-size: 12px;"></td>
+                @endif
+
+                @if ($data->payment_method == 'Pending')
+                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                @else
+                <td style="font-size: 12px;"></td>
+                @endif
+
+                @if ($data->payment_method != 'Pending' && $data->payment_method != 'Cash')
+                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                @else
+                <td style="font-size: 12px;"></td>
+                @endif
             </tr>
             @endforeach
         </tbody>

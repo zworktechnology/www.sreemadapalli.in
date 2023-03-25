@@ -92,7 +92,7 @@
                                             <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
                                             <td>₹ {{ $datas->amount }}</td>
                                             @if ( $datas->status == 'Pending')
-                                            <td style="background-color: red; color: white;">.....</td>
+                                            <td style="background-color: red; color: white;">G-pay</td>
                                             @else
                                             <td style="background-color: green; color: white;">Cash</td>
                                             @endif

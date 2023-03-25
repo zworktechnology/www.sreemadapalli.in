@@ -30,13 +30,31 @@
                                             Search</button>
 
                                     </div>
-                                    <div style="margin-right: 10px;">
-                                    <input type="button" class="dailyexcelexport px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300 btn btn-success w-md" value="EXCEL Export"/>
-                                    </div>
                                 </form>
+
+                                <a href="javascript:void(0)" class="nofilter ">
+                                    <button class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300" style="border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
+                                        Export as</button>
+                                </a>
+                                <a href="/pdf_export/{{ $date }}" class="nofilter ">
+                                    <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
+                                        All</button>
+                                </a>
+                                <a href="/pdfbybreakfast/{{ $date }}" class="nofilter ">
+                                    <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
+                                        Break Fast</button>
+                                </a>
+                                <a href="/pdfbylunch/{{ $date }}" class="nofilter ">
+                                    <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
+                                        Lunch</button>
+                                </a>
+                                <a href="/pdfbydinner/{{ $date }}" class="nofilter " style="margin-right: 10px;">
+                                    <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300" style="border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
+                                        Dinner</button>
+                                </a>
                                 <div>
                                 <a href="/zwork-admin/sales">
-                                    <button type="button" class="btn btn-success w-md" >Back</button>
+                                    <button type="button" class="px-4 py-2 btn btn-success w-md" >Back</button>
                                     </a>
 
                                 </div>
@@ -284,7 +302,7 @@
 //$(".dailyexcelexport").click(function (e) {
  //   window.open('data:application/vnd.ms-excel,' +  encodeURIComponent($('.dailyFilterData').html()));
  //   e.preventDefault();
-//});  
+//});
 
 
         </script>
