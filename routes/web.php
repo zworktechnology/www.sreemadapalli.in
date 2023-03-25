@@ -299,7 +299,7 @@ Route::get('/getemployeeId/{phoneno}', [EmployeeController::class, 'getemployeeI
 //DASHBOARD ARRAY FILTER
 Route::put('/getDashboardData', [DashboardController::class, 'filterindex'])->name('filterindex');
 
-Route::get('/pdfexportexpence', [ExpenceController::class, 'pdfexportexpence']);
+Route::get('/pdfexportexpence/{date}', [ExpenceController::class, 'pdfexportexpence']);
 
 // SALES CONTROLLER // PDF EXPORT THE RECORD
 Route::get('/pdf_export/{date}', [SalesController::class, 'pdf_export']);

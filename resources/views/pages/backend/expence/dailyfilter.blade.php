@@ -23,6 +23,10 @@
                                         <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                             Search</button>
                                     </div>
+                                    <a href="/pdfexportexpence/{{ $daily_date }}" class="nofilter " style="margin-right: 10px;">
+                                        <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
+                                            Export as PDF</button>
+                                    </a>
                                 </form>
                                 <div>
                                     <a href="/zwork-admin/expence">

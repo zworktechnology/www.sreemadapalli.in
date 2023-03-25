@@ -93,9 +93,10 @@ class ExpenceController extends Controller
         return redirect()->route('expence.index')->with('destroy', 'Successfully erased the expence record !');
     }
 
-    public function pdfexportexpence()
+    public function pdfexportexpence($date)
     {
-        $today = Carbon::now()->format('Y-m-d');
+        $today = $date;
+
         $data = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
         $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
@@ -112,7 +113,9 @@ class ExpenceController extends Controller
             'data' => $data,
         ]);
 
-        return $pdf->download('expence_pdfexport.pdf');
+        $name = 'Expence' . '_' . $date . '.' . 'pdf';
+
+        return $pdf->download($name);
     }
 }
 

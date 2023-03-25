@@ -24,7 +24,7 @@
                                         <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                             Search</button>
                                     </div>
-                                    <a href="/pdfexportexpence" class="nofilter ">
+                                    <a href="/pdfexportexpence/{{ $today }}" class="nofilter ">
                                         <button type="button" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
                                             Export as PDF</button>
                                     </a>
