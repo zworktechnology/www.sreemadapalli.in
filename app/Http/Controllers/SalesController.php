@@ -775,7 +775,7 @@ class SalesController extends Controller
             'total_pending' => $total_pending,
             'total_wallet' => $total_wallet,
             'daily_Data' => $daily_Data,
-            'today' => $today,
+            'date' => $today,
             'total_total' => $total_total,
         ]);
 
@@ -798,7 +798,7 @@ class SalesController extends Controller
 
         $data = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
 
-        $pdf = Pdf::loadView('pages.backend.sales.pdfexport_breakfast', [
+        $pdf = Pdf::loadView('pages.backend.sales.pdf.pdfexport_breakfast', [
             'cash' => $cash,
             'pending' => $pending,
             'wallet' => $wallet,
