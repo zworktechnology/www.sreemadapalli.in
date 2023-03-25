@@ -779,7 +779,9 @@ class SalesController extends Controller
             'total_total' => $total_total,
         ]);
 
-        return $pdf->download('pdfexport.pdf');
+        $name = 'All' . '_' . $date . '.' . 'pdf';
+
+        return $pdf->download($name);
     }
 
     public function pdfbybreafast($date)
@@ -807,7 +809,7 @@ class SalesController extends Controller
             'total' => $total,
         ]);
 
-        $name = 'Breakfast' . '_' . $total . '.' . 'pdf';
+        $name = 'Breakfast' . '_' . $date . '.' . 'pdf';
 
         return $pdf->download($name);
     }
@@ -837,7 +839,7 @@ class SalesController extends Controller
             'total' => $total,
         ]);
 
-        $name = 'Lunch' . '_' . $total . '.' . 'pdf';
+        $name = 'Lunch' . '_' . $date . '.' . 'pdf';
 
         return $pdf->download($name);
     }
@@ -867,7 +869,7 @@ class SalesController extends Controller
             'total' => $total,
         ]);
 
-        $name = 'Dinner' . '_' . $total . '.' . 'pdf';
+        $name = 'Dinner' . '_' . $date . '.' . 'pdf';
 
         return $pdf->download($name);
     }

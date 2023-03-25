@@ -27,7 +27,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
             text-align: left;
-            background-color: #CAF1DE;
+            background-color: #e5ff8e;
             color: black;
         }
 
@@ -82,24 +82,22 @@
     </style>
 </head>
 <body>
-    <div class="logoname" style="display: flex; justify-content: space-between;">
-        <div>
-            <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
-        </div>
-        <div>
-            <h4 style="color: red;">All</h4>
-        </div>
-        <div>
-            <h4 style="color: red;">{{ date('d M Y', strtotime($date)) }}</h4>
-        </div>
-    </div>
-    <table id="customers" style="margin-bottom: 20px;">
+    <table style="margin-bottom: 10px;">
         <thead>
             <tr>
-                <th>Cash - {{ $total_cash }}</th>
-                <th>Pending - {{ $total_pending }}</th>
-                <th>Wallet - {{ $total_wallet }}</th>
-                <th>Total - {{ $total_total }}</th>
+                <th><img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40"></th>
+                <th>All</th>
+                <th>{{ date('d M Y', strtotime($date)) }}</th>
+            </tr>
+        </thead>
+    </table>
+    <table id="customers" style="margin-bottom: 10px;">
+        <thead>
+            <tr>
+                <th>Cash - Rs. <span style="color: red;">{{ $total_cash }}</span></th>
+                <th>Pending - Rs. <span style="color: red;">{{ $total_pending }}</span></th>
+                <th>Wallet - Rs. <span style="color: red;">{{ $total_wallet }}</span></th>
+                <th>Total - Rs. <span style="color: red;">{{ $total_total }}</span></th>
             </tr>
         </thead>
     </table>

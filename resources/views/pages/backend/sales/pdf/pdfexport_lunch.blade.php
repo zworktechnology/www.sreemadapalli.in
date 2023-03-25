@@ -82,24 +82,22 @@
     </style>
 </head>
 <body>
-    <div class="logoname" style="display: flex; justify-content: space-between;">
-        <div>
-            <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
-        </div>
-        <div>
-            <h4 style="color: red;">Lunch</h4>
-        </div>
-        <div>
-            <h4 style="color: red;">{{ date('d M Y', strtotime($date)) }}</h4>
-        </div>
-    </div>
-    <table id="customers" style="margin-bottom: 20px;">
+    <table style="margin-bottom: 10px;">
         <thead>
             <tr>
-                <th>Cash - Rs. {{ $cash }}</th>
-                <th>Pending - Rs. {{ $pending }}</th>
-                <th>Wallet - Rs. {{ $wallet }}</th>
-                <th>Total - Rs. {{ $total }}</th>
+                <th><img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40"></th>
+                <th>Lunch</th>
+                <th>{{ date('d M Y', strtotime($date)) }}</th>
+            </tr>
+        </thead>
+    </table>
+    <table id="customers" style="margin-bottom: 10px;">
+        <thead>
+            <tr>
+                <th>Cash - Rs. <span style="color: red;">{{ $cash }}</span></th>
+                <th>Pending - Rs. <span style="color: red;">{{ $pending }}</span></th>
+                <th>Wallet - Rs. <span style="color: red;">{{ $wallet }}</span></th>
+                <th>Total - Rs. <span style="color: red;">{{ $total }}</span></th>
             </tr>
         </thead>
     </table>
