@@ -23,7 +23,7 @@
 
                                     @csrf
                                     <div style="margin-right: 10px;">
-                                        <input type="date" class="form-control" name="daily_date" id="daily_date" placeholder="Enter Your " required>
+                                        <input type="date" class="form-control" name="daily_date" id="daily_date" placeholder="Enter Your " required value="{{ $date }}">
                                     </div>
                                     <div style="margin-right: 10px;">
                                         <button type="submit" class="px-4 py-2 bg-black text-white rounded font-bold font-serif shadow-sm shadow-red-300">
