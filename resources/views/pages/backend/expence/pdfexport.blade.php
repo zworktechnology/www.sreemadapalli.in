@@ -105,6 +105,7 @@
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
+                <th>Sl. No</th>
                 <th>Name</th>
                 <th>Amount</th>
                 <th>Status</th>
@@ -114,6 +115,7 @@
         <tbody id="customer_index">
             @foreach ($data as $keydata => $datas)
             <tr>
+                <td>{{ ++$keydata }}</td>
                 <td style="font-size: 12px;">{{ $datas->employee->name }}</td>
                 <td style="font-size: 12px;">Rs. {{ $datas->amount }}</td>
                 @if ( $datas->status == 'Pending')

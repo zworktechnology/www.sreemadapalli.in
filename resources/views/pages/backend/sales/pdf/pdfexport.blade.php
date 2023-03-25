@@ -106,6 +106,7 @@
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
+                <th>Sl. No</th>
                 <th>Bill No</th>
                 <th>Customer</th>
                 <th>Session</th>
@@ -116,6 +117,7 @@
         <tbody id="customer_index">
             @foreach ($daily_Data as $keydata => $outputs)
             <tr>
+                <td>{{ ++$keydata }}</td>
                 <td style="font-size: 12px;">{{ $outputs['invoice_no'] }}</td>
                 <td style="font-size: 12px;">{{ $outputs['customer'] }}</td>
                 <td style="font-size: 12px;">{{ $outputs['title'] }}</td>
