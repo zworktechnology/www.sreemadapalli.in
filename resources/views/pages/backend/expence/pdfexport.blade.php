@@ -108,6 +108,7 @@
                 <th>Name</th>
                 <th>Amount</th>
                 <th>Status</th>
+                <th>Note</th>
             </tr>
         </thead>
         <tbody id="customer_index">
@@ -120,6 +121,7 @@
                 @else
                 <td style="font-size: 12px;">Cash</td>
                 @endif
+                <td style="font-size: 12px;">Rs. {{ $datas->note }}</td>
             </tr>
             @endforeach
         </tbody>
