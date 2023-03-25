@@ -96,9 +96,9 @@
     <table id="customers">
         <thead>
             <tr>
-                <th>Total - Rs. <span style="color: red;">{{ $total_pending }}</span></th>
+                <th>G-Pay - Rs. <span style="color: red;">{{ $total_pending }}</span></th>
                 <th>Cash - Rs. <span style="color: red;">{{ $total_paid }}</span></th>
-                <th>Over All - Rs. <span style="color: red;">{{ $total }}</span></th>
+                <th>Total - Rs. <span style="color: red;">{{ $total }}</span></th>
             </tr>
         </thead>
     </table>
