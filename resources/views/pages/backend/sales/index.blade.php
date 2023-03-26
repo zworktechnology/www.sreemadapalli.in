@@ -40,13 +40,9 @@
                                     <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
                                         All</button>
                                 </a>
-                                <a href="/pdfbybreakfast/{{ $today }}" class="nofilter ">
+                                <a href="/pdfbybreakfastlunch/{{ $today }}" class="nofilter ">
                                     <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
-                                        Break Fast</button>
-                                </a>
-                                <a href="/pdfbylunch/{{ $today }}" class="nofilter ">
-                                    <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">
-                                        Lunch</button>
+                                        Breakfast & Lunch</button>
                                 </a>
                                 <a href="/pdfbydinner/{{ $today }}" class="nofilter ">
                                     <button type="button" class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300" style="border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
