@@ -96,7 +96,6 @@
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
-                <th>Sl. No</th>
                 <th>Bill No</th>
                 <th>Customer Name</th>
                 <th>Cash</th>

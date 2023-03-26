@@ -96,7 +96,6 @@
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
-                <th>Sl. No</th>
                 <th>Bill No</th>
                 <th>Customer Name</th>
                 <th>Cash</th>
@@ -107,7 +106,6 @@
         <tbody id="customer_index">
             @foreach ($data as $keydata => $data)
             <tr>
-                <td>{{ ++$keydata }}</td>
                 <td>{{ $data->invoice_no }}</td>
                 <td style="font-size: 12px;">{{ $data->customer->name }}</td>
 
@@ -132,25 +130,31 @@
             @endforeach
         </tbody>
     </table>
-    <table>
-        <thead>
+    <table id="customers">
+        <thead style="background: #CAF1DE">
             <tr>
-                <th style="font-size: 12px;">Cash</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $cash }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Pending</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $pending }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Wallet</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $wallet }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Total</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total }}</span></th>
+                <th style="font-size: 12px;">Accounting</th>
+                <th style="font-size: 12px;">Details</th>
             </tr>
         </thead>
+        <tbody id="customer_index">
+            <tr>
+                <td style="font-size: 12px;">Cash</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $cash }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Pending</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $pending }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Wallet</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $wallet }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Total</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total }}</span></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>

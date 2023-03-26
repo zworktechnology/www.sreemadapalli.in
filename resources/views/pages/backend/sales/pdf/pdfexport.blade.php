@@ -117,25 +117,31 @@
             @endforeach
         </tbody>
     </table>
-    <table>
-        <thead>
+    <table id="customers">
+        <thead style="background: #CAF1DE">
             <tr>
-                <th style="font-size: 12px;">Cash</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_cash }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Pending</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_pending }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Wallet</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_wallet }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Total</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_total }}</span></th>
+                <th style="font-size: 12px;">Accounting</th>
+                <th style="font-size: 12px;">Details</th>
             </tr>
         </thead>
+        <tbody id="customer_index">
+            <tr>
+                <td style="font-size: 12px;">Cash</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_cash }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Pending</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_pending }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Wallet</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_wallet }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Total</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_total }}</span></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>

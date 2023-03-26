@@ -119,22 +119,27 @@
             @endforeach
         </tbody>
     </table>
-
-    <table>
-        <thead>
+    <table id="customers">
+        <thead style="background: #CAF1DE">
             <tr>
-                <th style="font-size: 12px;">G-Pay</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_pending }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Cash</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_paid }}</span></th>
-            </tr>
-            <tr>
-                <th style="font-size: 12px;">Total</th>
-                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total }}</span></th>
+                <th style="font-size: 12px;">Accounting</th>
+                <th style="font-size: 12px;">Details</th>
             </tr>
         </thead>
+        <tbody id="customer_index">
+            <tr>
+                <td style="font-size: 12px;">G-Pay</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_pending }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Cash</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_paid }}</span></td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px;">Total</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total }}</span></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
