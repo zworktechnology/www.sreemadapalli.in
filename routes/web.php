@@ -309,4 +309,5 @@ Route::get('/pdfbybreakfast/{date}', [SalesController::class, 'pdfbybreafast']);
 Route::get('/pdfbylunch/{date}', [SalesController::class, 'pdfbylunch']);
 // SALES CONTROLLER // PDF EXPORT BY DINNER
 Route::get('/pdfbydinner/{date}', [SalesController::class, 'pdfbydinner']);
-
+// SALES CONTROLLER // PDF EXPORT BY BREAKFAST & LUNCH
+Route::get('/pdfbybreakfastlunch/{date}', [SalesController::class, 'pdfbybreafastlunch']);

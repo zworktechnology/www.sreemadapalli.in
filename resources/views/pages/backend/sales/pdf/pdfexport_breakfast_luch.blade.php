@@ -86,9 +86,9 @@
         <thead>
             <tr>
                 <th><img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40"></th>
-                <th><p>-----------------------</p></th>
-                <th style="margin: 20px;">Breakfast</th>
-                <th><p>-----------------------</p></th>
+                <th><p>------------------</p></th>
+                <th style="margin: 20px;">Breakfast & Lunch</th>
+                <th><p>------------------</p></th>
                 <th style="margin: 20px;">{{ date('d M Y', strtotime($date)) }}</th>
             </tr>
         </thead>
@@ -105,26 +105,51 @@
             </tr>
         </thead>
         <tbody id="customer_index">
-            @foreach ($data as $keydata => $data)
+            @foreach ($datab as $keydata => $data)
             <tr>
                 <td>{{ ++$keydata }}</td>
                 <td>{{ $data->invoice_no }}</td>
                 <td style="font-size: 12px;">{{ $data->customer->name }}</td>
 
                 @if ($data->payment_method == 'Cash')
-                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
                 @else
                 <td style="font-size: 12px;"></td>
                 @endif
 
                 @if ($data->payment_method == 'Pending')
-                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
                 @else
                 <td style="font-size: 12px;"></td>
                 @endif
 
                 @if ($data->payment_method != 'Pending' && $data->payment_method != 'Cash')
-                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
+                @else
+                <td style="font-size: 12px;"></td>
+                @endif
+            </tr>
+            @endforeach
+            @foreach ($datal as $keydata => $data)
+            <tr>
+                <td>{{ ++$keydata }}</td>
+                <td>{{ $data->invoice_no }}</td>
+                <td style="font-size: 12px;">{{ $data->customer->name }}</td>
+
+                @if ($data->payment_method == 'Cash')
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
+                @else
+                <td style="font-size: 12px;"></td>
+                @endif
+
+                @if ($data->payment_method == 'Pending')
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
+                @else
+                <td style="font-size: 12px;"></td>
+                @endif
+
+                @if ($data->payment_method != 'Pending' && $data->payment_method != 'Cash')
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
                 @else
                 <td style="font-size: 12px;"></td>
                 @endif

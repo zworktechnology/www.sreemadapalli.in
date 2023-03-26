@@ -93,16 +93,6 @@
             </tr>
         </thead>
     </table>
-    <table id="customers" style="margin-bottom: 10px;">
-        <thead>
-            <tr>
-                <th>Cash - Rs. <span style="color: red;">{{ $cash }}</span></th>
-                <th>Pending - Rs. <span style="color: red;">{{ $pending }}</span></th>
-                <th>Wallet - Rs. <span style="color: red;">{{ $wallet }}</span></th>
-                <th>Total - Rs. <span style="color: red;">{{ $total }}</span></th>
-            </tr>
-        </thead>
-    </table>
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
@@ -122,25 +112,45 @@
                 <td style="font-size: 12px;">{{ $data->customer->name }}</td>
 
                 @if ($data->payment_method == 'Cash')
-                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
                 @else
                 <td style="font-size: 12px;"></td>
                 @endif
 
                 @if ($data->payment_method == 'Pending')
-                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
                 @else
                 <td style="font-size: 12px;"></td>
                 @endif
 
                 @if ($data->payment_method != 'Pending' && $data->payment_method != 'Cash')
-                <td style="font-size: 12px;">Rs. {{ $data->bill_amount }}</td>
+                <td style="font-size: 12px;">{{ $data->bill_amount }}</td>
                 @else
                 <td style="font-size: 12px;"></td>
                 @endif
             </tr>
             @endforeach
         </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th style="font-size: 12px;">Cash</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $cash }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Pending</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $pending }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Wallet</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $wallet }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Total</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total }}</span></th>
+            </tr>
+        </thead>
     </table>
 </body>
 </html>

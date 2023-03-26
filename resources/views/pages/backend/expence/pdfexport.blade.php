@@ -94,15 +94,6 @@
         </thead>
     </table>
     <table id="customers">
-        <thead>
-            <tr>
-                <th>G-Pay - Rs. <span style="color: red;">{{ $total_pending }}</span></th>
-                <th>Cash - Rs. <span style="color: red;">{{ $total_paid }}</span></th>
-                <th>Total - Rs. <span style="color: red;">{{ $total }}</span></th>
-            </tr>
-        </thead>
-    </table>
-    <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
                 <th>Sl. No</th>
@@ -127,6 +118,23 @@
             </tr>
             @endforeach
         </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="font-size: 12px;">G-Pay</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_pending }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Cash</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_paid }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Total</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total }}</span></th>
+            </tr>
+        </thead>
     </table>
 </body>
 </html>

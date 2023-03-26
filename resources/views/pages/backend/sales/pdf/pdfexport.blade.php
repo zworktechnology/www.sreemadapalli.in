@@ -93,16 +93,6 @@
             </tr>
         </thead>
     </table>
-    <table id="customers" style="margin-bottom: 10px;">
-        <thead>
-            <tr>
-                <th>Cash - Rs. <span style="color: red;">{{ $total_cash }}</span></th>
-                <th>Pending - Rs. <span style="color: red;">{{ $total_pending }}</span></th>
-                <th>Wallet - Rs. <span style="color: red;">{{ $total_wallet }}</span></th>
-                <th>Total - Rs. <span style="color: red;">{{ $total_total }}</span></th>
-            </tr>
-        </thead>
-    </table>
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
@@ -126,6 +116,26 @@
             </tr>
             @endforeach
         </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th style="font-size: 12px;">Cash</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_cash }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Pending</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_pending }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Wallet</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_wallet }}</span></th>
+            </tr>
+            <tr>
+                <th style="font-size: 12px;">Total</th>
+                <th style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_total }}</span></th>
+            </tr>
+        </thead>
     </table>
 </body>
 </html>
