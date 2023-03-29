@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deliveryboy;
+use App\Models\Outdoor;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DeliveryboyController extends Controller
 {
     public function index()
     {
+        $today = Carbon::now()->format('Y-m-d');
         $data = Deliveryboy::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
-        return view('pages.backend.deliveryboy.index', compact('data'));
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+
+        return view('pages.backend.deliveryboy.index', compact('data', 'notificationcount'));
     }
 
     public function store(Request $request)

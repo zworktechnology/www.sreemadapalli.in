@@ -86,6 +86,7 @@
                                         <tr>
                                             <th>Sl. No</th>
                                             <th>Amount</th>
+                                            <th>Note</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -94,6 +95,7 @@
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->amount }}</td>
+                                            <td>{{ $datas->note }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li>

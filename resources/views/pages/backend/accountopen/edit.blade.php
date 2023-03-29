@@ -36,6 +36,13 @@
                                             <input type="number" class="form-control" name="amount" placeholder="Enter Your " required value="{{ $data->amount }}">
                                         </div>
                                     </div>
+                                    <div class="row mb-4">
+                                        <label for="amount" class="col-sm-3 col-form-label">
+                                            Note</label>
+                                        <div class="col-sm-9">
+                                            <textarea type="text" class="form-control" name="note" placeholder="Enter Your ">{!! $data->note !!}</textarea>
+                                        </div>
+                                    </div>
                                     <div class="row justify-content-end">
                                         <div class="col-sm-9">
                                             <div>

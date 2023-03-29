@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Determination;
 use Illuminate\Http\Request;
+use App\Models\Outdoor;
 use Carbon\Carbon;
 
 class DeterminationController extends Controller
@@ -12,6 +13,7 @@ class DeterminationController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $data = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
 
         $total_2000 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_2000');
         $total_500 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_500');
@@ -26,13 +28,14 @@ class DeterminationController extends Controller
 
         $total = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
 
-        return view('pages.backend.determination.index', compact('data', 'today', 'total'));
+        return view('pages.backend.determination.index', compact('notificationcount', 'data', 'today', 'total'));
     }
 
     public function dailyfilter(Request $request)
     {
         $daily_date = $request->get('date');
         $data = Determination::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
 
         $total_2000 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_2000');
         $total_500 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_500');
@@ -47,7 +50,7 @@ class DeterminationController extends Controller
 
         $total = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
 
-        return view('pages.backend.determination.dailyfilter', compact('data', 'daily_date', 'total'));
+        return view('pages.backend.determination.dailyfilter', compact('notificationcount', 'data', 'daily_date', 'total'));
     }
 
     public function store(Request $request)

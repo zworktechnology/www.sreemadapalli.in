@@ -25,8 +25,7 @@
         </div>
         <div class="d-flex">
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="d-none d-xl-inline-block ms-1" key="t-henry" style="color:black;">{{ date('d M Y') }}</span>
                     <span class="d-none d-xl-inline-block ms-1" key="t-henry" style="color:black;"> | </span>
                     <span class="d-none d-xl-inline-block ms-1" key="t-henry" style="color:black;">{{ auth()->user()->name }}</span>

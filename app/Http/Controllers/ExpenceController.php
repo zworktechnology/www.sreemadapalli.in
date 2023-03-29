@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Expence;
+use App\Models\Outdoor;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use PDF;
@@ -13,6 +14,7 @@ class ExpenceController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
         $data = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
         $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
@@ -21,19 +23,21 @@ class ExpenceController extends Controller
         $total_paid = Expence::where('date', '=', $today)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
 
 
-        return view('pages.backend.expence.index', compact('data', 'today', 'employee', 'total', 'employee_mobile', 'total_pending', 'total_paid'));
+        return view('pages.backend.expence.index', compact('notificationcount', 'data', 'today', 'employee', 'total', 'employee_mobile', 'total_pending', 'total_paid'));
     }
 
     public function dailyfilter(Request $request)
     {
         $daily_date = $request->get('date');
-        
+        $today = Carbon::now()->format('Y-m-d');
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+
         $expense_data = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('amount');
         $total_pending = Expence::where('date', '=', $daily_date)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');
         $total_paid = Expence::where('date', '=', $daily_date)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
 
-        return view('pages.backend.expence.dailyfilter', compact('expense_data', 'total', 'daily_date', 'total_pending', 'total_paid'));
+        return view('pages.backend.expence.dailyfilter', compact('notificationcount', 'expense_data', 'total', 'daily_date', 'total_pending', 'total_paid'));
     }
 
     public function store(Request $request)

@@ -13,14 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('account_opens', function (Blueprint $table) {
+        Schema::create('outdoors', function (Blueprint $table) {
 
             // Auto-generate ID column
             $table->id();
 
             // Request columns
-            $table->string('date');
-            $table->string('amount');
+            $table->string('name');
+            $table->string('contact_number');
+            $table->longText('address')->nullable();
+            $table->string('booking_date');
+            $table->string('delivery_date');
+            $table->string('status')->default(0);
+            $table->longText('order_note');
             $table->longText('note');
             $table->boolean('soft_delete')->default(0);
 
@@ -37,6 +42,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('account_opens');
+        Schema::dropIfExists('outdoors');
     }
 };

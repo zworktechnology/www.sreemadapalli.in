@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\Dinner;
 use App\Models\Lunch;
 use App\Models\Payment;
+use App\Models\Outdoor;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use PDF;
@@ -52,7 +53,9 @@ class CustomerController extends Controller
 
         }
 
-        return view('pages.backend.customer.index', compact('data', 'index_amount_arr', 'today', 'customer'));
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+
+        return view('pages.backend.customer.index', compact('data', 'index_amount_arr', 'today', 'customer', 'notificationcount'));
     }
 
     public function store(Request $request)

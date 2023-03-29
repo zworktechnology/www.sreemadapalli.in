@@ -21,6 +21,13 @@
                         <input type="number" class="form-control" name="amount" placeholder="Enter Your " required>
                     </div>
                 </div>
+                <div class="row mb-4">
+                    <label for="amount" class="col-sm-3 col-form-label">
+                        Note</label>
+                    <div class="col-sm-9">
+                        <textarea type="text" class="form-control" name="note" placeholder="Enter Your "></textarea>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-success">Save</button>

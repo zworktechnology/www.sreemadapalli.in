@@ -14,6 +14,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ExpenceController;
 use App\Http\Controllers\InviteController;
 use App\Http\Controllers\LunchController;
+use App\Http\Controllers\OutdoorController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SalesController;
 
@@ -262,6 +263,24 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/determination/delete/{id}', [DeterminationController::class, 'delete'])->name('determination.delete');
         // DESTROY
         Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/determination/destroy/{id}', [DeterminationController::class, 'destroy'])->name('determination.destroy');
+    });
+
+    // OUTDOOR CONTROLLER
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        // INDEX
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/outdoor', [OutdoorController::class, 'index'])->name('outdoor.index');
+        // STORE
+        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/outdoor/store', [OutdoorController::class, 'store'])->name('outdoor.store');
+        // EDIT
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/outdoor/edit/{id}', [OutdoorController::class, 'edit'])->name('outdoor.edit');
+        // UPDATE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/outdoor/update/{id}', [OutdoorController::class, 'update'])->name('outdoor.update');
+        // DELIVERED
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/outdoor/delivered/{id}', [OutdoorController::class, 'delivered'])->name('outdoor.delivered');
+        // DELETE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/outdoor/delete/{id}', [OutdoorController::class, 'delete'])->name('outdoor.delete');
+        // DESTROY
+        Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/outdoor/destroy/{id}', [OutdoorController::class, 'destroy'])->name('outdoor.destroy');
     });
 
      // SALES CONTROLLER

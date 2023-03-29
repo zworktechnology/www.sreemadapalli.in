@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
+use App\Models\Outdoor;
 use App\Models\User;
 
 class ChangeProfileController extends Controller
@@ -16,7 +18,10 @@ class ChangeProfileController extends Controller
 
     public function index_password()
     {
-        return view('pages.backend.settings');
+        $today = Carbon::now()->format('Y-m-d');
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+
+        return view('pages.backend.settings', compact('notificationcount'));
     }
 
     public function update_password(Request $request)
@@ -34,7 +39,10 @@ class ChangeProfileController extends Controller
 
     public function index_profile()
     {
-        return view('pages.backend.profile');
+        $today = Carbon::now()->format('Y-m-d');
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        
+        return view('pages.backend.profile', compact('notificationcount'));
     }
 
     public function update_profile(Request $request)

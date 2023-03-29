@@ -96,6 +96,7 @@
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
+                <th>Sl No</th>
                 <th>Bill No</th>
                 <th>Customer Name</th>
                 <th>Cash</th>
@@ -104,8 +105,14 @@
             </tr>
         </thead>
         <tbody id="customer_index">
+            <tr>
+                <th><p>-----------------------</p></th>
+                <th style="margin: 20px;">Breakfast</th>
+                <th><p>-----------------------</p></th>
+            </tr>
             @foreach ($datab as $keydata => $data)
             <tr>
+                <td>{{ ++$keydata }}</td>
                 <td>{{ $data->invoice_no }}</td>
                 <td style="font-size: 12px;">{{ $data->customer->name }}</td>
 
@@ -128,8 +135,14 @@
                 @endif
             </tr>
             @endforeach
+            <tr>
+                <th><p>-----------------------</p></th>
+                <th style="margin: 20px;">Lunch</th>
+                <th><p>-----------------------</p></th>
+            </tr>
             @foreach ($datal as $keydata => $data)
             <tr>
+                <td>{{ ++$keydata }}</td>
                 <td>{{ $data->invoice_no }}</td>
                 <td style="font-size: 12px;">{{ $data->customer->name }}</td>
 

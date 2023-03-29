@@ -6,6 +6,7 @@ use App\Models\Customer;
 use App\Models\BreakFast;
 use App\Models\Lunch;
 use App\Models\Dinner;
+use App\Models\Outdoor;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -15,6 +16,7 @@ class PaymentController extends Controller
     public function index()
     {
         $today = date('Y-m-d');
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
         $data = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $customerarr = [];
@@ -37,7 +39,7 @@ class PaymentController extends Controller
 
         $total = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
 
-        return view('pages.backend.payment.index', compact('data', 'today', 'customerarr', 'customer_mobile', 'total'));
+        return view('pages.backend.payment.index', compact('data', 'today', 'customerarr', 'customer_mobile', 'total', 'notificationcount'));
     }
 
 
@@ -46,11 +48,14 @@ class PaymentController extends Controller
     {
         $daily_date = $request->get('daily_date');
 
+        $today = Carbon::now()->format('Y-m-d');
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+
         $Payment_data = Payment::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
 
 
 
-        return view('pages.backend.payment.dailyfilter', compact('daily_date', 'Payment_data'));
+        return view('pages.backend.payment.dailyfilter', compact('notificationcount', 'daily_date', 'Payment_data'));
     }
 
 

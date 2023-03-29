@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AccountClose;
 use Illuminate\Http\Request;
+use App\Models\Outdoor;
 use Carbon\Carbon;
 
 class AccountCloseController extends Controller
@@ -11,17 +12,20 @@ class AccountCloseController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $data = AccountClose::where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
+        $data = AccountClose::  where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.accountclose.index', compact('data', 'today'));
+        return view('pages.backend.accountclose.index', compact('notificationcount', 'data', 'today'));
     }
 
     public function dailyfilter(Request $request)
     {
+        $today = Carbon::now()->format('Y-m-d');
         $daily_date = $request->get('date');
         $data = AccountClose::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.accountclose.dailyfilter', compact('data', 'daily_date'));
+        return view('pages.backend.accountclose.dailyfilter', compact('notificationcount', 'data', 'daily_date'));
     }
 
     public function store(Request $request)
