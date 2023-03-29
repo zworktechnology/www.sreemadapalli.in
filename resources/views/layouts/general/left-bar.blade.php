@@ -11,22 +11,7 @@
                         <span key="t-dashboards">Dashboard</span>
                     </a>
                 </li>
-                @if ($notificationcount >= 1)
-                <li class="{{ Route::is('outdoor.index','outdoor.create','outdoor.edit') ? 'mm-active' : '' }}">
-                    <a href="{{ route('outdoor.index') }}">
-                        <i class="mdi mdi-door-open"></i>
-                        <span key="t-dashboards">Outdoor &nbsp;&nbsp;
-                            <span class="badge bg-danger rounded-pill">{{ $notificationcount }}</span></span>
-                    </a>
-                </li>
-                @else
-                <li class="{{ Route::is('outdoor.index','outdoor.create','outdoor.edit') ? 'mm-active' : '' }}">
-                    <a href="{{ route('outdoor.index') }}">
-                        <i class="mdi mdi-door-open"></i>
-                        <span key="t-dashboards">Outdoor</span>
-                    </a>
-                </li>
-                @endif
+                
 
                 <li class="menu-title" key="t-menu">Delivery</li>
                 <li class="{{ Route::is('customer.index','customer.create','customer.edit','customer.view', 'custome.filter', 'customer.breafast.view','customer.lunch.view','customer.dinner.view') ? 'mm-active' : '' }}">
