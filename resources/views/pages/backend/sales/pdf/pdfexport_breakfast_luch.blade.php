@@ -86,10 +86,27 @@
         <thead>
             <tr>
                 <th><img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40"></th>
-                <th><p>------------------</p></th>
+                <th>
+                    <p>------------------</p>
+                </th>
                 <th style="margin: 20px;">Breakfast & Lunch</th>
-                <th><p>------------------</p></th>
+                <th>
+                    <p>------------------</p>
+                </th>
                 <th style="margin: 20px;">{{ date('d M Y', strtotime($date)) }}</th>
+            </tr>
+        </thead>
+    </table>
+    <table style="margin-bottom: 5px;">
+        <thead>
+            <tr>
+                <th>
+                    <p>-----------------------</p>
+                </th>
+                <th style="margin: 20px;">Breakfast</th>
+                <th>
+                    <p>-----------------------</p>
+                </th>
             </tr>
         </thead>
     </table>
@@ -105,11 +122,6 @@
             </tr>
         </thead>
         <tbody id="customer_index">
-            <tr>
-                <th><p>-----------------------</p></th>
-                <th style="margin: 20px;">Breakfast</th>
-                <th><p>-----------------------</p></th>
-            </tr>
             @foreach ($datab as $keydata => $data)
             <tr>
                 <td>{{ ++$keydata }}</td>
@@ -135,11 +147,33 @@
                 @endif
             </tr>
             @endforeach
+        </tbody>
+    </table>
+    <table style="margin-bottom: 5px;">
+        <thead>
             <tr>
-                <th><p>-----------------------</p></th>
+                <th>
+                    <p>-----------------------</p>
+                </th>
                 <th style="margin: 20px;">Lunch</th>
-                <th><p>-----------------------</p></th>
+                <th>
+                    <p>-----------------------</p>
+                </th>
             </tr>
+        </thead>
+    </table>
+    <table id="customers">
+        <thead style="background: #CAF1DE">
+            <tr>
+                <th>Sl No</th>
+                <th>Bill No</th>
+                <th>Customer Name</th>
+                <th>Cash</th>
+                <th>Pending</th>
+                <th>Wallet</th>
+            </tr>
+        </thead>
+        <tbody id="customer_index">
             @foreach ($datal as $keydata => $data)
             <tr>
                 <td>{{ ++$keydata }}</td>
