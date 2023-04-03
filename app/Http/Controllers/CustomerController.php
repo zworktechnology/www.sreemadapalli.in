@@ -80,7 +80,7 @@ class CustomerController extends Controller
 
         $data->save();
 
-        return redirect()->route('customer.index')->with('add', 'Successful addition of a new customer !');
+        return redirect()->back()->with('add', 'Successful addition of a new customer !');
     }
 
     public function view($id)

@@ -42,7 +42,7 @@ class EmployeeController extends Controller
 
         $data->save();
 
-        return redirect()->route('employee.index')->with('add', 'Successful addition of a new employee !');
+        return redirect()->back()->with('add', 'Successful addition of a new employee !');
     }
 
     public function view($id)

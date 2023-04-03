@@ -3,7 +3,7 @@
 @section('content')
 <div id="layout-wrapper">
 
-    @include('layouts.general.left-bar')
+    @include('layouts.general.notify-leftbar')
 
     <div class="main-content">
         <div class="page-content">
@@ -308,6 +308,46 @@
                         <div class="card">
                             <div class="card-body">
                                 @include('pages.backend.sales.create')
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header" hidden>
+                                            <h5 class="modal-title" id="staticBackdropLabel" style="margin-bottom: 20px;">New Customer</h5>
+                                        </div>
+                                        <form autocomplete="off" method="POST" action="{{ route('customer.store') }}">
+                                            @csrf
+                                            <div class="modal-body">
+                                                <div class="row mb-2">
+                                                    <label for="name" class="col-sm-3 col-form-label" hidden>
+                                                        Name <span style="color: red;">*</span></label>
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" name="name" placeholder="Enter Your Name" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <label for="contact_number" class="col-sm-3 col-form-label" hidden>
+                                                        Phone No <span style="color: red;">*</span></label>
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" name="contact_number" placeholder="Enter Your Phone Number" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <label for="address" class="col-sm-3 col-form-label" hidden>
+                                                        Addresss</label>
+                                                    <div class="col-sm-12">
+                                                        <textarea class="form-control" name="address" placeholder="Enter Your Address"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-success">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

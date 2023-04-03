@@ -3,7 +3,7 @@
 @section('content')
 <div id="layout-wrapper">
 
-    @include('layouts.general.left-bar')
+    @include('layouts.general.notify-leftbar')
 
     <div class="main-content">
         <div class="page-content">
@@ -179,6 +179,11 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                @include('pages.backend.employee.create')
                             </div>
                         </div>
                     </div>

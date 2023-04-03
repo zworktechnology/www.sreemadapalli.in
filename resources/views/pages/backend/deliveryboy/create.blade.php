@@ -17,7 +17,7 @@
                     <label for="contact_number" class="col-sm-3 col-form-label">
                         Phone No <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="contact_number" placeholder="Enter Your " required>
+                        <input type="text" class="form-control" name="contact_number" placeholder="Enter Your " required>
                     </div>
                 </div>
                 <div class="row mb-4">

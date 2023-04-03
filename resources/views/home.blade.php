@@ -4,7 +4,7 @@
 @hasrole('Super-Admin|Admin')
 <div id="layout-wrapper">
 
-    @include('layouts.general.left-bar')
+    @include('layouts.general.notify-leftbar')
 
     <div class="main-content">
 
@@ -79,6 +79,18 @@
                 @endif
                 <div class="row" style="font-weight: bold;">
                     <div class="col-xl-6 col-12" style="padding-right: 10px;">
+                        <div class="card" style="background-color: #E7E7E7;">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap mb-0">
+                                        <tr style="color: red;">
+                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over All Pending Amount</th>
+                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ $overall_total_amount_of_pending }}</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card" style="background-color: #ACDDDE;">
                             <div class="card-body">
                                 <div class="table-responsive">

@@ -3,7 +3,7 @@
 @section('content')
 <div id="layout-wrapper">
 
-    @include('layouts.general.left-bar')
+    @include('layouts.general.notify-leftbar')
 
     <div class="main-content">
         <div class="page-content">
@@ -16,7 +16,7 @@
                                 <div style="display: flex;">
                                     <form autocomplete="off" method="POST" action="{{ route('accountclose.dailyfilter') }}" style="display: flex;">
                                         @method('PUT')
-    
+
                                         @csrf
                                         <div style="margin-right: 10px;">
                                             <input type="date" class="form-control" name="date" id="date" placeholder="Enter Your " required value="{{ $today }}">

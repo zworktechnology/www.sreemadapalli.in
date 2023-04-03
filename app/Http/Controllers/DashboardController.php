@@ -71,12 +71,19 @@ class DashboardController extends Controller
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
 
+        $overall_breakfast_pending = BreakFast::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $overall_lunch_pending = Lunch::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $overall_dinner_pending = Dinner::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $payment = Payment::where('soft_delete', '!=', 1)->sum('amount');
+        $overall_total_amount_of_pending = ($overall_breakfast_pending + $overall_lunch_pending + $overall_dinner_pending) - $payment;
+
         return view('home', compact('today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
         'g_pay', 'g_pay_business', 'phone_pay', 'card', 'other_case', 'sales_amount', 'determination',
         'total_2000', 'total_500', 'total_200', 'total_100', 'total_50', 'total_20', 'total_10',
         'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate', 'paytm',
-        'open_sales', 'open_sales_exp', 'totaldeterminationdate', 'total_pending', 'total_card_one',  'over_all', 'openaccount' , 'notificationcount'));
+        'open_sales', 'open_sales_exp', 'totaldeterminationdate', 'total_pending', 'total_card_one',
+        'over_all', 'openaccount' , 'notificationcount', 'overall_total_amount_of_pending'));
     }
 
 
