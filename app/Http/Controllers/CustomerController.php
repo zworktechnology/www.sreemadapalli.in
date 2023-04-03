@@ -275,7 +275,7 @@ class CustomerController extends Controller
             $dinner_amount_paid = Dinner::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
             $dinner_total_amount = Dinner::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->sum('bill_amount');
 
-            $total_paid = $breakfast_amount_paid + $lunch_amount_paid + $dinner_total_amount;
+            $total_paid = $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid;
             $total_pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending;
             $total_amount = $breakfast_total_amount + $lunch_total_amount + $dinner_total_amount;
             $payment_total_amount = Payment::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->sum('amount');
