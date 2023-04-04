@@ -74,8 +74,8 @@ class DashboardController extends Controller
         $overall_breakfast_pending = BreakFast::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $overall_lunch_pending = Lunch::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $overall_dinner_pending = Dinner::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
-        $payment = Payment::where('soft_delete', '!=', 1)->sum('amount');
-        $overall_total_amount_of_pending = ($overall_breakfast_pending + $overall_lunch_pending + $overall_dinner_pending) - $payment;
+        $total_payment = Payment::where('soft_delete', '!=', 1)->sum('amount');
+        $overall_total_amount_of_pending = ($overall_breakfast_pending + $overall_lunch_pending + $overall_dinner_pending) - $total_payment;
 
         return view('home', compact('today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
