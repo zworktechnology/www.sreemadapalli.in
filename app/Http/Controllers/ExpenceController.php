@@ -14,7 +14,7 @@ class ExpenceController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $data = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
         $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
@@ -30,7 +30,7 @@ class ExpenceController extends Controller
     {
         $daily_date = $request->get('date');
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         $expense_data = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
         $total = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('amount');

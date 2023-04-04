@@ -243,7 +243,7 @@ class SalesController extends Controller
 
         $total_delivey_count = Count($breakfast_data_count1) + Count($lunch_data_count1) + Count($dinner_data_count1);
 
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         return view('pages.backend.sales.index', compact('today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
         'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customerarr',
@@ -259,7 +259,7 @@ class SalesController extends Controller
         $daily_date = $request->get('daily_date');
 
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         $cardb = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
         $cardl = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');

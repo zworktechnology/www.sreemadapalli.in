@@ -19,7 +19,7 @@ class ChangeProfileController extends Controller
     public function index_password()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         return view('pages.backend.settings', compact('notificationcount'));
     }
@@ -40,8 +40,8 @@ class ChangeProfileController extends Controller
     public function index_profile()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
-        
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
+
         return view('pages.backend.profile', compact('notificationcount'));
     }
 

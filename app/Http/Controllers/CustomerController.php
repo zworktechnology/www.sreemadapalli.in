@@ -53,7 +53,7 @@ class CustomerController extends Controller
 
         }
 
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         return view('pages.backend.customer.index', compact('data', 'index_amount_arr', 'today', 'customer', 'notificationcount'));
     }

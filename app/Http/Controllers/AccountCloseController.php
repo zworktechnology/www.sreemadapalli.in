@@ -13,7 +13,7 @@ class AccountCloseController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $data = AccountClose::  where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         return view('pages.backend.accountclose.index', compact('notificationcount', 'data', 'today'));
     }
@@ -23,7 +23,7 @@ class AccountCloseController extends Controller
         $today = Carbon::now()->format('Y-m-d');
         $daily_date = $request->get('date');
         $data = AccountClose::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         return view('pages.backend.accountclose.dailyfilter', compact('notificationcount', 'data', 'daily_date'));
     }

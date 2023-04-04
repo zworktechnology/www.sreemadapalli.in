@@ -69,7 +69,7 @@ class DashboardController extends Controller
             $over_all = $total_card_one - $open_sales_exp;
         }
 
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         $overall_breakfast_pending = BreakFast::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $overall_lunch_pending = Lunch::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
@@ -141,7 +141,7 @@ class DashboardController extends Controller
             $over_all = $total_card_one - $open_sales_exp;
         }
 
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         return view('homefilter', compact('today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',

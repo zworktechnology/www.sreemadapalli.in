@@ -13,7 +13,7 @@ class DeterminationController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $data = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         $total_2000 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_2000');
         $total_500 = Determination::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('total_500');
@@ -35,7 +35,7 @@ class DeterminationController extends Controller
     {
         $daily_date = $request->get('date');
         $data = Determination::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         $total_2000 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_2000');
         $total_500 = Determination::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('total_500');

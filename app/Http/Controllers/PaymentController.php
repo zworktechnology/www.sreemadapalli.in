@@ -16,7 +16,7 @@ class PaymentController extends Controller
     public function index()
     {
         $today = date('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $data = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->get();
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $customerarr = [];
@@ -49,7 +49,7 @@ class PaymentController extends Controller
         $daily_date = $request->get('daily_date');
 
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         $Payment_data = Payment::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->get();
 

@@ -15,7 +15,7 @@ class EmployeeController extends Controller
         $today = Carbon::now()->format('Y-m-d');
         $data = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
         return view('pages.backend.employee.index', compact('data', 'notificationcount'));
     }

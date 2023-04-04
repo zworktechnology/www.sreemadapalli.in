@@ -12,7 +12,7 @@ class AccountOpenController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $data = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
         $total = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $today)->sum('amount');
 
@@ -22,7 +22,7 @@ class AccountOpenController extends Controller
     public function dailyfilter(Request $request)
     {
         $today = Carbon::now()->format('Y-m-d');
-        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->count();
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $daily_date = $request->get('date');
         $data = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get();
         $total = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->sum('amount');
