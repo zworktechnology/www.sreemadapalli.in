@@ -53,6 +53,22 @@ class OutdoorController extends Controller
         $data->field_unit_6 = $request->get('field_unit_6');
         $data->field_unit_price_6 = $request->get('field_unit_price_6');
         $data->field_total_6 = $request->get('field_total_6');
+        $data->field_title_7 = $request->get('field_title_7');
+        $data->field_unit_7 = $request->get('field_unit_7');
+        $data->field_unit_price_7 = $request->get('field_unit_price_7');
+        $data->field_total_7 = $request->get('field_total_7');
+        $data->field_title_8 = $request->get('field_title_8');
+        $data->field_unit_8 = $request->get('field_unit_8');
+        $data->field_unit_price_8 = $request->get('field_unit_price_8');
+        $data->field_total_8 = $request->get('field_total_8');
+        $data->field_title_9 = $request->get('field_title_9');
+        $data->field_unit_9 = $request->get('field_unit_9');
+        $data->field_unit_price_9 = $request->get('field_unit_price_9');
+        $data->field_total_9 = $request->get('field_total_9');
+        $data->field_title_10 = $request->get('field_title_10');
+        $data->field_unit_10 = $request->get('field_unit_10');
+        $data->field_unit_price_10 = $request->get('field_unit_price_10');
+        $data->field_total_10 = $request->get('field_total_10');
         $data->over_all_total = $request->get('over_all_total');
 
         $data->save();
@@ -102,6 +118,22 @@ class OutdoorController extends Controller
         $data->field_unit_6 = $request->get('field_unit_6');
         $data->field_unit_price_6 = $request->get('field_unit_price_6');
         $data->field_total_6 = $request->get('field_total_6');
+        $data->field_title_7 = $request->get('field_title_7');
+        $data->field_unit_7 = $request->get('field_unit_7');
+        $data->field_unit_price_7 = $request->get('field_unit_price_7');
+        $data->field_total_7 = $request->get('field_total_7');
+        $data->field_title_8 = $request->get('field_title_8');
+        $data->field_unit_8 = $request->get('field_unit_8');
+        $data->field_unit_price_8 = $request->get('field_unit_price_8');
+        $data->field_total_8 = $request->get('field_total_8');
+        $data->field_title_9 = $request->get('field_title_9');
+        $data->field_unit_9 = $request->get('field_unit_9');
+        $data->field_unit_price_9 = $request->get('field_unit_price_9');
+        $data->field_total_9 = $request->get('field_total_9');
+        $data->field_title_10 = $request->get('field_title_10');
+        $data->field_unit_10 = $request->get('field_unit_10');
+        $data->field_unit_price_10 = $request->get('field_unit_price_10');
+        $data->field_total_10 = $request->get('field_total_10');
         $data->over_all_total = $request->get('over_all_total');
 
         $data->update();

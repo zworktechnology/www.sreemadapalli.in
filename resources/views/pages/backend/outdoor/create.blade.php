@@ -156,6 +156,78 @@
                             placeholder="Total" onchange="totalcalculate()">
                     </div>
                 </div>
+                <div class="row mb-3 file-7">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="field_title_7" placeholder="Product Name">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_7" id="field_unit_7"
+                            placeholder="Unit" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_price_7" id="field_unit_price_7"
+                            placeholder="Price" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_total_7" id="field_total_7"
+                            placeholder="Total" onchange="totalcalculate()">
+                    </div>
+                </div>
+                <div class="row mb-3 file-8">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="field_title_8" placeholder="Product Name">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_8" id="field_unit_8"
+                            placeholder="Unit" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_price_8" id="field_unit_price_8"
+                            placeholder="Price" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_total_8" id="field_total_8"
+                            placeholder="Total" onchange="totalcalculate()">
+                    </div>
+                </div>
+                <div class="row mb-3 file-9">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="field_title_9" placeholder="Product Name">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_9" id="field_unit_9"
+                            placeholder="Unit" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_price_9" id="field_unit_price_9"
+                            placeholder="Price" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_total_9" id="field_total_9"
+                            placeholder="Total" onchange="totalcalculate()">
+                    </div>
+                </div>
+                <div class="row mb-3 file-">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="field_title_10" placeholder="Product Name">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_10" id="field_unit_10"
+                            placeholder="Unit" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_unit_price_10" id="field_unit_price_10"
+                            placeholder="Price" onchange="totalcalculate()">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="field_total_10" id="field_total_10"
+                            placeholder="Total" onchange="totalcalculate()">
+                    </div>
+                </div>
                 <div class="row mb-3 file-6">
                     <label for="note" class="col-sm-6 col-form-label">
                         Over All Total Amount</label>
@@ -206,6 +278,22 @@
         var field_unit_price_6 = $('#field_unit_price_6').val();
         $('#field_total_6').val(field_unit_6 * field_unit_price_6);
 
+        var field_unit_7 = $('#field_unit_7').val();
+        var field_unit_price_7 = $('#field_unit_price_7').val();
+        $('#field_total_7').val(field_unit_7 * field_unit_price_7);
+
+        var field_unit_8 = $('#field_unit_8').val();
+        var field_unit_price_8 = $('#field_unit_price_8').val();
+        $('#field_total_8').val(field_unit_8 * field_unit_price_8);
+
+        var field_unit_9 = $('#field_unit_9').val();
+        var field_unit_price_9 = $('#field_unit_price_9').val();
+        $('#field_total_9').val(field_unit_9 * field_unit_price_9);
+
+        var field_unit_10 = $('#field_unit_10').val();
+        var field_unit_price_10 = $('#field_unit_price_10').val();
+        $('#field_total_10').val(field_unit_10 * field_unit_price_10);
+
         var over_all_total = 0;
         var field_total_1 = $('#field_total_1').val();
         var field_total_2 = $('#field_total_2').val();
@@ -213,6 +301,10 @@
         var field_total_4 = $('#field_total_4').val();
         var field_total_5 = $('#field_total_5').val();
         var field_total_6 = $('#field_total_6').val();
+        var field_total_7 = $('#field_total_7').val();
+        var field_total_8 = $('#field_total_8').val();
+        var field_total_9 = $('#field_total_9').val();
+        var field_total_10 = $('#field_total_10').val();
 
         if (field_total_1 != "") {
             over_all_total += parseFloat(field_total_1);
@@ -231,6 +323,18 @@
         }
         if (field_total_6 != "") {
             over_all_total += parseFloat(field_total_6);
+        }
+        if (field_total_7 != "") {
+            over_all_total += parseFloat(field_total_7);
+        }
+        if (field_total_8 != "") {
+            over_all_total += parseFloat(field_total_8);
+        }
+        if (field_total_9 != "") {
+            over_all_total += parseFloat(field_total_9);
+        }
+        if (field_total_10 != "") {
+            over_all_total += parseFloat(field_total_10);
         }
 
         $('#over_all_total').val(over_all_total);
