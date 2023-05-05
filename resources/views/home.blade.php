@@ -78,19 +78,7 @@
                 </div>
                 @endif
                 <div class="row" style="font-weight: bold;">
-                    <div class="col-xl-6 col-12" style="padding-right: 10px;">
-                        <div class="card" style="background-color: #E7E7E7;">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table align-middle table-nowrap mb-0">
-                                        <tr style="color: red;">
-                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over All Pending Amount</th>
-                                            <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ $overall_total_amount_of_pending }}</th>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-4 col-12" style="padding-right: 10px;">
                         <div class="card" style="background-color: #ACDDDE;">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -155,6 +143,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-xl-4 col-12" style="padding-left: 10px;">
                         <div class="card" style="background-color: #CAF1DE;">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -215,14 +205,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-12" style="padding-left: 10px;">
+                    <div class="col-xl-4 col-12" style="padding-left: 10px;">
                         <div class="card" style="background-color: #FEF8DD;">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-nowrap mb-0">
                                         <tbody id="current_date_denomination">
                                             @foreach ($determination as $determinations)
-                                            <tr>
+                                            <tr hidden>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 2000</h5>
                                                 </td>
@@ -230,7 +220,7 @@
                                                 <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_2000 }}</td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $determinations->total_2000 }}</td>
                                             </tr>
-                                            <tr>
+                                            <tr hidden>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 500</h5>
                                                 </td>
@@ -238,7 +228,7 @@
                                                 <td style="font-weight: bold;font-size: 16px !important;">{{ $determinations->count_500 }}</td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $determinations->total_500 }}</td>
                                             </tr>
-                                            <tr>
+                                            <tr hidden>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">₹ 200</h5>
                                                 </td>
@@ -405,6 +395,18 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color: #E7E7E7;">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table align-middle table-nowrap mb-0">
+                                    <tr style="color: red;">
+                                        <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over All Pending Amount</th>
+                                        <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹ {{ $overall_total_amount_of_pending }}</th>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>

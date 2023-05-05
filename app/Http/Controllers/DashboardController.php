@@ -19,15 +19,15 @@ class DashboardController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
+
         $breakfast_data_ps_pending = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $lunch_data_ps_pending = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $dinner_data_ps_pending = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
 
         $opening = AccountOpen::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
-
         $expense = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
-
-        $payment = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+        // $payment = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+        $payment = 0;
 
         $g_pay = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('g_pay');
         $g_pay_business = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('g_pay_business');
@@ -96,10 +96,9 @@ class DashboardController extends Controller
         $dinner_data_ps_pending = Dinner::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
 
         $opening = AccountOpen::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
-
         $expense = Expence::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
-
-        $payment = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+        // $payment = Payment::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('amount');
+        $payment = 0;
 
         $g_pay = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('g_pay');
         $g_pay_business = AccountClose::where('date', '=', $today)->where('soft_delete', '!=', 1)->sum('g_pay_business');

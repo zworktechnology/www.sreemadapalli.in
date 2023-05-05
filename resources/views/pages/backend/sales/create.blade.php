@@ -82,8 +82,8 @@
                     Payment Via <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-control js-example-basic-single" name="payment_method" required>
-                        <option value="" disabled selected hidden class="text-muted">Select Payment Via</option>
-                        <option value="Cash" class="text-muted">Cash</option>
+                        <option value="" disabled hidden class="text-muted">Select Payment Via</option>
+                        <option value="Cash" class="text-muted" selected>Cash</option>
                         <option value="Pending" class="text-muted">Pending</option>
                         <option value="G-Pay" class="text-muted">G Pay</option>
                         <option value="G-Pay Business" class="text-muted">G-Pay Business</option>

@@ -7,41 +7,41 @@
         <form autocomplete="off" method="POST" action="{{ route('determination.store') }}">
             @csrf
             <div class="modal-body">
-                <div class="row mb-4">
+                <div class="row mb-4" hidden>
                     <label for="date" class="col-sm-4 col-form-label">
                         Date <span style="color: red;">*</span></label>
                     <div class="col-sm-8">
                         <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
                     </div>
                 </div>
-                <div class="row mb-4">
+                <div class="row mb-4" hidden>
                     <label for="2000" class="col-sm-4 col-form-label">
                         ₹ 2000 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="count_2000" id="count_2000" placeholder="Enter Your " required onchange="totaldetermination()">
+                        <input type="number" class="form-control" name="count_2000" id="count_2000" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
                     </div>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="total_2000" id="total_2000" placeholder="Enter Your " required onchange="totaldetermination()">
+                        <input type="number" class="form-control" name="total_2000" id="total_2000" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
                     </div>
                 </div>
-                <div class="row mb-4">
+                <div class="row mb-4" hidden>
                     <label for="500" class="col-sm-4 col-form-label">
                         ₹ 500 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="count_500" id="count_500" placeholder="Enter Your " required onchange="totaldetermination()">
+                        <input type="number" class="form-control" name="count_500" id="count_500" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
                     </div>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="total_500" id="total_500" placeholder="Enter Your " required onchange="totaldetermination()">
+                        <input type="number" class="form-control" name="total_500" id="total_500" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
                     </div>
                 </div>
-                <div class="row mb-4">
+                <div class="row mb-4" hidden>
                     <label for="200" class="col-sm-4 col-form-label">
                         ₹ 200 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="count_200" id="count_200" placeholder="Enter Your " required onchange="totaldetermination()">
+                        <input type="number" class="form-control" name="count_200" id="count_200" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
                     </div>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="total_200" id="total_200" placeholder="Enter Your " required onchange="totaldetermination()">
+                        <input type="number" class="form-control" name="total_200" id="total_200" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
                     </div>
                 </div>
                 <div class="row mb-4">
