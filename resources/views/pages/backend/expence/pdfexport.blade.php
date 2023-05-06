@@ -109,8 +109,10 @@
                 <td>{{ ++$keydata }}</td>
                 <td style="font-size: 12px;">{{ $datas->employee->name }}</td>
                 <td style="font-size: 12px;">Rs. {{ $datas->amount }}</td>
-                @if ( $datas->status == 'Pending')
+                @if ($datas->status == 'Pending')
                 <td style="font-size: 12px;">G-Pay</td>
+                @elseif($datas->status == 'Salary')
+                <td style="font-size: 12px;">Salary</td>
                 @else
                 <td style="font-size: 12px;">Cash</td>
                 @endif

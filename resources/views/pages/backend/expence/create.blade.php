@@ -55,6 +55,7 @@
                         <select class="form-control js-example-basic-single" name="status" required>
                             <option value="Pending" class="text-muted">G-pay</option>
                             <option value="Paid" selected class="text-muted">Cash</option>
+                            <option value="Salary" class="text-muted">Salary</option>
                         </select>
                     </div>
                 </div>

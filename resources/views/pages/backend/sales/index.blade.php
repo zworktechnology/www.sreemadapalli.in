@@ -105,34 +105,56 @@
                                         style="background-color: #CADAF1;">
                                         <thead>
                                             <tr>
+                                                <th><b>Session</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="color: red !important;"><b>Breakfast</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: red !important;"><b>Lunch</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: red !important;"><b>Dinner</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: red !important;"><b>Total</b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-2 col-12 pointer">
+                                    <table class="table table-bordered dt-responsive nowrap w-100"
+                                        style="background-color: #CADAF1;">
+                                        <thead>
+                                            <tr>
                                                 <th><b>Total Amount</b></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Breakfast:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $breakfast_data_pm_total }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Lunch: </span>
+                                                <td style="color: red !important;">
                                                     ₹
                                                     {{ $lunch_data_pm_total }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Dinner:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $dinner_data_pm_total }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Total: </span>
+                                                <td style="color: red !important;">
                                                     ₹
                                                     {{ $total_total }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3 col-12 pointer">
+                                <div class="col-md-2 col-12 pointer">
                                     <table class="table table-bordered dt-responsive nowrap w-100"
                                         style="background-color: #FFEE93;">
                                         <thead>
@@ -142,29 +164,25 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Breakfast:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $breakfast_data_pm_cash }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Lunch:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $lunch_data_pm_cash }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Dinner:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $dinner_data_pm_cash }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Total:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $total_cash }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-3 col-12 pointer">
+                                <div class="col-md-2 col-12 pointer">
                                     <table class="table table-bordered dt-responsive nowrap w-100"
                                         style="background-color: #B8FF72;">
                                         <thead>
@@ -174,23 +192,19 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Breakfast:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $breakfast_data_ps_pending }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Lunch:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $lunch_data_ps_pending }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Dinner:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $dinner_data_ps_pending }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><span style="color: black">Total:
-                                                    </span> ₹
+                                                <td style="color: red !important;">₹
                                                     {{ $total_pending }}</td>
                                             </tr>
                                         </tbody>
@@ -424,7 +438,8 @@
                                     style="background-color: #f0e659c2;">
                                     <thead>
                                         <tr>
-                                            <th class="mb-0 pendingamount" style="color: red !important;"><b><span style="color: black;">Pending:</span> ₹</b></th>
+                                            <th class="mb-0 pendingamount" style="color: red !important;"><b><span
+                                                        style="color: black;">Pending:</span> ₹</b></th>
                                         </tr>
                                     </thead>
                                 </table>

@@ -21,9 +21,10 @@ class ExpenceController extends Controller
         $employee_mobile = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $total_pending = Expence::where('date', '=', $today)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');
         $total_paid = Expence::where('date', '=', $today)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
+        $total_salary = Expence::where('date', '=', $today)->where('status', '=', 'Salary')->where('soft_delete', '!=', 1)->sum('amount');
 
 
-        return view('pages.backend.expence.index', compact('notificationcount', 'data', 'today', 'employee', 'total', 'employee_mobile', 'total_pending', 'total_paid'));
+        return view('pages.backend.expence.index', compact('total_salary', 'notificationcount', 'data', 'today', 'employee', 'total', 'employee_mobile', 'total_pending', 'total_paid'));
     }
 
     public function dailyfilter(Request $request)

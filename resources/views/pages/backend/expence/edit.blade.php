@@ -63,6 +63,7 @@
                                             <select class="form-control js-example-basic-single" name="status" required>
                                                 <option value="Pending" class="text-muted" {{ $data->status == "Pending" ? 'selected' : '' }}>G-pay</option>
                                                 <option value="Paid" class="text-muted" {{ $data->status == "Paid" ? 'selected' : '' }}>Cash</option>
+                                                <option value="Salary" class="text-muted" {{ $data->status == "Salary" ? 'selected' : '' }}>Salary</option>
                                             </select>
                                         </div>
                                     </div>
