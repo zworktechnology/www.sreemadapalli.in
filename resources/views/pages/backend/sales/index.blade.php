@@ -118,7 +118,7 @@
                                                         style="color: black">₹ {{ $breakfast_data_ps_pending }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><b>Total Amount </b><span
+                                                <td style="color: red !important;"><b>Total </b><span
                                                         style="color: black">₹ {{ $breakfast_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
@@ -142,7 +142,7 @@
                                                         style="color: black">₹ {{ $lunch_data_ps_pending }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><b>Total Amount </b><span
+                                                <td style="color: red !important;"><b>Total </b><span
                                                         style="color: black">₹ {{ $lunch_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
@@ -166,7 +166,7 @@
                                                         style="color: black">₹ {{ $dinner_data_ps_pending }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;"><b>Total Amount </b><span
+                                                <td style="color: red !important;"><b>Total </b><span
                                                         style="color: black">₹ {{ $dinner_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
