@@ -268,37 +268,37 @@
                                                         <td>{{ $outputs['devlivery_by'] }}</td>
 
                                                         @if ($outputs['payment_method'] == 'Cash')
-                                                            <td style="color: white; background-color: #589b31;"><img
+                                                            <td style="color: white; background-color: #94ec61a4;"><img
                                                                     src="{{ asset('assets/images/cash.jpg') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'G-Pay Business')
-                                                            <td style="color: white; background-color: #fbbb04;"><img
+                                                            <td style="color: white; background-color: #fcc42b83;"><img
                                                                     src="{{ asset('assets/images/gpayb.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'G-Pay')
-                                                            <td style="color: white; background-color: #fbbb04;"><img
+                                                            <td style="color: white; background-color: #fbb90463;"><img
                                                                     src="{{ asset('assets/images/gpay.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'Phone Pe')
-                                                            <td style="color: white; background-color: #5f259f;"><img
+                                                            <td style="color: white; background-color: #60259f9f;"><img
                                                                     src="{{ asset('assets/images/phonepay.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'Paytm')
-                                                            <td style="color: white; background-color: #01aef0;"><img
+                                                            <td style="color: white; background-color: #01acf069;"><img
                                                                     src="{{ asset('assets/images/paytm.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'Card')
-                                                            <td style="color: white; background-color: #9ab3c3;"><img
+                                                            <td style="color: white; background-color: #9ab3c3ce;"><img
                                                                     src="{{ asset('assets/images/card.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @else
-                                                            <td style="color: white; background-color: #ff3d3d;"><img
+                                                            <td style="color: white; background-color: #ff3d3d9d;"><img
                                                                     src="{{ asset('assets/images/pending.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
