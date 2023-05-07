@@ -100,84 +100,26 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="row">
-                                <div class="col-md-3 col-12 pointer">
-                                    <table class="table table-bordered dt-responsive nowrap w-100"
-                                        style="background-color: #CADAF1;">
-                                        <thead>
-                                            <tr>
-                                                <th><b>Session</b></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Breakfast</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Lunch</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Dinner</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Total</b></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                                 <div class="col-md-2 col-12 pointer">
                                     <table class="table table-bordered dt-responsive nowrap w-100"
                                         style="background-color: #CADAF1;">
                                         <thead>
                                             <tr>
-                                                <th><b>Total Amount</b></th>
+                                                <th><b>Breakfast</b></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $breakfast_data_pm_total }}</td>
+                                                <td style="color: red !important;"><b>Cash </b><span style="color: black">₹
+                                                        {{ $breakfast_data_pm_cash }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;">
-                                                    ₹
-                                                    {{ $lunch_data_pm_total }}</td>
+                                                <td style="color: red !important;"><b>Pending </b><span
+                                                        style="color: black">₹ {{ $breakfast_data_ps_pending }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $dinner_data_pm_total }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color: red !important;">
-                                                    ₹
-                                                    {{ $total_total }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-md-2 col-12 pointer">
-                                    <table class="table table-bordered dt-responsive nowrap w-100"
-                                        style="background-color: #FFEE93;">
-                                        <thead>
-                                            <tr>
-                                                <th><b>Cash</b></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $breakfast_data_pm_cash }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $lunch_data_pm_cash }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $dinner_data_pm_cash }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $total_cash }}</td>
+                                                <td style="color: red !important;"><b>Total Amount </b><span
+                                                        style="color: black">₹ {{ $breakfast_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -187,25 +129,45 @@
                                         style="background-color: #B8FF72;">
                                         <thead>
                                             <tr>
-                                                <th><b>Pending</b></th>
+                                                <th><b>Lunch</b></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $breakfast_data_ps_pending }}</td>
+                                                <td style="color: red !important;"><b>Cash </b><span style="color: black">₹
+                                                        {{ $lunch_data_pm_cash }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $lunch_data_ps_pending }}</td>
+                                                <td style="color: red !important;"><b>Pending </b><span
+                                                        style="color: black">₹ {{ $lunch_data_ps_pending }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $dinner_data_ps_pending }}</td>
+                                                <td style="color: red !important;"><b>Total Amount </b><span
+                                                        style="color: black">₹ {{ $lunch_data_pm_total }}</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-2 col-12 pointer">
+                                    <table class="table table-bordered dt-responsive nowrap w-100"
+                                        style="background-color: #FFEE93;">
+                                        <thead>
+                                            <tr>
+                                                <th><b>Dinner</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="color: red !important;"><b>Cash </b><span
+                                                        style="color: black">₹ {{ $dinner_data_pm_cash }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td style="color: red !important;">₹
-                                                    {{ $total_pending }}</td>
+                                                <td style="color: red !important;"><b>Pending </b><span
+                                                        style="color: black">₹ {{ $dinner_data_ps_pending }}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: red !important;"><b>Total Amount </b><span
+                                                        style="color: black">₹ {{ $dinner_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -213,19 +175,20 @@
                                 <div class="col-md-3 col-12 pointer">
                                     <div>
                                         <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
-                                            <div class="card mini-stats-wid">
-                                                <div class="card-body" style="background-color: #E5FF8E;">
-                                                    <div class="d-flex">
-                                                        <div class="flex-grow-1">
-                                                            <p class="text-muted fw-medium"
-                                                                style="color: black !important; font-weight: bold;">Wallet
-                                                            </p>
-                                                            <h4 class="mb-0" style="color: red !important;">₹
-                                                                {{ $total_wallet }}</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #E5FF8E;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Wallet</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="color: red !important;"><span style="color: black">₹
+                                                                {{ $total_wallet }}</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                         <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static"
                                             data-bs-keyboard="false" tabindex="-1" role="dialog"
@@ -234,38 +197,60 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <table class="table table-bordered dt-responsive nowrap w-100"
+                                            style="background-color: #f0e659c2;">
+                                            <thead>
+                                                <tr>
+                                                    <th><b>Pending Amount</b></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-12 pointer">
+                                    <div>
                                         <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                            <div class="card mini-stats-wid">
-                                                <div class="card-body" style="background-color: #E2CFCF;">
-                                                    <div class="d-flex">
-                                                        <div class="flex-grow-1">
-                                                            <p class="text-muted fw-medium"
-                                                                style="color: black !important; font-weight: bold;">Total
-                                                                Delivery
-                                                                Count</p>
-                                                            <h4 class="mb-0" style="color: red !important;">
-                                                                <h4 class="mb-0" style="color: red !important;">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #E2CFCF;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Total Delivery Count</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="color: red !important;">
+                                                            <span style="color: black">
+                                                                <div style="display: none">
+                                                                    {{ $totalcount = 0 }}
+                                                                </div>
+                                                                @foreach ($deliveryboys_arr as $deliveryboys_a)
                                                                     <div style="display: none">
-                                                                        {{ $totalcount = 0 }}
+                                                                        {{ $totalcount += $deliveryboys_a['delivery_count'] }}
                                                                     </div>
-                                                                    @foreach ($deliveryboys_arr as $deliveryboys_a)
-                                                                        <div style="display: none">
-                                                                            {{ $totalcount += $deliveryboys_a['delivery_count'] }}
-                                                                        </div>
-                                                                    @endforeach
-                                                                    {{ $total_delivey_count }}
-                                                                </h4>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                                @endforeach
+                                                                {{ $total_delivey_count }}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
                                             data-bs-keyboard="false" tabindex="-1" role="dialog"
                                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             @include('pages.backend.sales.addon.deliveryby')
                                         </div>
+                                    </div>
+                                    <div>
+                                        <table class="table table-bordered dt-responsive nowrap w-100"
+                                            style="background-color: #f0e659c2;">
+                                            <thead>
+                                                <tr>
+                                                    <th class="mb-0 pendingamount" style="color: red !important;">₹</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -434,15 +419,6 @@
                         </div>
                         <div class="col-md-3">
                             <div class="col-12">
-                                <table class="table table-bordered dt-responsive nowrap w-100"
-                                    style="background-color: #f0e659c2;">
-                                    <thead>
-                                        <tr>
-                                            <th class="mb-0 pendingamount" style="color: red !important;"><b><span
-                                                        style="color: black;">Pending:</span> ₹</b></th>
-                                        </tr>
-                                    </thead>
-                                </table>
                                 <div class="card">
                                     <div class="card-body">
                                         @include('pages.backend.sales.create')
