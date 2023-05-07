@@ -102,71 +102,68 @@
                             <div class="row">
                                 <div class="col-md-2 col-12 pointer">
                                     <table class="table table-bordered dt-responsive nowrap w-100"
-                                        style="background-color: #e0e9f5;">
+                                    style="background-color: #ffecec;">
                                         <thead>
                                             <tr>
                                                 <th><b>Breakfast</b></th>
                                             </tr>
                                         </thead>
-                                        <tbody style="font-size: 14px; font-weight: bold;">
-                                            <tr>
-                                                <td style="color: red !important;"><b>Cash </b><span style="color: black; ">₹
+                                        <tbody style="font-size: 16px; font-weight: bold;">
+                                            <tr style="background-color: #e0e9f5;">
+                                                <td><span style="color: black; ">₹
                                                         {{ $breakfast_data_pm_cash }}</span></td>
                                             </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Pending </b><span
-                                                        style="color: black">₹ {{ $breakfast_data_ps_pending }}</span></td>
+                                            <tr style="background-color: #d3f0b7;">
+                                                <td><span style="color: black">₹ {{ $breakfast_data_ps_pending }}</span></td>
                                             </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Total </b><span style="color: black">₹
+                                            <tr style="background-color: #f8f0c5;">
+                                                <td><span style="color: black">₹
                                                         {{ $breakfast_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
-                                    <table class="table table-bordered dt-responsive nowrap w-100"
-                                        style="background-color: #d3f0b7;">
+                                    <table class="table table-bordered dt-responsive nowrap w-100" style="background-color: #ffecec;" >
                                         <thead>
                                             <tr>
                                                 <th><b>Lunch</b></th>
                                             </tr>
                                         </thead>
-                                        <tbody style="font-size: 14px; font-weight: bold;">
-                                            <tr>
-                                                <td style="color: red !important;"><b>Cash </b><span style="color: black">₹
+                                        <tbody style="font-size: 16px; font-weight: bold;">
+                                            <tr style="background-color: #e0e9f5;">
+                                                <td><span style="color: black">₹
                                                         {{ $lunch_data_pm_cash }}</span></td>
                                             </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Pending </b><span
+                                            <tr style="background-color: #d3f0b7;">
+                                                <td><span
                                                         style="color: black">₹ {{ $lunch_data_ps_pending }}</span></td>
                                             </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Total </b><span
+                                            <tr style="background-color: #f8f0c5;">
+                                                <td><span
                                                         style="color: black">₹ {{ $lunch_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
-                                    <table class="table table-bordered dt-responsive nowrap w-100"
-                                        style="background-color: #f8f0c5;">
+                                    <table class="table table-bordered dt-responsive nowrap w-100"  style="background-color: #ffecec;">
                                         <thead>
                                             <tr>
                                                 <th><b>Dinner</b></th>
                                             </tr>
                                         </thead>
-                                        <tbody style="font-size: 14px; font-weight: bold;">
-                                            <tr>
-                                                <td style="color: red !important;"><b>Cash </b><span
+                                        <tbody style="font-size: 16px; font-weight: bold;">
+                                            <tr style="background-color: #e0e9f5;">
+                                                <td><span
                                                         style="color: black">₹ {{ $dinner_data_pm_cash }}</span></td>
                                             </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Pending </b><span
+                                            <tr style="background-color: #d3f0b7;">
+                                                <td><span
                                                         style="color: black">₹ {{ $dinner_data_ps_pending }}</span></td>
                                             </tr>
-                                            <tr>
-                                                <td style="color: red !important;"><b>Total </b><span
+                                            <tr style="background-color: #f8f0c5;">
+                                                <td><span
                                                         style="color: black">₹ {{ $dinner_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
@@ -181,7 +178,7 @@
                                                     <th><b>Wallet</b></th>
                                                 </tr>
                                             </thead>
-                                            <tbody style="font-size: 14px; font-weight: bold;">
+                                            <tbody style="font-size: 18px; font-weight: bold;">
                                                 <tr>
                                                     <td style="color: red !important;"><span style="color: black">₹
                                                             {{ $total_wallet }}</span></td>
@@ -204,7 +201,7 @@
                                                     <th><b>Delivery Count</b></th>
                                                 </tr>
                                             </thead>
-                                            <tbody style="font-size: 14px; font-weight: bold;">
+                                            <tbody style="font-size: 18px; font-weight: bold;">
                                                 <tr>
                                                     <td style="color: red !important;">
                                                         <span style="color: black">
@@ -237,7 +234,7 @@
                                                 <th><b>Pending</b></th>
                                             </tr>
                                         </thead>
-                                        <tbody style="font-size: 14px; font-weight: bold;">
+                                        <tbody style="font-size: 18px; font-weight: bold;">
                                             <tr>
                                                 <td class="mb-0 pendingamount" style="color: red !important;">₹</td>
                                             </tr>
