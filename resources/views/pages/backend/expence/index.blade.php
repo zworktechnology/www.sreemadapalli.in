@@ -80,7 +80,7 @@
                             <table class="table table-bordered dt-responsive nowrap w-100"
                                         style="background-color: #CADAF1;">
                                         <thead>
-                                            <tr>
+                                            <tr style="font-size: 16px; font-weight: bold;">
                                                 <th><b>Expence</b></th>
                                                 <th style="color: red !important;"><span style="color: black">Cash:</span> ₹
                                                     {{ $total_paid }}</th>

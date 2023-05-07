@@ -182,9 +182,9 @@
                                             <tr style="background-color: #d3f0b7;">
                                                 <td><span style="color: black">₹ {{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</span></td>
                                             </tr>
-                                            {{-- <tr style="background-color: #f8f0c5;">
+                                            <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">₹ {{ $breakfast_data_pm_total + $lunch_data_pm_total + $dinner_data_pm_total }}</span></td>
-                                            </tr> --}}
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
