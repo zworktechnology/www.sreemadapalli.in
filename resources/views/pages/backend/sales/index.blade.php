@@ -102,7 +102,7 @@
                             <div class="row">
                                 <div class="col-md-2 col-12 pointer">
                                     <table class="table table-bordered dt-responsive nowrap w-100"
-                                    style="background-color: #ffecec;">
+                                        style="background-color: #ffecec;">
                                         <thead>
                                             <tr>
                                                 <th><b>Breakfast</b></th>
@@ -114,7 +114,8 @@
                                                         {{ $breakfast_data_pm_cash }}</span></td>
                                             </tr>
                                             <tr style="background-color: #d3f0b7;">
-                                                <td><span style="color: black">₹ {{ $breakfast_data_ps_pending }}</span></td>
+                                                <td><span style="color: black">₹ {{ $breakfast_data_ps_pending }}</span>
+                                                </td>
                                             </tr>
                                             <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">₹
@@ -124,7 +125,8 @@
                                     </table>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
-                                    <table class="table table-bordered dt-responsive nowrap w-100" style="background-color: #ffecec;" >
+                                    <table class="table table-bordered dt-responsive nowrap w-100"
+                                        style="background-color: #ffecec;">
                                         <thead>
                                             <tr>
                                                 <th><b>Lunch</b></th>
@@ -136,18 +138,17 @@
                                                         {{ $lunch_data_pm_cash }}</span></td>
                                             </tr>
                                             <tr style="background-color: #d3f0b7;">
-                                                <td><span
-                                                        style="color: black">₹ {{ $lunch_data_ps_pending }}</span></td>
+                                                <td><span style="color: black">₹ {{ $lunch_data_ps_pending }}</span></td>
                                             </tr>
                                             <tr style="background-color: #f8f0c5;">
-                                                <td><span
-                                                        style="color: black">₹ {{ $lunch_data_pm_total }}</span></td>
+                                                <td><span style="color: black">₹ {{ $lunch_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
-                                    <table class="table table-bordered dt-responsive nowrap w-100"  style="background-color: #ffecec;">
+                                    <table class="table table-bordered dt-responsive nowrap w-100"
+                                        style="background-color: #ffecec;">
                                         <thead>
                                             <tr>
                                                 <th><b>Dinner</b></th>
@@ -155,75 +156,95 @@
                                         </thead>
                                         <tbody style="font-size: 16px; font-weight: bold;">
                                             <tr style="background-color: #e0e9f5;">
-                                                <td><span
-                                                        style="color: black">₹ {{ $dinner_data_pm_cash }}</span></td>
+                                                <td><span style="color: black">₹ {{ $dinner_data_pm_cash }}</span></td>
                                             </tr>
                                             <tr style="background-color: #d3f0b7;">
-                                                <td><span
-                                                        style="color: black">₹ {{ $dinner_data_ps_pending }}</span></td>
+                                                <td><span style="color: black">₹ {{ $dinner_data_ps_pending }}</span></td>
                                             </tr>
                                             <tr style="background-color: #f8f0c5;">
-                                                <td><span
-                                                        style="color: black">₹ {{ $dinner_data_pm_total }}</span></td>
+                                                <td><span style="color: black">₹ {{ $dinner_data_pm_total }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
-                                    <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
-                                        <table class="table table-bordered dt-responsive nowrap w-100"
-                                            style="background-color: #eaf7c3;">
-                                            <thead>
-                                                <tr>
-                                                    <th><b>Wallet</b></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody style="font-size: 18px; font-weight: bold;">
-                                                <tr>
-                                                    <td style="color: red !important;"><span style="color: black">₹
-                                                            {{ $total_wallet }}</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static"
-                                        data-bs-keyboard="false" tabindex="-1" role="dialog"
-                                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        @include('pages.backend.sales.addon.wallet')
-                                    </div>
+                                    <table class="table table-bordered dt-responsive nowrap w-100"
+                                        style="background-color: #ffecec;">
+                                        <thead>
+                                            <tr>
+                                                <th><b>Total</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="font-size: 16px; font-weight: bold;">
+                                            <tr style="background-color: #e0e9f5;">
+                                                <td><span style="color: black">₹ {{ $breakfast_data_pm_cash + $lunch_data_pm_cash + $dinner_data_pm_cash }}</span></td>
+                                            </tr>
+                                            <tr style="background-color: #d3f0b7;">
+                                                <td><span style="color: black">₹ {{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</span></td>
+                                            </tr>
+                                            <tr style="background-color: #f8f0c5;">
+                                                <td><span style="color: black">₹ {{ $breakfast_data_pm_total + $lunch_data_pm_total + $dinner_data_pm_total }}</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
-                                    <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <table class="table table-bordered dt-responsive nowrap w-100"
-                                            style="background-color: #ffecec;">
-                                            <thead>
-                                                <tr>
-                                                    <th><b>Delivery Count</b></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody style="font-size: 18px; font-weight: bold;">
-                                                <tr>
-                                                    <td style="color: red !important;">
-                                                        <span style="color: black">
-                                                            <div style="display: none">
-                                                                {{ $totalcount = 0 }}
-                                                            </div>
-                                                            @foreach ($deliveryboys_arr as $deliveryboys_a)
-                                                                <div style="display: none">
-                                                                    {{ $totalcount += $deliveryboys_a['delivery_count'] }}
-                                                                </div>
-                                                            @endforeach
-                                                            {{ $total_delivey_count }}
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div>
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #eaf7c3;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Wallet</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 16px; font-weight: bold;">
+                                                    <tr>
+                                                        <td style="color: red !important;"><span style="color: black">₹
+                                                                {{ $total_wallet }}</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" role="dialog"
+                                            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            @include('pages.backend.sales.addon.wallet')
+                                        </div>
                                     </div>
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                        data-bs-keyboard="false" tabindex="-1" role="dialog"
-                                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        @include('pages.backend.sales.addon.deliveryby')
+                                    <div>
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #ffecec;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Delivery Count</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 16px; font-weight: bold;">
+                                                    <tr>
+                                                        <td style="color: red !important;">
+                                                            <span style="color: black">
+                                                                <div style="display: none">
+                                                                    {{ $totalcount = 0 }}
+                                                                </div>
+                                                                @foreach ($deliveryboys_arr as $deliveryboys_a)
+                                                                    <div style="display: none">
+                                                                        {{ $totalcount += $deliveryboys_a['delivery_count'] }}
+                                                                    </div>
+                                                                @endforeach
+                                                                {{ $total_delivey_count }}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" role="dialog"
+                                            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            @include('pages.backend.sales.addon.deliveryby')
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
@@ -268,37 +289,37 @@
                                                         <td>{{ $outputs['devlivery_by'] }}</td>
 
                                                         @if ($outputs['payment_method'] == 'Cash')
-                                                            <td style="color: white; background-color: #94ec61a4;"><img
+                                                            <td style="color: white; background-color: #589b31;"><img
                                                                     src="{{ asset('assets/images/cash.jpg') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'G-Pay Business')
-                                                            <td style="color: white; background-color: #fcc42b83;"><img
+                                                            <td style="color: white; background-color: #fbbb04;"><img
                                                                     src="{{ asset('assets/images/gpayb.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'G-Pay')
-                                                            <td style="color: white; background-color: #fbb90463;"><img
+                                                            <td style="color: white; background-color: #fbbb04;"><img
                                                                     src="{{ asset('assets/images/gpay.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'Phone Pe')
-                                                            <td style="color: white; background-color: #60259f9f;"><img
+                                                            <td style="color: white; background-color: #5f259f;"><img
                                                                     src="{{ asset('assets/images/phonepay.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'Paytm')
-                                                            <td style="color: white; background-color: #01acf069;"><img
+                                                            <td style="color: white; background-color: #01aef0;"><img
                                                                     src="{{ asset('assets/images/paytm.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'Card')
-                                                            <td style="color: white; background-color: #9ab3c3ce;"><img
+                                                            <td style="color: white; background-color: #9ab3c3;"><img
                                                                     src="{{ asset('assets/images/card.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @else
-                                                            <td style="color: white; background-color: #ff3d3d9d;"><img
+                                                            <td style="color: white; background-color: #ff3d3d;"><img
                                                                     src="{{ asset('assets/images/pending.png') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
