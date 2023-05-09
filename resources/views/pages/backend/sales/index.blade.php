@@ -188,8 +188,8 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-2 col-12 pointer">
-                                    <div>
+                                <div class="col-md-4 col-12 pointer row">
+                                    <div class="col-md-6 col-12 pointer" style="margin-bottom: -15px;">
                                         <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #eaf7c3;">
@@ -212,13 +212,13 @@
                                             @include('pages.backend.sales.addon.wallet')
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="col-md-6 col-12 pointer" style="margin-bottom: -15px;">
                                         <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #ffecec;">
                                                 <thead>
                                                     <tr>
-                                                        <th><b>Delivery Count</b></th>
+                                                        <th><b>Delivery</b></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody style="font-size: 16px; font-weight: bold;">
@@ -246,9 +246,8 @@
                                             @include('pages.backend.sales.addon.deliveryby')
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2 col-12 pointer">
-                                    <table class="table table-bordered dt-responsive nowrap w-100"
+                                    <div class="col-md-12 col-12 pointer">
+                                        <table class="table table-bordered dt-responsive nowrap w-100"
                                         style="background-color: #f7f3c0c2;">
                                         <thead>
                                             <tr>
@@ -261,6 +260,10 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-12 pointer">
+
                                 </div>
                             </div>
                             <div class="col-12 col-md-12">

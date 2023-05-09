@@ -66,45 +66,23 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
+            <table class="table table-bordered dt-responsive nowrap w-100"
+                                style="background-color: #CADAF1;">
+                                <thead>
+                                    <tr style="font-size: 16px; font-weight: bold;">
+                                        <th><b>Expense</b></th>
+                                        <th style="color: red !important;"><span style="color: black">Cash:</span> ₹
+                                            {{ $total_paid }}</th>
+                                        <th style="color: red !important;"><span style="color: black">G Pay:</span>
+                                            ₹ {{ $total_pending }}</th>
+                                        <th style="color: red !important;"><span style="color: black">Salary:</span>
+                                            ₹ {{ $total_salary }}</th>
+                                        <th style="color: red !important;"><span style="color: black">Total:</span>
+                                            ₹ {{ $total }}</th>
+                                    </tr>
+                                </thead>
+                            </table>
             <div class="row">
-                <div style="display: flex;">
-                    <div class="col-md-4" style="margin-right: 5px;">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #B8FF72;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Expence - Gpay</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_pending }}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #01aef0;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Expence - Cash</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total_paid }}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body" style="background-color: #9ab3c3;">
-                                <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <p class="text-muted fw-medium" style="color: black !important; font-weight: bold;">Total</p>
-                                        <h4 class="mb-0" style="color: red !important;">₹ {{ $total }}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">

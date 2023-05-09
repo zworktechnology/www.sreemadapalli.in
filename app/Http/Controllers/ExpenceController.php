@@ -37,8 +37,9 @@ class ExpenceController extends Controller
         $total = Expence::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->sum('amount');
         $total_pending = Expence::where('date', '=', $daily_date)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');
         $total_paid = Expence::where('date', '=', $daily_date)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
+        $total_salary = Expence::where('date', '=', $today)->where('status', '=', 'Salary')->where('soft_delete', '!=', 1)->sum('amount');
 
-        return view('pages.backend.expence.dailyfilter', compact('notificationcount', 'expense_data', 'total', 'daily_date', 'total_pending', 'total_paid'));
+        return view('pages.backend.expence.dailyfilter', compact('total_salary', 'notificationcount', 'expense_data', 'total', 'daily_date', 'total_pending', 'total_paid'));
     }
 
     public function store(Request $request)
@@ -109,12 +110,14 @@ class ExpenceController extends Controller
         $employee_mobile = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
         $total_pending = Expence::where('date', '=', $today)->where('status', '=', 'Pending')->where('soft_delete', '!=', 1)->sum('amount');
         $total_paid = Expence::where('date', '=', $today)->where('status', '=', 'Paid')->where('soft_delete', '!=', 1)->sum('amount');
+        $total_salary = Expence::where('date', '=', $today)->where('status', '=', 'Salary')->where('soft_delete', '!=', 1)->sum('amount');
 
 
         $pdf = Pdf::loadView('pages.backend.expence.pdfexport', [
             'today' => $today,
             'total_pending' => $total_pending,
             'total_paid' => $total_paid,
+            'total_salary' => $total_salary,
             'total' => $total,
             'data' => $data,
         ]);

@@ -78,21 +78,21 @@
                     <div class="row">
                         <div class="col-12 col-md-8">
                             <table class="table table-bordered dt-responsive nowrap w-100"
-                                        style="background-color: #CADAF1;">
-                                        <thead>
-                                            <tr style="font-size: 16px; font-weight: bold;">
-                                                <th><b>Expence</b></th>
-                                                <th style="color: red !important;"><span style="color: black">Cash:</span> ₹
-                                                    {{ $total_paid }}</th>
-                                                <th style="color: red !important;"><span style="color: black">G Pay:</span>
-                                                    ₹ {{ $total_pending }}</th>
-                                                <th style="color: red !important;"><span style="color: black">Salary:</span>
-                                                    ₹ {{ $total_salary }}</th>
-                                                <th style="color: red !important;"><span style="color: black">Total:</span>
-                                                    ₹ {{ $total }}</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
+                                style="background-color: #CADAF1;">
+                                <thead>
+                                    <tr style="font-size: 16px; font-weight: bold;">
+                                        <th><b>Expense</b></th>
+                                        <th style="color: red !important;"><span style="color: black">Cash:</span> ₹
+                                            {{ $total_paid }}</th>
+                                        <th style="color: red !important;"><span style="color: black">G Pay:</span>
+                                            ₹ {{ $total_pending }}</th>
+                                        <th style="color: red !important;"><span style="color: black">Salary:</span>
+                                            ₹ {{ $total_salary }}</th>
+                                        <th style="color: red !important;"><span style="color: black">Total:</span>
+                                            ₹ {{ $total }}</th>
+                                    </tr>
+                                </thead>
+                            </table>
                             <div class="card">
                                 <div class="card-body">
                                     <table id="expensedatatable" class="table table-bordered dt-responsive  nowrap w-100">

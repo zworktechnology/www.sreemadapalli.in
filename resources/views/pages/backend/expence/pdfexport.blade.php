@@ -87,7 +87,7 @@
             <tr>
                 <th><img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40"></th>
                 <th><p>-----------------------</p></th>
-                <th style="margin: 20px;">Expence</th>
+                <th style="margin: 20px;">Expense</th>
                 <th><p>-----------------------</p></th>
                 <th style="margin: 20px;">{{ date('d M Y', strtotime($today)) }}</th>
             </tr>
@@ -136,6 +136,9 @@
             <tr>
                 <td style="font-size: 12px;">Cash</td>
                 <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_paid }}</span></td>
+            </tr><tr>
+                <td style="font-size: 12px;">Salary</td>
+                <td style="font-size: 12px;"><span style="color: red;">Rs. {{ $total_salary }}</span></td>
             </tr>
             <tr>
                 <td style="font-size: 12px;">Total</td>
