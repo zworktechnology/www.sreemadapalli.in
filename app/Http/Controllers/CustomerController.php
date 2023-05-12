@@ -107,38 +107,38 @@ class CustomerController extends Controller
         $payment_total_amount = Payment::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->sum('amount');
 
         // Datewise Customer's order
-        $GetBreakfastData = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
+        $GetBreakfastData = BreakFast::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Breakfast_Date_arr = [];
         foreach ($GetBreakfastData as $key => $GetBreakfastDatas) {
             $Breakfast_Date_arr[] = $GetBreakfastDatas->date;
         }
 
-        $GetLunchData = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
+        $GetLunchData = Lunch::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Lunch_Date_arr = [];
         foreach ($GetLunchData as $key => $GetLunchDatas) {
             $Lunch_Date_arr[] = $GetLunchDatas->date;
         }
 
-        $GetDinnerData = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->get();
+        $GetDinnerData = Dinner::where('customer_id', '=', $data->id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Dinner_Date_arr = [];
         foreach ($GetDinnerData as $key => $GetDinnerDatas) {
             $Dinner_Date_arr[] = $GetDinnerDatas->date;
         }
 
         $merging_Data = array_merge($Breakfast_Date_arr, $Lunch_Date_arr, $Dinner_Date_arr);
-        usort($merging_Data, function ($a, $b) {
-            $dateTimestamp1 = strtotime($a);
-            $dateTimestamp2 = strtotime($b);
+        // usort($merging_Data, function ($a, $b) {
+        //     $dateTimestamp1 = strtotime($a);
+        //     $dateTimestamp2 = strtotime($b);
 
-            return $dateTimestamp1 - $dateTimestamp2;
-        });
+        //     return $dateTimestamp1 - $dateTimestamp2;
+        // });
 
         $Custumer_index_array = [];
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
 
-            $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
-            $CustomersLunchAmt = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
-            $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->sum('bill_amount');
+            $CustomersLunchAmt = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->sum('bill_amount');
+            $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->sum('bill_amount');
             $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
 
             $Custumer_index_array[] = array(
@@ -214,31 +214,31 @@ class CustomerController extends Controller
 
     public function export_customerorder_pdf($id)
     {
-        $GetBreakfastData = BreakFast::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->get();
+        $GetBreakfastData = BreakFast::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Breakfast_Date_arr = [];
         foreach ($GetBreakfastData as $key => $GetBreakfastDatas) {
             $Breakfast_Date_arr[] = $GetBreakfastDatas->date;
         }
 
-        $GetLunchData = Lunch::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->get();
+        $GetLunchData = Lunch::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Lunch_Date_arr = [];
         foreach ($GetLunchData as $key => $GetLunchDatas) {
             $Lunch_Date_arr[] = $GetLunchDatas->date;
         }
 
-        $GetDinnerData = Dinner::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->get();
+        $GetDinnerData = Dinner::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Dinner_Date_arr = [];
         foreach ($GetDinnerData as $key => $GetDinnerDatas) {
             $Dinner_Date_arr[] = $GetDinnerDatas->date;
         }
 
         $merging_Data = array_merge($Breakfast_Date_arr, $Lunch_Date_arr, $Dinner_Date_arr);
-        usort($merging_Data, function ($a, $b) {
-            $dateTimestamp1 = strtotime($a);
-            $dateTimestamp2 = strtotime($b);
+        // usort($merging_Data, function ($a, $b) {
+        //     $dateTimestamp1 = strtotime($a);
+        //     $dateTimestamp2 = strtotime($b);
 
-            return $dateTimestamp1 - $dateTimestamp2;
-        });
+        //     return $dateTimestamp1 - $dateTimestamp2;
+        // });
         $Custumer_pdf_array = [];
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
 
@@ -343,21 +343,21 @@ class CustomerController extends Controller
         $customer_id = $request->get('customer_ids');
 
 //Get Breakfast Dates
-        $Breakfast_datearr = BreakFast::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->get();
+        $Breakfast_datearr = BreakFast::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Breakfast_datearray = [];
         foreach ($Breakfast_datearr as $key => $Breakfast_datearrs) {
             $Breakfast_datearray[] = $Breakfast_datearrs->date;
         }
 
 //Get Lunch Dates
-        $Lunch_datearr = Lunch::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->get();
+        $Lunch_datearr = Lunch::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Lunch_datearray = [];
         foreach ($Lunch_datearr as $key => $Lunch_datearrs) {
             $Lunch_datearray[] = $Lunch_datearrs->date;
         }
 
 //Get Dinner Dates
-        $Dinner_datearr = Dinner::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->get();
+        $Dinner_datearr = Dinner::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Dinner_datearray = [];
         foreach ($Dinner_datearr as $key => $Dinner_datearrs) {
             $Dinner_datearray[] = $Dinner_datearrs->date;
@@ -365,12 +365,12 @@ class CustomerController extends Controller
 
 
         $merging_Datearr = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
-        usort($merging_Datearr, function ($a, $b) {
-            $dateTimestamp1 = strtotime($a);
-            $dateTimestamp2 = strtotime($b);
+        // usort($merging_Datearr, function ($a, $b) {
+        //     $dateTimestamp1 = strtotime($a);
+        //     $dateTimestamp2 = strtotime($b);
 
-            return $dateTimestamp1 - $dateTimestamp2;
-        });
+        //     return $dateTimestamp1 - $dateTimestamp2;
+        // });
         $Custumer_filter_array = [];
         foreach (array_unique($merging_Datearr) as $key => $merging_Datearray) {
 
