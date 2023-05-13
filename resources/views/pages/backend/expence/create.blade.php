@@ -59,17 +59,17 @@
                         <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                             <input type="radio" name="status" value="G-pay" id="G-pay"
                                 style="margin-left: 5px; margin-top:10px;">
-                            <label style="margin-right: 10px;" for="G-pay">GP</label>
+                            <label style="margin-right: 10px;" for="G-pay">GPAY</label>
                         </div>
                         <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                             <input type="radio" name="status" value="Cash" id="Cash" checked
                                 style="margin-left: 5px; margin-top:10px;">
-                            <label style="margin-right: 10px;" for="Cash">CA</label>
+                            <label style="margin-right: 10px;" for="Cash">CASH</label>
                         </div>
                         <div style="background-color: lightgreen; border-style: solid; border-width: 0.5px; border-color: lightgray;">
                             <input type="radio" name="status" value="Salary" id="Salary"
                                 style="margin-left: 5px; margin-top:10px;">
-                            <label style="margin-right: 10px;" for="Salary">SA</label>
+                            <label style="margin-right: 10px;" for="Salary">SALARY</label>
                         </div>
                     </div>
                 </div>

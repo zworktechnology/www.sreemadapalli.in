@@ -63,17 +63,17 @@
                     <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="session" id="Breakfast" value="Breakfast"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="Breakfast">BF</label>
+                        <label style="margin-right: 10px;" for="Breakfast">BREA</label>
                     </div>
                     <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="session" id="Lunch" value="Lunch"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="Lunch">LU</label>
+                        <label style="margin-right: 10px;" for="Lunch">LUNC</label>
                     </div>
                     <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray;">
                         <input type="radio" name="session" id="Dinner" value="Dinner"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="Dinner">DI</label>
+                        <label style="margin-right: 10px;" for="Dinner">DINN</label>
                     </div>
                 </div>
             </div>
@@ -84,17 +84,17 @@
                     <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="payment_method" value="Cash" id="Cash"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="Cash">CA</label>
+                        <label style="margin-right: 10px;" for="Cash">CASH</label>
                     </div>
                     <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="payment_method" value="Pending" id="Pending"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="Pending">PE</label>
+                        <label style="margin-right: 10px;" for="Pending">PEND</label>
                     </div>
                     <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray;">
                         <input type="radio" name="payment_method" value="G Pay" id="G Pay"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="G Pay">WA</label>
+                        <label style="margin-right: 10px;" for="G Pay">WALT</label>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     <div style="background-color: lightgreen; border-style: solid; border-width: 1px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="delivery_boy_id" id="{{ $deliveryboys->id }}" value="{{ $deliveryboys->id }}"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="{{ $deliveryboys->id }}">{{ substr($deliveryboys->name, 0, 2) }}</label>
+                        <label style="margin-right: 10px;" for="{{ $deliveryboys->id }}">{{ substr($deliveryboys->name, 0, 4) }}</label>
                     </div>
                     @endforeach
                 </div>
