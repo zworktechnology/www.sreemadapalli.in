@@ -6,7 +6,7 @@
 <title>Sree Madapalli - Zwork Technology | Delivery & Expense - Custom Softwarek</title>
 
 {{-- App favicon --}}
-<link rel="shortcut icon" href="{{ asset('assets/images/fav-logo.png') }}">
+<link rel="shortcut icon" href="">
 
 {{-- owl.carousel css --}}
 <link rel="stylesheet" href="{{ asset('assets/libs/owl.carousel/assets/owl.carousel.min.css') }}">
