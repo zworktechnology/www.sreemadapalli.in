@@ -9,18 +9,20 @@
                 <label for="date" class="col-md-1 col-form-label" hidden>
                     Date <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required value="{{ $today }}">
+                    <input type="date" class="form-control" name="date" placeholder="Enter Your " required
+                        value="{{ $today }}">
                 </div>
             </div>
             <div class="row mb-2 col-12 ">
                 <label for="customer_id" class="col-md-1 col-form-label" hidden>
                     Customer <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <select class="form-control js-example-basic-single customer_id" name="customer_id" id="customer_id" required>
-                        <option value="" selected  class="text-muted">
+                    <select class="form-control js-example-basic-single customer_id" name="customer_id" id="customer_id"
+                        required>
+                        <option value="" selected class="text-muted">
                             Select Customer</option>
                         @foreach ($customerarr as $customers)
-                        <option value="{{ $customers['id'] }}">{{ $customers['name'] }}</option>
+                            <option value="{{ $customers['id'] }}">{{ $customers['name'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -30,10 +32,11 @@
                     Contact Number <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
                     <select class="form-control js-example-basic-single phoneno" name="phoneno" id="phoneno" required>
-                        <option value="" selected  class="text-muted">
+                        <option value="" selected class="text-muted">
                             Select Mobile</option>
                         @foreach ($customer_mobile as $customer_mobiles)
-                        <option value="{{ $customer_mobiles->contact_number }}">{{ $customer_mobiles->contact_number }}</option>
+                            <option value="{{ $customer_mobiles->contact_number }}">
+                                {{ $customer_mobiles->contact_number }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -49,48 +52,64 @@
                 <label for="bill_amount" class="col-md-1 col-form-label" hidden>
                     Bill Amount <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2">
-                    <input type="number" class="form-control" name="bill_amount" id="bill_amount" placeholder="Bill Amount" required onchange="totalbreakfast()">
-                </div>
-            </div>
-            <div class="row mb-2 col-12 ">
-                <label for="delivery_boy_id" class="col-md-1 col-form-label" hidden>
-                    Delivery By <span style="color: red;">*</span></label>
-                <div class="col-9 col-md-2">
-                    <select class="form-select js-example-basic-single" name="delivery_boy_id" required>
-                        <option value="" disabled selected hidden class="text-muted">
-                            Delivery By</option>
-                        @foreach ($deliveryboy as $deliveryboys)
-                        <option value="{{ $deliveryboys->id }}">{{ $deliveryboys->name }}</option>
-                        @endforeach
-                    </select>
+                    <input type="number" class="form-control" name="bill_amount" id="bill_amount"
+                        placeholder="Bill Amount" required onchange="totalbreakfast()">
                 </div>
             </div>
             <div class="row mb-2 col-12 ">
                 <label for="session" class="col-md-1 col-form-label" hidden>
                     Session <span style="color: red;">*</span></label>
-                <div class="col-9 col-md-2">
-                    <select class="form-control js-example-basic-single" name="session" required>
-                        <option value="" disabled selected hidden class="text-muted">Select Session</option>
-                        <option value="Break_Fast" class="text-muted">Breakfast</option>
-                        <option value="Lunch" class="text-muted">Lunch</option>
-                        <option value="Dinner" class="text-muted">Dinner</option>
-                    </select>
+                <div class="col-9 col-md-2" style="display: flex;">
+                    <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                        <input type="radio" name="session" id="Breakfast" value="Breakfast"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="Breakfast">BF</label>
+                    </div>
+                    <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                        <input type="radio" name="session" id="Lunch" value="Lunch"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="Lunch">LU</label>
+                    </div>
+                    <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray;">
+                        <input type="radio" name="session" id="Dinner" value="Dinner"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="Dinner">DI</label>
+                    </div>
                 </div>
             </div>
-            <div class="row mb-4 col-12 col-md-12">
+            <div class="row mb-2 col-12 col-md-12">
                 <label for="payment_method" class="col-md-1 col-form-label" hidden>
                     Payment Via <span style="color: red;">*</span></label>
-                <div class="col-9 col-md-2">
-                    <select class="form-control js-example-basic-single" name="payment_method" required>
-                        <option value="" disabled hidden class="text-muted">Select Payment Via</option>
-                        <option value="Cash" class="text-muted" selected>Cash</option>
-                        <option value="Pending" class="text-muted">Pending</option>
-                        <option value="G-Pay" class="text-muted">G Pay</option>
-                        <option value="G-Pay Business" class="text-muted">G-Pay Business</option>
-                        <option value="Phone Pe" class="text-muted">Phone Pe</option>
-                        <option value="Paytm" class="text-muted">Paytm</option>
-                        <option value="Card" class="text-muted">Card</option>
-                    </select>
+                <div class="col-9 col-md-2" style="display: flex;">
+                    <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                        <input type="radio" name="payment_method" value="Cash" id="Cash"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="Cash">CA</label>
+                    </div>
+                    <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                        <input type="radio" name="payment_method" value="Pending" id="Pending"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="Pending">PE</label>
+                    </div>
+                    <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray;">
+                        <input type="radio" name="payment_method" value="G Pay" id="G Pay"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="G Pay">WA</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2 col-12 ">
+                <label for="delivery_boy_id" class="col-md-1 col-form-label" hidden>
+                    Delivery By <span style="color: red;">*</span></label>
+
+                <div class="col-9 col-md-2" style="display: flex;">
+                    @foreach ($deliveryboy as $deliveryboys)
+                    <div style="background-color: lightgreen; border-style: solid; border-width: 1px; border-color: lightgray; margin-right: 10px;">
+                        <input type="radio" name="delivery_boy_id" id="{{ $deliveryboys->id }}" value="{{ $deliveryboys->id }}"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="{{ $deliveryboys->id }}">{{ substr($deliveryboys->name, 0, 2) }}</label>
+                    </div>
+                    @endforeach
                 </div>
             </div>
             <div style="display: flex;" hidden>
@@ -108,14 +127,16 @@
                     <label for="payment_amount" class="col-sm-3 col-form-label">
                         Payment Amount <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="payment_amount" id="payment_amount_total" placeholder="Enter Your " value="00">
+                        <input type="number" class="form-control" name="payment_amount" id="payment_amount_total"
+                            placeholder="Enter Your " value="00">
                     </div>
                 </div>
                 <div class="row mb-4 col-6 ">
                     <label for="delivery_amount" class="col-sm-3 col-form-label">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery Charge <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="delivery_amount" id="delivery_amount" placeholder="Enter Your " onchange="totalbreakfast()" value="00">
+                        <input type="number" class="form-control" name="delivery_amount" id="delivery_amount"
+                            placeholder="Enter Your " onchange="totalbreakfast()" value="00">
                     </div>
                 </div>
             </div>
@@ -141,83 +162,75 @@
     }
 
 
-$(document).ready(function(){
-    $('.customer_id').on("select2:select", function(e) {
-        //alert($(this).val());
-        var customer_id = $(this).val();
-//alert(customer_id);
-                $.ajax({
-                    url: '/getphoneno/' + customer_id,
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(response) {
+    $(document).ready(function() {
+        $('.customer_id').on("select2:select", function(e) {
+            //alert($(this).val());
+            var customer_id = $(this).val();
+            //alert(customer_id);
+            $.ajax({
+                url: '/getphoneno/' + customer_id,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
 
-                        console.log(response);
-                        $('.phoneno').val('');
-                        var output = response.length;
-                        for (var i = 0; i < output; i++) {
-                            $('.phoneno').val(response[i].contact_number);
-                            $('.phoneno').select2().trigger('change');
-                            $('.pendingamount').html('₹ ' + response[i].pending);
+                    console.log(response);
+                    $('.phoneno').val('');
+                    var output = response.length;
+                    for (var i = 0; i < output; i++) {
+                        $('.phoneno').val(response[i].contact_number);
+                        $('.phoneno').select2().trigger('change');
+                        $('.pendingamount').html('₹ ' + response[i].pending);
 
-                            if(response[i].pending > 0){
-                                $('.customer_pending').show();
-                            }else{
-                                $('.customer_pending').hide();
-                            }
+                        if (response[i].pending > 0) {
+                            $('.customer_pending').show();
+                        } else {
+                            $('.customer_pending').hide();
                         }
-
-                        //$('.phoneno').val(response['data'].contact_number);
-                        //$('.phoneno').select2().trigger('change');
-
                     }
-                });
+
+                    //$('.phoneno').val(response['data'].contact_number);
+                    //$('.phoneno').select2().trigger('change');
+
+                }
+            });
+        });
     });
-});
 
 
-$(document).ready(function(){
-    $('.phoneno').on("select2:select", function(e) {
-        var phoneno = $(this).val();
+    $(document).ready(function() {
+        $('.phoneno').on("select2:select", function(e) {
+            var phoneno = $(this).val();
 
-                $.ajax({
-                    url: '/getcustomerId/' + phoneno,
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(response) {
-                        console.log(response);
-
-
-                        $('.customer_id').val('');
-                        var output = response.length;
+            $.ajax({
+                url: '/getcustomerId/' + phoneno,
+                type: 'get',
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response);
 
 
-                        for (var i = 0; i < output; i++) {
-                            $('.customer_id').val(response[i].id);
-                            $('.customer_id').select2().trigger('change');
-                            $('.pendingamount').html('₹ ' + response[i].pending);
+                    $('.customer_id').val('');
+                    var output = response.length;
 
-                            if(response[i].pending > 0){
-                                $('.customer_pending').show();
-                            }else{
-                                $('.customer_pending').hide();
-                            }
+
+                    for (var i = 0; i < output; i++) {
+                        $('.customer_id').val(response[i].id);
+                        $('.customer_id').select2().trigger('change');
+                        $('.pendingamount').html('₹ ' + response[i].pending);
+
+                        if (response[i].pending > 0) {
+                            $('.customer_pending').show();
+                        } else {
+                            $('.customer_pending').hide();
                         }
-
-
-
-
                     }
-                });
 
+
+
+
+                }
+            });
+
+        });
     });
-});
-
-
-
-
-
-
-
-
 </script>
