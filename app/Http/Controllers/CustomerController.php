@@ -126,12 +126,12 @@ class CustomerController extends Controller
         }
 
         $merging_Data = array_merge($Breakfast_Date_arr, $Lunch_Date_arr, $Dinner_Date_arr);
-        // usort($merging_Data, function ($a, $b) {
-        //     $dateTimestamp1 = strtotime($a);
-        //     $dateTimestamp2 = strtotime($b);
+        usort($merging_Data, function ($a, $b) {
+            $dateTimestamp1 = strtotime($a);
+            $dateTimestamp2 = strtotime($b);
 
-        //     return $dateTimestamp1 - $dateTimestamp2;
-        // });
+            return $dateTimestamp1 - $dateTimestamp2;
+        });
 
         $Custumer_index_array = [];
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
@@ -233,12 +233,12 @@ class CustomerController extends Controller
         }
 
         $merging_Data = array_merge($Breakfast_Date_arr, $Lunch_Date_arr, $Dinner_Date_arr);
-        // usort($merging_Data, function ($a, $b) {
-        //     $dateTimestamp1 = strtotime($a);
-        //     $dateTimestamp2 = strtotime($b);
+        usort($merging_Data, function ($a, $b) {
+            $dateTimestamp1 = strtotime($a);
+            $dateTimestamp2 = strtotime($b);
 
-        //     return $dateTimestamp1 - $dateTimestamp2;
-        // });
+            return $dateTimestamp1 - $dateTimestamp2;
+        });
         $Custumer_pdf_array = [];
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
 
@@ -365,12 +365,12 @@ class CustomerController extends Controller
 
 
         $merging_Datearr = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
-        // usort($merging_Datearr, function ($a, $b) {
-        //     $dateTimestamp1 = strtotime($a);
-        //     $dateTimestamp2 = strtotime($b);
+        usort($merging_Datearr, function ($a, $b) {
+            $dateTimestamp1 = strtotime($a);
+            $dateTimestamp2 = strtotime($b);
 
-        //     return $dateTimestamp1 - $dateTimestamp2;
-        // });
+            return $dateTimestamp1 - $dateTimestamp2;
+        });
         $Custumer_filter_array = [];
         foreach (array_unique($merging_Datearr) as $key => $merging_Datearray) {
 
