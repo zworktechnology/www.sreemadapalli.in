@@ -104,7 +104,7 @@
 
                 <div class="col-9 col-md-2" style="display: grid; grid-template-columns: 35% 30% 35%;">
                     @foreach ($deliveryboy as $deliveryboys)
-                    <div style="background-color: red; border-style: solid; border-width: 1px;margin-top: 7px; border-color: lightgray; margin-right: 10px;">
+                    <div style="background-color: lightyellow; border-style: solid; border-width: 1px;margin-top: 7px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="delivery_boy_id" id="{{ $deliveryboys->id }}" value="{{ $deliveryboys->id }}"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="{{ $deliveryboys->id }}">{{ substr($deliveryboys->name, 0, 4) }}</label>
