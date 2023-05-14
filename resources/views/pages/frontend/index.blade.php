@@ -15,8 +15,8 @@
                     <div class="sb-main-title-frame">
                         <div class="sb-main-title">
                             <span class="sb-suptitle sb-mb-30">Welcome To Sree Madapalli!</span>
-                            <h1 class="sb-mb-30">Traditional food to each and every corner</h1>
-                            <p class="sb-text sb-text-lg sb-mb-30">Lord Ranganatha is the Head of this House, A Silent
+                            <h1 class="sb-mb-30">Lord Ranganatha is the Head of this House</h1>
+                            <p class="sb-text sb-text-lg sb-mb-30">A Silent
                                 Listener in Every Conversation and an Unseen Guest at Every Meal</p>
                             <!-- button -->
                             <a href="{{ route('menu') }}" class="sb-btn">
@@ -41,14 +41,14 @@
                 <div class="col-lg-6">
                     <div class="sb-ilustration-fix">
                         <div class="sb-illustration-1-2">
-                            <img src="{{ asset('frontend_styles/img/illustrations/1.png') }}" alt="food"
+                            <img src="{{ asset('frontend_styles/image/home/img9.png') }}" alt="food"
                                 class="sb-food-1">
-                            <img src="{{ asset('frontend_styles/img/illustrations/2.png') }}" alt="food"
+                            <img src="{{ asset('frontend_styles/image/home/img7.png') }}" alt="food"
                                 class="sb-food-2">
-                            <img src="{{ asset('frontend_styles/img/illustrations/3.png') }}" alt="food"
+                            <img src="{{ asset('frontend_styles/image/home/img8.png') }}" alt="food"
                                 class="sb-food-3">
-                            <div class="sb-illu-dialog-1"><span>🧄</span> No Garlic...</div>
-                            <div class="sb-illu-dialog-2"><span>🧅</span> No Onion...</div>
+                            {{-- <div class="sb-illu-dialog-1"><span>🧄</span> No Garlic...</div> --}}
+                            {{-- <div class="sb-illu-dialog-2"><span>🧅</span> No Onion...</div> --}}
                             <div class="sb-cirkle-1"></div>
                             <div class="sb-cirkle-2"></div>
                             <div class="sb-cirkle-3"></div>
