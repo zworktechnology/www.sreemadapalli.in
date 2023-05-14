@@ -12,10 +12,7 @@
                     <div class="sb-main-title-frame">
                         <div class="sb-main-title text-center">
                             <span class="sb-suptitle sb-mb-30">About us</span>
-                            <h1 class="sb-mb-30">There is no <span>love</span> more sincere <br> than the love of
-                                <span>food</span>.</h1>
-                            <p class="sb-text sb-text-lg sb-mb-30">Consectetur numquam poro nemo veniam<br>eligendi rem
-                                adipisci quo modi.</p>
+                            <h1 class="sb-mb-30">Sree Madapalli was established <br> in the year 2016</h1>
                             <ul class="sb-breadcrumbs">
                                 <li><a href="{{ route('index') }}">Home</a></li>
                                 <li><a href="#.">About us</a></li>
@@ -57,17 +54,13 @@
                 </div>
                 <div class="col-lg-6 align-self-center sb-mb-60">
                     <h2 class="sb-mb-60">We are doing more than <br>you expect</h2>
-                    <p class="sb-text sb-mb-30">Faudantium magnam error temporibus ipsam aliquid neque quibusdam
-                        dolorum, quia ea numquam assumenda mollitia dolorem impedit. Voluptate at quis exercitationem
-                        officia temporibus adipisci quae totam enim
-                        dolorum,
-                        assumenda. Sapiente soluta nostrum reprehenderit a velit obcaecati facilis vitae magnam tenetur
-                        neque vel itaque inventore eaque explicabo commodi maxime! Aliquam quasi, voluptates odio.</p>
-                    <p class="sb-text sb-mb-60">Consectetur adipisicing elit. Cupiditate nesciunt amet facilis numquam,
-                        nam adipisci qui voluptate voluptas enim obcaecati veritatis animi nulla, mollitia commodi
-                        quaerat ex, autem ea
-                        laborum.</p>
-                    <img src="img/ui/signature.png" alt="Signature" class="sb-signature sb-mb-30">
+                    <p class="sb-text sb-mb-30">Sree Madapalli was established in the year 2016, with an objective of
+                        serving No onion and No Garlic food to the yatrikas visitor the srirangam temple.</p>
+                    <p class="sb-text sb-mb-30">We design our entire menu on this traditional front.</p>
+                    <p class="sb-text sb-mb-30">Sree madapalli is located near to main entrance of the srirangam temple with ample car parking for great dining.</p>
+                    <p class="sb-text sb-mb-30">The Meal are served in traditional banana leaves with devotional.</p>
+                    <p class="sb-text sb-mb-30">Sree madapalli also delivers food daily to almost 100+ senior citizens in and around srirangam with our own delivery system at throw door steps.</p>
+                    <p class="sb-text sb-mb-60">Sree madapalli also serves customised menu for the special requirements.</p>
                 </div>
             </div>
         </div>
@@ -82,9 +75,7 @@
                     <div class="sb-features-item sb-mb-60">
                         <div class="sb-number">01</div>
                         <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">We are located in the city center</h3>
-                            <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus
-                                adipisci quo modi numquam.</p>
+                            <h3 class="sb-mb-15">We are located near to main entrance of the srirangam temple</h3>
                         </div>
                     </div>
                 </div>
@@ -92,9 +83,7 @@
                     <div class="sb-features-item sb-mb-60">
                         <div class="sb-number">02</div>
                         <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">Fresh ingredients from organic farms</h3>
-                            <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus
-                                adipisci quo modi numquam.</p>
+                            <h3 class="sb-mb-15">We also serves customised menu for the special requirements.</h3>
                         </div>
                     </div>
                 </div>
@@ -102,9 +91,7 @@
                     <div class="sb-features-item sb-mb-60">
                         <div class="sb-number">03</div>
                         <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">Own fast delivery. 30 min Maximum</h3>
-                            <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem temporibus
-                                adipisci quo modi numquam.</p>
+                            <h3 class="sb-mb-15">We delivers food daily to almost 100+ senior citizens in and around srirangam</h3>
                         </div>
                     </div>
                 </div>
@@ -285,8 +272,7 @@
                 <div class="col-lg-6 align-self-center">
                     <div class="sb-cta-text">
                         <h2 class="sb-h1 sb-mb-30">Home delivery service.</h2>
-                        <p class="sb-text sb-mb-30">Consectetur numquam poro nemo veniam<br>eligendi rem adipisci quo
-                            modi.</p>
+                        <p class="sb-text sb-mb-30">Feast in the Comfort of Your Home: Divisional's Irresistible Food Delivery Service</p>
                         <!-- button -->
                         <a href="https://api.whatsapp.com/send/?phone=919025166000" class="sb-btn" target="_blank">
                             <span class="sb-icon">

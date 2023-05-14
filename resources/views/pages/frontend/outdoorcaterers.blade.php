@@ -34,174 +34,134 @@
             <div class="sb-masonry-grid">
                 <div class="sb-grid-sizer"></div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-cover-vert sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/1.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img1.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Incredible Vegan Mac and Cheese</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Ayush Homam</h3>
+                            <p class="sb-text">Ayush Homam: An auspicious Vedic ritual performed to promote health, longevity, and well-being.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/2.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img2.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Beet and Burrata Salad with Fried Bread</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Upanayanam</h3>
+                            <p class="sb-text">Sacred initiation ceremony marking the beginning of Vedic education and spiritual journey in Hinduism.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-cover-vert sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/3.jpg') }}" alt="cover">
-                            <div class="sb-badge">Popular</div>
+                            <img src="{{ asset('frontend_styles/image/outdoor/img3.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Creamy Kale Pasta</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Marriages</h3>
+                            <p class="sb-text">Joining lives, creating memories. Celebrate love and commitment with our exquisite marriage services.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-cover-vert sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/4.jpg') }}" alt="cover">
-                            <div class="sb-badge">Popular</div>
+                            <img src="{{ asset('frontend_styles/image/outdoor/img4.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Join Us For Plant-Powered January!</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Seemandham</h3>
+                            <p class="sb-text">Traditional Indian baby shower ceremony celebrating the impending arrival of a new life.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/5.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img5.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">The Best Chicken Tinga Tacos</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Birthday Party</h3>
+                            <p class="sb-text">Unforgettable moments, joyful surprises, and endless memories. The perfect birthday party awaits!</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/6.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img6.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Quinoa Sweet Potato Salad</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Retirement Functions</h3>
+                            <p class="sb-text">Celebrate a life well-lived. Honor and rejoice in retirement with a memorable function.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-cover-vert sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/1.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img7.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Incredible Vegan Mac and Cheese</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Sashtiapthapoorthy</h3>
+                            <p class="sb-text">Celebrating 60 years of a remarkable life journey filled with blessings and achievements.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/2.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img8.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Beet and Burrata Salad with Fried Bread</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Bhhemaradhasanthi</h3>
+                            <p class="sb-text">Celebrating a Milestone of 80 Years, Honoring the Journey of Wisdom and Grace.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-cover-vert sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/3.jpg') }}" alt="cover">
-                            <div class="sb-badge">Popular</div>
+                            <img src="{{ asset('frontend_styles/image/outdoor/img9.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Creamy Kale Pasta</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Sadhabhishegam</h3>
+                            <p class="sb-text">A sacred ritual celebrating the long-standing legacy and divine blessings bestowed upon a revered deity</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-cover-vert sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/4.jpg') }}" alt="cover">
-                            <div class="sb-badge">Popular</div>
+                            <img src="{{ asset('frontend_styles/image/outdoor/img10.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Join Us For Plant-Powered January!</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Kanagabhishegam</h3>
+                            <p class="sb-text">An auspicious ritual of anointing the deity with sacred substances, symbolizing divine blessings and purification.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/5.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img11.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">The Best Chicken Tinga Tacos</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Office Meetings</h3>
+                            <p class="sb-text">Productive collaboration and idea exchange in dynamic office meetings, driving progress and fostering teamwork.</p>
                         </div>
                     </a>
                 </div>
                 <div class="sb-grid-item sb-item-33">
-                    <a href="publication-1.html" class="sb-blog-card sb-mb-30">
+                    <a href="JavaScript:void(0);" class="sb-blog-card sb-mb-30">
                         <div class="sb-cover-frame sb-mb-30">
-                            <img src="{{ asset('frontend_styles/img/blog/6.jpg') }}" alt="cover">
+                            <img src="{{ asset('frontend_styles/image/outdoor/img12.png') }}" alt="cover">
                         </div>
                         <div class="sb-blog-card-descr">
-                            <h3 class="sb-mb-10">Quinoa Sweet Potato Salad</h3>
-                            <div class="sb-suptitle sb-mb-15"><span>17 Jul</span> <span>14:32</span> <span>Emma
-                                    T.</span></div>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <h3 class="sb-mb-10">Get Togethers</h3>
+                            <p class="sb-text">Connect, celebrate, and create lasting memories with loved ones in a warm and inviting atmosphere.</p>
                         </div>
                     </a>
                 </div>

@@ -61,7 +61,7 @@
                     Session <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2" style="display: flex;">
                     <div style="background-color: #ffecec; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
-                        <input type="radio" name="session" id="Breakfast" value="Breakfast"
+                        <input type="radio" name="session" id="Breakfast" value="Break_Fast"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="Breakfast">BREA</label>
                     </div>

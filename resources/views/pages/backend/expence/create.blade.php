@@ -57,12 +57,12 @@
                         Status <span style="color: red;">*</span></label>
                     <div class="col-sm-9" style="display: flex;">
                         <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
-                            <input type="radio" name="status" value="G-pay" id="G-pay"
+                            <input type="radio" name="status" value="Pending" id="G-pay"
                                 style="margin-left: 5px; margin-top:10px;">
                             <label style="margin-right: 10px;" for="G-pay">GPAY</label>
                         </div>
                         <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
-                            <input type="radio" name="status" value="Cash" id="Cash" checked
+                            <input type="radio" name="status" value="Paid" id="Cash"
                                 style="margin-left: 5px; margin-top:10px;">
                             <label style="margin-right: 10px;" for="Cash">CASH</label>
                         </div>

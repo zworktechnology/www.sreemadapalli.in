@@ -15,11 +15,9 @@
                     <div class="sb-main-title-frame">
                         <div class="sb-main-title">
                             <span class="sb-suptitle sb-mb-30">Welcome To Sree Madapalli!</span>
-                            <h1 class="sb-mb-30">We do not <span>cook</span>, <br>we <span>create</span> your
-                                <br>emotions!
-                            </h1>
-                            <p class="sb-text sb-text-lg sb-mb-30">Consectetur numquam poro nemo
-                                veniam<br>eligendi rem adipisci quo modi.</p>
+                            <h1 class="sb-mb-30">Lord Ranganatha is the Head of this House</h1>
+                            <p class="sb-text sb-text-lg sb-mb-30">A Silent
+                                Listener in Every Conversation and an Unseen Guest at Every Meal</p>
                             <!-- button -->
                             <a href="{{ route('menu') }}" class="sb-btn">
                                 <span class="sb-icon">
@@ -43,14 +41,14 @@
                 <div class="col-lg-6">
                     <div class="sb-ilustration-fix">
                         <div class="sb-illustration-1-2">
-                            <img src="{{ asset('frontend_styles/img/illustrations/1.png') }}" alt="food"
+                            <img src="{{ asset('frontend_styles/image/home/img9.png') }}" alt="food"
                                 class="sb-food-1">
-                            <img src="{{ asset('frontend_styles/img/illustrations/2.png') }}" alt="food"
+                            <img src="{{ asset('frontend_styles/image/home/img7.png') }}" alt="food"
                                 class="sb-food-2">
-                            <img src="{{ asset('frontend_styles/img/illustrations/3.png') }}" alt="food"
+                            <img src="{{ asset('frontend_styles/image/home/img8.png') }}" alt="food"
                                 class="sb-food-3">
-                            <div class="sb-illu-dialog-1"><span>🧄</span> No Garlic...</div>
-                            <div class="sb-illu-dialog-2"><span>🧅</span> No Onion...</div>
+                            {{-- <div class="sb-illu-dialog-1"><span>🧄</span> No Garlic...</div> --}}
+                            {{-- <div class="sb-illu-dialog-2"><span>🧅</span> No Onion...</div> --}}
                             <div class="sb-cirkle-1"></div>
                             <div class="sb-cirkle-2"></div>
                             <div class="sb-cirkle-3"></div>
@@ -90,7 +88,7 @@
                         <div class="sb-cirkle-4"></div>
                         <div class="sb-experience">
                             <div class="sb-exp-content">
-                                <p class="sb-h1 sb-mb-10">17</p>
+                                <p class="sb-h1 sb-mb-10">7</p>
                                 <p class="sb-h3">Years Experiense</p>
                             </div>
                         </div>
@@ -98,20 +96,13 @@
                 </div>
                 <div class="col-lg-6 align-self-center sb-mb-60">
                     <h2 class="sb-mb-60">We are doing more than <br>you expect</h2>
-                    <p class="sb-text sb-mb-30">Faudantium magnam error temporibus ipsam aliquid neque
-                        quibusdam dolorum, quia ea numquam assumenda mollitia dolorem impedit. Voluptate at quis
-                        exercitationem officia temporibus adipisci quae totam enim
-                        dolorum,
-                        assumenda. Sapiente soluta nostrum reprehenderit a velit obcaecati facilis vitae magnam
-                        tenetur
-                        neque vel itaque inventore eaque explicabo commodi maxime! Aliquam quasi, voluptates
-                        odio.</p>
-                    <p class="sb-text sb-mb-60">Consectetur adipisicing elit. Cupiditate nesciunt amet facilis
-                        numquam, nam adipisci qui voluptate voluptas enim obcaecati veritatis animi nulla,
-                        mollitia commodi quaerat ex, autem ea
-                        laborum.</p>
-                    <img src="{{ asset('frontend_styles/img/ui/signature.png') }}" alt="Signature"
-                        class="sb-signature sb-mb-30">
+                    <p class="sb-text sb-mb-30">Sree Madapalli was established in the year 2016, with an objective of
+                        serving No onion and No Garlic food to the yatrikas visitor the srirangam temple.</p>
+                    <p class="sb-text sb-mb-30">We design our entire menu on this traditional front.</p>
+                    <p class="sb-text sb-mb-30">Sree madapalli is located near to main entrance of the srirangam temple with ample car parking for great dining.</p>
+                    <p class="sb-text sb-mb-30">The Meal are served in traditional banana leaves with devotional.</p>
+                    <p class="sb-text sb-mb-30">Sree madapalli also delivers food daily to almost 100+ senior citizens in and around srirangam with our own delivery system at throw door steps.</p>
+                    <p class="sb-text sb-mb-60">Sree madapalli also serves customised menu for the special requirements.</p>
                 </div>
             </div>
         </div>
@@ -126,9 +117,7 @@
                     <div class="sb-features-item sb-mb-60">
                         <div class="sb-number">01</div>
                         <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">We are located in the city center</h3>
-                            <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem
-                                temporibus adipisci quo modi numquam.</p>
+                            <h3 class="sb-mb-15">We are located near to main entrance of the srirangam temple</h3>
                         </div>
                     </div>
                 </div>
@@ -136,9 +125,7 @@
                     <div class="sb-features-item sb-mb-60">
                         <div class="sb-number">02</div>
                         <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">Fresh ingredients from organic farms</h3>
-                            <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem
-                                temporibus adipisci quo modi numquam.</p>
+                            <h3 class="sb-mb-15">We also serves customised menu for the special requirements.</h3>
                         </div>
                     </div>
                 </div>
@@ -146,9 +133,7 @@
                     <div class="sb-features-item sb-mb-60">
                         <div class="sb-number">03</div>
                         <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">Own fast delivery. 30 min Maximum</h3>
-                            <p class="sb-text">Porro nemo veniam necessitatibus praesentium eligendi rem
-                                temporibus adipisci quo modi numquam.</p>
+                            <h3 class="sb-mb-15">We delivers food daily to almost 100+ senior citizens in and around srirangam</h3>
                         </div>
                     </div>
                 </div>
@@ -166,8 +151,6 @@
             <div class="sb-group-title sb-mb-30">
                 <div class="sb-left sb-mb-30">
                     <h2 class="sb-mb-30">Our <span>Services</h2>
-                    <p class="sb-text">Consectetur numquam poro nemo veniam<br>eligendi rem adipisci quo modi.
-                    </p>
                 </div>
                 <div class="sb-right sb-mb-30">
                     <!-- slider navigation -->
@@ -181,8 +164,8 @@
             <div class="swiper-container sb-short-menu-slider-3i">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup href="{{ asset('frontend_styles/image/home/img2.png') }}"
-                            class="sb-menu-item">
+                        <a data-fancybox="menu" data-no-swup
+                            href="{{ asset('frontend_styles/image/home/img2.png') }}" class="sb-menu-item">
                             <div class="sb-cover-frame">
                                 <img src="{{ asset('frontend_styles/image/home/img2.png') }}" alt="product">
                             </div>
@@ -190,21 +173,19 @@
                                 <h3 class="sb-card-title">Dine In</h3>
                                 <div class="sb-price">
                                     <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}" alt="icon">
+                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
+                                            alt="icon">
                                     </span>
                                 </div>
                             </div>
                             <div class="sb-description">
-                                <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>,
-                                    <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>,
-                                    <span>corn</span>, <span>shrimp</span>.
-                                </p>
+                                <p class="sb-text sb-mb-15">Indulge in Exquisite Culinary Delights: Experience the Art of Fine Dining at Divisional</p>
                             </div>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup href="{{ asset('frontend_styles/image/home/img3.png') }}"
-                            class="sb-menu-item">
+                        <a data-fancybox="menu" data-no-swup
+                            href="{{ asset('frontend_styles/image/home/img3.png') }}" class="sb-menu-item">
                             <div class="sb-cover-frame">
                                 <img src="{{ asset('frontend_styles/image/home/img3.png') }}" alt="product">
                             </div>
@@ -212,21 +193,19 @@
                                 <h3 class="sb-card-title">Outdoor Caterers</h3>
                                 <div class="sb-price">
                                     <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}" alt="icon">
+                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
+                                            alt="icon">
                                     </span>
                                 </div>
                             </div>
                             <div class="sb-description">
-                                <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>,
-                                    <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>,
-                                    <span>corn</span>, <span>shrimp</span>.
-                                </p>
+                                <p class="sb-text sb-mb-15">Elevate Your Celebrations: Experience Unforgettable Outdoor Catering with Divisional</p>
                             </div>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup href="{{ asset('frontend_styles/image/home/img4.png') }}"
-                            class="sb-menu-item">
+                        <a data-fancybox="menu" data-no-swup
+                            href="{{ asset('frontend_styles/image/home/img4.png') }}" class="sb-menu-item">
                             <div class="sb-cover-frame">
                                 <img src="{{ asset('frontend_styles/image/home/img4.png') }}" alt="product">
                             </div>
@@ -234,21 +213,19 @@
                                 <h3 class="sb-card-title">Service Apartment</h3>
                                 <div class="sb-price">
                                     <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}" alt="icon">
+                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
+                                            alt="icon">
                                     </span>
                                 </div>
                             </div>
                             <div class="sb-description">
-                                <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>,
-                                    <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>,
-                                    <span>corn</span>, <span>shrimp</span>.
-                                </p>
+                                <p class="sb-text sb-mb-15">Elevate Your Stay: Experience Unmatched Comfort at Divisional's Service Apartments</p>
                             </div>
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup href="{{ asset('frontend_styles/image/home/img5.png') }}"
-                            class="sb-menu-item">
+                        <a data-fancybox="menu" data-no-swup
+                            href="{{ asset('frontend_styles/image/home/img5.png') }}" class="sb-menu-item">
                             <div class="sb-cover-frame">
                                 <img src="{{ asset('frontend_styles/image/home/img5.png') }}" alt="product">
                             </div>
@@ -256,15 +233,13 @@
                                 <h3 class="sb-card-title">Home Delivery</h3>
                                 <div class="sb-price">
                                     <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}" alt="icon">
+                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
+                                            alt="icon">
                                     </span>
                                 </div>
                             </div>
                             <div class="sb-description">
-                                <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>,
-                                    <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>,
-                                    <span>corn</span>, <span>shrimp</span>.
-                                </p>
+                                <p class="sb-text sb-mb-15">Convenience Meets Culinary Delights: Enjoy Divisional's Flawless Food Home Delivery Service</p>
                             </div>
                         </a>
                     </div>
@@ -280,8 +255,6 @@
             <div class="sb-group-title sb-mb-30">
                 <div class="sb-left sb-mb-30">
                     <h2 class="sb-mb-30">Reviews <span>about</span> us</h2>
-                    <p class="sb-text">Consectetur numquam poro nemo veniam<br>eligendi rem adipisci quo modi.
-                    </p>
                 </div>
                 <div class="sb-right sb-mb-30">
                     <!-- slider navigation -->
@@ -408,8 +381,7 @@
                 <div class="col-lg-6 align-self-center">
                     <div class="sb-cta-text">
                         <h2 class="sb-h1 sb-mb-15">Home delivery service.</h2>
-                        <p class="sb-text sb-mb-30">*Consectetur numquam poro nemo veniam<br>eligendi rem
-                            adipisci quo modi.</p>
+                        <p class="sb-text sb-mb-30">Savor Culinary Delights at Your Doorstep: Divisional's Premier Food Home Delivery Service.</p>
                         <!-- button -->
                         <a href="tel:+919025166000" class="sb-btn">
                             <span class="sb-icon">
@@ -448,4 +420,4 @@
     </section>
     <!-- call to action end -->
 
-@include('layouts.frontend.footer')
+    @include('layouts.frontend.footer')
