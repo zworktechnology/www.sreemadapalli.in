@@ -51,19 +51,15 @@
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center sb-mb-60">
-                    <h2 class="sb-mb-60">We are doing more than <br>you expect</h2>
-                    <p class="sb-text sb-mb-30">Faudantium magnam error temporibus ipsam aliquid neque quibusdam
-                        dolorum, quia ea numquam assumenda mollitia dolorem impedit. Voluptate at quis exercitationem
-                        officia temporibus adipisci quae totam enim
-                        dolorum,
-                        assumenda. Sapiente soluta nostrum reprehenderit a velit obcaecati facilis vitae magnam tenetur
-                        neque vel itaque inventore eaque explicabo commodi maxime! Aliquam quasi, voluptates odio.</p>
-                    <p class="sb-text sb-mb-60">Consectetur adipisicing elit. Cupiditate nesciunt amet facilis numquam,
-                        nam adipisci qui voluptate voluptas enim obcaecati veritatis animi nulla, mollitia commodi
-                        quaerat ex, autem ea
-                        laborum.</p>
-                    <img src="{{ asset('frontend_styles/img/ui/signature.png') }}" alt="Signature"
-                        class="sb-signature sb-mb-30">
+                    <h2 class="sb-mb-60">Historical Background of <br> Sri Rangam</h2>
+                    <p class="sb-text sb-mb-30">Srirangam is an island situated in between the two rivers cauvery and kollidam.</p>
+                    <p class="sb-text sb-mb-30">Srirangam is one of the oldest town in india and is mentioned with prominence in all vedic literature.</p>
+                    <p class="sb-text sb-mb-30">Two most important temple on vaishnava and shaiva cult are situated in srirangam.</p>
+                    <p class="sb-text sb-mb-30">Sree ranganatha swamy temple is the first of the 108 divya desams.</p>
+                    <p class="sb-text sb-mb-30">This is the largest operating hindu temple in the world with an area of around 150 areas, This temple has utsavam on all 365 days of the year.</p>
+                    <p class="sb-text sb-mb-30">Sree akilandeswari and sree jambukeswarar temple which relates to water in the pancha bootha sthalangal.</p>
+                    <p class="sb-text sb-mb-30">Pilgrims from all over the world visit these temples of prominence all throughout the year.</p>
+                    <p class="sb-text sb-mb-60">Srirangam is well connected by Air, Rail and Road routes.</p>
                 </div>
             </div>
         </div>
@@ -408,7 +404,6 @@
             <div class="sb-group-title sb-mb-30">
                 <div class="sb-left sb-mb-30">
                     <h2 class="sb-cate-title sb-mb-30">Near by<span> best</span> stay</h2>
-                    <p class="sb-text">Consectetur numquam poro nemo veniam<br>eligendi rem adipisci quo modi.</p>
                 </div>
                 <div class="sb-right sb-mb-30">
                     <!-- button -->
@@ -475,8 +470,7 @@
                 <div class="col-lg-6 align-self-center">
                     <div class="sb-cta-text">
                         <h2 class="sb-h1 sb-mb-15">Home delivery service.</h2>
-                        <p class="sb-text sb-mb-30">*Consectetur numquam poro nemo veniam<br>eligendi rem adipisci quo
-                            modi.</p>
+                        <p class="sb-text sb-mb-30">A Taste of Excellence, Delivered: Divisional's Unparalleled Food Delivery Experience</p>
                         <!-- button -->
                         <a href="tel:+919025166000" class="sb-btn">
                             <span class="sb-icon">

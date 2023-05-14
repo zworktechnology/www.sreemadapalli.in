@@ -40,8 +40,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Ayush Homam</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Ayush Homam: An auspicious Vedic ritual performed to promote health, longevity, and well-being.</p>
                         </div>
                     </a>
                 </div>
@@ -52,8 +51,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Upanayanam</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Sacred initiation ceremony marking the beginning of Vedic education and spiritual journey in Hinduism.</p>
                         </div>
                     </a>
                 </div>
@@ -64,8 +62,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Marriages</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Joining lives, creating memories. Celebrate love and commitment with our exquisite marriage services.</p>
                         </div>
                     </a>
                 </div>
@@ -76,8 +73,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Seemandham</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Traditional Indian baby shower ceremony celebrating the impending arrival of a new life.</p>
                         </div>
                     </a>
                 </div>
@@ -88,8 +84,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Birthday Party</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Unforgettable moments, joyful surprises, and endless memories. The perfect birthday party awaits!</p>
                         </div>
                     </a>
                 </div>
@@ -100,8 +95,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Retirement Functions</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Celebrate a life well-lived. Honor and rejoice in retirement with a memorable function.</p>
                         </div>
                     </a>
                 </div>
@@ -112,8 +106,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Sashtiapthapoorthy</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Celebrating 60 years of a remarkable life journey filled with blessings and achievements.</p>
                         </div>
                     </a>
                 </div>
@@ -124,8 +117,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Bhhemaradhasanthi</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Celebrating a Milestone of 80 Years, Honoring the Journey of Wisdom and Grace.</p>
                         </div>
                     </a>
                 </div>
@@ -136,8 +128,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Sadhabhishegam</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">A sacred ritual celebrating the long-standing legacy and divine blessings bestowed upon a revered deity</p>
                         </div>
                     </a>
                 </div>
@@ -148,8 +139,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Kanagabhishegam</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">An auspicious ritual of anointing the deity with sacred substances, symbolizing divine blessings and purification.</p>
                         </div>
                     </a>
                 </div>
@@ -160,8 +150,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Office Meetings</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Productive collaboration and idea exchange in dynamic office meetings, driving progress and fostering teamwork.</p>
                         </div>
                     </a>
                 </div>
@@ -172,8 +161,7 @@
                         </div>
                         <div class="sb-blog-card-descr">
                             <h3 class="sb-mb-10">Get Togethers</h3>
-                            <p class="sb-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio,
-                                sed expedita.</p>
+                            <p class="sb-text">Connect, celebrate, and create lasting memories with loved ones in a warm and inviting atmosphere.</p>
                         </div>
                     </a>
                 </div>
