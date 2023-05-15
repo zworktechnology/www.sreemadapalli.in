@@ -130,7 +130,7 @@ class CustomerController extends Controller
             $dateTimestamp1 = strtotime($a);
             $dateTimestamp2 = strtotime($b);
 
-            return $dateTimestamp1 - $dateTimestamp2;
+            return $dateTimestamp1 < $dateTimestamp2 ? 1 : -1;
         });
 
         $Custumer_index_array = [];
@@ -179,34 +179,53 @@ class CustomerController extends Controller
             return $dateTimestamp1 - $dateTimestamp2;
         });
 
-        $uniquearray = array_unique($merging_Arr);
-        $reverse = array_reverse( $uniquearray );
-        $today = date("Y-m-d");
-        if($reverse[0] == $today){
-            $secondLast = $reverse[1];
-        }else if($reverse[0] != $today){
-            $secondLast = $reverse[0];
-        }
+
+        
+
+        
 
 
+            $uniquearray = array_unique($merging_Arr);
+            $reverse = array_reverse( $uniquearray );
+            $today = date("Y-m-d");
+            if($reverse){
+                if($reverse[0] == $today){
+                    $secondLast = $reverse[1];
+                }else if($reverse[0] != $today){
+                    $secondLast = $reverse[0];
+                }
+            
+    
+    
+    
+            $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersLunchAmt = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
+    
+            $Custumer_recent_array = [];
+    
+    
+                    $Custumer_recent_array[] = array(
+                        'date' => date('d-m-Y', strtotime($secondLast)),
+                        'CustomersBreakfastAmt' => $CustomersBreakfastAmt,
+                        'CustomersLunchAmt' => $CustomersLunchAmt,
+                        'CustomersDinnerAmt' => $CustomersDinnerAmt,
+                        'TotalAmount' => $TotalAmount,
+                    );
 
+        
 
-        $CustomersBreakfastAmt = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
-        $CustomersLunchAmt = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
-        $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $secondLast)->where('soft_delete', '!=', 1)->sum('bill_amount');
-        $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
-
-        $Custumer_recent_array = [];
-
-
+        
+            }else {
                 $Custumer_recent_array[] = array(
-                    'date' => date('d-m-Y', strtotime($secondLast)),
-                    'CustomersBreakfastAmt' => $CustomersBreakfastAmt,
-                    'CustomersLunchAmt' => $CustomersLunchAmt,
-                    'CustomersDinnerAmt' => $CustomersDinnerAmt,
-                    'TotalAmount' => $TotalAmount,
+                    'date' => '',
+                    'CustomersBreakfastAmt' => '',
+                    'CustomersLunchAmt' => '',
+                    'CustomersDinnerAmt' => '',
+                    'TotalAmount' => '',
                 );
-
+            }
 
 
         return view('pages.backend.customer.view', compact('today', 'customer', 'data', 'breakfast_amount_pending', 'lunch_amount_pending', 'dinner_amount_pending', 'breakfast_amount_paid', 'lunch_amount_paid', 'dinner_amount_paid', 'breakfast_total_amount', 'lunch_total_amount', 'dinner_total_amount', 'payment', 'payment_total_amount', 'Custumer_index_array', 'Custumer_recent_array'));
@@ -237,7 +256,7 @@ class CustomerController extends Controller
             $dateTimestamp1 = strtotime($a);
             $dateTimestamp2 = strtotime($b);
 
-            return $dateTimestamp1 - $dateTimestamp2;
+            return $dateTimestamp1 < $dateTimestamp2 ? 1 : -1;
         });
         $Custumer_pdf_array = [];
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
@@ -369,7 +388,7 @@ class CustomerController extends Controller
             $dateTimestamp1 = strtotime($a);
             $dateTimestamp2 = strtotime($b);
 
-            return $dateTimestamp1 - $dateTimestamp2;
+            return $dateTimestamp1 < $dateTimestamp2 ? 1 : -1;
         });
         $Custumer_filter_array = [];
         foreach (array_unique($merging_Datearr) as $key => $merging_Datearray) {
@@ -468,7 +487,7 @@ class CustomerController extends Controller
             $dateTimestamp1 = strtotime($a);
             $dateTimestamp2 = strtotime($b);
 
-            return $dateTimestamp1 - $dateTimestamp2;
+            return $dateTimestamp1 < $dateTimestamp2 ? 1 : -1;
         });
         $Custumer_pdf_array = [];
         foreach (array_unique($merging_Data) as $key => $merging_Datas) {
