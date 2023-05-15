@@ -177,13 +177,19 @@
                                         </thead>
                                         <tbody style="font-size: 16px; font-weight: bold;">
                                             <tr style="background-color: #e0e9f5;">
-                                                <td><span style="color: black">₹ {{ $breakfast_data_pm_cash + $lunch_data_pm_cash + $dinner_data_pm_cash }}</span></td>
+                                                <td><span style="color: black">₹
+                                                        {{ $breakfast_data_pm_cash + $lunch_data_pm_cash + $dinner_data_pm_cash }}</span>
+                                                </td>
                                             </tr>
                                             <tr style="background-color: #d3f0b7;">
-                                                <td><span style="color: black">₹ {{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</span></td>
+                                                <td><span style="color: black">₹
+                                                        {{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</span>
+                                                </td>
                                             </tr>
                                             <tr style="background-color: #f8f0c5;">
-                                                <td><span style="color: black">₹ {{ $breakfast_data_pm_total + $lunch_data_pm_total + $dinner_data_pm_total }}</span></td>
+                                                <td><span style="color: black">₹
+                                                        {{ $breakfast_data_pm_total + $lunch_data_pm_total + $dinner_data_pm_total }}</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -210,6 +216,16 @@
                                             data-bs-keyboard="false" tabindex="-1" role="dialog"
                                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             @include('pages.backend.sales.addon.wallet')
+                                        </div>
+                                        <div>
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #f7f3c0c2;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Pending</b></th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12 pointer" style="margin-bottom: -15px;">
@@ -245,21 +261,16 @@
                                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             @include('pages.backend.sales.addon.deliveryby')
                                         </div>
-                                    </div>
-                                    <div class="col-md-12 col-12 pointer">
-                                        <table class="table table-bordered dt-responsive nowrap w-100"
-                                        style="background-color: #f7f3c0c2;">
-                                        <thead>
-                                            <tr>
-                                                <th><b>Pending</b></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody style="font-size: 18px; font-weight: bold;">
-                                            <tr>
-                                                <td class="mb-0 pendingamount" style="color: red !important;">₹</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #f7f3c0c2;">
+                                                <tbody style="font-size: 18px; font-weight: bold;">
+                                                    <tr>
+                                                        <td class="mb-0 pendingamount" style="color: red !important;">₹</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">

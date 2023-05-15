@@ -65,12 +65,12 @@
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="Breakfast">BREA</label>
                     </div>
-                    <div style="background-color: #e0e9f5; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                    <div style="background-color: #ffecec; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="session" id="Lunch" value="Lunch"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="Lunch">LUNC</label>
                     </div>
-                    <div style="background-color: #d3f0b7; border-style: solid; border-width: 0.5px; border-color: lightgray;">
+                    <div style="background-color: #ffecec; border-style: solid; border-width: 0.5px; border-color: lightgray;">
                         <input type="radio" name="session" id="Dinner" value="Dinner"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="Dinner">DINN</label>
@@ -81,7 +81,7 @@
                 <label for="payment_method" class="col-md-1 col-form-label" hidden>
                     Payment Via <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2" style="display: flex;">
-                    <div style="background-color: #f8f0c5; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                    <div style="background-color: #eaf7c3; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                         <input type="radio" name="payment_method" value="Cash" id="Cash"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="Cash">CASH</label>
@@ -91,7 +91,7 @@
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="Pending">PEND</label>
                     </div>
-                    <div style="background-color: lightblue; border-style: solid; border-width: 0.5px; border-color: lightgray;">
+                    <div style="background-color: #eaf7c3; border-style: solid; border-width: 0.5px; border-color: lightgray;">
                         <input type="radio" name="payment_method" value="G Pay" id="G Pay"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="G Pay">WALT</label>
@@ -102,12 +102,12 @@
                 <label for="delivery_boy_id" class="col-md-1 col-form-label" hidden>
                     Delivery By <span style="color: red;">*</span></label>
 
-                <div class="col-9 col-md-2" style="display: grid; grid-template-columns: 35% 30% 35%;">
+                <div class="col-9 col-md-2" style="display: grid; grid-template-columns: 35% 35% 35%;">
                     @foreach ($deliveryboy as $deliveryboys)
-                    <div style="background-color: lightyellow; border-style: solid; border-width: 1px;margin-top: 7px; border-color: lightgray; margin-right: 10px;">
+                    <div style="background-color: #DBD9D9; border-style: solid; border-width: 1px; border-color: lightgray; margin-right: 10px; margin-bottom: 10px;">
                         <input type="radio" name="delivery_boy_id" id="{{ $deliveryboys->id }}" value="{{ $deliveryboys->id }}"
                             style="margin-left: 5px; margin-top:10px;">
-                        <label style="margin-right: 10px;" for="{{ $deliveryboys->id }}">{{ substr($deliveryboys->name, 0, 3) }}</label>
+                        <label style="margin-right: 10px;" for="{{ $deliveryboys->id }}">{{ substr($deliveryboys->name, 0, 4) }}</label>
                     </div>
                     @endforeach
                 </div>
