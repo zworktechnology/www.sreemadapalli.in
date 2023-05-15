@@ -170,4 +170,21 @@
     </section>
     <!-- blog list end -->
 
+     <!-- About text -->
+     <section class="sb-p-90-0">
+        <div class="sb-bg-2" style="margin-top: 90px">
+            <div></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 align-self-center sb-mb-60">
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Sree Madapalli is always your first choice for your functions.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Sree Madapalli can cater from 5 to 5000+ peoples for your functions.</p>
+                    <p class="sb-text sb-mb-60" style="font-size: 19px;">Our motto is to promote Traditional Srirangam food to each and every corner of the state.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About text end -->
+
     @include('layouts.frontend.footer')

@@ -68,9 +68,6 @@
                                 <li class="sb-has-children {{ Route::is('index') ? 'sb-active' : '' }}">
                                     <a href="{{ route('index') }}">Home</a>
                                 </li>
-                                <li class="sb-has-children {{ Route::is('srirangam') ? 'sb-active' : '' }}">
-                                    <a href="{{ route('srirangam') }}">Sri Rangam</a>
-                                </li>
                                 <li class="sb-has-children {{ Route::is('about') ? 'sb-active' : '' }}">
                                     <a href="{{ route('about') }}">About</a>
                                 </li>

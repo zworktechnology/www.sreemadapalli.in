@@ -10,14 +10,13 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <!-- main title -->
                     <div class="sb-main-title-frame">
                         <div class="sb-main-title">
                             <span class="sb-suptitle sb-mb-30">Welcome To Sree Madapalli!</span>
-                            <h1 class="sb-mb-30">Lord Ranganatha is the Head of this House</h1>
-                            <p class="sb-text sb-text-lg sb-mb-30">A Silent
-                                Listener in Every Conversation and an Unseen Guest at Every Meal</p>
+                            <h2 class="sb-mb-30" style="font-size: 25px;">Lord Ranganatha is the Head of this House,</h2>
+                            <h2 class="sb-mb-30" style="font-size: 25px;">A Silent Listener in Every Conversation and an Unseen Guest at Every Meal</h2>
                             <!-- button -->
                             <a href="{{ route('menu') }}" class="sb-btn">
                                 <span class="sb-icon">
@@ -38,15 +37,15 @@
                     </div>
                     <!-- main title end -->
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="sb-ilustration-fix">
                         <div class="sb-illustration-1-2">
                             <img src="{{ asset('frontend_styles/image/home/img9.png') }}" alt="food"
                                 class="sb-food-1">
                             <img src="{{ asset('frontend_styles/image/home/img7.png') }}" alt="food"
                                 class="sb-food-2">
-                            <img src="{{ asset('frontend_styles/image/home/img8.png') }}" alt="food"
-                                class="sb-food-3">
+                            {{-- <img src="{{ asset('frontend_styles/image/home/img8.png') }}" alt="food"
+                                class="sb-food-3"> --}}
                             {{-- <div class="sb-illu-dialog-1"><span>🧄</span> No Garlic...</div> --}}
                             {{-- <div class="sb-illu-dialog-2"><span>🧅</span> No Onion...</div> --}}
                             <div class="sb-cirkle-1"></div>
@@ -77,8 +76,8 @@
             <div class="row">
                 <div class="col-lg-6 align-self-center">
                     <div class="sb-illustration-2 sb-mb-90">
-                        <div class="sb-interior-frame">
-                            <img src="{{ asset('frontend_styles/image/home/img1.png') }}" alt="interior"
+                        <div class="sb-interior-frame" style="margin-left: 100px;">
+                            <img src="{{ asset('frontend_styles/image/home/img9.png') }}" alt="interior"
                                 class="sb-interior" style="object-position: center">
                         </div>
                         <div class="sb-square"></div>
@@ -86,23 +85,20 @@
                         <div class="sb-cirkle-2"></div>
                         <div class="sb-cirkle-3"></div>
                         <div class="sb-cirkle-4"></div>
-                        <div class="sb-experience">
-                            <div class="sb-exp-content">
-                                <p class="sb-h1 sb-mb-10">7</p>
-                                <p class="sb-h3">Years Experiense</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 align-self-center sb-mb-60">
-                    <h2 class="sb-mb-60">We are doing more than <br>you expect</h2>
-                    <p class="sb-text sb-mb-30">Sree Madapalli was established in the year 2016, with an objective of
-                        serving No onion and No Garlic food to the yatrikas visitor the srirangam temple.</p>
-                    <p class="sb-text sb-mb-30">We design our entire menu on this traditional front.</p>
-                    <p class="sb-text sb-mb-30">Sree madapalli is located near to main entrance of the srirangam temple with ample car parking for great dining.</p>
-                    <p class="sb-text sb-mb-30">The Meal are served in traditional banana leaves with devotional.</p>
-                    <p class="sb-text sb-mb-30">Sree madapalli also delivers food daily to almost 100+ senior citizens in and around srirangam with our own delivery system at throw door steps.</p>
-                    <p class="sb-text sb-mb-60">Sree madapalli also serves customised menu for the special requirements.</p>
+                <div class="col-lg-6 align-self-center">
+                    <div class="sb-illustration-2 sb-mb-90">
+                        <div class="sb-interior-frame">
+                            <img src="{{ asset('frontend_styles/image/srirangam/img1.png') }}" alt="interior"
+                                class="sb-interior" style="object-position: center">
+                        </div>
+                        <div class="sb-square"></div>
+                        <div class="sb-cirkle-1"></div>
+                        <div class="sb-cirkle-2"></div>
+                        <div class="sb-cirkle-3"></div>
+                        <div class="sb-cirkle-4"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,311 +109,365 @@
     <section class="sb-features sb-p-0-30">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="sb-features-item sb-mb-60">
-                        <div class="sb-number">01</div>
-                        <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">We are located near to main entrance of the srirangam temple</h3>
+                <div class="col-lg-6 align-self-center">
+                    <div class="sb-illustration-2 sb-mb-90">
+                        <div class="sb-interior-frame">
+                            <img src="{{ asset('frontend_styles/image/home/img11.png') }}" alt="interior"
+                                class="sb-interior" style="object-position: center">
+                        </div>
+                        <div class="sb-square"></div>
+                        <div class="sb-cirkle-1"></div>
+                        <div class="sb-cirkle-2"></div>
+                        <div class="sb-cirkle-3"></div>
+                        <div class="sb-cirkle-4"></div>
+                        <div class="sb-experience">
+                            <div class="sb-exp-content">
+                                <p class="sb-h3">06:00 AM  09:00 PM</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="sb-features-item sb-mb-60">
-                        <div class="sb-number">02</div>
-                        <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">We also serves customised menu for the special requirements.</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="sb-features-item sb-mb-60">
-                        <div class="sb-number">03</div>
-                        <div class="sb-feature-text">
-                            <h3 class="sb-mb-15">We delivers food daily to almost 100+ senior citizens in and around srirangam</h3>
-                        </div>
-                    </div>
+                <div class="col-lg-6 align-self-center sb-mb-60">
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Srirangam is an island situated in between the two rivers Cauvery and Kollidam.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Srirangam is one of the oldest town in india and is mentioned with prominence in all vedic literature.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Two most important temple on vaishnava and shaiva cult are situated in srirangam.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">1.   Sree Ranganatha Swamy temple is the first of the 108 divya desams. This is the largest living hindu temple in the world with an area of around 150 acres, This temple has utsavam all round the year.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">2.   Sree Akilandeswari samedha Sree Jambukeswarar temple which relates to water in the pancha bootha sthalangal.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Pilgrims from all over the world visit these temples of prominence all through the year.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Srirangam is well connected by Air, Rail and Road routes.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- features end -->
 
-    <!-- short menu -->
-    <section class="sb-short-menu sb-p-0-90">
-        <div class="sb-bg-2">
+    <!-- menu section 1 -->
+    <section class="sb-menu-section sb-p-90-60">
+        <div class="sb-bg-1">
             <div></div>
         </div>
         <div class="container">
-            <div class="sb-group-title sb-mb-30">
-                <div class="sb-left sb-mb-30">
-                    <h2 class="sb-mb-30">Our <span>Services</h2>
-                </div>
-                <div class="sb-right sb-mb-30">
-                    <!-- slider navigation -->
-                    <div class="sb-slider-nav">
-                        <div class="sb-prev-btn sb-short-menu-prev"><i class="fas fa-arrow-left"></i></div>
-                        <div class="sb-next-btn sb-short-menu-next"><i class="fas fa-arrow-right"></i></div>
-                    </div>
-                    <!-- slider navigation end -->
-                </div>
+            <!-- filter -->
+            <div class="sb-filter mb-30">
+                <a href="#." data-filter="*" class="sb-filter-link sb-active">All</a>
+                <a href="#." data-filter=".10" class="sb-filter-link">With in 10 Kms</a>
+                <a href="#." data-filter=".20" class="sb-filter-link">With in 20 kms</a>
+                <a href="#." data-filter=".more" class="sb-filter-link">More than 20 kms</a>
             </div>
-            <div class="swiper-container sb-short-menu-slider-3i">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup
-                            href="{{ asset('frontend_styles/image/home/img2.png') }}" class="sb-menu-item">
-                            <div class="sb-cover-frame">
-                                <img src="{{ asset('frontend_styles/image/home/img2.png') }}" alt="product">
-                            </div>
-                            <div class="sb-card-tp">
-                                <h3 class="sb-card-title">Dine In</h3>
-                                <div class="sb-price">
-                                    <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
-                                            alt="icon">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="sb-description">
-                                <p class="sb-text sb-mb-15">Indulge in Exquisite Culinary Delights: Experience the Art of Fine Dining at Divisional</p>
-                            </div>
-                        </a>
+            <!-- filter end -->
+            <div class="sb-masonry-grid">
+                <div class="sb-grid-sizer"></div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Ranganatha Swamy Temple, Sri Rangam</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">0 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 09:00 PM</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup
-                            href="{{ asset('frontend_styles/image/home/img3.png') }}" class="sb-menu-item">
-                            <div class="sb-cover-frame">
-                                <img src="{{ asset('frontend_styles/image/home/img3.png') }}" alt="product">
-                            </div>
-                            <div class="sb-card-tp">
-                                <h3 class="sb-card-title">Outdoor Caterers</h3>
-                                <div class="sb-price">
-                                    <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
-                                            alt="icon">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="sb-description">
-                                <p class="sb-text sb-mb-15">Elevate Your Celebrations: Experience Unforgettable Outdoor Catering with Divisional</p>
-                            </div>
-                        </a>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Rajagopuram Muneeswaran, Sri Rangam</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #E712D3; color: white;">0.1 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 09:00 PM</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup
-                            href="{{ asset('frontend_styles/image/home/img4.png') }}" class="sb-menu-item">
-                            <div class="sb-cover-frame">
-                                <img src="{{ asset('frontend_styles/image/home/img4.png') }}" alt="product">
-                            </div>
-                            <div class="sb-card-tp">
-                                <h3 class="sb-card-title">Service Apartment</h3>
-                                <div class="sb-price">
-                                    <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
-                                            alt="icon">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="sb-description">
-                                <p class="sb-text sb-mb-15">Elevate Your Stay: Experience Unmatched Comfort at Divisional's Service Apartments</p>
-                            </div>
-                        </a>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Kaatazhagiza Singaperumal, Sri Rangam</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #FF0000; color: white;" >1 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:15 AM to 12:00 PM and 05:00 PM to 08:30 PM</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <a data-fancybox="menu" data-no-swup
-                            href="{{ asset('frontend_styles/image/home/img5.png') }}" class="sb-menu-item">
-                            <div class="sb-cover-frame">
-                                <img src="{{ asset('frontend_styles/image/home/img5.png') }}" alt="product">
-                            </div>
-                            <div class="sb-card-tp">
-                                <h3 class="sb-card-title">Home Delivery</h3>
-                                <div class="sb-price">
-                                    <span class="sb-icon">
-                                        <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
-                                            alt="icon">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="sb-description">
-                                <p class="sb-text sb-mb-15">Convenience Meets Culinary Delights: Enjoy Divisional's Flawless Food Home Delivery Service</p>
-                            </div>
-                        </a>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Jambukeshwarar - Akilandeswari, Thiruvanaikoil</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #40D71E; color: white;">2 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Uthammar Kovil, No.1 Tollgate</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">3 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 07:00 AM to 12:00 PM and 04:30 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Thayumanavar Swamy Temple, Malaikottai</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #40D71E; color: white;">5 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 05:00 AM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Uchi Pillaiyar Temple, Malaikottai</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #10DFF0; color: white;">5 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Vekkali Amman Temple, Woraiyur</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #FFC300; color: white;">7 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 05:30 AM to 09:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Naciyar Temple, Woraiyur</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">7 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 12:00 PM and 05:00 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Sivan Temple, Thiruvasi</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #40D71E; color: white;">9 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 07:00 AM to 12:00 PM and 04:30 PM to 07:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 10">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Mariyamman Temple, Samayapuram</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #FFC300; color: white;">10 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 05:30 AM to 09:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Erumbeeswarar Temple, Thiruverumbur</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #40D71E; color: white;">13 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 07:00 AM to 12:00 PM and 05:30 PM to 09:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Ayyappan Temple, Cantonment</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #FF49AC; color: white;">15 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 05:00 AM to 11:00 AM and 05:00 PM to 09:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Pundareekaksha Parumal Temple, Thiruvellarai</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">17 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 07:00 AM to 01:00 PM and 03:30 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Aadhinayaga Perumai Kovil, Kopurapatti</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">17 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 05:00 AM to 09:00 AM and 05:00 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Prasanna Venkatachalapathi Kovil, Gunaseelam</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">18 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:30 AM to 12:30 PM and 04:30 PM to 08:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Manakkalnambi, Manakkal</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #49FFD0; color: white;">18 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 08:00 AM to 12:00 AM and 04:00 PM to 06:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Neelavaneswarar Kovil, Thirupaineeli</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #40D71E; color: white;">18 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:30 AM to 01:00 PM and 04:00 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 20">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Sundararaja Perumal Temple, Anbil</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">20 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 07:00 AM to 12:30 PM and 04:00 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Thirunedungula Nathar Temple, Thirunedungalam</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #40D71E; color: white;">22 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:30 AM to 12:00 PM and 04:30 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Murugan Temple, Kumara vayalur</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #D649FF; color: white;">25 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 01:30 PM and 03:30 PM to 09:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Brahmapureeswarar Temple, Thirupattur</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #40D71E; color: white;">25 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 07:00 AM to 12:00 PM and 04:00 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Murugan Temple, Thinniam</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #D649FF; color: white;">26 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 11:00 AM and 04:00 PM to 07:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Bala Dhandayuthabani Temple, Chettikulam</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #D649FF; color: white;">30 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 07:30 AM to 01:00 PM and 04:30 PM to 07:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Appala Rangan Temple, koviladi</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">30 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 08:00 AM to 12:30 PM and 04:30 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Murugan Temple, Viralimalai</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #D649FF; color: white;">35 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 11:00 AM and 04:00 PM to 08:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Aayiram Kanniraindha Perumal, Malayadipatti</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #1F0E72; color: white;">40 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 08:00 AM to 12:00 AM and 04:00 PM to 06:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-grid-item sb-item-50 more">
+                    <div class="sb-menu-item sb-mb-30">
+                        <div class="sb-card-tp">
+                            <h4 class="sb-card-title">Mathurakali Amman Temple, Siruvachur</h4>
+                            <div class="sb-price" style="width: 120px !important; background-color: #FFC300; color: white;">45 kms</div>
+                        </div>
+                        <div class="sb-description">
+                            <p class="sb-text sb-mb-15">Opening Time : 06:00 AM to 08:35 PM (Only Monday and Friday)</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- short menu end -->
-
-    <!-- revievs -->
-    <section class="sb-reviews sb-p-0-90">
-        <div class="container">
-            <div class="sb-group-title sb-mb-30">
-                <div class="sb-left sb-mb-30">
-                    <h2 class="sb-mb-30">Reviews <span>about</span> us</h2>
-                </div>
-                <div class="sb-right sb-mb-30">
-                    <!-- slider navigation -->
-                    <div class="sb-slider-nav">
-                        <div class="sb-prev-btn sb-reviews-prev"><i class="fas fa-arrow-left"></i></div>
-                        <div class="sb-next-btn sb-reviews-next"><i class="fas fa-arrow-right"></i></div>
-                    </div>
-                    <!-- slider navigation end -->
-                </div>
-            </div>
-            <div class="swiper-container sb-reviews-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="sb-review-card">
-                            <div class="sb-review-header sb-mb-15">
-                                <h4 class="sb-mb-15">Very tasty</h4>
-                                <ul class="sb-stars">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium
-                                provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit
-                                rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                            <div class="sb-author-frame">
-                                <div class="sb-avatar-frame">
-                                    <img src="{{ asset('frontend_styles/img/faces/1.jpg') }}" alt="Guest">
-                                </div>
-                                <h4>Emma Newman</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="sb-review-card">
-                            <div class="sb-review-header sb-mb-15">
-                                <h4 class="sb-mb-15">I have lunch here every day</h4>
-                                <ul class="sb-stars">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium
-                                provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit
-                                rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                            <div class="sb-author-frame">
-                                <div class="sb-avatar-frame">
-                                    <img src="{{ asset('frontend_styles/img/faces/2.jpg') }}" alt="Guest">
-                                </div>
-                                <h4>Paul Trueman</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="sb-review-card">
-                            <div class="sb-review-header sb-mb-15">
-                                <h4 class="sb-mb-15">Great service</h4>
-                                <ul class="sb-stars">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li class="sb-empty"><i class="fas fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium
-                                provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit
-                                rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                            <div class="sb-author-frame">
-                                <div class="sb-avatar-frame">
-                                    <img src="{{ asset('frontend_styles/img/faces/3.jpg') }}" alt="Guest">
-                                </div>
-                                <h4>Viktoria Freeman</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="sb-review-card">
-                            <div class="sb-review-header sb-mb-15">
-                                <h4 class="sb-mb-15">Starbelly is amazing!</h4>
-                                <ul class="sb-stars">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Quis fugiat totam nobis quas unde excepturi inventore possimus laudantium
-                                provident, rem eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit
-                                rem accusamus! Quibusdam labore, aliquam dolor harum!</p>
-                            <div class="sb-author-frame">
-                                <div class="sb-avatar-frame">
-                                    <img src="{{ asset('frontend_styles/img/faces/4.jpg') }}" alt="Guest">
-                                </div>
-                                <h4>Audrey Oldman</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- revievs end -->
-
-    <!-- call to action -->
-    <section class="sb-call-to-action">
-        <div class="sb-bg-3"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 align-self-center">
-                    <div class="sb-cta-text">
-                        <h2 class="sb-h1 sb-mb-15">Home delivery service.</h2>
-                        <p class="sb-text sb-mb-30">Savor Culinary Delights at Your Doorstep: Divisional's Premier Food Home Delivery Service.</p>
-                        <!-- button -->
-                        <a href="tel:+919025166000" class="sb-btn">
-                            <span class="sb-icon">
-                                <img src="{{ asset('frontend_styles/img/ui/icons/arrow-2.svg') }}" alt="icon">
-                            </span>
-                            <span>Call Now</span>
-                        </a>
-                        <!-- button end -->
-                        <!-- button -->
-                        <a href="{{ route('menu') }}" class="sb-btn sb-btn-2 sb-btn-gray">
-                            <span class="sb-icon">
-                                <img src="{{ asset('frontend_styles/img/ui/icons/menu.svg') }}" alt="icon">
-                            </span>
-                            <span>Menu</span>
-                        </a>
-                        <!-- button end -->
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="sb-illustration-8">
-                        <img src="{{ asset('frontend_styles/img/illustrations/delivery.png') }}" alt="reserved"
-                            class="sb-reserved">
-                        <div class="sb-cirkle-1"></div>
-                        <div class="sb-cirkle-2"></div>
-                        <div class="sb-cirkle-3"></div>
-                        <div class="sb-cirkle-4"></div>
-                        <div class="sb-cirkle-5"></div>
-                        <img src="{{ asset('frontend_styles/img/illustrations/2.svg') }}" alt="icon"
-                            class="sb-pik-2">
-                        <img src="{{ asset('frontend_styles/img/illustrations/3.svg') }}" alt="icon"
-                            class="sb-pik-3">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- call to action end -->
+    <!-- menu end -->
 
     @include('layouts.frontend.footer')

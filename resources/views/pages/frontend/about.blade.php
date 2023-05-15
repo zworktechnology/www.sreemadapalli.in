@@ -4,7 +4,7 @@
 <div id="sb-dynamic-content" class="sb-transition-fade">
 
     <!-- banner -->
-    <section class="sb-banner sb-banner-sm sb-banner-color">
+    <section class="sb-banner sb-banner-sm sb-banner-color" hidden>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -46,21 +46,21 @@
                         <div class="sb-cirkle-4"></div>
                         <div class="sb-experience">
                             <div class="sb-exp-content">
-                                <p class="sb-h1 sb-mb-10">17</p>
-                                <p class="sb-h3">Years Experiense</p>
+                                <p class="sb-h3">Since</p>
+                                <br>
+                                <p class="sb-h1 sb-mb-10">2016</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center sb-mb-60">
-                    <h2 class="sb-mb-60">We are doing more than <br>you expect</h2>
-                    <p class="sb-text sb-mb-30">Sree Madapalli was established in the year 2016, with an objective of
-                        serving No onion and No Garlic food to the yatrikas visitor the srirangam temple.</p>
-                    <p class="sb-text sb-mb-30">We design our entire menu on this traditional front.</p>
-                    <p class="sb-text sb-mb-30">Sree madapalli is located near to main entrance of the srirangam temple with ample car parking for great dining.</p>
-                    <p class="sb-text sb-mb-30">The Meal are served in traditional banana leaves with devotional.</p>
-                    <p class="sb-text sb-mb-30">Sree madapalli also delivers food daily to almost 100+ senior citizens in and around srirangam with our own delivery system at throw door steps.</p>
-                    <p class="sb-text sb-mb-60">Sree madapalli also serves customised menu for the special requirements.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">Sree Madapalli was established in the year 2016, with an objective of
+                        serving No onion and No Garlic food to all devotees.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">We design our entire menu on this traditional front.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">1.    Sree Madapalli is located near to main entrance of the Srirangam temple with ample car parking for great dining.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">2.    The Meal are served in traditional banana leaves with all divinity.</p>
+                    <p class="sb-text sb-mb-30" style="font-size: 19px;">3.    Sree Madapalli also delivers food daily to almost 100+ senior citizens in and around srirangam with our own delivery system at their door steps.</p>
+                    <p class="sb-text sb-mb-60" style="font-size: 19px;">4.    Sree Madapalli also serves customised menu for your special requirements.</p>
                 </div>
             </div>
         </div>

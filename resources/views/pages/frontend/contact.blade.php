@@ -103,6 +103,7 @@
                         <div class="sb-feature-text">
                             <h3 class="sb-mb-15">Call</h3>
                             <p class="sb-text">+91 90251 66000</p>
+                            <p class="sb-text">+91 7200 72 7200</p>
                         </div>
                     </div>
                 </div>
@@ -122,7 +123,7 @@
 
     <!-- map -->
     <div class="sb-map-frame">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.364373814002!2d78.68837220998743!3d10.859866089249405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf6771c7a63c3%3A0xd9c7e2675128f463!2sSree%20Madapalli!5e0!3m2!1sen!2sin!4v1683905937073!5m2!1sen!2sin" style="border:0; height: 550px; width: -moz-available;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.364373814002!2d78.68837220998743!3d10.859866089249405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf6771c7a63c3%3A0xd9c7e2675128f463!2sSree%20Madapalli!5e0!3m2!1sen!2sin!4v1683905937073!5m2!1sen!2sin" style="border:0; height: 550px; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- map end -->
 
