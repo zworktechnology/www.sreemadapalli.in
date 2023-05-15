@@ -219,7 +219,7 @@
                                         </div>
                                         <div>
                                             <table class="table table-bordered dt-responsive nowrap w-100"
-                                                style="background-color: #f7f3c0c2;">
+                                                style="background-color: #f7f3c0c2; font-size: 18px;">
                                                 <thead>
                                                     <tr>
                                                         <th><b>Pending</b></th>
