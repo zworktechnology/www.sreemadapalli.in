@@ -197,7 +197,6 @@
 
 
 
-
         // get system local time
         var d = new Date();
         var m = d.getMinutes();
