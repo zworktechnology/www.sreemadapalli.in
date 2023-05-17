@@ -18,6 +18,7 @@ class SalesController extends Controller
     public function index()
     {
         $daily_date = date('Y-m-d');
+        $todaytime = date('h:i');
         $today = Carbon::now()->format('Y-m-d');
 
         $cardb = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Card')->sum('bill_amount');
@@ -245,7 +246,7 @@ class SalesController extends Controller
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.sales.index', compact('today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
+        return view('pages.backend.sales.index', compact('todaytime', 'today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
         'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customerarr',
         'walletcard', 'walletgpay', 'walletgpaybusiness', 'walletphonepe',
         'walletpaytm', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending',

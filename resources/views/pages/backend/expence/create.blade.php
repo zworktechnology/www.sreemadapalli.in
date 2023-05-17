@@ -64,7 +64,7 @@
                         <div style="background-color: lightpink; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
                             <input type="radio" name="status" value="Paid" id="Cash"
                                 style="margin-left: 5px; margin-top:10px;">
-                            <label style="margin-right: 10px;" for="Cash">CASH</label>
+                            <label style="margin-right: 10px;" for="Cash" checked>CASH</label>
                         </div>
                         <div style="background-color: lightgreen; border-style: solid; border-width: 0.5px; border-color: lightgray;">
                             <input type="radio" name="status" value="Salary" id="Salary"
