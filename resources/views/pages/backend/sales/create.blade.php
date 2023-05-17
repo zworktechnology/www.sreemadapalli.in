@@ -270,39 +270,39 @@
 
 
         // get system local time
-        // var d = new Date();
-        // var m = d.getMinutes();
-        // var h = d.getHours();
-        // if (h == '0') {
-        //     h = 24
-        // }
+        var d = new Date();
+        var m = d.getMinutes();
+        var h = d.getHours();
+        if (h == '0') {
+            h = 24
+        }
 
-        // var currentTime = h + "." + m;
-        // console.log(currentTime);
+        var currentTime = h + "." + m;
+        console.log(currentTime);
 
-        // var Breakfast = $('#Breakfast').val();
-        // var Lunch = $('#Lunch').val();
-        // var Dinner = $('#Dinner').val();
+        var Breakfast = $('#Breakfast').val();
+        var Lunch = $('#Lunch').val();
+        var Dinner = $('#Dinner').val();
 
-        // var b_time = '11:00';
-        // var l_time = '15:00';
-        // var d_time = '22:00';
+        var b_time = '11:00';
+        var l_time = '15:00';
+        var d_time = '22:00';
 
-        // var morning_time = '06:00';
+        var morning_time = '06:00';
 
-        // if ((currentTime > morning_time) && (currentTime <= b_time)) {
-        //     $('#Breakfast').prop('checked', true);
-        //     $('#Lunch').prop('checked', false);
-        //     $('#Dinner').prop('checked', false);
-        // } else if ((currentTime > b_time) && (currentTime <= l_time)) {
-        //     $('#Breakfast').prop('checked', false);
-        //     $('#Lunch').prop('checked', true);
-        //     $('#Dinner').prop('checked', false);
-        // } else if ((currentTime > l_time) && (currentTime <= d_time)) {
-        //     $('#Breakfast').prop('checked', false);
-        //     $('#Lunch').prop('checked', false);
-        //     $('#Dinner').prop('checked', true);
-        // }
+        if ((currentTime > morning_time) && (currentTime <= b_time)) {
+            $('#Breakfast').prop('checked', true);
+            $('#Lunch').prop('checked', false);
+            $('#Dinner').prop('checked', false);
+        } else if ((currentTime > b_time) && (currentTime <= l_time)) {
+            $('#Breakfast').prop('checked', false);
+            $('#Lunch').prop('checked', true);
+            $('#Dinner').prop('checked', false);
+        } else if ((currentTime > l_time) && (currentTime <= d_time)) {
+            $('#Breakfast').prop('checked', false);
+            $('#Lunch').prop('checked', false);
+            $('#Dinner').prop('checked', true);
+        }
 
     });
 
