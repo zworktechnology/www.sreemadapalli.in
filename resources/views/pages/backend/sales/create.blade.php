@@ -59,7 +59,7 @@
             <div class="row mb-2 col-12 ">
                 <label for="session" class="col-md-1 col-form-label" hidden>
                     Session <span style="color: red;">*</span></label>
-                @if ($todaytime <= '11:00')
+                {{-- @if ($todaytime <= '11:00')
                     <div class="col-9 col-md-2" style="display: flex;">
                         <div
                             style="background-color: #ffecec; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
@@ -122,7 +122,7 @@
                             <label style="margin-right: 10px;" for="Dinner">DINN</label>
                         </div>
                     </div>
-                    @else
+                @else --}}
                     <div class="col-9 col-md-2" style="display: flex;">
                         <div
                             style="background-color: #ffecec; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
@@ -143,7 +143,7 @@
                             <label style="margin-right: 10px;" for="Dinner">DINN</label>
                         </div>
                     </div>
-                @endif
+                {{-- @endif --}}
             </div>
             <div class="row mb-2 col-12 col-md-12">
                 <label for="payment_method" class="col-md-1 col-form-label" hidden>
