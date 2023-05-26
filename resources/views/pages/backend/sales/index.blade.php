@@ -196,7 +196,7 @@
                                 </div>
                                 <div class="col-md-4 col-12 pointer row">
                                     <div class="col-md-6 col-12 pointer" style="margin-bottom: -15px;">
-                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallets">
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #eaf7c3;">
                                                 <thead>

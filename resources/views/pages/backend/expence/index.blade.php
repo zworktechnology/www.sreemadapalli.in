@@ -100,7 +100,7 @@
                                             <tr>
                                                 <th>Sl. No</th>
                                                 <th>Name</th>
-                                                <th>Date</th>
+                                                {{-- <th>Date</th> --}}
                                                 <th>Amount</th>
                                                 <th>Status</th>
                                                 <th>Note</th>
@@ -112,7 +112,7 @@
                                                 <tr>
                                                     <td>{{ ++$keydata }}</td>
                                                     <td>{{ $datas->employee->name }}</td>
-                                                    <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td>
+                                                    {{-- <td>{{ date('d - m - Y', strtotime($datas->date)) }}</td> --}}
                                                     <td>₹ {{ $datas->amount }}</td>
                                                     @if ($datas->status == 'Pending')
                                                         <td style="font-size: 12px;">G-Pay</td>
