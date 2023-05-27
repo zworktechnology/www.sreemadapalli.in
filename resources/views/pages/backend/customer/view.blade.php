@@ -102,15 +102,19 @@
                                         </tr>
                                     </thead>
 
-
                                     <tbody id="customer_index">
                                         @foreach ($Custumer_index_array as $index => $Custumer_index_arr)
                                         <tr>
                                             <td>{{ ++$index }}</td>
                                             <td>{{ $Custumer_index_arr['date'] }}</td>
-                                            <td>₹ {{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
-                                            <td>₹ {{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
-                                            <td>₹ {{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
+
+                                            
+                                            <td {{ $Custumer_index_arr['bf_status'] }}>₹ {{ $Custumer_index_arr['CustomersBreakfastAmt'] }}</td>
+                                            
+
+
+                                            <td {{ $Custumer_index_arr['l_status'] }}>₹ {{ $Custumer_index_arr['CustomersLunchAmt'] }}</td>
+                                            <td {{ $Custumer_index_arr['d_status'] }}>₹ {{ $Custumer_index_arr['CustomersDinnerAmt'] }}</td>
                                             <td>₹ {{ $Custumer_index_arr['TotalAmount'] }}</td>
                                         </tr>
                                         @endforeach

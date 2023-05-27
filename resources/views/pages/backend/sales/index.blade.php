@@ -225,6 +225,7 @@
                                                         <th><b>Pending</b></th>
                                                     </tr>
                                                 </thead>
+                                                
                                             </table>
                                         </div>
                                     </div>
@@ -261,16 +262,16 @@
                                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             @include('pages.backend.sales.addon.deliveryby')
                                         </div>
-                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallet">
+                                        <div>
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #f7f3c0c2;">
                                                 <tbody style="font-size: 18px; font-weight: bold;">
                                                     <tr>
-                                                        <td class="mb-0 pendingamount" style="color: red !important;">₹</td>
+                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ {{$total_pending}}</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </div>
+                                        </div> 
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-12 pointer">
@@ -486,7 +487,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-success">Save</button>
+                                                        <button type="submit" class="btn btn-success" onclick="customersubmitForm(this);" >Save</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -506,6 +507,16 @@
                 $(document).ready(function() {
                     $('#todaydatatable').DataTable();
                 });
+
+
+
+
+    function customersubmitForm(btn) {
+        // disable the button
+        btn.disabled = true;
+        // submit the form    
+        btn.form.submit();
+    }
             </script>
 
 

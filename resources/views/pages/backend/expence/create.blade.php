@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success" onclick="submitForm(this);" >Save</button>
             </div>
         </form>
     </div>
@@ -137,4 +137,13 @@
 
         });
     });
+
+
+
+    function submitForm(btn) {
+        // disable the button
+        btn.disabled = true;
+        // submit the form    
+        btn.form.submit();
+    }
 </script>

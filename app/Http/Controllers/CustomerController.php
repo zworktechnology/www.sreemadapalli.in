@@ -141,6 +141,55 @@ class CustomerController extends Controller
             $CustomersDinnerAmt = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->sum('bill_amount');
             $TotalAmount = $CustomersBreakfastAmt + $CustomersLunchAmt + $CustomersDinnerAmt;
 
+            
+            $customer_bf_paidstatus = BreakFast::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->first();
+            if($customer_bf_paidstatus){
+                
+                    if($customer_bf_paidstatus->payment_method == 'Pending'){
+                        $bf_status = 'style=color:red';
+                    }else{
+                        $bf_status = 'style=color:green';
+                    }
+                
+            }else{
+                $bf_status = '';
+            }
+
+
+
+            $customer_l_paidstatus = Lunch::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->first();
+            if($customer_l_paidstatus){
+                
+                    if($customer_l_paidstatus->payment_method == 'Pending'){
+                        $l_status = 'style=color:red';
+                    }else{
+                        $l_status = 'style=color:green';
+                    }
+                
+            }else{
+                $l_status = '';
+            }
+
+
+
+            $customer_d_paidstatus = Dinner::where('customer_id', '=', $data->id)->where('date', '=', $merging_Datas)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->first();
+            if($customer_d_paidstatus){
+                
+                    if($customer_d_paidstatus->payment_method == 'Pending'){
+                        $d_status = 'style=color:red';
+                    }else{
+                        $d_status = 'style=color:green';
+                    }
+                
+            }else{
+                $d_status = '';
+            }
+            
+
+
+
+
+
             $Custumer_index_array[] = array(
                 'date' => date('d-m-Y', strtotime($merging_Datas)),
                 'CustomersBreakfastAmt' => $CustomersBreakfastAmt,
@@ -148,6 +197,9 @@ class CustomerController extends Controller
                 'CustomersDinnerAmt' => $CustomersDinnerAmt,
                 'TotalAmount' => $TotalAmount,
                 'customer_id' => $data->id,
+                'bf_status' => $bf_status,
+                'l_status' => $l_status,
+                'd_status' => $d_status,
             );
         }
 
@@ -280,6 +332,7 @@ class CustomerController extends Controller
         }
 
         $customerdata = Customer::findOrFail($id);
+        $customer_name = $customerdata->name;
 
             $breakfast_amount_pending = BreakFast::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
             $breakfast_amount_paid = BreakFast::where('customer_id', '=', $id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
@@ -308,7 +361,7 @@ class CustomerController extends Controller
             'total_pending' => $total_pending,
             'payment_total_amount' => $payment_total_amount,
         ]);
-        return $pdf->download('exportpdf.pdf');
+        return $pdf->download($customerdata->name . '.pdf');
     }
 
     public function edit($id)
@@ -537,7 +590,7 @@ class CustomerController extends Controller
             'total_pending' => $total_pending,
             'payment_total_amount' => $payment_total_amount,
         ]);
-        return $pdf->download('exportpdf.pdf');
+        return $pdf->download($customerdata->name . '.pdf');
     }
 
 
