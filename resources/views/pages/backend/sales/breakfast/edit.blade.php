@@ -109,11 +109,11 @@
                                                     Enter Your</option>
                                                     <option value="Cash" class="text-muted" {{ $data->payment_method == "Cash" ? 'selected' : '' }}>Cash</option>
                                                     <option value="Pending" class="text-muted" {{ $data->payment_method == "Pending" ? 'selected' : '' }}>Pending</option>
-                                                    <option value="G-Pay" class="text-muted" {{ $data->payment_method == "G-Pay" ? 'selected' : '' }}>G Pay</option>
-                                                    <option value="G-Pay Business" class="text-muted" {{ $data->payment_method == "G-Pay Business" ? 'selected' : '' }}>G-Pay Business</option>
-                                                    <option value="Phone Pe" class="text-muted" {{ $data->payment_method == "Phone Pe" ? 'selected' : '' }}>Phone Pe</option>
-                                                    <option value="Paytm" class="text-muted" {{ $data->payment_method == "Paytm" ? 'selected' : '' }}>Paytm</option>
-                                                    <option value="Card" class="text-muted" {{ $data->payment_method == "Card" ? 'selected' : '' }}>Card</option>
+                                                    <option value="G-Pay" class="text-muted" {{ $data->payment_method == "G-Pay" ? 'selected' : '' }}>Wallet</option>
+                                                    {{-- <option value="G-Pay Business" class="text-muted" {{ $data->payment_method == "G-Pay Business" ? 'selected' : '' }} hidden>G-Pay Business</option>
+                                                    <option value="Phone Pe" class="text-muted" {{ $data->payment_method == "Phone Pe" ? 'selected' : '' }} hidden>Phone Pe</option>
+                                                    <option value="Paytm" class="text-muted" {{ $data->payment_method == "Paytm" ? 'selected' : '' }} hidden>Paytm</option>
+                                                    <option value="Card" class="text-muted" {{ $data->payment_method == "Card" ? 'selected' : '' }} hidden>Card</option> --}}
                                             </select>
                                         </div>
                                     </div>

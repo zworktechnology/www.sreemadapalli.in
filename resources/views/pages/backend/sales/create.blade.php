@@ -163,7 +163,7 @@
                     </div>
                     <div
                         style="background-color: #eaf7c3; border-style: solid; border-width: 0.5px; border-color: lightgray;">
-                        <input type="radio" name="payment_method" value="G Pay" id="G Pay"
+                        <input type="radio" name="payment_method" value="G-Pay" id="G Pay"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="G Pay">WALT</label>
                     </div>
@@ -349,7 +349,7 @@
     function submitForm(btn) {
         // disable the button
         btn.disabled = true;
-        // submit the form    
+        // submit the form
         btn.form.submit();
     }
 </script>

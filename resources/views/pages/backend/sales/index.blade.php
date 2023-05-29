@@ -105,6 +105,32 @@
                                         style="background-color: #ffecec;">
                                         <thead>
                                             <tr>
+                                                <th><b>Detail</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="font-size: 16px; font-weight: bold;">
+                                            <tr style="background-color: #e0e9f5;">
+                                                <td><span style="color: black; ">Cash</span></td>
+                                            </tr>
+                                            <tr style="background-color: #d3f0b7;">
+                                                <td><span style="color: black">Pending</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="background-color: #eaf7c3;">
+                                                <td><span style="color: black">Wallet</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="background-color: #f8f0c5;">
+                                                <td><span style="color: black">Total</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-2 col-12 pointer">
+                                    <table class="table table-bordered dt-responsive nowrap w-100"
+                                        style="background-color: #ffecec;">
+                                        <thead>
+                                            <tr>
                                                 <th><b>Breakfast</b></th>
                                             </tr>
                                         </thead>
@@ -115,6 +141,10 @@
                                             </tr>
                                             <tr style="background-color: #d3f0b7;">
                                                 <td><span style="color: black">₹ {{ $breakfast_data_ps_pending }}</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="background-color: #eaf7c3;">
+                                                <td><span style="color: black">₹ {{ $breakfast_data_pm_wallet }}</span>
                                                 </td>
                                             </tr>
                                             <tr style="background-color: #f8f0c5;">
@@ -140,6 +170,9 @@
                                             <tr style="background-color: #d3f0b7;">
                                                 <td><span style="color: black">₹ {{ $lunch_data_ps_pending }}</span></td>
                                             </tr>
+                                            <tr style="background-color: #eaf7c3;">
+                                                <td><span style="color: black">₹ {{ $lunch_data_pm_wallet }}</span></td>
+                                            </tr>
                                             <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">₹ {{ $lunch_data_pm_total }}</span></td>
                                             </tr>
@@ -160,6 +193,9 @@
                                             </tr>
                                             <tr style="background-color: #d3f0b7;">
                                                 <td><span style="color: black">₹ {{ $dinner_data_ps_pending }}</span></td>
+                                            </tr>
+                                            <tr style="background-color: #eaf7c3;">
+                                                <td><span style="color: black">₹ {{ $dinner_data_pm_wallet }}</span></td>
                                             </tr>
                                             <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">₹ {{ $dinner_data_pm_total }}</span></td>
@@ -186,6 +222,11 @@
                                                         {{ $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending }}</span>
                                                 </td>
                                             </tr>
+                                            <tr style="background-color: #eaf7c3;">
+                                                <td><span style="color: black">₹
+                                                        {{ $breakfast_data_pm_wallet + $lunch_data_pm_wallet + $dinner_data_pm_wallet }}</span>
+                                                </td>
+                                            </tr>
                                             <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">₹
                                                         {{ $breakfast_data_pm_total + $lunch_data_pm_total + $dinner_data_pm_total }}</span>
@@ -194,9 +235,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-4 col-12 pointer row">
-                                    <div class="col-md-6 col-12 pointer" style="margin-bottom: -15px;">
-                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallets">
+                                <div class="col-md-2 col-12 pointer">
+                                    <div class="col-md-12 col-12 pointer">
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallets" hidden>
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #eaf7c3;">
                                                 <thead>
@@ -217,7 +258,7 @@
                                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             @include('pages.backend.sales.addon.wallet')
                                         </div>
-                                        <div>
+                                        <div hidden>
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #f7f3c0c2; font-size: 18px;">
                                                 <thead>
@@ -225,7 +266,107 @@
                                                         <th><b>Pending</b></th>
                                                     </tr>
                                                 </thead>
-                                                
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-12 pointer" style="margin-bottom: -15px;">
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #ffecec;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Delivery</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 16px; font-weight: bold;">
+                                                    <tr>
+                                                        <td style="color: red !important;">
+                                                            <span style="color: black">
+                                                                <div style="display: none">
+                                                                    {{ $totalcount = 0 }}
+                                                                </div>
+                                                                @foreach ($deliveryboys_arr as $deliveryboys_a)
+                                                                    <div style="display: none">
+                                                                        {{ $totalcount += $deliveryboys_a['delivery_count'] }}
+                                                                    </div>
+                                                                @endforeach
+                                                                {{ $total_delivey_count }}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" role="dialog"
+                                            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            @include('pages.backend.sales.addon.deliveryby')
+                                        </div>
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallets">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #f7f3c0c2;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Pending</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 18px; font-weight: bold;">
+                                                    <tr>
+                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ {{$total_pending}}</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" role="dialog"
+                                            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            @include('pages.backend.sales.addon.wallet')
+                                        </div>
+                                        <div hidden>
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #f7f3c0c2;">
+                                                <tbody style="font-size: 18px; font-weight: bold;">
+                                                    <tr>
+                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ {{$total_pending}}</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pointer row" hidden>
+                                    <div class="col-md-6 col-12 pointer" style="margin-bottom: -15px;">
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallets" hidden>
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #eaf7c3;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Wallet</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 16px; font-weight: bold;">
+                                                    <tr>
+                                                        <td style="color: red !important;"><span style="color: black">₹
+                                                                {{ $total_wallet }}</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" role="dialog"
+                                            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            @include('pages.backend.sales.addon.wallet')
+                                        </div>
+                                        <div hidden>
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #f7f3c0c2; font-size: 18px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Pending</b></th>
+                                                    </tr>
+                                                </thead>
+
                                             </table>
                                         </div>
                                     </div>
@@ -262,7 +403,27 @@
                                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             @include('pages.backend.sales.addon.deliveryby')
                                         </div>
-                                        <div>
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallets">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #f7f3c0c2;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Pending</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 18px; font-weight: bold;">
+                                                    <tr>
+                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ {{$total_pending}}</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal fade" id="staticBackdropwallet" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" role="dialog"
+                                            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            @include('pages.backend.sales.addon.wallet')
+                                        </div>
+                                        <div hidden>
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #f7f3c0c2;">
                                                 <tbody style="font-size: 18px; font-weight: bold;">
@@ -271,11 +432,8 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </div> 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2 col-12 pointer">
-
                                 </div>
                             </div>
                             <div class="col-12 col-md-12">
@@ -308,31 +466,11 @@
                                                                     src="{{ asset('assets/images/cash.jpg') }}"
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
-                                                        @elseif ($outputs['payment_method'] == 'G-Pay Business')
-                                                            <td style="color: white; background-color: #fbbb04;"><img
-                                                                    src="{{ asset('assets/images/gpayb.png') }}"
-                                                                    style="width: 15px; height: 15px;" />
-                                                                {{ $outputs['payment_method'] }}</td>
                                                         @elseif ($outputs['payment_method'] == 'G-Pay')
                                                             <td style="color: white; background-color: #fbbb04;"><img
                                                                     src="{{ asset('assets/images/gpay.png') }}"
                                                                     style="width: 15px; height: 15px;" />
-                                                                {{ $outputs['payment_method'] }}</td>
-                                                        @elseif ($outputs['payment_method'] == 'Phone Pe')
-                                                            <td style="color: white; background-color: #5f259f;"><img
-                                                                    src="{{ asset('assets/images/phonepay.png') }}"
-                                                                    style="width: 15px; height: 15px;" />
-                                                                {{ $outputs['payment_method'] }}</td>
-                                                        @elseif ($outputs['payment_method'] == 'Paytm')
-                                                            <td style="color: white; background-color: #01aef0;"><img
-                                                                    src="{{ asset('assets/images/paytm.png') }}"
-                                                                    style="width: 15px; height: 15px;" />
-                                                                {{ $outputs['payment_method'] }}</td>
-                                                        @elseif ($outputs['payment_method'] == 'Card')
-                                                            <td style="color: white; background-color: #9ab3c3;"><img
-                                                                    src="{{ asset('assets/images/card.png') }}"
-                                                                    style="width: 15px; height: 15px;" />
-                                                                {{ $outputs['payment_method'] }}</td>
+                                                                Wallet </td>
                                                         @else
                                                             <td style="color: white; background-color: #ff3d3d;"><img
                                                                     src="{{ asset('assets/images/pending.png') }}"
@@ -514,7 +652,7 @@
     function customersubmitForm(btn) {
         // disable the button
         btn.disabled = true;
-        // submit the form    
+        // submit the form
         btn.form.submit();
     }
             </script>
