@@ -440,7 +440,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="todaydatatable"
-                                            class="table table-bordered dt-responsive  nowrap w-100">
+                                            class="table table-bordered dt-responsive nowrap w-100">
                                             <thead style="background: #CAF1DE">
                                                 <tr>
                                                     <th>Bill No</th>
@@ -643,7 +643,12 @@
 
             <script>
                 $(document).ready(function() {
-                    $('#todaydatatable').DataTable();
+                    $('#todaydatatable').DataTable(
+                        {
+                            pageLength : 6,
+                            lengthMenu: [[6, 12, 18], [6, 12, 18]]
+                        }
+                    );
                 });
 
 
