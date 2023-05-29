@@ -266,7 +266,6 @@
                                                         <th><b>Pending</b></th>
                                                     </tr>
                                                 </thead>
-
                                             </table>
                                         </div>
                                     </div>
@@ -313,7 +312,7 @@
                                                 </thead>
                                                 <tbody style="font-size: 18px; font-weight: bold;">
                                                     <tr>
-                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ {{$total_pending}}</a></td>
+                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ 0</a></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
