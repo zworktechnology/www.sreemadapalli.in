@@ -312,7 +312,7 @@
                                                 </thead>
                                                 <tbody style="font-size: 18px; font-weight: bold;">
                                                     <tr>
-                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ 0</a></td>
+                                                        <td class="mb-0 pendingamtroute" id="" style="color: red !important;">₹</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -327,7 +327,7 @@
                                                 style="background-color: #f7f3c0c2;">
                                                 <tbody style="font-size: 18px; font-weight: bold;">
                                                     <tr>
-                                                        <td class="mb-0 pendingamount" style="color: red !important;"><a href="{{ route('customer.index') }}">₹ {{$total_pending}}</a></td>
+                                                        <td class="mb-0" style="color: red !important;">₹ {{$total_pending}}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -438,10 +438,11 @@
                             <div class="col-12 col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <table id="todaydatatable"
+                                        <table id="todaydatatable" data-order='[[ 0, "desc" ]]'
                                             class="table table-bordered dt-responsive nowrap w-100">
                                             <thead style="background: #CAF1DE">
                                                 <tr>
+                                                    
                                                     <th>Bill No</th>
                                                     <th>Customer</th>
                                                     <th>Amount</th>
@@ -454,6 +455,7 @@
                                             <tbody id="today_data">
                                                 @foreach ($daily_Data as $keydata => $outputs)
                                                     <tr>
+                                                        
                                                         <td>{{ $outputs['invoice_no'] }}</td>
                                                         <td>{{ $outputs['customer'] }}</td>
                                                         <td>₹ {{ $outputs['bill_amount'] }}</td>
@@ -650,6 +652,11 @@
                     );
                 });
 
+
+                
+    
+
+    
 
 
 

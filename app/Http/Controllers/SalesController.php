@@ -68,7 +68,7 @@ class SalesController extends Controller
         $dinner_data_count = Count($dinner_data);
 
         $output = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
-
+        
         $daily_Data = [];
         $total_bill_amount = 0;
         foreach ($output as $key => $output_arr) {
