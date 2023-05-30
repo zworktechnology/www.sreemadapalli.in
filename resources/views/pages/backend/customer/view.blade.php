@@ -91,16 +91,17 @@
                                                 <button type="submit" class="btn btn-success w-md">
                                                     Search</button>
                                             </div>
-                                            <div style="margin-right: 10px;">
+                                        </div>
+                                    </form>
+                                    <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter "><button
+                                            type="button" class="btn btn-success w-md">Export as PDF</button></a>
+
+                                            <div style="margin-left: 10px;">
                                                 <a href="{{ route('customer.edit', ['id' => $data['id']]) }}">
                                                     <button class="btn btn-success w-md">
                                                         Edit</button>
                                                 </a>
                                             </div>
-                                        </div>
-                                    </form>
-                                    <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter "><button
-                                            type="button" class="btn btn-success w-md">Export as PDF</button></a>
                                 </div>
                             </div>
                         </div>
