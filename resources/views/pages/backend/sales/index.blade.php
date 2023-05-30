@@ -442,7 +442,7 @@
                                             class="table table-bordered dt-responsive nowrap w-100">
                                             <thead style="background: #CAF1DE">
                                                 <tr>
-                                                    
+
                                                     <th>Bill No</th>
                                                     <th>Customer</th>
                                                     <th>Amount</th>
@@ -455,7 +455,7 @@
                                             <tbody id="today_data">
                                                 @foreach ($daily_Data as $keydata => $outputs)
                                                     <tr>
-                                                        
+
                                                         <td>{{ $outputs['invoice_no'] }}</td>
                                                         <td>{{ $outputs['customer'] }}</td>
                                                         <td>₹ {{ $outputs['bill_amount'] }}</td>
@@ -646,17 +646,17 @@
                 $(document).ready(function() {
                     $('#todaydatatable').DataTable(
                         {
-                            pageLength : 6,
-                            lengthMenu: [[6, 12, 18], [6, 12, 18]]
+                            pageLength : 12,
+                            lengthMenu: [[6, 12, 18, 24], [6, 12, 18, 24]]
                         }
                     );
                 });
 
 
-                
-    
 
-    
+
+
+
 
 
 
