@@ -260,8 +260,10 @@
                         } else {
                             $('.customer_pending').hide();
                         }
-
-                        $(".pendingamtroute").append("<a href='http://127.0.0.1:8000/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");
+                        // Local
+                        // $(".pendingamtroute").append("<a href='http://127.0.0.1:8000/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");
+                        // Live
+                        $(".pendingamtroute").append("<a href='http://www.sreemadapalli.in/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");
                     }
 
                     //$('.phoneno').val(response['data'].contact_number);
@@ -337,9 +339,10 @@
                             $('.customer_pending').hide();
                         }
 
-                       
-
-                        $(".pendingamtroute").append("<a href='http://127.0.0.1:8000/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");
+                        // Local
+                        // $(".pendingamtroute").append("<a href='http://127.0.0.1:8000/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");
+                        // Live
+                        $(".pendingamtroute").append("<a href='https://www.sreemadapalli.in/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");
                     }
 
 
