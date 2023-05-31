@@ -249,6 +249,7 @@
                     console.log(response);
                     $('.phoneno').val('');
                     var output = response.length;
+                    $('.pendingamtroute').html('');
                     for (var i = 0; i < output; i++) {
                         $('.phoneno').val(response[i].contact_number);
                         $('.phoneno').select2().trigger('change');
@@ -323,7 +324,7 @@
 
                     $('.customer_id').val('');
                     var output = response.length;
-
+                    $('.pendingamtroute').html('');
 
                     for (var i = 0; i < output; i++) {
                         $('.customer_id').val(response[i].id);
