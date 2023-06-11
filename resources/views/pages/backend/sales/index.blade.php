@@ -123,6 +123,10 @@
                                             <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">Total</span></td>
                                             </tr>
+                                            <tr style="background-color: #f7c3c3;">
+                                                <td><span style="color: black">Delivery</span>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -151,6 +155,9 @@
                                                 <td><span style="color: black">₹
                                                         {{ $breakfast_data_pm_total }}</span></td>
                                             </tr>
+                                            <tr style="background-color: #f7c3c3;">
+                                                <td><span style="color: black">{{ $breafast_countdata }}</span></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -176,6 +183,9 @@
                                             <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">₹ {{ $lunch_data_pm_total }}</span></td>
                                             </tr>
+                                            <tr style="background-color: #f7c3c3;">
+                                                <td><span style="color: black">{{ $lunch_countdata }}</span></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -199,6 +209,9 @@
                                             </tr>
                                             <tr style="background-color: #f8f0c5;">
                                                 <td><span style="color: black">₹ {{ $dinner_data_pm_total }}</span></td>
+                                            </tr>
+                                            <tr style="background-color: #f7c3c3;">
+                                                <td><span style="color: black">{{ $dinner_countdata }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -231,6 +244,9 @@
                                                 <td><span style="color: black">₹
                                                         {{ $breakfast_data_pm_total + $lunch_data_pm_total + $dinner_data_pm_total }}</span>
                                                 </td>
+                                            </tr>
+                                            <tr style="background-color: #f7c3c3;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                <td><span style="color: black">{{ $breafast_countdata + $lunch_countdata + $dinner_countdata }}</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -270,7 +286,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-12 pointer" style="margin-bottom: -15px;">
-                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdrop" hidden>
                                             <table class="table table-bordered dt-responsive nowrap w-100"
                                                 style="background-color: #ffecec;">
                                                 <thead>
@@ -313,6 +329,21 @@
                                                 <tbody style="font-size: 18px; font-weight: bold;">
                                                     <tr>
                                                         <td class="mb-0 pendingamtroute" id="" style="color: red !important;">₹</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div data-bs-toggle="modal" data-bs-target="#staticBackdropwallets">
+                                            <table class="table table-bordered dt-responsive nowrap w-100"
+                                                style="background-color: #f7f3c0c2;">
+                                                <thead>
+                                                    <tr>
+                                                        <th><b>Last Date</b></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 18px; font-weight: bold;">
+                                                    <tr>
+                                                        <td class="mb-0" id="" style="color: red !important;">01.01.23</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -652,14 +683,6 @@
                     );
                 });
 
-
-
-
-
-
-
-
-
     function customersubmitForm(btn) {
         // disable the button
         btn.disabled = true;
@@ -667,14 +690,6 @@
         btn.form.submit();
     }
             </script>
-
-
-
-
-
-
-
-
 
         </div>
     </div>

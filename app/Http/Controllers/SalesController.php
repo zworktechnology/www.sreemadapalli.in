@@ -68,7 +68,7 @@ class SalesController extends Controller
         $dinner_data_count = Count($dinner_data);
 
         $output = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
-        
+
         $daily_Data = [];
         $total_bill_amount = 0;
         foreach ($output as $key => $output_arr) {
@@ -246,7 +246,11 @@ class SalesController extends Controller
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.sales.index', compact('todaytime', 'today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
+        $breafast_countdata = BreakFast::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->count();
+        $lunch_countdata = Lunch::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->count();
+        $dinner_countdata = Dinner::where('date', '=', $daily_date)->where('soft_delete', '!=', 1)->count();
+
+        return view('pages.backend.sales.index', compact('breafast_countdata', 'lunch_countdata', 'dinner_countdata', 'todaytime', 'today', 'daily_Data', 'deliveryboy', 'breakfast_data_count', 'lunch_data_count', 'dinner_data_count',
         'total_bill_amount', 'total_cash', 'total_wallet', 'date', 'total_pending', 'deliveryboys_arr', 'customerarr',
         'walletcard', 'walletgpay', 'walletgpaybusiness', 'walletphonepe',
         'walletpaytm', 'breakfast_data_ps_pending', 'lunch_data_ps_pending', 'dinner_data_ps_pending',
