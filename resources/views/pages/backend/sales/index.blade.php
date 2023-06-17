@@ -343,7 +343,7 @@
                                                 </thead>
                                                 <tbody style="font-size: 18px; font-weight: bold;">
                                                     <tr>
-                                                        <td class="mb-0" id="" style="color: red !important;">01.01.23</td>
+                                                        <td class="mb-0 mostRecent_date" id="" style="color: red !important;"></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -610,6 +610,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            
                         </div>
                         <div class="col-md-3">
                             <div class="col-12">

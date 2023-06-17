@@ -250,6 +250,7 @@
                     $('.phoneno').val('');
                     var output = response.length;
                     $('.pendingamtroute').html('');
+                    $('.mostRecent_date').html('');
                     for (var i = 0; i < output; i++) {
                         $('.phoneno').val(response[i].contact_number);
                         $('.phoneno').select2().trigger('change');
@@ -260,6 +261,7 @@
                         } else {
                             $('.customer_pending').hide();
                         }
+                        $('.mostRecent_date').html(response[i].latest_date);
                         // Local
                         // $(".pendingamtroute").append("<a href='http://127.0.0.1:8000/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");
                         // Live
@@ -327,6 +329,7 @@
                     $('.customer_id').val('');
                     var output = response.length;
                     $('.pendingamtroute').html('');
+                    $('.mostRecent_date').html('');
 
                     for (var i = 0; i < output; i++) {
                         $('.customer_id').val(response[i].id);
@@ -338,6 +341,8 @@
                         } else {
                             $('.customer_pending').hide();
                         }
+
+                        $('.mostRecent_date').html(response[i].latest_date);
 
                         // Local
                         // $(".pendingamtroute").append("<a href='http://127.0.0.1:8000/zwork-admin/customer/view/" + response[i].id +"'>" + response[i].pending + "</a>");

@@ -37,6 +37,12 @@
                         <span key="t-dashboards">Daily</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('wallet.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('wallet.index') }}">
+                        <i class="mdi mdi-credit-card-wireless"></i>
+                        <span key="t-dashboards">Wallet</span>
+                    </a>
+                </li>
                 <li class="{{ Route::is('payment.index','payment.create','payment.edit','payment.dailyfilter') ? 'mm-active' : '' }}">
                     <a href="{{ route('payment.index') }}">
                         <i class="mdi mdi-currency-brl"></i>

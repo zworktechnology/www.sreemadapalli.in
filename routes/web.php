@@ -295,7 +295,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/sales/create', [SalesController::class, 'create'])->name('sales.create');
         // STORE
         Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/sales/store', [SalesController::class, 'store'])->name('sales.store');
+        
     });
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        // INDEX
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/wallet', [SalesController::class, 'wallet'])->name('wallet.index');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/wallet_dailyfilter', [SalesController::class, 'wallet_dailyfilter'])->name('wallet.wallet_dailyfilter');
+    });
+
 });
 
 // INVITE ACCEPT
@@ -324,8 +332,10 @@ Route::get('/pdfexportexpence/{date}', [ExpenceController::class, 'pdfexportexpe
 
 // SALES CONTROLLER // PDF EXPORT THE RECORD
 Route::get('/pdf_export/{date}', [SalesController::class, 'pdf_export']);
+Route::get('/wallet_pdf_export/{date}', [SalesController::class, 'wallet_pdf_export']);
 // SALES CONTROLLER // PDF EXPORT BY BREAKFAST
 Route::get('/pdfbybreakfast/{date}', [SalesController::class, 'pdfbybreafast']);
+Route::get('/walletpdfbybreafast/{date}', [SalesController::class, 'walletpdfbybreafast']);
 // SALES CONTROLLER // PDF EXPORT BY LUNCH
 Route::get('/pdfbylunch/{date}', [SalesController::class, 'pdfbylunch']);
 // SALES CONTROLLER // PDF EXPORT BY DINNER

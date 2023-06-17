@@ -259,6 +259,253 @@ class SalesController extends Controller
         'breakfast_data_pm_wallet', 'lunch_data_pm_wallet', 'dinner_data_pm_wallet', 'customer_mobile', 'total_delivey_count', 'notificationcount'));
     }
 
+
+
+    public function wallet() {
+
+        $daily_date = date('Y-m-d');
+        $todaytime = date('h:i');
+        $today = Carbon::now()->format('Y-m-d');
+
+
+
+        $breakfast_data = BreakFast::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Breakfast_datearray = [];
+        foreach ($breakfast_data as $key => $breakfast_data_arr) {
+            $Breakfast_datearray[] = $breakfast_data_arr;
+        }
+        $breakfast_data_count = Count($breakfast_data);
+
+        $lunch_data = Lunch::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Lunch_datearray = [];
+        foreach ($lunch_data as $key => $lunch_data_arr) {
+            $Lunch_datearray[] = $lunch_data_arr;
+        }
+        $lunch_data_count = Count($lunch_data);
+
+        $dinner_data = Dinner::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Dinner_datearray = [];
+        foreach ($dinner_data as $key => $dinner_data_arr) {
+            $Dinner_datearray[] = $dinner_data_arr;
+        }
+        $dinner_data_count = Count($dinner_data);
+
+        $output = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
+
+        $daily_Data = [];
+        $total_bill_amount = 0;
+        foreach ($output as $key => $output_arr) {
+
+            //Bill Amount
+            $total_bill_amount += $output_arr->bill_amount;
+            $customer = Customer::findOrFail($output_arr->customer_id);
+            $devlivery_by = Deliveryboy::findOrFail($output_arr->delivery_boy_id);
+            if($output_arr->soft_delete == 1){
+                $status = 'Deleted';
+            }else{
+                $status = 'Active';
+            }
+            $daily_Data[] = array(
+                'title' => $output_arr->title,
+                'date' => date('d-m-Y', strtotime($output_arr->date)),
+                'invoice_no' => $output_arr->invoice_no,
+                'customer' => $customer->name,
+                'bill_amount' => $output_arr->bill_amount,
+                'devlivery_by' => $devlivery_by->name,
+                'payment_method' => $output_arr->payment_method,
+                'status' => $status,
+                'id' => $output_arr->id,
+            );
+        }
+
+
+
+        return view('pages.backend.wallet.index', compact('daily_Data', 'today'));
+    }
+
+
+    public function wallet_dailyfilter(Request $request) {
+
+        $daily_date = $request->get('daily_date');
+        $today = Carbon::now()->format('Y-m-d');
+
+        $breakfast_data = BreakFast::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Breakfast_datearray = [];
+        foreach ($breakfast_data as $key => $breakfast_data_arr) {
+            $Breakfast_datearray[] = $breakfast_data_arr;
+        }
+
+        $breakfast_data_count = Count($breakfast_data);
+
+        $lunch_data = Lunch::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Lunch_datearray = [];
+        foreach ($lunch_data as $key => $lunch_data_arr) {
+            $Lunch_datearray[] = $lunch_data_arr;
+        }
+
+        $lunch_data_count = Count($lunch_data);
+
+        $dinner_data = Dinner::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Dinner_datearray = [];
+        foreach ($dinner_data as $key => $dinner_data_arr) {
+            $Dinner_datearray[] = $dinner_data_arr;
+        }
+
+        $dinner_data_count = Count($dinner_data);
+
+        $dailyoutput = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
+
+        $daily_Data = [];
+        $total_bill_amount = 0;
+        foreach ($dailyoutput as $key => $output_arr) {
+            //Bill Amount
+            $total_bill_amount += $output_arr->bill_amount;
+
+            $customer = Customer::findOrFail($output_arr->customer_id);
+            $devlivery_by = Deliveryboy::findOrFail($output_arr->delivery_boy_id);
+
+            if($output_arr->soft_delete == 1){
+                $status = 'Deleted';
+            }else{
+                $status = 'Active';
+            }
+
+            $daily_Data[] = array(
+                'title' => $output_arr->title,
+                'date' => date('d-m-Y', strtotime($output_arr->date)),
+                'invoice_no' => $output_arr->invoice_no,
+                'customer' => $customer->name,
+                'bill_amount' => $output_arr->bill_amount,
+                'devlivery_by' => $devlivery_by->name,
+                'payment_method' => $output_arr->payment_method,
+                'status' => $status,
+                'id' => $output_arr->id,
+            );
+        }
+
+
+        return view('pages.backend.wallet.index', compact('daily_Data', 'today'));
+    }
+
+
+
+
+    public function wallet_pdf_export($date)
+    {
+        $daily_date = $date;
+        $today = $date;
+
+
+        $breakfast_data = BreakFast::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Breakfast_datearray = [];
+        foreach ($breakfast_data as $key => $breakfast_data_arr) {
+            $Breakfast_datearray[] = $breakfast_data_arr;
+        }
+        $breakfast_data_count = Count($breakfast_data);
+
+        $lunch_data = Lunch::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Lunch_datearray = [];
+        foreach ($lunch_data as $key => $lunch_data_arr) {
+            $Lunch_datearray[] = $lunch_data_arr;
+        }
+        $lunch_data_count = Count($lunch_data);
+
+        $dinner_data = Dinner::where('date', '=', $daily_date)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+        $Dinner_datearray = [];
+        foreach ($dinner_data as $key => $dinner_data_arr) {
+            $Dinner_datearray[] = $dinner_data_arr;
+        }
+        $dinner_data_count = Count($dinner_data);
+
+        $output = array_merge($Breakfast_datearray, $Lunch_datearray, $Dinner_datearray);
+
+        $daily_Data = [];
+        $total_bill_amount = 0;
+        foreach ($output as $key => $output_arr) {
+
+            //Bill Amount
+            $total_bill_amount += $output_arr->bill_amount;
+            $customer = Customer::findOrFail($output_arr->customer_id);
+            $devlivery_by = Deliveryboy::findOrFail($output_arr->delivery_boy_id);
+            if($output_arr->soft_delete == 1){
+                $status = 'Deleted';
+            }else{
+                $status = 'Active';
+            }
+            $daily_Data[] = array(
+                'title' => $output_arr->title,
+                'date' => date('d-m-Y', strtotime($output_arr->date)),
+                'invoice_no' => $output_arr->invoice_no,
+                'customer' => $customer->name,
+                'bill_amount' => $output_arr->bill_amount,
+                'devlivery_by' => $devlivery_by->name,
+                'payment_method' => $output_arr->payment_method,
+                'status' => $status,
+                'id' => $output_arr->id,
+            );
+        }
+
+        $pdf = Pdf::loadView('pages.backend.wallet.pdf.wallet_pdf_export', [
+            'daily_Data' => $daily_Data,
+            'date' => $today,
+        ]);
+
+        $name = 'All' . '_' . $date . '.' . 'pdf';
+        return $pdf->download($name);
+    }
+
+
+
+
+    public function walletpdfbybreafast($date)
+    {
+        $today = $date;
+        $data = BreakFast::where('date', '=', $today)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+
+        $pdf = Pdf::loadView('pages.backend.wallet.pdf.walletpdfbybreafast', [
+           'data' => $data,
+            'date' => $today,
+        ]);
+
+        $name = 'Breakfast' . '_' . $date . '.' . 'pdf';
+        return $pdf->download($name);
+    }
+
+
+
+    public function walletpdfbylunch($date)
+    {
+        $today = $date;
+        $data = Lunch::where('date', '=', $today)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+
+        $pdf = Pdf::loadView('pages.backend.wallet.pdf.walletpdfbylunch', [
+            'data' => $data,
+            'date' => $today,
+        ]);
+
+        $name = 'Lunch' . '_' . $date . '.' . 'pdf';
+        return $pdf->download($name);
+    }
+
+
+    public function walletpdfbydinner($date)
+    {
+        $today = $date;
+        $data = Dinner::where('date', '=', $today)->where('payment_method', '=', 'G-Pay')->where('soft_delete', '!=', 1)->get();
+
+        $pdf = Pdf::loadView('pages.backend.wallet.pdf.walletpdfbydinner', [
+            'data' => $data,
+            'date' => $today,
+        ]);
+
+        $name = 'Dinner' . '_' . $date . '.' . 'pdf';
+        return $pdf->download($name);
+    }
+
+
+
+    
+
     public function dailyfilter(Request $request)
     {
         $daily_date = $request->get('daily_date');

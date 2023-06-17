@@ -607,10 +607,50 @@ class CustomerController extends Controller
         $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount;
 
 
+        $latest_breakfast = BreakFast::where('customer_id', '=', $customerdata->id)->where('soft_delete', '!=', 1)->latest('id')->first();
+        $latest_lunch = Lunch::where('customer_id', '=', $customerdata->id)->where('soft_delete', '!=', 1)->latest('id')->first();
+        $latest_dinner = Dinner::where('customer_id', '=', $customerdata->id)->where('soft_delete', '!=', 1)->latest('id')->first();
+
+        if($latest_breakfast != ""){
+            $latest_bf = $latest_breakfast->date;
+        }else {
+            $latest_bf = '';
+        }
+
+        if($latest_lunch != ""){
+            $latest_l = $latest_lunch->date;
+        }else {
+            $latest_l = '';
+        }
+
+
+        if($latest_dinner != ""){
+            $latest_dner = $latest_dinner->date;
+        }else {
+            $latest_dner = '';
+        }
+
+        
+        $date_arr = array('bf_date' => $latest_bf, 'lunch_date' => $latest_l, 'dinner_date' => $latest_dner);
+        usort($date_arr, function($a, $b) {
+            $dateTimestamp1 = strtotime($a);
+            $dateTimestamp2 = strtotime($b);
+        
+            return $dateTimestamp1 < $dateTimestamp2 ? -1: 1;
+        });
+
+
+        
+
+        $latest_date = $date_arr[count($date_arr) - 1];
+
+
+
         $customer_Arr[] = array(
             'id' => $customerdata->id,
             'contact_number' => $customerdata->contact_number,
-            'pending' => $pending
+            'pending' => $pending,
+            'latest_date' => $latest_date,
         );
 
 

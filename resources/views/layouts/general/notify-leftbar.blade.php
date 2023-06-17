@@ -54,6 +54,12 @@
                         <span key="t-dashboards">Payment</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('wallet.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('wallet.index') }}">
+                        <i class="mdi mdi-currency-brl"></i>
+                        <span key="t-dashboards">Wallet</span>
+                    </a>
+                </li>
                 <li class="menu-title" key="t-menu">Expenses</li>
                 <li class="{{ Route::is('employee.index','employee.create','employee.edit','employee.view') ? 'mm-active' : '' }}">
                     <a href="{{ route('employee.index') }}">
