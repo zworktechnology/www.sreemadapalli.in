@@ -82,6 +82,7 @@
                                                     <th>Session</th>
                                                     <th>Delivery By</th>
                                                     <th>Payment Via</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -112,6 +113,13 @@
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @endif
 
+                                                        @if ($outputs['wallet_status'] == 'PAID')
+                                                        <td style="color: white; background-color:green;">{{ $outputs['wallet_status'] }}</td>
+                                                        @elseif ($outputs['wallet_status'] == 'PENDING')
+                                                        <td style="color: white; background-color:red;">{{ $outputs['wallet_status'] }}</td>
+                                                        @endif
+
+                                                        
                                                         <td>
                                                             @if ($outputs['title'] == 'Break Fast')
                                                                 <ul class="list-unstyled hstack gap-1 mb-0">

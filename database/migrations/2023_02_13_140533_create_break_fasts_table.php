@@ -28,6 +28,7 @@ return new class extends Migration
             $table->unsignedBigInteger('delivery_boy_id');
             $table->string('payment_status');
             $table->string('payment_method')->nullable();
+            $table->string('wallet_status')->nullable();
             $table->string('delivery_amount');
             $table->string('payment_amount');
             $table->boolean('soft_delete')->default(0);

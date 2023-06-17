@@ -18,6 +18,7 @@ class Lunch extends Model
         'delivery_amount',
         'payment_amount',
         'payment_method',
+        'wallet_status',
         'soft_delete',
         'payment_status',
         'customer_id'

@@ -644,13 +644,13 @@ class CustomerController extends Controller
 
         $latest_date = $date_arr[count($date_arr) - 1];
 
-
+        $latest_dat = date('d-M-Y', strtotime($latest_date));
 
         $customer_Arr[] = array(
             'id' => $customerdata->id,
             'contact_number' => $customerdata->contact_number,
             'pending' => $pending,
-            'latest_date' => $latest_date,
+            'latest_date' => $latest_dat,
         );
 
 

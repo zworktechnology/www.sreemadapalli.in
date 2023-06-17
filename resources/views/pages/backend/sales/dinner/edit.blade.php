@@ -117,6 +117,19 @@
                                             </select>
                                         </div>
                                     </div>
+                                    @if ($data->payment_method == "G-Pay")
+                                    <div class="row mb-4">
+                                        <label for="wallet_status" class="col-sm-3 col-form-label">
+                                            Wallet Status <span style="color: red;">*</span></label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="wallet_status" required>
+                                                <option value="1" class="text-muted" {{ $data->wallet_status == "1" ? 'selected' : '' }}>Paid</option>
+                                                <option value="0" class="text-muted" {{ $data->wallet_status == "0" ? 'selected' : '' }}>Pending</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    @endif
                                     <div class="row mb-4" hidden>
                                         <label for="delivery_amount" class="col-sm-3 col-form-label">
                                             Delivery Charge <span style="color: red;">*</span></label>

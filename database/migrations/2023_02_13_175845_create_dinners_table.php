@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('delivery_amount');
             $table->string('payment_amount');
             $table->string('payment_method')->nullable();
+            $table->string('wallet_status')->nullable();
             $table->string('payment_status');
             $table->boolean('soft_delete')->default(0);
             $table->unsignedBigInteger('customer_id');

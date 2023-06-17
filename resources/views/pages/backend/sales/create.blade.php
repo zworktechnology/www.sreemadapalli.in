@@ -163,12 +163,31 @@
                     </div>
                     <div
                         style="background-color: #eaf7c3; border-style: solid; border-width: 0.5px; border-color: lightgray;">
-                        <input type="radio" name="payment_method" value="G-Pay" id="G Pay"
+                        <input type="radio" name="payment_method"  value="G-Pay" id="G Pay"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="G Pay">WALT</label>
                     </div>
                 </div>
             </div>
+            <div class="row mb-2 col-12 col-md-12 wallet_div" style="display:none">
+                <label for="wallet_status" class="col-md-1 col-form-label" hidden>
+                    Status <span style="color: red;">*</span></label>
+                <div class="col-9 col-md-2" style="display: flex;">
+                    <div
+                        style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                        <input type="radio" name="wallet_status" value="1" id="walletpaid"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="walletpaid">PAID</label>
+                    </div>
+                    <div
+                        style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
+                        <input type="radio" name="wallet_status" value="0" id="walletPending"
+                            style="margin-left: 5px; margin-top:10px;">
+                        <label style="margin-right: 10px;" for="walletPending">PENDING</label>
+                    </div>
+                </div>
+            </div>
+            
             <div class="row mb-2 col-12 ">
                 <label for="delivery_boy_id" class="col-md-1 col-form-label" hidden>
                     Delivery By <span style="color: red;">*</span></label>
@@ -315,6 +334,22 @@
 
 
     $(document).ready(function() {
+        
+        $("input[name$='payment_method']").click(function() {
+            var payment_method = $(this).val();
+
+            if (payment_method == 'Cash') {
+                $(".wallet_div").hide();
+            } else if (payment_method == 'Pending') {
+                $(".wallet_div").hide();
+            } else if (payment_method == 'G-Pay') {
+                $(".wallet_div").show();
+            }
+        });
+    });
+
+
+    $(document).ready(function() {
         $('.phoneno').on("select2:select", function(e) {
             var phoneno = $(this).val();
 
@@ -341,6 +376,7 @@
                         } else {
                             $('.customer_pending').hide();
                         }
+
 
                         $('.mostRecent_date').html(response[i].latest_date);
 

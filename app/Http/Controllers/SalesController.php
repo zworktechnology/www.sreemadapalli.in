@@ -300,11 +300,23 @@ class SalesController extends Controller
             $total_bill_amount += $output_arr->bill_amount;
             $customer = Customer::findOrFail($output_arr->customer_id);
             $devlivery_by = Deliveryboy::findOrFail($output_arr->delivery_boy_id);
+
+
             if($output_arr->soft_delete == 1){
                 $status = 'Deleted';
             }else{
                 $status = 'Active';
             }
+            
+            if($output_arr->wallet_status == 1){
+                $wallet_status = 'PAID';
+            }else if($output_arr->wallet_status == 0){
+                $wallet_status = 'PENDING';
+            }else {
+                $wallet_status = '';
+            }
+
+
             $daily_Data[] = array(
                 'title' => $output_arr->title,
                 'date' => date('d-m-Y', strtotime($output_arr->date)),
@@ -315,6 +327,7 @@ class SalesController extends Controller
                 'payment_method' => $output_arr->payment_method,
                 'status' => $status,
                 'id' => $output_arr->id,
+                'wallet_status' => $wallet_status,
             );
         }
 
@@ -370,6 +383,15 @@ class SalesController extends Controller
                 $status = 'Active';
             }
 
+
+            if($output_arr->wallet_status == 1){
+                $wallet_status = 'PAID';
+            }else if($output_arr->wallet_status == 0){
+                $wallet_status = 'PENDING';
+            }else {
+                $wallet_status = '';
+            }
+
             $daily_Data[] = array(
                 'title' => $output_arr->title,
                 'date' => date('d-m-Y', strtotime($output_arr->date)),
@@ -380,6 +402,7 @@ class SalesController extends Controller
                 'payment_method' => $output_arr->payment_method,
                 'status' => $status,
                 'id' => $output_arr->id,
+                'wallet_status' => $wallet_status,
             );
         }
 
@@ -749,6 +772,7 @@ class SalesController extends Controller
             $data->delivery_amount = $request->get('delivery_amount');
             $data->payment_amount = $request->get('payment_amount');
             $data->payment_method = $request->get('payment_method');
+            $data->wallet_status = $request->get('wallet_status');
             $data->customer_id = $request->get('customer_id');
             $data->payment_status = $request->get('payment_status');
 
@@ -769,6 +793,7 @@ class SalesController extends Controller
             $data->delivery_amount = $request->get('delivery_amount');
             $data->payment_amount = $request->get('payment_amount');
             $data->payment_method = $request->get('payment_method');
+            $data->wallet_status = $request->get('wallet_status');
             $data->customer_id = $request->get('customer_id');
             $data->payment_status = $request->get('payment_status');
 
@@ -788,6 +813,7 @@ class SalesController extends Controller
             $data->delivery_amount = $request->get('delivery_amount');
             $data->payment_amount = $request->get('payment_amount');
             $data->payment_method = $request->get('payment_method');
+            $data->wallet_status = $request->get('wallet_status');
             $data->customer_id = $request->get('customer_id');
             $data->payment_status = $request->get('payment_status');
 

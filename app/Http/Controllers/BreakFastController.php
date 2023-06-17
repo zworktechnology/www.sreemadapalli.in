@@ -30,6 +30,7 @@ class BreakFastController extends Controller
         $data->delivery_amount = $request->get('delivery_amount');
         $data->payment_amount = $request->get('payment_amount');
         $data->payment_method = $request->get('payment_method');
+        $data->wallet_status = $request->get('wallet_status');
         $data->customer_id = $request->get('customer_id');
         $data->payment_status = $request->get('payment_status');
 
