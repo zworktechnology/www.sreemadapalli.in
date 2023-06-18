@@ -31,7 +31,7 @@
 
                                         </div>
                                     </form>
-                                    <a href="javascript:void(0)" class="nofilter ">
+                                    {{-- <a href="javascript:void(0)" class="nofilter ">
                                         <button
                                             class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300"
                                             style="border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
@@ -57,17 +57,17 @@
                                             class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300"
                                             style="border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
                                             Dinner</button>
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    
-                    
+
+
                     <div class="row">
                         <div class="col-md-12">
-                            
+
                             <div class="col-12 col-md-12">
                                 <div class="card">
                                     <div class="card-body">
@@ -79,9 +79,6 @@
                                                     <th>Bill No</th>
                                                     <th>Customer</th>
                                                     <th>Amount</th>
-                                                    <th>Session</th>
-                                                    <th>Delivery By</th>
-                                                    <th>Payment Via</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -93,25 +90,6 @@
                                                         <td>{{ $outputs['invoice_no'] }}</td>
                                                         <td>{{ $outputs['customer'] }}</td>
                                                         <td>₹ {{ $outputs['bill_amount'] }}</td>
-                                                        <td>{{ $outputs['title'] }}</td>
-                                                        <td>{{ $outputs['devlivery_by'] }}</td>
-
-                                                        @if ($outputs['payment_method'] == 'Cash')
-                                                            <td style="color: white; background-color: #589b31;"><img
-                                                                    src="{{ asset('assets/images/cash.jpg') }}"
-                                                                    style="width: 15px; height: 15px;" />
-                                                                {{ $outputs['payment_method'] }}</td>
-                                                        @elseif ($outputs['payment_method'] == 'G-Pay')
-                                                            <td style="color: white; background-color: #fbbb04;"><img
-                                                                    src="{{ asset('assets/images/gpay.png') }}"
-                                                                    style="width: 15px; height: 15px;" />
-                                                                Wallet </td>
-                                                        @else
-                                                            <td style="color: white; background-color: #ff3d3d;"><img
-                                                                    src="{{ asset('assets/images/pending.png') }}"
-                                                                    style="width: 15px; height: 15px;" />
-                                                                {{ $outputs['payment_method'] }}</td>
-                                                        @endif
 
                                                         @if ($outputs['wallet_status'] == 'PAID')
                                                         <td style="color: white; background-color:green;">{{ $outputs['wallet_status'] }}</td>
@@ -119,7 +97,7 @@
                                                         <td style="color: white; background-color:red;">{{ $outputs['wallet_status'] }}</td>
                                                         @endif
 
-                                                        
+
                                                         <td>
                                                             @if ($outputs['title'] == 'Break Fast')
                                                                 <ul class="list-unstyled hstack gap-1 mb-0">
@@ -221,9 +199,9 @@
                                 </div>
                             </div>
 
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -241,7 +219,7 @@
                     );
                 });
 
-   
+
             </script>
 
         </div>
