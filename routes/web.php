@@ -17,6 +17,7 @@ use App\Http\Controllers\LunchController;
 use App\Http\Controllers\OutdoorController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\WalletController;
 
 /*
 |--------------------------------------------------------------------------
@@ -295,13 +296,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/sales/create', [SalesController::class, 'create'])->name('sales.create');
         // STORE
         Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/sales/store', [SalesController::class, 'store'])->name('sales.store');
-        
+
     });
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
-        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/wallet', [SalesController::class, 'wallet'])->name('wallet.index');
-        // DAILY FILTER
-        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/wallet_dailyfilter', [SalesController::class, 'wallet_dailyfilter'])->name('wallet.wallet_dailyfilter');
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/wallet', [WalletController::class, 'index'])->name('wallet.index');
+        // STORE
+        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/wallet/store', [WalletController::class, 'store'])->name('wallet.store');
+        // DELETE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/paid/{id}', [WalletController::class, 'paid'])->name('wallet.paid');
     });
 
 });

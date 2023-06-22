@@ -37,4 +37,9 @@ class Customer extends Model
     {
         return $this->hasMany(Payment::class, 'customer_id');
     }
+
+    public function wallet()
+    {
+        return $this->hasMany(Wallet::class, 'customer_id');
+    }
 }

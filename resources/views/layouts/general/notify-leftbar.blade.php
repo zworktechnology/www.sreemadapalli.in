@@ -11,7 +11,7 @@
                         <span key="t-dashboards">Dashboard</span>
                     </a>
                 </li>
-                
+
                 <li class="{{ Route::is('outdoor.index','outdoor.create','outdoor.edit') ? 'mm-active' : '' }}">
                     <a href="{{ route('outdoor.index') }}">
                         <i class="mdi mdi-door-open"></i>
@@ -47,7 +47,7 @@
                 </li>
                 <li class="{{ Route::is('wallet.index') ? 'mm-active' : '' }}">
                     <a href="{{ route('wallet.index') }}">
-                        <i class="mdi mdi-currency-brl"></i>
+                        <i class="mdi mdi-currency-usd-circle-outline"></i>
                         <span key="t-dashboards">Wallet</span>
                     </a>
                 </li>

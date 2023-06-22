@@ -15,7 +15,7 @@
                             </h4>
                             <div class="page-title-right">
                                 <div style="display: flex;">
-                                    <form autocomplete="off" method="POST" action="{{ route('wallet.wallet_dailyfilter') }}"
+                                    {{-- <form autocomplete="off" method="POST" action="{{ route('wallet.wallet_dailyfilter') }}"
                                         style="display: flex;">
                                         @method('PUT')
 
@@ -30,7 +30,7 @@
                                                 Search</button>
 
                                         </div>
-                                    </form>
+                                    </form> --}}
                                     {{-- <a href="javascript:void(0)" class="nofilter ">
                                         <button
                                             class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300"
@@ -63,12 +63,27 @@
                         </div>
                     </div>
 
+                    @if (\Session::has('add'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <i class="mdi mdi-check-all me-2"></i>
+                            {!! \Session::get('add') !!}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    @if (\Session::has('update'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <i class="mdi mdi-bullseye-arrow me-2"></i>
+                            {!! \Session::get('update') !!}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
 
 
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="display: flex">
 
-                            <div class="col-12 col-md-12">
+                            <div class="col-12 col-md-9">
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="walletdatatable" data-order='[[ 0, "desc" ]]'
@@ -76,7 +91,7 @@
                                             <thead style="background: #CAF1DE">
                                                 <tr>
 
-                                                    <th>Bill No</th>
+                                                    <th>Date</th>
                                                     <th>Customer</th>
                                                     <th>Amount</th>
                                                     <th>Status</th>
@@ -84,109 +99,60 @@
                                                 </tr>
                                             </thead>
                                             <tbody id="today_data">
-                                                @foreach ($daily_Data as $keydata => $outputs)
+                                                @foreach ($data as $keydata => $outputs)
                                                     <tr>
 
-                                                        <td>{{ $outputs['invoice_no'] }}</td>
-                                                        <td>{{ $outputs['customer'] }}</td>
-                                                        <td>₹ {{ $outputs['bill_amount'] }}</td>
+                                                        <td>{{ $outputs->date }}</td>
+                                                        <td>{{ $outputs->customer->name }}</td>
+                                                        <td>₹ {{ $outputs->amount }}</td>
 
-                                                        @if ($outputs['wallet_status'] == 'PAID')
-                                                        <td style="color: white; background-color:green;">{{ $outputs['wallet_status'] }}</td>
-                                                        @elseif ($outputs['wallet_status'] == 'PENDING')
-                                                        <td style="color: white; background-color:red;">{{ $outputs['wallet_status'] }}</td>
+                                                        @if ($outputs->status == '1')
+                                                            <td style="color: white; background-color:green;">PAID</td>
+                                                        @else
+                                                            <td style="color: white; background-color:red;">PENDING</td>
                                                         @endif
 
-
                                                         <td>
-                                                            @if ($outputs['title'] == 'Break Fast')
-                                                                <ul class="list-unstyled hstack gap-1 mb-0">
+                                                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                                                @if ($outputs->status == '1')
                                                                     <li>
-                                                                        <a href="{{ route('breakfast.edit', ['id' => $outputs['id']]) }}"
-                                                                            class="btn btn-sm btn-soft-info"><i
-                                                                                class="mdi mdi-pencil-outline"></i>
-                                                                            Edit</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#jobDelete{{ $outputs['id'] }}"
+                                                                        <a href="#jobDelete{{ $outputs->id }}"
                                                                             data-bs-toggle="modal"
                                                                             class="btn btn-sm btn-soft-danger"><i
                                                                                 class="mdi mdi-delete-outline"></i>
-                                                                            Delete</a>
+                                                                            Mark as pending</a>
                                                                     </li>
-                                                                </ul>
-                                                            @elseif($outputs['title'] == 'Lunch')
-                                                                <ul class="list-unstyled hstack gap-1 mb-0">
+                                                                @else
                                                                     <li>
-                                                                        <a href="{{ route('lunch.edit', ['id' => $outputs['id']]) }}"
-                                                                            class="btn btn-sm btn-soft-info"><i
-                                                                                class="mdi mdi-pencil-outline"></i>
-                                                                            Edit</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#jobDelete{{ $outputs['id'] }}"
+                                                                        <a href="#jobDelete{{ $outputs->id }}"
                                                                             data-bs-toggle="modal"
                                                                             class="btn btn-sm btn-soft-danger"><i
                                                                                 class="mdi mdi-delete-outline"></i>
-                                                                            Delete</a>
+                                                                            Mark as paid</a>
                                                                     </li>
-                                                                </ul>
-                                                            @elseif($outputs['title'] == 'Dinner')
-                                                                <ul class="list-unstyled hstack gap-1 mb-0">
-                                                                    <li>
-                                                                        <a href="{{ route('dinner.edit', ['id' => $outputs['id']]) }}"
-                                                                            class="btn btn-sm btn-soft-info"><i
-                                                                                class="mdi mdi-pencil-outline"></i>
-                                                                            Edit</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#jobDelete{{ $outputs['id'] }}"
-                                                                            data-bs-toggle="modal"
-                                                                            class="btn btn-sm btn-soft-danger"><i
-                                                                                class="mdi mdi-delete-outline"></i>
-                                                                            Delete</a>
-                                                                    </li>
-                                                                </ul>
-                                                            @endif
+                                                                @endif
+                                                            </ul>
                                                         </td>
+
                                                     </tr>
-                                                    <div class="modal fade" id="jobDelete{{ $outputs['id'] }}"
-                                                        tabindex="-1" aria-labelledby="jobDeleteLabel"
-                                                        aria-hidden="true">
+                                                    <div class="modal fade" id="jobDelete{{ $outputs->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered modal-sm">
                                                             <div class="modal-content">
                                                                 <div class="modal-body px-4 py-5 text-center">
                                                                     <div class="avatar-sm mb-4 mx-auto">
-                                                                        <div
-                                                                            class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
+                                                                        <div class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
                                                                             <i class="mdi mdi-trash-can-outline"></i>
                                                                         </div>
                                                                     </div>
-                                                                    <p class="text-muted font-size-16 mb-4">Please confirm
-                                                                        that
-                                                                        you wish to remove the record.</p>
+                                                                    <p class="text-muted font-size-16 mb-4">Please confirm he or she paid the amount today</p>
 
                                                                     <div class="hstack gap-2 justify-content-center mb-0">
-                                                                        @if ($outputs['title'] == 'Break Fast')
-                                                                            <form autocomplete="off" method="POST"
-                                                                                action="{{ route('breakfast.delete', ['id' => $outputs['id']]) }}">
-                                                                            @elseif($outputs['title'] == 'Lunch')
-                                                                                <form autocomplete="off" method="POST"
-                                                                                    action="{{ route('lunch.delete', ['id' => $outputs['id']]) }}">
-                                                                                @elseif($outputs['title'] == 'Dinner')
-                                                                                    <form autocomplete="off"
-                                                                                        method="POST"
-                                                                                        action="{{ route('dinner.delete', ['id' => $outputs['id']]) }}">
-                                                                        @endif
-                                                                        @method('PUT')
-                                                                        @csrf
-                                                                        <button type="submit" class="btn btn-danger">Yes,
-                                                                            Delete</button>
+                                                                        <form autocomplete="off" method="POST" action="{{ route('wallet.paid', ['id' => $outputs->id]) }}">
+                                                                            @method('PUT')
+                                                                            @csrf
+                                                                            <button type="submit" class="btn btn-danger">Yes, Paid</button>
                                                                         </form>
-                                                                        </form>
-                                                                        </form>
-                                                                        <button type="button" class="btn btn-secondary"
-                                                                            data-bs-dismiss="modal">No, Get Back</button>
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Get Back</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -199,6 +165,66 @@
                                 </div>
                             </div>
 
+                            <div class="col-12 col-md-3" style="margin-left:15px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form autocomplete="off" method="POST" action="{{ route('wallet.store') }}">
+                                            @csrf
+                                            <div class="modal-body">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-12">
+                                                        <input type="date" class="form-control" name="date"
+                                                            placeholder="Enter Your " value="{{ $today }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-12">
+                                                        <select class="form-control js-example-basic-single customer_id"
+                                                            name="customer_id" id="customer_id" required>
+                                                            <option value="" selected class="text-muted">
+                                                                Select Customer</option>
+                                                            @foreach ($customer as $customers)
+                                                                <option value="{{ $customers->id }}">
+                                                                    {{ $customers->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" name="amount"
+                                                            placeholder="Enter Your Amount " required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-9 col-md-2" style="display: flex;">
+                                                        <div
+                                                            style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px; display:flex;">
+                                                            <input type="radio" name="status" value="1"
+                                                                id="walletpaid" style="margin-left: 5px; margin-top:10px;">
+                                                            <label
+                                                                style="margin-left: 10px; margin-top: 10px; margin-right: 15px;"
+                                                                for="walletpaid">PAID</label>
+                                                        </div>
+                                                        <div
+                                                            style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px; display:flex;">
+                                                            <input type="radio" name="status" value="0"
+                                                                id="walletPending" checked
+                                                                style="margin-left: 5px; margin-top:10px;">
+                                                            <label
+                                                                style="margin-left: 10px; margin-top: 10px; margin-right: 15px;"
+                                                                for="walletPending">PENDING</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-success">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -211,15 +237,14 @@
 
             <script>
                 $(document).ready(function() {
-                    $('#walletdatatable').DataTable(
-                        {
-                            pageLength : 12,
-                            lengthMenu: [[6, 12, 18, 24], [6, 12, 18, 24]]
-                        }
-                    );
+                    $('#walletdatatable').DataTable({
+                        pageLength: 12,
+                        lengthMenu: [
+                            [6, 12, 18, 24],
+                            [6, 12, 18, 24]
+                        ]
+                    });
                 });
-
-
             </script>
 
         </div>

@@ -169,13 +169,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-2 col-12 col-md-12 wallet_div" style="display:none">
+            <div class="row mb-2 col-12 col-md-12" style="display:none">
                 <label for="wallet_status" class="col-md-1 col-form-label" hidden>
                     Status <span style="color: red;">*</span></label>
                 <div class="col-9 col-md-2" style="display: flex;">
                     <div
                         style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px;">
-                        <input type="radio" name="wallet_status" value="1" id="walletpaid"
+                        <input type="radio" checked name="wallet_status" value="1" id="walletpaid"
                             style="margin-left: 5px; margin-top:10px;">
                         <label style="margin-right: 10px;" for="walletpaid">PAID</label>
                     </div>
@@ -187,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row mb-2 col-12 ">
                 <label for="delivery_boy_id" class="col-md-1 col-form-label" hidden>
                     Delivery By <span style="color: red;">*</span></label>
@@ -334,7 +334,7 @@
 
 
     $(document).ready(function() {
-        
+
         $("input[name$='payment_method']").click(function() {
             var payment_method = $(this).val();
 

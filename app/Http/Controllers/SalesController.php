@@ -307,7 +307,7 @@ class SalesController extends Controller
             }else{
                 $status = 'Active';
             }
-            
+
             if($output_arr->wallet_status == 1){
                 $wallet_status = 'PAID';
             }else if($output_arr->wallet_status == 0){
@@ -527,7 +527,7 @@ class SalesController extends Controller
 
 
 
-    
+
 
     public function dailyfilter(Request $request)
     {
