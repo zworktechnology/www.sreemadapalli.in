@@ -53,13 +53,12 @@
                 </div>
                 @endif
                 <div class="row">
-                    <div class="col-12 col-md-12">
+                    <div class="col-12 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #CAF1DE">
                                         <tr>
-                                            <th>Sl. No</th>
                                             <th>Name</th>
                                             <th>Phone No</th>
                                             <th>Pending Amount</th>
@@ -68,8 +67,9 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($index_amount_arr as $keydata => $datas)
+                                        @if ($datas['pending'] > 0)
+                                        @else
                                         <tr>
-                                            <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas['name'] }}</td>
                                             <td>{{ $datas['contact_number'] }}</td>
                                             @if ($datas['pending'] > 0)
@@ -93,6 +93,77 @@
                                                 </ul>
                                             </td>
                                         </tr>
+                                        @endif
+                                        <div class="modal fade" id="jobDelete{{ $datas['id'] }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-body px-4 py-5 text-center">
+                                                        <div class="avatar-sm mb-4 mx-auto">
+                                                            <div class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
+                                                                <i class="mdi mdi-trash-can-outline"></i>
+                                                            </div>
+                                                        </div>
+                                                        <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the customer.</p>
+
+                                                        <div class="hstack gap-2 justify-content-center mb-0">
+                                                            <form autocomplete="off" method="POST" action="{{ route('customer.delete', ['id' => $datas['id']]) }}">
+                                                                @method('PUT')
+                                                                @csrf
+                                                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                                            </form>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Get Back</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <table id="datatables" class="table table-bordered dt-responsive  nowrap w-100">
+                                    <thead style="background: #CAF1DE">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Phone No</th>
+                                            <th>Pending Amount</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($index_amount_arr as $keydata => $datas)
+                                        @if ($datas['pending'] > 0)
+                                        <tr>
+                                            <td>{{ $datas['name'] }}</td>
+                                            <td>{{ $datas['contact_number'] }}</td>
+                                            @if ($datas['pending'] > 0)
+                                            <td style="color: white; background-color: #ff3d3d;">₹ {{ $datas['pending'] }}</td>
+                                            @elseif ($datas['pending'] < 0)
+                                            <td style="color: white; background-color: #589b31;">₹ {{ $datas['pending'] }}</td>
+                                            @else
+                                            <td>₹ {{ $datas['pending'] }}</td>
+                                            @endif
+                                            <td>
+                                                <ul class="list-unstyled hstack gap-1 mb-0">
+                                                    <li>
+                                                        <a href="{{ route('customer.view', ['id' => $datas['id']]) }}" class="btn btn-sm btn-soft-pink"><i class="mdi mdi-card-account-details-star-outline"></i> View</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ route('customer.edit', ['id' => $datas['id']]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i> Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#jobDelete{{ $datas['id'] }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i> Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        @else
+                                        @endif
                                         <div class="modal fade" id="jobDelete{{ $datas['id'] }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">
                                                 <div class="modal-content">
@@ -132,6 +203,27 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            $(document).ready(function() {
+                $('#datatable').DataTable({
+                    pageLength: 12,
+                    lengthMenu: [
+                        [6, 12, 18, 24],
+                        [6, 12, 18, 24]
+                    ]
+                });
+            });
+            $(document).ready(function() {
+                $('#datatables').DataTable({
+                    pageLength: 12,
+                    lengthMenu: [
+                        [6, 12, 18, 24],
+                        [6, 12, 18, 24]
+                    ]
+                });
+            });
+        </script>
 
         @include('layouts.general.footer')
 

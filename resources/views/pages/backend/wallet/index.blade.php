@@ -83,13 +83,12 @@
                     <div class="row">
                         <div class="col-md-12" style="display: flex">
 
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-7">
                                 <table class="table table-bordered dt-responsive nowrap w-100"
                                     style="background-color: #CADAF1;">
                                     <thead>
                                         <tr style="font-size: 16px; font-weight: bold;">
-                                            <th><b>Today</b></th>
-                                            <th><b>Wallet</b></th>
+                                            <th><b>Today Wallet</b></th>
                                             <th style="color: red !important;"><span style="color: black">Paid:</span> ₹
                                                 {{ $wallet_paid }}</th>
                                             <th style="color: red !important;"><span style="color: black">Pending:</span>
@@ -104,6 +103,149 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="walletdatatable" data-order='[[ 0, "desc" ]]'
+                                            class="table table-bordered dt-responsive nowrap w-100">
+                                            <thead style="background: #CAF1DE">
+                                                <tr>
+
+                                                    <th>Date</th>
+                                                    <th>Customer</th>
+                                                    <th>Amount</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="today_data">
+                                                @foreach ($datas as $keydata => $outputs)
+                                                    <tr>
+
+                                                        <td>{{ $outputs->date }}</td>
+                                                        <td>{{ $outputs->customer->name }}</td>
+                                                        <td>₹ {{ $outputs->amount }}</td>
+
+                                                        @if ($outputs->status == '1')
+                                                            <td style="color: white; background-color:green;">PAID</td>
+                                                        @else
+                                                            <td style="color: white; background-color:red;">PENDING</td>
+                                                        @endif
+
+                                                        <td>
+                                                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                                                @if ($outputs->status == '1')
+                                                                    <li>
+                                                                        <p>---</p>
+                                                                    </li>
+                                                                @else
+                                                                    <li>
+                                                                        <a href="#jobDelete{{ $outputs->id }}"
+                                                                            data-bs-toggle="modal"
+                                                                            class="btn btn-sm btn-soft-danger"><i
+                                                                                class="mdi mdi-delete-outline"></i>
+                                                                            Mark as paid</a>
+                                                                    </li>
+                                                                @endif
+                                                            </ul>
+                                                        </td>
+
+                                                    </tr>
+                                                    <div class="modal fade" id="jobDelete{{ $outputs->id }}" tabindex="-1"
+                                                        aria-labelledby="jobDeleteLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body px-4 py-5 text-center">
+                                                                    <div class="avatar-sm mb-4 mx-auto">
+                                                                        <div
+                                                                            class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
+                                                                            <i class="mdi mdi-trash-can-outline"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="text-muted font-size-16 mb-4">Please confirm
+                                                                        he or she paid the amount today</p>
+
+                                                                    <div class="hstack gap-2 justify-content-center mb-0">
+                                                                        <form autocomplete="off" method="POST"
+                                                                            action="{{ route('wallet.paid', ['id' => $outputs->id]) }}">
+                                                                            @method('PUT')
+                                                                            @csrf
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger">Yes, Paid</button>
+                                                                        </form>
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">No, Get Back</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-5" style="margin-left:15px;">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form autocomplete="off" method="POST" action="{{ route('wallet.store') }}">
+                                            @csrf
+                                            <div class="modal-body">
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-12">
+                                                        <input type="date" class="form-control" name="date"
+                                                            placeholder="Enter Your " value="{{ $today }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-12">
+                                                        <select class="form-control js-example-basic-single customer_id"
+                                                            name="customer_id" id="customer_id" required>
+                                                            <option value="" selected class="text-muted">
+                                                                Select Customer</option>
+                                                            @foreach ($customer as $customers)
+                                                                <option value="{{ $customers->id }}">
+                                                                    {{ $customers->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" name="amount"
+                                                            placeholder="Enter Your Amount " required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-9 col-md-2" style="display: flex;">
+                                                        <div
+                                                            style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px; display:flex;">
+                                                            <input type="radio" name="status" value="1"
+                                                                id="walletpaid"
+                                                                style="margin-left: 5px; margin-top:10px;">
+                                                            <label
+                                                                style="margin-left: 10px; margin-top: 10px; margin-right: 15px;"
+                                                                for="walletpaid">PAID</label>
+                                                        </div>
+                                                        <div
+                                                            style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px; display:flex;">
+                                                            <input type="radio" name="status" value="0"
+                                                                id="walletPending" checked
+                                                                style="margin-left: 5px; margin-top:10px;">
+                                                            <label
+                                                                style="margin-left: 10px; margin-top: 10px; margin-right: 15px;"
+                                                                for="walletPending">PENDING</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-success">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table id="walletdatatables" data-order='[[ 0, "desc" ]]'
                                             class="table table-bordered dt-responsive nowrap w-100">
                                             <thead style="background: #CAF1DE">
                                                 <tr>
@@ -188,68 +330,6 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-3" style="margin-left:15px;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <form autocomplete="off" method="POST" action="{{ route('wallet.store') }}">
-                                            @csrf
-                                            <div class="modal-body">
-                                                <div class="row mb-2">
-                                                    <div class="col-sm-12">
-                                                        <input type="date" class="form-control" name="date"
-                                                            placeholder="Enter Your " value="{{ $today }}" required>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-sm-12">
-                                                        <select class="form-control js-example-basic-single customer_id"
-                                                            name="customer_id" id="customer_id" required>
-                                                            <option value="" selected class="text-muted">
-                                                                Select Customer</option>
-                                                            @foreach ($customer as $customers)
-                                                                <option value="{{ $customers->id }}">
-                                                                    {{ $customers->name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-sm-12">
-                                                        <input type="text" class="form-control" name="amount"
-                                                            placeholder="Enter Your Amount " required>
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-9 col-md-2" style="display: flex;">
-                                                        <div
-                                                            style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px; display:flex;">
-                                                            <input type="radio" name="status" value="1"
-                                                                id="walletpaid"
-                                                                style="margin-left: 5px; margin-top:10px;">
-                                                            <label
-                                                                style="margin-left: 10px; margin-top: 10px; margin-right: 15px;"
-                                                                for="walletpaid">PAID</label>
-                                                        </div>
-                                                        <div
-                                                            style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px; display:flex;">
-                                                            <input type="radio" name="status" value="0"
-                                                                id="walletPending" checked
-                                                                style="margin-left: 5px; margin-top:10px;">
-                                                            <label
-                                                                style="margin-left: 10px; margin-top: 10px; margin-right: 15px;"
-                                                                for="walletPending">PENDING</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn btn-success">Save</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
 
                     </div>
@@ -262,6 +342,15 @@
             <script>
                 $(document).ready(function() {
                     $('#walletdatatable').DataTable({
+                        pageLength: 12,
+                        lengthMenu: [
+                            [6, 12, 18, 24],
+                            [6, 12, 18, 24]
+                        ]
+                    });
+                });
+                $(document).ready(function() {
+                    $('#walletdatatables').DataTable({
                         pageLength: 12,
                         lengthMenu: [
                             [6, 12, 18, 24],
