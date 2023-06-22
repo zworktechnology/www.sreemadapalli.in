@@ -16,9 +16,13 @@ class WalletController extends Controller
         $data = Wallet::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get()->all();
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
+        $wallet_paid = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 1)->where('paid_date', '=', $today)->sum('amount');
+        $wallet_pending = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 0)->where('date', '=', $today)->sum('amount');
+
+
         // $notificationcount = Output::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.wallet.index', compact('data', 'today', 'customer'));
+        return view('pages.backend.wallet.index', compact('data', 'today', 'customer', 'wallet_paid', 'wallet_pending'));
     }
 
     public function store(Request $request)

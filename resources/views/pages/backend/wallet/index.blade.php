@@ -84,6 +84,23 @@
                         <div class="col-md-12" style="display: flex">
 
                             <div class="col-12 col-md-9">
+                                <table class="table table-bordered dt-responsive nowrap w-100"
+                                    style="background-color: #CADAF1;">
+                                    <thead>
+                                        <tr style="font-size: 16px; font-weight: bold;">
+                                            <th><b>Today</b></th>
+                                            <th><b>Wallet</b></th>
+                                            <th style="color: red !important;"><span style="color: black">Paid:</span> ₹
+                                                {{ $wallet_paid }}</th>
+                                            <th style="color: red !important;"><span style="color: black">Pending:</span>
+                                                ₹ {{ $wallet_pending }}</th>
+                                            <th style="color: red !important;"><span style="color: black">total:</span>
+                                                ₹
+                                                {{ $wallet_paid + $wallet_pending }}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="walletdatatable" data-order='[[ 0, "desc" ]]'
@@ -135,24 +152,30 @@
                                                         </td>
 
                                                     </tr>
-                                                    <div class="modal fade" id="jobDelete{{ $outputs->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="jobDelete{{ $outputs->id }}" tabindex="-1"
+                                                        aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered modal-sm">
                                                             <div class="modal-content">
                                                                 <div class="modal-body px-4 py-5 text-center">
                                                                     <div class="avatar-sm mb-4 mx-auto">
-                                                                        <div class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
+                                                                        <div
+                                                                            class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
                                                                             <i class="mdi mdi-trash-can-outline"></i>
                                                                         </div>
                                                                     </div>
-                                                                    <p class="text-muted font-size-16 mb-4">Please confirm he or she paid the amount today</p>
+                                                                    <p class="text-muted font-size-16 mb-4">Please confirm
+                                                                        he or she paid the amount today</p>
 
                                                                     <div class="hstack gap-2 justify-content-center mb-0">
-                                                                        <form autocomplete="off" method="POST" action="{{ route('wallet.paid', ['id' => $outputs->id]) }}">
+                                                                        <form autocomplete="off" method="POST"
+                                                                            action="{{ route('wallet.paid', ['id' => $outputs->id]) }}">
                                                                             @method('PUT')
                                                                             @csrf
-                                                                            <button type="submit" class="btn btn-danger">Yes, Paid</button>
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger">Yes, Paid</button>
                                                                         </form>
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Get Back</button>
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">No, Get Back</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -201,7 +224,8 @@
                                                         <div
                                                             style="background-color: #f17d64; border-style: solid; border-width: 0.5px; border-color: lightgray; margin-right: 10px; display:flex;">
                                                             <input type="radio" name="status" value="1"
-                                                                id="walletpaid" style="margin-left: 5px; margin-top:10px;">
+                                                                id="walletpaid"
+                                                                style="margin-left: 5px; margin-top:10px;">
                                                             <label
                                                                 style="margin-left: 10px; margin-top: 10px; margin-right: 15px;"
                                                                 for="walletpaid">PAID</label>
