@@ -1,4 +1,4 @@
-@include('layouts.frontend.head')
+﻿@include('layouts.frontend.head')
 
 <!-- dynamic content -->
 <div id="sb-dynamic-content" class="sb-transition-fade">
@@ -26,7 +26,7 @@
                 <div class="col-lg-5">
                     <div class="sb-contact-form-frame">
                         <div class="sb-illustration-9">
-                            <img src="{{ asset('frontend_styles/img/illustrations/envelope-1.png') }}" alt="envelope" class="sb-envelope-1">
+                            {{-- <img src="{{ asset('frontend_styles/img/illustrations/envelope-1.png') }}" alt="envelope" class="sb-envelope-1"> --}}
                             <img src="{{ asset('frontend_styles/img/illustrations/envelope-2.png') }}" alt="envelope" class="sb-envelope-2">
                             <div class="sb-cirkle-1"></div>
                             <div class="sb-cirkle-2"></div>
