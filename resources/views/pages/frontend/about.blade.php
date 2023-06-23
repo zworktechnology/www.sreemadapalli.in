@@ -1,4 +1,4 @@
-@include('layouts.frontend.head')
+﻿@include('layouts.frontend.head')
 
 <!-- dynamic content -->
 <div id="sb-dynamic-content" class="sb-transition-fade">
@@ -108,11 +108,9 @@
                     <div class="sb-mb-90">
                         <span class="sb-suptitle sb-mb-15">Promo video</span>
                         <h2 class="sb-mb-30">Restaurant is like a theater.<br> Our task is to amaze you!</h2>
-                        <p class="sb-text sb-mb-30">Repellat, dolorem a. Qui ipsam quos, obcaecati mollitia consectetur
-                            ad vero minus neque sit architecto totam distineserunt pariatur adipisci rem aspernatur
-                            illum ex!</p>
+                        <p class="sb-text sb-mb-30">Experience unparalleled luxury and breathtaking views in the heart of the city. Unwind and create unforgettable memories at our premier hotel destination</p>
                         <!-- button -->
-                        <a data-fancybox="" data-no-swup href="https://www.youtube.com/watch?v=F3zw1Gvn4Mk"
+                        <a data-fancybox="" data-no-swup href="https://www.youtube.com/watch?v=TBadsZLZXg4"
                             class="sb-btn">
                             <span class="sb-icon">
                                 <img src="{{ asset('frontend_styles/img/ui/icons/play.svg') }}" alt="icon">
@@ -126,7 +124,7 @@
                     <div class="sb-illustration-7 sb-mb-90">
                         <div class="sb-interior-frame">
                             <img src="{{ asset('frontend_styles/image/about/img2.png') }}" alt="interior" class="sb-interior">
-                            <a data-fancybox="" data-no-swup href="https://www.youtube.com/watch?v=F3zw1Gvn4Mk"
+                            <a data-fancybox="" data-no-swup href="https://www.youtube.com/watch?v=TBadsZLZXg4"
                                 class="sb-video-play"><i class="fas fa-play"></i></a>
                         </div>
                         <div class="sb-cirkle-1"></div>
@@ -170,16 +168,12 @@
                                     <li><i class="fas fa-star"></i></li>
                                 </ul>
                             </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-                                fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem
-                                eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem
-                                accusamus! Quibusdam labore, aliquam dolor harum!</p>
+                            <p class="sb-text sb-mb-15">After having darshan at Srirangam, the family stepped into Madapalli Hotel located close to the temple, for Dinner. We had Dosa, Poori and Potato sabjii, and then  Hot milk. Dosa was served with 3 different Chutneys and Sambhar. Dosa and Sambhaar was awesome. Poori was piping hot. Milk was thick and tasty. All the items we ate costed a nominal amount of Rs 240. Food was value for Money. Service was prompt and good. But the hygiene factor needs attention. The hotel offers combos that are pocket friendly to customers.</p>
                             <div class="sb-author-frame">
                                 <div class="sb-avatar-frame">
                                     <img src="{{ asset('frontend_styles/img/faces/1.jpg') }}" alt="Guest">
                                 </div>
-                                <h4>Emma Newman</h4>
+                                <h4>Janardhan Pala Bushanam</h4>
                             </div>
                         </div>
                     </div>
@@ -195,16 +189,13 @@
                                     <li><i class="fas fa-star"></i></li>
                                 </ul>
                             </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-                                fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem
-                                eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem
-                                accusamus! Quibusdam labore, aliquam dolor harum!</p>
+                            <p class="sb-text sb-mb-15">They will never take the order and just make you sit for a long time. You will get frustrated and leave after certain point of time. The lady staffs will never consider you as a customer and look only for tips.  One of the worst hotel experience I ever faced.
+                                Better choose some other hotel if you need a peaceful food to take.</p>
                             <div class="sb-author-frame">
                                 <div class="sb-avatar-frame">
                                     <img src="{{ asset('frontend_styles/img/faces/2.jpg') }}" alt="Guest">
                                 </div>
-                                <h4>Paul Trueman</h4>
+                                <h4>Prakash Periyasamy</h4>
                             </div>
                         </div>
                     </div>
@@ -220,16 +211,12 @@
                                     <li class="sb-empty"><i class="fas fa-star"></i></li>
                                 </ul>
                             </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-                                fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem
-                                eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem
-                                accusamus! Quibusdam labore, aliquam dolor harum!</p>
+                            <p class="sb-text sb-mb-15">Vegitarian Restaurant at Srirengam , Ambiance is good, good combination of North Indian, South Indian, and Chinese cuisine. Neat and clean place to have food. Near to Srirengam Temple South entrance.</p>
                             <div class="sb-author-frame">
                                 <div class="sb-avatar-frame">
                                     <img src="{{ asset('frontend_styles/img/faces/3.jpg') }}" alt="Guest">
                                 </div>
-                                <h4>Viktoria Freeman</h4>
+                                <h4>Capt Navik</h4>
                             </div>
                         </div>
                     </div>
@@ -245,16 +232,12 @@
                                     <li><i class="fas fa-star"></i></li>
                                 </ul>
                             </div>
-                            <p class="sb-text sb-mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-                                fugiat totam nobis quas unde excepturi inventore possimus laudantium provident, rem
-                                eligendi velit. Aut molestias, ipsa itaque laborum, natus
-                                tempora, ut soluta animi ducimus dignissimos deserunt doloribus in reprehenderit rem
-                                accusamus! Quibusdam labore, aliquam dolor harum!</p>
+                            <p class="sb-text sb-mb-15">Excellent food at very nominal price. Food is authentic South indian , prepared in healthy manner and best for all specially kids and elderly people while travelling. We got it delivered at our hotel and service was prompt. Thank you Sree Madapalli!</p>
                             <div class="sb-author-frame">
                                 <div class="sb-avatar-frame">
                                     <img src="{{ asset('frontend_styles/img/faces/4.jpg') }}" alt="Guest">
                                 </div>
-                                <h4>Audrey Oldman</h4>
+                                <h4>Bhawani Rajendran</h4>
                             </div>
                         </div>
                     </div>
