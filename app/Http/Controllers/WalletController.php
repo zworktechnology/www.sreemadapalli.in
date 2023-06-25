@@ -14,10 +14,10 @@ class WalletController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $data = Wallet::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get()->all();
-        $datas = Wallet::where('soft_delete', '!=', 1)->where('paid_date', '=', $today)->get()->all();
+        $datas = Wallet::where('soft_delete', '!=', 1)->where('date', '=', $today)->get()->all();
         $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
-        $wallet_paid = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 1)->where('paid_date', '=', $today)->sum('amount');
+        $wallet_paid = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 1)->where('date', '=', $today)->sum('amount');
         $wallet_pending = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 0)->where('date', '=', $today)->sum('amount');
 
 
@@ -49,6 +49,19 @@ class WalletController extends Controller
         $data = Wallet::findOrFail($id);
 
         $data->status = 1;
+        $data->paid_date = $today;
+
+        $data->update();
+
+        return redirect()->back()->with('update', 'Status updated !');
+    }
+
+    public function pending($id)
+    {
+        $today = Carbon::now()->format('Y-m-d');
+        $data = Wallet::findOrFail($id);
+
+        $data->status = 0;
         $data->paid_date = $today;
 
         $data->update();
