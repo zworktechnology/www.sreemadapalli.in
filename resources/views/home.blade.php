@@ -98,19 +98,19 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">G Pay</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Wallet</h5>
                                                 </td>
-                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $g_pay }}</td>
+                                                <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $wallet_total_cost }}</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">G-Pay Business</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Business Wallet</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $g_pay_business }}</td>
                                             </tr>
-                                            <tr>
+                                            <tr hidden>
                                                 <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Phone Pe</h5>
+                                                    <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">phone pay</h5>
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $phone_pay }}</td>
                                             </tr>
@@ -120,7 +120,7 @@
                                                 </td>
                                                 <td style="font-weight: bold;font-size: 16px !important;">₹ {{ $card }}</td>
                                             </tr>
-                                            <tr>
+                                            <tr hidden>
                                                 <td>
                                                     <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold;font-size: 16px !important;">Paytm</h5>
                                                 </td>

@@ -10,6 +10,7 @@ use App\Models\Dinner;
 use App\Models\Expence;
 use App\Models\Lunch;
 use App\Models\Outdoor;
+use App\Models\Wallet;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -58,10 +59,12 @@ class DashboardController extends Controller
 
         $open_sales = $opening + $sales_amount;
         $open_sales_exp = (($opening + $sales_amount) - $expense);
+        
+        $wallet_total_cost = Wallet::where('soft_delete', '!=', 1)->where('date', '=', $today)->sum('amount');
 
         $totaldeterminationdate = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
         $total_pending = $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending;
-        $total_card_one = $totaldeterminationdate + $g_pay + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
+        $total_card_one = $totaldeterminationdate + $wallet_total_cost + $phone_pay + $card + $breakfast_data_ps_pending + $lunch_data_ps_pending + $dinner_data_ps_pending + $g_pay_business + $paytm + $payment + $other_case;
 
         if ($open_sales_exp < 0) {
             $over_all = $total_card_one + $open_sales_exp;
@@ -77,13 +80,16 @@ class DashboardController extends Controller
         $total_payment = Payment::where('soft_delete', '!=', 1)->sum('amount');
         $overall_total_amount_of_pending = ($overall_breakfast_pending + $overall_lunch_pending + $overall_dinner_pending) - $total_payment;
 
+
+        
+
         return view('home', compact('today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
         'g_pay', 'g_pay_business', 'phone_pay', 'card', 'other_case', 'sales_amount', 'determination',
         'total_2000', 'total_500', 'total_200', 'total_100', 'total_50', 'total_20', 'total_10',
         'total_5', 'total_2', 'total_1', 'opendate', 'closedate', 'determinationdate', 'paytm',
         'open_sales', 'open_sales_exp', 'totaldeterminationdate', 'total_pending', 'total_card_one',
-        'over_all', 'openaccount' , 'notificationcount', 'overall_total_amount_of_pending'));
+        'over_all', 'openaccount' , 'notificationcount', 'overall_total_amount_of_pending', 'wallet_total_cost'));
     }
 
 
