@@ -13,8 +13,8 @@
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0 font-size-18">Customer</h4>
                             <div class="page-title-right">
-                                <a href="{{ route('customer.all') }}">
-                                    <button type="button" class="btn btn-success w-md">SHOW ALL CUSTOMER</button>
+                                <a href="{{ route('customer.index') }}">
+                                    <button type="button" class="btn btn-success w-md">SHOW PENDING CUSTOMER</button>
                                 </a>
                                 <div hidden>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
@@ -59,7 +59,7 @@
                     <div class="col-12 col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <table id="datatables" class="table table-bordered dt-responsive  nowrap w-100">
+                                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                     <thead style="background: #CAF1DE">
                                         <tr>
                                             <th>Name</th>
@@ -70,7 +70,6 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($index_amount_arr as $keydata => $datas)
-                                        @if ($datas['pending'] > 0)
                                         <tr>
                                             <td>{{ $datas['name'] }}</td>
                                             <td>{{ $datas['contact_number'] }}</td>
@@ -95,8 +94,6 @@
                                                 </ul>
                                             </td>
                                         </tr>
-                                        @else
-                                        @endif
                                         <div class="modal fade" id="jobDelete{{ $datas['id'] }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-sm">
                                                 <div class="modal-content">

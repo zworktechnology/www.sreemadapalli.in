@@ -74,6 +74,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/customer', [CustomerController::class, 'index'])->name('customer.index');
+        // INDEX
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/all', [CustomerController::class, 'all'])->name('customer.all');
         // FILTER
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/customer/getdatewiseCustomerOrders', [CustomerController::class, 'getdatewiseCustomerOrders'])->name('customer.getdatewiseCustomerOrders');
         // CREATE
@@ -305,7 +307,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/wallet/store', [WalletController::class, 'store'])->name('wallet.store');
         // DELETE
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/paid/{id}', [WalletController::class, 'paid'])->name('wallet.paid');
-        
+
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/pending/{id}', [WalletController::class, 'pending'])->name('wallet.pending');
     });
 
