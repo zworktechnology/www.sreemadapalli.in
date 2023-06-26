@@ -37,14 +37,14 @@
                                                 <input type="number" class="form-control" name="case_on_hand" placeholder="Enter Your " required value="{{ $data->case_on_hand }}">
                                             </div>
                                         </div>
-                                        <div class="row mb-4">
+                                        <div class="row mb-4" hidden>
                                             <label for="g_pay" class="col-sm-3 col-form-label">
                                                 G Pay <span style="color: red;">*</span></label>
                                             <div class="col-sm-9">
                                                 <input type="number" class="form-control" name="g_pay" placeholder="Enter Your " required value={{ $data->g_pay }}>
                                             </div>
                                         </div>
-                                        <div class="row mb-4">
+                                        <div class="row mb-4" hidden>
                                             <label for="g_pay_business" class="col-sm-3 col-form-label">
                                                 G Pay Business<span style="color: red;">*</span></label>
                                             <div class="col-sm-9">

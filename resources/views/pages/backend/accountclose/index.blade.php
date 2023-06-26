@@ -74,7 +74,7 @@
                                             <th>Sl. No</th>
                                             <th>Paytm</th>
                                             <th>G Pay</th>
-                                            <th>G Pay Business</th>
+                                            <th hidden>G Pay Business</th>
                                             <th>Phone Pe</th>
                                             <th>Card</th>
                                             <th>Other Cash</th>
@@ -88,7 +88,7 @@
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->case_on_hand }}</td>
                                             <td>{{ $datas->g_pay }}</td>
-                                            <td>{{ $datas->g_pay_business }}</td>
+                                            <td hidden>{{ $datas->g_pay_business }}</td>
                                             <td>{{ $datas->phone_pay }}</td>
                                             <td>{{ $datas->card }}</td>
                                             <td>{{ $datas->other_case }}</td>
