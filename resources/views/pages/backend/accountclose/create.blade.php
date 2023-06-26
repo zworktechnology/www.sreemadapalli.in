@@ -15,52 +15,53 @@
                     </div>
                 </div>
                 <div class="row mb-4" hidden>
-                    <label for="case_on_hand" class="col-sm-3 col-form-label">
-                        Paytm <span style="color: red;">*</span></label>
-                    <div class="col-sm-9">
-                        <input type="number" class="form-control" name="case_on_hand" placeholder="Enter Your " required value="0">
-                    </div>
-                </div>
-                <div class="row mb-4" hidden>
                     <label for="g_pay" class="col-sm-3 col-form-label">
                         G Pay <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
                         <input type="number" class="form-control" name="g_pay" placeholder="Enter Your " required value="{{ $wallet_total_cost }}">
                     </div>
                 </div>
-                <div class="row mb-4">
+                <div class="row mb-4" hidden>
                     <label for="g_pay_business" class="col-sm-3 col-form-label">
                         Business Wallet<span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="g_pay_business" placeholder="Enter Your " required>
+                        <input type="number" class="form-control" name="g_pay_business" placeholder="Enter Your " required value="0">
                     </div>
                 </div>
-                <div class="row mb-4" hidden>
+                <div class="row mb-4">
                     <label for="phone_pay" class="col-sm-3 col-form-label">
                         Phone Pe <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="phone_pay" placeholder="Enter Your " required value="0">
+                        <input type="number" class="form-control" name="phone_pay" placeholder="Phone Pay " required>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <label for="case_on_hand" class="col-sm-3 col-form-label">
+                        Paytm <span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" name="case_on_hand" placeholder="Paytm" required>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="card" class="col-sm-3 col-form-label">
                         Card <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="card" placeholder="Enter Your " required>
+                        <input type="number" class="form-control" name="card" placeholder="Card" required>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="other_case" class="col-sm-3 col-form-label">
                         Other Cash <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="other_case" placeholder="Enter Your " required>
+                        <input type="number" class="form-control" name="other_case" placeholder="Other Case" required>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="sales_amount" class="col-sm-3 col-form-label">
                         Sales <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="sales_amount" placeholder="Enter Your " required>
+                        <input type="number" class="form-control" name="sales_amount" placeholder="Sales" required>
                     </div>
                 </div>
             </div>
