@@ -15,7 +15,9 @@ class AccountCloseController extends Controller
         $data = AccountClose::  where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.accountclose.index', compact('notificationcount', 'data', 'today'));
+        $wallet_total_cost = Wallet::where('soft_delete', '!=', 1)->where('date', '=', $today)->sum('amount');
+
+        return view('pages.backend.accountclose.index', compact('notificationcount', 'data', 'today', 'wallet_total_cost'));
     }
 
     public function dailyfilter(Request $request)
