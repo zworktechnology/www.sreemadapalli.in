@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AccountClose;
 use Illuminate\Http\Request;
 use App\Models\Outdoor;
+use App\Models\Wallet;
 use Carbon\Carbon;
 
 class AccountCloseController extends Controller
