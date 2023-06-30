@@ -9,6 +9,7 @@ use App\Models\Dinner;
 use App\Models\Lunch;
 use App\Models\Payment;
 use App\Models\Outdoor;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use PDF;
@@ -778,6 +779,19 @@ class SalesController extends Controller
 
             $data->save();
 
+            if ($request->get('payment_method') == 'G-Pay') {
+                
+                $wdata = new Wallet();
+
+                $wdata->date = $request->get('date');
+                $wdata->amount = $request->get('payment_amount');
+                $wdata->status = '0';
+                $wdata->customer_id = $request->get('customer_id');
+                $wdata->paid_date = $request->get('date');
+
+                $wdata->save();
+            }
+
         } elseif($request->get('session') == 'Lunch') {
 
 
@@ -799,6 +813,19 @@ class SalesController extends Controller
 
             $data->save();
 
+            if ($request->get('payment_method') == 'G-Pay') {
+                
+                $wdata = new Wallet();
+
+                $wdata->date = $request->get('date');
+                $wdata->amount = $request->get('payment_amount');
+                $wdata->status = '0';
+                $wdata->customer_id = $request->get('customer_id');
+                $wdata->paid_date = $request->get('date');
+
+                $wdata->save();
+            }
+
         } else {
 
             $title = 'Dinner';
@@ -818,6 +845,19 @@ class SalesController extends Controller
             $data->payment_status = $request->get('payment_status');
 
             $data->save();
+
+            if ($request->get('payment_method') == 'G-Pay') {
+                
+                $wdata = new Wallet();
+
+                $wdata->date = $request->get('date');
+                $wdata->amount = $request->get('payment_amount');
+                $wdata->status = '0';
+                $wdata->customer_id = $request->get('customer_id');
+                $wdata->paid_date = $request->get('date');
+
+                $wdata->save();
+            }
 
         }
 

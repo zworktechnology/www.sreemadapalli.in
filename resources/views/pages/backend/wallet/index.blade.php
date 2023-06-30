@@ -147,7 +147,14 @@
                                                                             Mark as paid</a>
                                                                     </li>
                                                                 @endif
+                                                                <li>
+                                                                    <a href="{{ route('wallet.edit', ['id' => $outputs->id]) }}" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i> Edit</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#jobSoftDelete{{ $outputs->id }}" data-bs-toggle="modal" class="btn btn-sm btn-soft-danger"><i class="mdi mdi-delete-outline"></i> Delete</a>
+                                                                </li>
                                                             </ul>
+                                                            
                                                         </td>
 
                                                     </tr>
@@ -204,6 +211,29 @@
                                                                         </form>
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-bs-dismiss="modal">No, Get Back</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal fade" id="jobSoftDelete{{ $outputs->id }}" tabindex="-1" aria-labelledby="jobDeleteLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body px-4 py-5 text-center">
+                                                                    <div class="avatar-sm mb-4 mx-auto">
+                                                                        <div class="avatar-title bg-primary text-primary bg-opacity-10 font-size-20 rounded-3">
+                                                                            <i class="mdi mdi-trash-can-outline"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="text-muted font-size-16 mb-4">Please confirm that you wish to remove the wallet.</p>
+            
+                                                                    <div class="hstack gap-2 justify-content-center mb-0">
+                                                                        <form autocomplete="off" method="POST" action="{{ route('wallet.delete', ['id' => $outputs->id]) }}">
+                                                                            @method('PUT')
+                                                                            @csrf
+                                                                            <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                                                        </form>
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Get Back</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

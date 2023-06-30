@@ -309,6 +309,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/paid/{id}', [WalletController::class, 'paid'])->name('wallet.paid');
 
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/pending/{id}', [WalletController::class, 'pending'])->name('wallet.pending');
+        // EDIT
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/wallet/edit/{id}', [WalletController::class, 'edit'])->name('wallet.edit');
+        // UPDATE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/update/{id}', [WalletController::class, 'update'])->name('wallet.update');
+        // DELETE
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/delete/{id}', [WalletController::class, 'delete'])->name('wallet.delete');
     });
 
 });

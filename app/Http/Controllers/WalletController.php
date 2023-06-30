@@ -68,4 +68,36 @@ class WalletController extends Controller
 
         return redirect()->back()->with('update', 'Status updated !');
     }
+
+    public function edit($id)
+    {
+        $data = Wallet::findOrFail($id);
+        $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+
+        return view('pages.backend.wallet.edit', compact('data', 'customer'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = Wallet::findOrFail($id);
+
+        $data->date = $request->get('date');
+        $data->amount = $request->get('amount');
+        $data->customer_id = $request->get('customer_id');
+
+        $data->update();
+
+        return redirect()->route('wallet.index')->with('update', 'Wallet detail successfully changed !');
+    }
+
+    public function delete($id)
+    {
+        $data = Wallet::findOrFail($id);
+
+        $data->soft_delete = 1;
+
+        $data->update();
+
+        return redirect()->route('wallet.index')->with('soft_destroy', 'Successfully deleted the wallet !');
+    }
 }
