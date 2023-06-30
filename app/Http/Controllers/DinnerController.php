@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Deliveryboy;
 use App\Models\Dinner;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -35,6 +36,19 @@ class DinnerController extends Controller
         $data->payment_status = $request->get('payment_status');
 
         $data->update();
+
+        if ($request->get('payment_method') == 'G-Pay') {
+                
+            $wdata = new Wallet();
+
+            $wdata->date = $request->get('date');
+            $wdata->amount = $request->get('payment_amount');
+            $wdata->status = '0';
+            $wdata->customer_id = $request->get('customer_id');
+            $wdata->paid_date = $request->get('date');
+
+            $wdata->save();
+        }
 
         return redirect()->route('sales.index')->with('update', 'Dinner record detail successfully changed !');
     }
