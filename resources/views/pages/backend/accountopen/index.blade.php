@@ -25,7 +25,7 @@
                                                 Search</button>
                                         </div>
                                     </form>
-                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
+                                    {{-- <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button> --}}
 
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         @include('pages.backend.accountopen.create')
@@ -85,6 +85,7 @@
                                     <thead style="background: #F4EA8F">
                                         <tr>
                                             <th>Sl. No</th>
+                                            <th>Name</th>
                                             <th>Amount</th>
                                             <th>Note</th>
                                             <th>Action</th>
@@ -94,6 +95,7 @@
                                         @foreach ($data as $keydata => $datas)
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
+                                            <td>{{ $datas->employee->name }}</td>
                                             <td>{{ $datas->amount }}</td>
                                             <td>{{ $datas->note }}</td>
                                             <td>

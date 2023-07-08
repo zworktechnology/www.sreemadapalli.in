@@ -39,7 +39,7 @@
                                             <input type="number" class="form-control" name="total_2000" id="total_2000" placeholder="Enter Your " required onchange="totaldetermination()" value="{{ $data->total_2000 }}">
                                         </div>
                                     </div>
-                                    <div class="row mb-4" hidden>
+                                    <div class="row mb-4">
                                         <label for="500" class="col-sm-4 col-form-label">
                                             500 <span style="color: red;">*</span></label>
                                         <div class="col-sm-4">
@@ -49,7 +49,7 @@
                                             <input type="number" class="form-control" name="total_500" id="total_500" placeholder="Enter Your " required onchange="totaldetermination()" value="{{ $data->total_500 }}">
                                         </div>
                                     </div>
-                                    <div class="row mb-4" hidden>
+                                    <div class="row mb-4">
                                         <label for="200" class="col-sm-4 col-form-label">
                                             200 <span style="color: red;">*</span></label>
                                         <div class="col-sm-4">

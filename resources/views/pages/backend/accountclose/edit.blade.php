@@ -44,7 +44,7 @@
                                                 <input type="number" class="form-control" name="g_pay" placeholder="Enter Your " required value={{ $data->g_pay }}>
                                             </div>
                                         </div>
-                                        <div class="row mb-4" hidden>
+                                        <div class="row mb-4">
                                             <label for="g_pay_business" class="col-sm-3 col-form-label">
                                                 G Pay Business<span style="color: red;">*</span></label>
                                             <div class="col-sm-9">

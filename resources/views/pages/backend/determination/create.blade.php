@@ -24,24 +24,24 @@
                         <input type="number" class="form-control" name="total_2000" id="total_2000" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
                     </div>
                 </div>
-                <div class="row mb-4" hidden>
+                <div class="row mb-4">
                     <label for="500" class="col-sm-4 col-form-label">
                         ₹ 500 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="count_500" id="count_500" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
+                        <input type="number" class="form-control" name="count_500" id="count_500" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="total_500" id="total_500" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
+                        <input type="number" class="form-control" name="total_500" id="total_500" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
                 </div>
-                <div class="row mb-4" hidden>
+                <div class="row mb-4">
                     <label for="200" class="col-sm-4 col-form-label">
                         ₹ 200 <span style="color: red;">*</span></label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="count_200" id="count_200" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
+                        <input type="number" class="form-control" name="count_200" id="count_200" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" name="total_200" id="total_200" placeholder="Enter Your " required onchange="totaldetermination()" value="0" hidden>
+                        <input type="number" class="form-control" name="total_200" id="total_200" placeholder="Enter Your " required onchange="totaldetermination()">
                     </div>
                 </div>
                 <div class="row mb-4">

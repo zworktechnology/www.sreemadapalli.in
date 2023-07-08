@@ -12,7 +12,13 @@ class AccountOpen extends Model
     protected $fillable = [
         'date',
         'amount',
+        'emp_id',
         'note',
         'soft_delete'
     ];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class, 'emp_id');
+    }
 }

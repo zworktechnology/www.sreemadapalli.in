@@ -11,6 +11,7 @@ use App\Models\Expence;
 use App\Models\Lunch;
 use App\Models\Outdoor;
 use App\Models\Wallet;
+use App\Models\Employee;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -20,6 +21,7 @@ class DashboardController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
+        $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         $breakfast_data_ps_pending = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $lunch_data_ps_pending = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
@@ -59,7 +61,7 @@ class DashboardController extends Controller
 
         $open_sales = $opening + $sales_amount;
         $open_sales_exp = (($opening + $sales_amount) - $expense);
-        
+
         $wallet_total_cost = Wallet::where('soft_delete', '!=', 1)->where('date', '=', $today)->sum('amount');
 
         $totaldeterminationdate = $total_2000 + $total_500 + $total_200 + $total_100 + $total_50 + $total_20 + $total_10 + $total_5 + $total_2 + $total_1;
@@ -81,9 +83,9 @@ class DashboardController extends Controller
         $overall_total_amount_of_pending = ($overall_breakfast_pending + $overall_lunch_pending + $overall_dinner_pending) - $total_payment;
 
 
-        
 
-        return view('home', compact('today', 'breakfast_data_ps_pending',
+
+        return view('home', compact('employee', 'today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
         'g_pay', 'g_pay_business', 'phone_pay', 'card', 'other_case', 'sales_amount', 'determination',
         'total_2000', 'total_500', 'total_200', 'total_100', 'total_50', 'total_20', 'total_10',
@@ -96,6 +98,8 @@ class DashboardController extends Controller
     public function filterindex(Request $request)
     {
         $today = $request->get('date');
+
+        $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
         $breakfast_data_ps_pending = BreakFast::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
         $lunch_data_ps_pending = Lunch::where('date', '=', $today)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
@@ -148,7 +152,7 @@ class DashboardController extends Controller
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
-        return view('homefilter', compact('today', 'breakfast_data_ps_pending',
+        return view('homefilter', compact('employee', 'today', 'breakfast_data_ps_pending',
         'lunch_data_ps_pending', 'dinner_data_ps_pending', 'opening', 'expense', 'payment',
         'g_pay', 'g_pay_business', 'phone_pay', 'card', 'other_case', 'sales_amount', 'determination',
         'total_2000', 'total_500', 'total_200', 'total_100', 'total_50', 'total_20', 'total_10',

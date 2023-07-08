@@ -86,8 +86,8 @@
                                     <thead style="background: #F4EA8F">
                                         <tr>
                                             <th hidden>2000</th>
-                                            <th hidden>500</th>
-                                            <th hidden>200</th>
+                                            <th>500</th>
+                                            <th>200</th>
                                             <th>100</th>
                                             <th>50</th>
                                             <th>20</th>
@@ -103,8 +103,8 @@
                                         @foreach ($data as $keydata => $datas)
                                         <tr>
                                             <td hidden>{{ $datas->count_2000 }} = {{ $datas->total_2000 }}</td>
-                                            <td hidden>{{ $datas->count_500 }} = {{ $datas->total_500 }}</td>
-                                            <td hidden>{{ $datas->count_200 }} = {{ $datas->total_200 }}</td>
+                                            <td>{{ $datas->count_500 }} = {{ $datas->total_500 }}</td>
+                                            <td>{{ $datas->count_200 }} = {{ $datas->total_200 }}</td>
                                             <td>{{ $datas->count_100 }} = {{ $datas->total_100 }}</td>
                                             <td>{{ $datas->count_50 }} = {{ $datas->total_50 }}</td>
                                             <td>{{ $datas->count_20 }} = {{ $datas->total_20 }}</td>

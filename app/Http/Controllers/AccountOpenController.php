@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AccountOpen;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Models\Outdoor;
 use Carbon\Carbon;
@@ -15,8 +16,9 @@ class AccountOpenController extends Controller
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $data = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $today)->get();
         $total = AccountOpen::where('soft_delete', '!=', 1)->where('date', '=', $today)->sum('amount');
+        $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
-        return view('pages.backend.accountopen.index', compact('notificationcount', 'data', 'today', 'total'));
+        return view('pages.backend.accountopen.index', compact('notificationcount', 'data', 'today', 'total', 'employee'));
     }
 
     public function dailyfilter(Request $request)
@@ -36,6 +38,7 @@ class AccountOpenController extends Controller
 
         $data->date = $request->get('date');
         $data->amount = $request->get('amount');
+        $data->emp_id = $request->get('emp_id');
         $data->note = $request->get('note');
 
         $data->save();
@@ -46,8 +49,9 @@ class AccountOpenController extends Controller
     public function edit($id)
     {
         $data = AccountOpen::findOrFail($id);
+        $employee = Employee::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
 
-        return view('pages.backend.accountopen.edit', compact('data'));
+        return view('pages.backend.accountopen.edit', compact('data', 'employee'));
     }
 
     public function update(Request $request, $id)
@@ -55,6 +59,7 @@ class AccountOpenController extends Controller
         $data = AccountOpen::findOrFail($id);
 
         $data->date = $request->get('date');
+        $data->emp_id = $request->get('emp_id');
         $data->amount = $request->get('amount');
         $data->note = $request->get('note');
 

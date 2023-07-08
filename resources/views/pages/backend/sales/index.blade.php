@@ -477,9 +477,9 @@
                                                     <th>Bill No</th>
                                                     <th>Customer</th>
                                                     <th>Amount</th>
-                                                    <th>Session</th>
-                                                    <th>Delivery By</th>
                                                     <th>Payment Via</th>
+                                                    <th>Delivery By</th>
+                                                    <th>Session</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -490,8 +490,6 @@
                                                         <td>{{ $outputs['invoice_no'] }}</td>
                                                         <td>{{ $outputs['customer'] }}</td>
                                                         <td>₹ {{ $outputs['bill_amount'] }}</td>
-                                                        <td>{{ $outputs['title'] }}</td>
-                                                        <td>{{ $outputs['devlivery_by'] }}</td>
 
                                                         @if ($outputs['payment_method'] == 'Cash')
                                                             <td style="color: white; background-color: #589b31;"><img
@@ -509,6 +507,10 @@
                                                                     style="width: 15px; height: 15px;" />
                                                                 {{ $outputs['payment_method'] }}</td>
                                                         @endif
+
+                                                        <td>{{ $outputs['devlivery_by'] }}</td>
+
+                                                        <td>{{ $outputs['title'] }}</td>
 
                                                         <td>
                                                             @if ($outputs['title'] == 'Break Fast')
@@ -611,7 +613,7 @@
                                 </div>
                             </div>
 
-                            
+
                         </div>
                         <div class="col-md-3">
                             <div class="col-12">

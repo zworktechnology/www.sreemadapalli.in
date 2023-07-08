@@ -22,4 +22,9 @@ class Employee extends Model
     {
         return $this->hasMany(Expence::class, 'employee_id');
     }
+
+    public function accountopen()
+    {
+        return $this->hasMany(AccountOpen::class, 'emp_id');
+    }
 }

@@ -21,11 +21,11 @@
                         <input type="number" class="form-control" name="g_pay" placeholder="Enter Your " required value="{{ $wallet_total_cost }}">
                     </div>
                 </div>
-                <div class="row mb-4" hidden>
+                <div class="row mb-4">
                     <label for="g_pay_business" class="col-sm-3 col-form-label">
-                        Business Wallet<span style="color: red;">*</span></label>
+                        GPAY Business<span style="color: red;">*</span></label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="g_pay_business" placeholder="Enter Your " required value="0">
+                        <input type="number" class="form-control" name="g_pay_business" placeholder="Enter Your " required >
                     </div>
                 </div>
                 <div class="row mb-4">

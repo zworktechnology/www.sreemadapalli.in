@@ -124,11 +124,10 @@
                                                         <td style="font-weight: bold;font-size: 16px !important;">₹
                                                             {{ $wallet_total_cost }}</td>
                                                     </tr>
-                                                    <tr hidden>
+                                                    <tr>
                                                         <td>
                                                             <h5 class="font-size-13 text-truncate mb-1"
-                                                                style="font-weight: bold;font-size: 16px !important;">Business
-                                                                Wallet</h5>
+                                                                style="font-weight: bold;font-size: 16px !important;">GPay Business</h5>
                                                         </td>
                                                         <td style="font-weight: bold;font-size: 16px !important;">₹
                                                             {{ $g_pay_business }}</td>

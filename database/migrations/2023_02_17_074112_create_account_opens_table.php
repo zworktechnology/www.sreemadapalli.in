@@ -21,6 +21,7 @@ return new class extends Migration
             // Request columns
             $table->string('date');
             $table->string('amount');
+            $table->string('emp_id');
             $table->longText('note');
             $table->boolean('soft_delete')->default(0);
 

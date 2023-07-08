@@ -15,6 +15,20 @@
                     </div>
                 </div>
                 <div class="row mb-4">
+                    <label for="emp_id" class="col-sm-3 col-form-label">
+                        Name <span style="color: red;">*</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control js-example-basic-single emp_id" name="emp_id"
+                            id="emp_id" required>
+                            <option value="" selected hidden class="text-muted">
+                                Enter Your</option>
+                            @foreach ($employee as $employees)
+                                <option value="{{ $employees->id }}">{{ $employees->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4">
                     <label for="amount" class="col-sm-3 col-form-label">
                         Amount <span style="color: red;">*</span></label>
                     <div class="col-sm-9">
