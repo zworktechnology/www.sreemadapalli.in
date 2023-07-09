@@ -98,30 +98,36 @@
                 <td>NAME</td>
                 <td> {{ $index_array['name'] }}</td>
             </tr>
+
             <tr>
                 <td>CONTACT NUMBER</td>
                 <td> {{ $index_array['contact_number'] }}</td>
             </tr>
+
             <tr>
                 <td>ADDRESS</td>
                 <td> {{ $index_array['address'] }}</td>
             </tr>
+
             <tr>
                 <td>BOOKING DATE</td>
                 <td> {{ $index_array['booking_date'] }}</td>
             </tr>
+
+            <tr>
                 <td>DELIVERY DATE</td>
                 <td> {{ $index_array['delivery_date'] }}</td>
             </tr>
-            </tr>
+
+            <tr>
                 <td>NOTE</td>
                 <td> {{ $index_array['note'] }}</td>
             </tr>
+
             <tr>
                <th>PRODUCT NAME</th>
                <th>UNIT</th>
             </tr>
-
 
              <tr>
                 <td>{{ $index_array['field_title_1'] }}</td>
