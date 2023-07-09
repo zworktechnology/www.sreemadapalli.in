@@ -178,15 +178,13 @@ class OutdoorController extends Controller
 
     public function outdoor_export($id)
     {
-       
-        
+
+
         $today = date('Y-m-d');
         $data = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
         $index_arr = [];
 
         foreach ($data as $datas) {
-
-            
 
             $index_arr[] = array(
                 'name' => $datas->name,
@@ -194,18 +192,38 @@ class OutdoorController extends Controller
                 'address' => $datas->address,
                 'booking_date' => $datas->booking_date,
                 'delivery_date' => $datas->delivery_date,
-                'delivery_date' => $datas->delivery_date,
-                'delivery_date' => $datas->delivery_date,
+                'note' => $datas->note,
+                'field_title_1' => $datas->field_title_1,
+                'field_unit_1' => $datas->field_unit_1,
+                'field_title_2' => $datas->field_title_2,
+                'field_unit_2' => $datas->field_unit_2,
+                'field_title_3' => $datas->field_title_3,
+                'field_unit_3' => $datas->field_unit_3,
+                'field_title_4' => $datas->field_title_4,
+                'field_unit_4' => $datas->field_unit_4,
+                'field_title_5' => $datas->field_title_5,
+                'field_unit_5' => $datas->field_unit_5,
+                'field_title_6' => $datas->field_title_6,
+                'field_unit_6' => $datas->field_unit_6,
+                'field_title_7' => $datas->field_title_7,
+                'field_unit_7' => $datas->field_unit_7,
+                'field_title_8' => $datas->field_title_8,
+                'field_unit_8' => $datas->field_unit_8,
+                'field_title_9' => $datas->field_title_9,
+                'field_unit_9' => $datas->field_unit_9,
+                'field_title_10' => $datas->field_title_10,
+                'field_unit_10' => $datas->field_unit_10,
                 'id' => $datas->id,
             );
 
+            // return view('pages.backend.outdoor.outdoor_export_pdf', compact('index_arr'));
 
             $outdoordata = Outdoor::findOrFail($id);
             $pdf = Pdf::loadView('pages.backend.outdoor.outdoor_export_pdf', [
                 'index_arr' => $index_arr,
                 'outdoor_name' => $outdoordata->name,
             ]);
-            
+
             $name = $outdoordata->name . '_outdoor.' . 'pdf';
             return $pdf->download('.pdf');
 

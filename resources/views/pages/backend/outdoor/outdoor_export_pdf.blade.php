@@ -91,28 +91,82 @@
         </div>
     </div>
     <table id="customers">
-       
+
         <tbody id="customer_index">
             @foreach ($index_arr as $index => $index_array)
             <tr>
                 <td>NAME</td>
                 <td> {{ $index_array['name'] }}</td>
+            </tr>
+            <tr>
                 <td>CONTACT NUMBER</td>
                 <td> {{ $index_array['contact_number'] }}</td>
+            </tr>
+            <tr>
                 <td>ADDRESS</td>
                 <td> {{ $index_array['address'] }}</td>
+            </tr>
+            <tr>
                 <td>BOOKING DATE</td>
                 <td> {{ $index_array['booking_date'] }}</td>
+            </tr>
                 <td>DELIVERY DATE</td>
                 <td> {{ $index_array['delivery_date'] }}</td>
+            </tr>
+            </tr>
+                <td>NOTE</td>
+                <td> {{ $index_array['note'] }}</td>
             </tr>
             <tr>
                <th>PRODUCT NAME</th>
                <th>UNIT</th>
             </tr>
+
+
+             <tr>
+                <td>{{ $index_array['field_title_1'] }}</td>
+                <td>{{ $index_array['field_unit_1'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_2'] }}</td>
+                <td>{{ $index_array['field_unit_2'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_3'] }}</td>
+                <td>{{ $index_array['field_unit_3'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_4'] }}</td>
+                <td>{{ $index_array['field_unit_4'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_5'] }}</td>
+                <td>{{ $index_array['field_unit_5'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_6'] }}</td>
+                <td>{{ $index_array['field_unit_6'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_7'] }}</td>
+                <td>{{ $index_array['field_unit_7'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_8'] }}</td>
+                <td>{{ $index_array['field_unit_8'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_9'] }}</td>
+                <td>{{ $index_array['field_unit_9'] }}</td>
+             </tr>
+             <tr>
+                <td>{{ $index_array['field_title_10'] }}</td>
+                <td>{{ $index_array['field_unit_10'] }}</td>
+             </tr>
+
             @endforeach
         </tbody>
     </table>
-   
+
 </body>
 </html>
