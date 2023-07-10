@@ -101,6 +101,14 @@
                                                                 class="btn btn-sm btn-soft-danger"><i
                                                                     class="mdi mdi-delete-outline"></i> Delete</a>
                                                         </li>
+                                                        <li>
+                                                        <a href="/outdoor_export/{{ $datas->id }}" class="nofilter ">
+                                                            <button
+                                                            class="btn btn-sm btn-soft-primary"
+                                                            style="border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
+                                                            Export as</button>
+                                                        </a>
+                                                        </li>
                                                     </ul>
                                                 </td>
                                             </tr>

@@ -87,39 +87,26 @@
             <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
         </div>
         <div>
-            <h5>{{ $customerdata->name }}</h5>
+            <h5>All Customers</h5>
         </div>
     </div>
     <table id="customers">
         <thead style="background: #CAF1DE">
             <tr>
-                <th>Date</th>
-                <th>Break Fast</th>
-                <th>Lunch</th>
-                <th>Dinner</th>
-                <th>Total</th>
+                <th>Name</th>
+                <th>Phone No</th>
+                <th>Pending Amount</th>
             </tr>
         </thead>
         <tbody id="customer_index">
-            @foreach ($Custumer_pdf_array as $index => $Custumer_pdf_arr)
+            @foreach ($index_amount_arr as $index => $indexamountarr)
             <tr>
-                <td>{{ $Custumer_pdf_arr['date'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['CustomersBreakfastAmt'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['CustomersLunchAmt'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['CustomersDinnerAmt'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['TotalAmount'] }}</td>
+                <td>{{ $indexamountarr['name'] }}</td>
+                <td>{{ $indexamountarr['contact_number'] }}</td>
+                <td>Rs. {{ $indexamountarr['pending'] }}</td>
             </tr>
             @endforeach
         </tbody>
-    </table>
-    <table id="customers">
-        <thead>
-            <tr>
-                <th style="background-color: #C1D1DB;">Total Amount - Rs. {{ $total_amount }}</th>
-                <th style="background-color: #FFE972;">Paid Amount - Rs. {{ $total_paid }}</th>
-                <th style="background-color: #D8E79D;">Pending Amount - Rs. {{ $total_pending - $payment_total_amount }}</th>
-            </tr>
-        </thead>
     </table>
 </body>
 </html>

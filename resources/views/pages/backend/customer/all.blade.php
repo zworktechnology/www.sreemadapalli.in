@@ -13,9 +13,12 @@
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0 font-size-18">Customer</h4>
                             <div class="page-title-right">
+                            <a href="/export_allcustomer_pdf/" class="nofilter "><button
+                                            type="button" class="btn btn-success w-md">Export as PDF</button></a>
                                 <a href="{{ route('customer.index') }}">
                                     <button type="button" class="btn btn-success w-md">SHOW PENDING CUSTOMER</button>
                                 </a>
+
                                 <div hidden>
                                     <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
 

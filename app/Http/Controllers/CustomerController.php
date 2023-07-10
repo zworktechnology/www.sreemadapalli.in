@@ -458,21 +458,21 @@ class CustomerController extends Controller
         $to_date = $request->get('to_date');
         $customer_id = $request->get('customer_ids');
 
-//Get Breakfast Dates
+            //Get Breakfast Dates
         $Breakfast_datearr = BreakFast::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Breakfast_datearray = [];
         foreach ($Breakfast_datearr as $key => $Breakfast_datearrs) {
             $Breakfast_datearray[] = $Breakfast_datearrs->date;
         }
 
-//Get Lunch Dates
+        //Get Lunch Dates
         $Lunch_datearr = Lunch::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Lunch_datearray = [];
         foreach ($Lunch_datearr as $key => $Lunch_datearrs) {
             $Lunch_datearray[] = $Lunch_datearrs->date;
         }
 
-//Get Dinner Dates
+        //Get Dinner Dates
         $Dinner_datearr = Dinner::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->orderBy('date', 'desc')->get();
         $Dinner_datearray = [];
         foreach ($Dinner_datearr as $key => $Dinner_datearrs) {
@@ -504,13 +504,13 @@ class CustomerController extends Controller
                 'TotalCustomerAmount' => $TotalCustomerAmount
             );
         }
-//Total Amount
+        //Total Amount
         $breakfast_total_amount = BreakFast::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $lunch_total_amount = Lunch::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $Dinner_total_amount = Dinner::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->sum('bill_amount');
         $total_filter_amount = $breakfast_total_amount + $lunch_total_amount + $Dinner_total_amount;
 
-// Total Amount Paid
+        // Total Amount Paid
         $breakfast_amount_paid = BreakFast::whereBetween('date', [$from_date, $to_date])
                                             ->where('customer_id', '=', $customer_id)
                                             ->where('soft_delete', '!=', 1)
@@ -531,11 +531,11 @@ class CustomerController extends Controller
 
         $total_paid_amount = $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid;
 
-// Total Payment Amount
+        // Total Payment Amount
         $payment_total_amount = Payment::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->sum('amount');
 
 
-// Total Pending
+        // Total Pending
 
         $breakfast_amount_pending = BreakFast::where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->where('payment_status', '=', 'Pending')->sum('bill_amount');
         $Lunch_amount_pending = Lunch::where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->where('payment_status', '=', 'Pending')->sum('bill_amount');
@@ -543,7 +543,7 @@ class CustomerController extends Controller
 
         $total_pending = $breakfast_amount_pending + $Lunch_amount_pending + $dinner_amount_pending;
 
-// Payment Array
+        // Payment Array
         $payment_Arr = Payment::whereBetween('date', [$from_date, $to_date])->where('customer_id', '=', $customer_id)->where('soft_delete', '!=', 1)->get();
 
 
@@ -721,6 +721,108 @@ class CustomerController extends Controller
 
         echo json_encode($customer_Arr);
     }
+
+
+
+    public function export_allcustomer_pdf()
+    {
+       
+        
+        $today = date('Y-m-d');
+        $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+        $index_amount_arr = [];
+
+        foreach ($data as $datas) {
+
+            $breakfastTotamount = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $lunchTotamount = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $dinnerTotamount = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+
+            $breakfast_amount_paid = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+            $lunch_amount_paid = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+            $dinner_amount_paid = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+
+            $breakfast_amount_pending = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $lunch_amount_pending = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $dinner_amount_pending = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+
+            $payment_total_amount = Payment::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('amount');
+
+            //Total
+            $totalamount = $breakfastTotamount + $lunchTotamount + $dinnerTotamount;
+            $paid = $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount;
+            $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount;
+
+            $index_amount_arr[] = array(
+                'name' => $datas->name,
+                'contact_number' => $datas->contact_number,
+                'totalamount' => $totalamount,
+                'paid' => $paid,
+                'pending' => $pending,
+                'id' => $datas->id,
+            );
+
+
+
+
+            $pdf = Pdf::loadView('pages.backend.customer.exportallcustomerpdf', [
+                'index_amount_arr' => $index_amount_arr,
+            ]);
+            return $pdf->download('AllCustomers.pdf');
+
+        }
+    }
+
+
+
+    public function export_pendingcustomer_pdf()
+    {
+       
+        
+        $today = date('Y-m-d');
+        $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+        $index_amount_arr = [];
+
+        foreach ($data as $datas) {
+
+            $breakfastTotamount = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $lunchTotamount = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+            $dinnerTotamount = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('bill_amount');
+
+            $breakfast_amount_paid = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+            $lunch_amount_paid = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+            $dinner_amount_paid = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '!=', 'Pending')->sum('bill_amount');
+
+            $breakfast_amount_pending = BreakFast::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $lunch_amount_pending = Lunch::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+            $dinner_amount_pending = Dinner::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+
+            $payment_total_amount = Payment::where('customer_id', '=', $datas->id)->where('soft_delete', '!=', 1)->sum('amount');
+
+            //Total
+            $totalamount = $breakfastTotamount + $lunchTotamount + $dinnerTotamount;
+            $paid = $breakfast_amount_paid + $lunch_amount_paid + $dinner_amount_paid + $payment_total_amount;
+            $pending = $breakfast_amount_pending + $lunch_amount_pending + $dinner_amount_pending - $payment_total_amount;
+
+            $index_amount_arr[] = array(
+                'name' => $datas->name,
+                'contact_number' => $datas->contact_number,
+                'totalamount' => $totalamount,
+                'paid' => $paid,
+                'pending' => $pending,
+                'id' => $datas->id,
+            );
+
+
+
+            $pdf = Pdf::loadView('pages.backend.customer.export_pendingcustomer_pdf', [
+                'index_amount_arr' => $index_amount_arr,
+            ]);
+            return $pdf->download('AllCustomers.pdf');
+
+        }
+    }
+
 
 
 

@@ -315,6 +315,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/update/{id}', [WalletController::class, 'update'])->name('wallet.update');
         // DELETE
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/delete/{id}', [WalletController::class, 'delete'])->name('wallet.delete');
+         // DAILY FILTER
+         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/wallet_dailyfilter', [WalletController::class, 'wallet_dailyfilter'])->name('wallet.wallet_dailyfilter');
     });
 
 });
@@ -327,6 +329,11 @@ Route::get('/getdatewiseCustomerOrders', [CustomerController::class, 'getdatewis
 Route::get('/export_customerorder_pdf/{id}', [CustomerController::class, 'export_customerorder_pdf']);
 Route::post('/exportfilterpdf', [CustomerController::class, 'exportfilterpdf'])->name('customer.exportfilterpdf');
 Route::get('/export_customerorder_filter_pdf/{id}/{from_date}/{to_date}', [CustomerController::class, 'export_customerorder_filter_pdf']);
+
+Route::get('/export_allcustomer_pdf', [CustomerController::class, 'export_allcustomer_pdf']);
+Route::get('/export_pendingcustomer_pdf', [CustomerController::class, 'export_pendingcustomer_pdf']);
+Route::get('/walletpdf_export/{date}', [WalletController::class, 'walletpdf_export']);
+Route::get('/outdoor_export/{id}', [OutdoorController::class, 'outdoor_export']);
 
 //DAILY DATE ARRAY FILTER
 Route::get('/getDailyListData', [SalesController::class, 'getDailyListData']);

@@ -7,6 +7,7 @@ use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Symfony\Component\Console\Output\Output;
+use PDF;
 
 class WalletController extends Controller
 {
@@ -99,5 +100,42 @@ class WalletController extends Controller
         $data->update();
 
         return redirect()->route('wallet.index')->with('soft_destroy', 'Successfully deleted the wallet !');
+    }
+
+
+
+    public function wallet_dailyfilter(Request $request)
+    {
+        $today = $request->get('daily_date');
+        $data = Wallet::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get()->all();
+        $datas = Wallet::where('soft_delete', '!=', 1)->where('date', '=', $today)->get()->all();
+        $customer = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+
+        $wallet_paid = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 1)->where('date', '=', $today)->sum('amount');
+        $wallet_pending = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 0)->where('date', '=', $today)->sum('amount');
+
+
+        // $notificationcount = Output::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
+
+        return view('pages.backend.wallet.index', compact('data', 'today', 'customer', 'wallet_paid', 'wallet_pending', 'datas'));
+    }
+
+
+    public function walletpdf_export($date)
+    {
+        $daily_date = $date;
+        $datas = Wallet::where('soft_delete', '!=', 1)->where('date', '=', $daily_date)->get()->all();
+        $wallet_paid = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 1)->where('date', '=', $daily_date)->sum('amount');
+        $wallet_pending = Wallet::where('soft_delete', '!=', 1)->where('status', '=', 0)->where('date', '=', $daily_date)->sum('amount');
+        
+        $pdf = Pdf::loadView('pages.backend.wallet.pdf.wallet_pdf_export', [
+            'daily_date' => $daily_date,
+            'datas' => $datas,
+            'wallet_paid' => $wallet_paid,
+            'wallet_pending' => $wallet_pending,
+        ]);
+
+        $name = 'WalletAll' . '_' . $date . '.' . 'pdf';
+        return $pdf->download($name);
     }
 }

@@ -15,7 +15,7 @@
                             </h4>
                             <div class="page-title-right">
                                 <div style="display: flex;">
-                                    {{-- <form autocomplete="off" method="POST" action="{{ route('wallet.wallet_dailyfilter') }}"
+                                     <form autocomplete="off" method="POST" action="{{ route('wallet.wallet_dailyfilter') }}"
                                         style="display: flex;">
                                         @method('PUT')
 
@@ -30,13 +30,14 @@
                                                 Search</button>
 
                                         </div>
-                                    </form> --}}
-                                    {{-- <a href="javascript:void(0)" class="nofilter ">
+                                    </form> 
+                                    <a href="/walletpdf_export/{{ $today }}" class="nofilter ">
                                         <button
                                             class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300"
                                             style="border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
                                             Export as</button>
                                     </a>
+                                    {{-- 
                                     <a href="/wallet_pdf_export/{{ $today }}" class="nofilter ">
                                         <button type="button"
                                             class="px-4 py-2 bg-black text-white font-bold font-serif shadow-sm shadow-red-300">

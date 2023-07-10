@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Outdoor;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use PDF;
+
 
 class OutdoorController extends Controller
 {
@@ -170,5 +172,43 @@ class OutdoorController extends Controller
         $data->delete();
 
         return redirect()->route('outdoor.index')->with('destroy', 'Successfully erased the outdoor record !');
+    }
+
+
+
+    public function outdoor_export($id)
+    {
+       
+        
+        $today = date('Y-m-d');
+        $data = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
+        $index_arr = [];
+
+        foreach ($data as $datas) {
+
+            
+
+            $index_arr[] = array(
+                'name' => $datas->name,
+                'contact_number' => $datas->contact_number,
+                'address' => $datas->address,
+                'booking_date' => $datas->booking_date,
+                'delivery_date' => $datas->delivery_date,
+                'delivery_date' => $datas->delivery_date,
+                'delivery_date' => $datas->delivery_date,
+                'id' => $datas->id,
+            );
+
+
+            $outdoordata = Outdoor::findOrFail($id);
+            $pdf = Pdf::loadView('pages.backend.outdoor.outdoor_export_pdf', [
+                'index_arr' => $index_arr,
+                'outdoor_name' => $outdoordata->name,
+            ]);
+            
+            $name = $outdoordata->name . '_outdoor.' . 'pdf';
+            return $pdf->download('.pdf');
+
+        }
     }
 }

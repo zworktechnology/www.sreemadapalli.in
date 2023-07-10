@@ -87,39 +87,32 @@
             <img src="{{ asset('assets/images/logo2.png') }}" alt="" height="40">
         </div>
         <div>
-            <h5>{{ $customerdata->name }}</h5>
+            <h5>{{ $outdoor_name }}</h5>
         </div>
     </div>
     <table id="customers">
-        <thead style="background: #CAF1DE">
-            <tr>
-                <th>Date</th>
-                <th>Break Fast</th>
-                <th>Lunch</th>
-                <th>Dinner</th>
-                <th>Total</th>
-            </tr>
-        </thead>
+       
         <tbody id="customer_index">
-            @foreach ($Custumer_pdf_array as $index => $Custumer_pdf_arr)
+            @foreach ($index_arr as $index => $index_array)
             <tr>
-                <td>{{ $Custumer_pdf_arr['date'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['CustomersBreakfastAmt'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['CustomersLunchAmt'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['CustomersDinnerAmt'] }}</td>
-                <td>Rs. {{ $Custumer_pdf_arr['TotalAmount'] }}</td>
+                <td>NAME</td>
+                <td> {{ $index_array['name'] }}</td>
+                <td>CONTACT NUMBER</td>
+                <td> {{ $index_array['contact_number'] }}</td>
+                <td>ADDRESS</td>
+                <td> {{ $index_array['address'] }}</td>
+                <td>BOOKING DATE</td>
+                <td> {{ $index_array['booking_date'] }}</td>
+                <td>DELIVERY DATE</td>
+                <td> {{ $index_array['delivery_date'] }}</td>
+            </tr>
+            <tr>
+               <th>PRODUCT NAME</th>
+               <th>UNIT</th>
             </tr>
             @endforeach
         </tbody>
     </table>
-    <table id="customers">
-        <thead>
-            <tr>
-                <th style="background-color: #C1D1DB;">Total Amount - Rs. {{ $total_amount }}</th>
-                <th style="background-color: #FFE972;">Paid Amount - Rs. {{ $total_paid }}</th>
-                <th style="background-color: #D8E79D;">Pending Amount - Rs. {{ $total_pending - $payment_total_amount }}</th>
-            </tr>
-        </thead>
-    </table>
+   
 </body>
 </html>
