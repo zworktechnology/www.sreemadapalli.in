@@ -815,12 +815,13 @@ class CustomerController extends Controller
 
 
 
-            $pdf = Pdf::loadView('pages.backend.customer.export_pendingcustomer_pdf', [
-                'index_amount_arr' => $index_amount_arr,
-            ]);
-            return $pdf->download('AllCustomers.pdf');
+            
 
         }
+        $pdf = Pdf::loadView('pages.backend.customer.export_pendingcustomer_pdf', [
+            'index_amount_arr' => $index_amount_arr,
+        ]);
+        return $pdf->download('AllCustomers.pdf');
     }
 
 
