@@ -780,7 +780,7 @@ class CustomerController extends Controller
        
         
         $today = date('Y-m-d');
-        $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get()->all();
+        $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get();
         $index_amount_arr = [];
 
         foreach ($data as $datas) {
