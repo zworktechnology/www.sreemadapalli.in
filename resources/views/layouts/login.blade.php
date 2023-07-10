@@ -7,7 +7,7 @@
 
 <body data-sidebar="dark" data-layout-mode="light">
 
-    <main>
+    <main style="font-family: Roboto">
         @yield('content')
     </main>
 
