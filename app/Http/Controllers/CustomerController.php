@@ -53,9 +53,15 @@ class CustomerController extends Controller
 
         }
 
+        $overall_breakfast_pending = BreakFast::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $overall_lunch_pending = Lunch::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $overall_dinner_pending = Dinner::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $total_payment = Payment::where('soft_delete', '!=', 1)->sum('amount');
+        $overall_total_amount_of_pending = ($overall_breakfast_pending + $overall_lunch_pending + $overall_dinner_pending) - $total_payment;
+
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.customer.index', compact('data', 'index_amount_arr', 'today', 'customer', 'notificationcount'));
+        return view('pages.backend.customer.index', compact('overall_total_amount_of_pending', 'data', 'index_amount_arr', 'today', 'customer', 'notificationcount'));
     }
 
     public function all()
@@ -97,9 +103,15 @@ class CustomerController extends Controller
 
         }
 
+        $overall_breakfast_pending = BreakFast::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $overall_lunch_pending = Lunch::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $overall_dinner_pending = Dinner::where('soft_delete', '!=', 1)->where('payment_method', '=', 'Pending')->sum('bill_amount');
+        $total_payment = Payment::where('soft_delete', '!=', 1)->sum('amount');
+        $overall_total_amount_of_pending = ($overall_breakfast_pending + $overall_lunch_pending + $overall_dinner_pending) - $total_payment;
+
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
 
-        return view('pages.backend.customer.all', compact('data', 'index_amount_arr', 'today', 'customer', 'notificationcount'));
+        return view('pages.backend.customer.all', compact('overall_total_amount_of_pending', 'data', 'index_amount_arr', 'today', 'customer', 'notificationcount'));
     }
 
     public function store(Request $request)
@@ -726,8 +738,8 @@ class CustomerController extends Controller
 
     public function export_allcustomer_pdf()
     {
-       
-        
+
+
         $today = date('Y-m-d');
         $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get();
         $index_amount_arr = [];
@@ -765,7 +777,7 @@ class CustomerController extends Controller
 
 
 
-            
+
 
         }
         $pdf = Pdf::loadView('pages.backend.customer.exportallcustomerpdf', [
@@ -778,8 +790,8 @@ class CustomerController extends Controller
 
     public function export_pendingcustomer_pdf()
     {
-       
-        
+
+
         $today = date('Y-m-d');
         $data = Customer::where('soft_delete', '!=', 1)->orderBy('name')->get();
         $index_amount_arr = [];
@@ -816,7 +828,7 @@ class CustomerController extends Controller
 
 
 
-            
+
 
         }
         $pdf = Pdf::loadView('pages.backend.customer.export_pendingcustomer_pdf', [

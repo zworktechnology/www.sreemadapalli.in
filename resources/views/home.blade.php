@@ -554,7 +554,7 @@
                             @if (count($opendate) >= 10)
                             @else
                                 <div class="col-xl-4 col-12" style="padding-left: 10px;">
-                                    <div class="card" style="background-color: #FEF8DD;">
+                                    <div class="card" style="background-color: #e7c9f0;">
                                         <div class="card-body">
                                             @include('pages.backend.accountopen.create')
                                         </div>
@@ -565,7 +565,7 @@
                             @if (count($determinationdate) >= 1)
                             @else
                                 <div class="col-xl-4 col-12" style="padding-left: 10px;">
-                                    <div class="card" style="background-color: #FEF8DD;">
+                                    <div class="card" style="background-color: #c6f7cf;">
                                         <div class="card-body">
                                             @include('pages.backend.determination.create')
                                         </div>
@@ -576,7 +576,7 @@
                             @if (count($closedate) >= 1)
                             @else
                                 <div class="col-xl-4 col-12" style="padding-left: 10px;">
-                                    <div class="card" style="background-color: #FEF8DD;">
+                                    <div class="card" style="background-color: #f0c0c0;">
                                         <div class="card-body">
                                             @include('pages.backend.accountclose.create')
                                         </div>

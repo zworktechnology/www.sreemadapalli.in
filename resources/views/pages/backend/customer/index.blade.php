@@ -29,6 +29,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card" style="background-color: #E7E7E7;">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table align-middle table-nowrap mb-0">
+                                <tr style="color: red;">
+                                    <th scope="col" style="font-weight: bold;font-size: 16px !important;">Over
+                                        All Pending Amount</th>
+                                    <th scope="col" style="font-weight: bold;font-size: 16px !important;">₹
+                                        {{ $overall_total_amount_of_pending }}</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 @if (\Session::has('add'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="mdi mdi-check-all me-2"></i>
