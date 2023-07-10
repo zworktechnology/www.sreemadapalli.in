@@ -218,7 +218,11 @@ class OutdoorController extends Controller
 
             // return view('pages.backend.outdoor.outdoor_export_pdf', compact('index_arr'));
 
-            $outdoordata = Outdoor::findOrFail($id);
+            
+
+        }
+
+        $outdoordata = Outdoor::findOrFail($id);
             $pdf = Pdf::loadView('pages.backend.outdoor.outdoor_export_pdf', [
                 'index_arr' => $index_arr,
                 'outdoor_name' => $outdoordata->name,
@@ -226,7 +230,5 @@ class OutdoorController extends Controller
 
             $name = $outdoordata->name . '_outdoor.' . 'pdf';
             return $pdf->download('.pdf');
-
-        }
     }
 }
