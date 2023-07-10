@@ -117,7 +117,7 @@
             <tr>
                 <th style="background-color: #C1D1DB;">Total Amount - Rs. {{ $total_amount }}</th>
                 <th style="background-color: #FFE972;">Paid Amount - Rs. {{ $total_paid }}</th>
-                <th style="background-color: #D8E79D;">Pending Amount - Rs. {{ $total_pending - $payment_total_amount }}</th>
+                <th style="background-color: #D8E79D;">Pending Amount - Rs. {{ $total_pending }}</th>
             </tr>
         </thead>
     </table>
