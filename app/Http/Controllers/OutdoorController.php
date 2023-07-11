@@ -181,7 +181,7 @@ class OutdoorController extends Controller
 
 
         $today = date('Y-m-d');
-        $data = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
+        $data = Outdoor::where('id', '=', $id)->where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
         $index_arr = [];
 
         foreach ($data as $datas) {
