@@ -20,6 +20,13 @@
                         <input type="text" class="form-control" name="contact_number" placeholder="Enter Your " required>
                     </div>
                 </div>
+                <div class="row mb-2">
+                    <label for="salary_amount" class="col-sm-3 col-form-label">
+                        Salary</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="salary_amount" placeholder="Enter Your ">
+                    </div>
+                </div>
                 <div class="row mb-4">
                     <label for="address" class="col-sm-3 col-form-label">
                         Addresss</label>

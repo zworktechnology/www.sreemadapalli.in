@@ -44,6 +44,13 @@
                                         </div>
                                     </div>
                                     <div class="row mb-4">
+                                        <label for="salary_amount" class="col-sm-3 col-form-label">
+                                            Salary <span style="color: red;">*</span></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="salary_amount" placeholder="Enter Your " value="{{ $data->salary_amount }}" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
                                         <label for="address" class="col-sm-3 col-form-label">
                                             Address</label>
                                         <div class="col-sm-9">

@@ -23,12 +23,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('contact_number');
             $table->string('email_address')->nullable();
+            $table->string('salary_amount')->nullable();
             $table->longText('address')->nullable();
             $table->boolean('soft_delete')->default(0);
 
             // CreatedAt & UpdatedAt columns
             $table->timestamps();
-            
+
         });
     }
 

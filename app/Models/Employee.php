@@ -14,6 +14,7 @@ class Employee extends Model
         'name',
         'contact_number',
         'email_address',
+        'salary_amount',
         'address',
         'soft_delete'
     ];

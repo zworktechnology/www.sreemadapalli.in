@@ -58,6 +58,12 @@
                         <span key="t-dashboards">Create New</span>
                     </a>
                 </li>
+                <li class="{{ Route::is('attendence.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('attendence.index') }}">
+                        <i class="mdi mdi-contactless-payment-circle-outline"></i>
+                        <span key="t-dashboards">Attendence</span>
+                    </a>
+                </li>
                 <li class="{{ Route::is('expence.index','expence.create','expence.edit','expence.dailyfilter') ? 'mm-active' : '' }}">
                     <a href="{{ route('expence.index') }}">
                         <i class="mdi mdi-contactless-payment-circle-outline"></i>

@@ -18,6 +18,7 @@ use App\Http\Controllers\OutdoorController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\WalletController;
+use App\Http\Controllers\AttendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -320,6 +321,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/delete/{id}', [WalletController::class, 'delete'])->name('wallet.delete');
          // DAILY FILTER
          Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/wallet_dailyfilter', [WalletController::class, 'wallet_dailyfilter'])->name('wallet.wallet_dailyfilter');
+    });
+
+    // ATTENDENCE CONTROLLER
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+        // INDEX
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/attendence', [AttendanceController::class, 'index'])->name('attendence.index');
+        // STORE
+        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/attendence/present', [AttendanceController::class, 'present'])->name('attendence.store');
+
     });
 
 });

@@ -28,6 +28,7 @@ class EmployeeController extends Controller
         $data->contact_number = $request->get('contact_number');
         $data->email_address = $request->get('email_address');
         $data->address = $request->get('address');
+        $data->salary_amount = $request->get('salary_amount');
 
         $uni_id_gen = $request->name;
         $uni_id_gen_one = $uni_id_gen[0];
@@ -70,6 +71,7 @@ class EmployeeController extends Controller
         $data->contact_number = $request->get('contact_number');
         $data->email_address = $request->get('email_address');
         $data->address = $request->get('address');
+        $data->salary_amount = $request->get('salary_amount');
 
         $data->update();
 
