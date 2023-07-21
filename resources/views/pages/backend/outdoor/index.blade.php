@@ -14,13 +14,15 @@
                             <div class="page-title-right">
                                 <div style="display: flex;">
                                     <div>
-                                        <button type="button" class="btn btn-success w-md" data-bs-toggle="modal"
-                                            data-bs-target=".bs-example-modal-lg">Create</button>
+                                        <a href="{{ route('outdoor.create') }}">
+                                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal"
+                                                data-bs-target=".bs-example-modal-lg">Create</button>
+                                        </a>
 
-                                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+                                        {{-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
                                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                             @include('pages.backend.outdoor.create')
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

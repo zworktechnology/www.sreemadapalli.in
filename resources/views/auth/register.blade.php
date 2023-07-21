@@ -23,7 +23,7 @@
                                                         id="auth-review-carousel">
                                                         <div class="item">
                                                             <div class="py-3">
-                                                                <p class="font-size-16 mb-4">Zwork Technology, Coimbatore & Tiruchirappalli | Custom Software</p>
+                                                                <p class="font-size-16 mb-4">Zwork Technology, Tiruchirappalli | Custom Software</p>
                                                             </div>
                                                         </div>
                                                     </div>

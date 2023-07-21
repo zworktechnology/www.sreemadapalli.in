@@ -275,6 +275,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/outdoor', [OutdoorController::class, 'index'])->name('outdoor.index');
         // STORE
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/outdoor/create', [OutdoorController::class, 'create'])->name('outdoor.create');
+        // STORE
         Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/outdoor/store', [OutdoorController::class, 'store'])->name('outdoor.store');
         // EDIT
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/outdoor/edit/{id}', [OutdoorController::class, 'edit'])->name('outdoor.edit');
@@ -300,6 +302,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/sales/store', [SalesController::class, 'store'])->name('sales.store');
 
     });
+
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/wallet', [WalletController::class, 'index'])->name('wallet.index');

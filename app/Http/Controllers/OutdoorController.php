@@ -21,6 +21,16 @@ class OutdoorController extends Controller
         return view('pages.backend.outdoor.index', compact('data', 'today', 'notificationcount', 'notificationdetails'));
     }
 
+    public function create()
+    {
+        $today = Carbon::now()->format('Y-m-d');
+
+        $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
+        $notificationdetails = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->get();
+
+        return view('pages.backend.outdoor.create', compact('today', 'notificationcount', 'notificationdetails'));
+    }
+
     public function store(Request $request)
     {
         $data = new Outdoor();
@@ -31,46 +41,6 @@ class OutdoorController extends Controller
         $data->booking_date = $request->get('booking_date');
         $data->delivery_date = $request->get('delivery_date');
         $data->note = $request->get('note');
-        $data->field_title_1 = $request->get('field_title_1');
-        $data->field_unit_1 = $request->get('field_unit_1');
-        $data->field_unit_price_1 = $request->get('field_unit_price_1');
-        $data->field_total_1 = $request->get('field_total_1');
-        $data->field_title_2 = $request->get('field_title_2');
-        $data->field_unit_2 = $request->get('field_unit_2');
-        $data->field_unit_price_2 = $request->get('field_unit_price_2');
-        $data->field_total_2 = $request->get('field_total_2');
-        $data->field_title_3 = $request->get('field_title_3');
-        $data->field_unit_3 = $request->get('field_unit_3');
-        $data->field_unit_price_3 = $request->get('field_unit_price_3');
-        $data->field_total_3 = $request->get('field_total_3');
-        $data->field_title_4 = $request->get('field_title_4');
-        $data->field_unit_4 = $request->get('field_unit_4');
-        $data->field_unit_price_4 = $request->get('field_unit_price_4');
-        $data->field_total_4 = $request->get('field_total_4');
-        $data->field_title_5 = $request->get('field_title_5');
-        $data->field_unit_5 = $request->get('field_unit_5');
-        $data->field_unit_price_5 = $request->get('field_unit_price_5');
-        $data->field_total_5 = $request->get('field_total_5');
-        $data->field_title_6 = $request->get('field_title_6');
-        $data->field_unit_6 = $request->get('field_unit_6');
-        $data->field_unit_price_6 = $request->get('field_unit_price_6');
-        $data->field_total_6 = $request->get('field_total_6');
-        $data->field_title_7 = $request->get('field_title_7');
-        $data->field_unit_7 = $request->get('field_unit_7');
-        $data->field_unit_price_7 = $request->get('field_unit_price_7');
-        $data->field_total_7 = $request->get('field_total_7');
-        $data->field_title_8 = $request->get('field_title_8');
-        $data->field_unit_8 = $request->get('field_unit_8');
-        $data->field_unit_price_8 = $request->get('field_unit_price_8');
-        $data->field_total_8 = $request->get('field_total_8');
-        $data->field_title_9 = $request->get('field_title_9');
-        $data->field_unit_9 = $request->get('field_unit_9');
-        $data->field_unit_price_9 = $request->get('field_unit_price_9');
-        $data->field_total_9 = $request->get('field_total_9');
-        $data->field_title_10 = $request->get('field_title_10');
-        $data->field_unit_10 = $request->get('field_unit_10');
-        $data->field_unit_price_10 = $request->get('field_unit_price_10');
-        $data->field_total_10 = $request->get('field_total_10');
         $data->over_all_total = $request->get('over_all_total');
 
         $data->save();
@@ -96,46 +66,6 @@ class OutdoorController extends Controller
         $data->booking_date = $request->get('booking_date');
         $data->delivery_date = $request->get('delivery_date');
         $data->note = $request->get('note');
-        $data->field_title_1 = $request->get('field_title_1');
-        $data->field_unit_1 = $request->get('field_unit_1');
-        $data->field_unit_price_1 = $request->get('field_unit_price_1');
-        $data->field_total_1 = $request->get('field_total_1');
-        $data->field_title_2 = $request->get('field_title_2');
-        $data->field_unit_2 = $request->get('field_unit_2');
-        $data->field_unit_price_2 = $request->get('field_unit_price_2');
-        $data->field_total_2 = $request->get('field_total_2');
-        $data->field_title_3 = $request->get('field_title_3');
-        $data->field_unit_3 = $request->get('field_unit_3');
-        $data->field_unit_price_3 = $request->get('field_unit_price_3');
-        $data->field_total_3 = $request->get('field_total_3');
-        $data->field_title_4 = $request->get('field_title_4');
-        $data->field_unit_4 = $request->get('field_unit_4');
-        $data->field_unit_price_4 = $request->get('field_unit_price_4');
-        $data->field_total_4 = $request->get('field_total_4');
-        $data->field_title_5 = $request->get('field_title_5');
-        $data->field_unit_5 = $request->get('field_unit_5');
-        $data->field_unit_price_5 = $request->get('field_unit_price_5');
-        $data->field_total_5 = $request->get('field_total_5');
-        $data->field_title_6 = $request->get('field_title_6');
-        $data->field_unit_6 = $request->get('field_unit_6');
-        $data->field_unit_price_6 = $request->get('field_unit_price_6');
-        $data->field_total_6 = $request->get('field_total_6');
-        $data->field_title_7 = $request->get('field_title_7');
-        $data->field_unit_7 = $request->get('field_unit_7');
-        $data->field_unit_price_7 = $request->get('field_unit_price_7');
-        $data->field_total_7 = $request->get('field_total_7');
-        $data->field_title_8 = $request->get('field_title_8');
-        $data->field_unit_8 = $request->get('field_unit_8');
-        $data->field_unit_price_8 = $request->get('field_unit_price_8');
-        $data->field_total_8 = $request->get('field_total_8');
-        $data->field_title_9 = $request->get('field_title_9');
-        $data->field_unit_9 = $request->get('field_unit_9');
-        $data->field_unit_price_9 = $request->get('field_unit_price_9');
-        $data->field_total_9 = $request->get('field_total_9');
-        $data->field_title_10 = $request->get('field_title_10');
-        $data->field_unit_10 = $request->get('field_unit_10');
-        $data->field_unit_price_10 = $request->get('field_unit_price_10');
-        $data->field_total_10 = $request->get('field_total_10');
         $data->over_all_total = $request->get('over_all_total');
 
         $data->update();
@@ -218,7 +148,7 @@ class OutdoorController extends Controller
 
             // return view('pages.backend.outdoor.outdoor_export_pdf', compact('index_arr'));
 
-            
+
 
         }
 
