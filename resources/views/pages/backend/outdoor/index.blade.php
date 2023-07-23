@@ -156,12 +156,11 @@
                                                                         {!! $datas->note !!}</span></p>
                                                                 <p class="font-size-16 mb-4" style="color:red;">Order
                                                                     Summary <br>
-                                                                    <span style="color:black;">{!! $datas->field_title_1 !!}  {!! $datas->field_unit_1 !!}</span><br>
-                                                                    <span style="color:black;">{!! $datas->field_title_2 !!}  {!! $datas->field_unit_2 !!}</span><br>
-                                                                    <span style="color:black;">{!! $datas->field_title_3 !!}  {!! $datas->field_unit_3 !!}</span><br>
-                                                                    <span style="color:black;">{!! $datas->field_title_4 !!}  {!! $datas->field_unit_4 !!}</span><br>
-                                                                    <span style="color:black;">{!! $datas->field_title_5 !!}  {!! $datas->field_unit_5 !!}</span><br>
-                                                                    <span style="color:black;">{!! $datas->field_title_6 !!}  {!! $datas->field_unit_6 !!}</span><br>
+                                                                    @foreach ($OutdoorData as $index => $OutdoorDatas)
+                                                                        @if ($OutdoorDatas->outdoor_id == $datas->id)
+                                                                    <span style="color:black;">{!! $OutdoorDatas->outdoor_product !!}  {!! $OutdoorDatas->outdoor_unit !!}</span><br>
+                                                                        @endif
+                                                                    @endforeach
                                                                 </p>
                                                             </div>
                                                         </div>

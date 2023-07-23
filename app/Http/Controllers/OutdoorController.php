@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Outdoor;
+use App\Models\OutdoorDetail;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use PDF;
@@ -14,11 +16,12 @@ class OutdoorController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $data = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
+        $OutdoorData = OutdoorDetail::where('soft_delete', '!=', 1)->get();
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $notificationdetails = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->get();
 
-        return view('pages.backend.outdoor.index', compact('data', 'today', 'notificationcount', 'notificationdetails'));
+        return view('pages.backend.outdoor.index', compact('data', 'today', 'notificationcount', 'notificationdetails', 'OutdoorData'));
     }
 
     public function create()
@@ -44,16 +47,29 @@ class OutdoorController extends Controller
         $data->over_all_total = $request->get('over_all_total');
 
         $data->save();
+        $outdoor_id = $data->id;
 
-        return redirect()->back()->with('add', 'Successful added a new outdoor record !');
+        foreach ($request->get('outdoor_product') as $key => $outdoor_product) {
+
+            $OutdoorDetail = new OutdoorDetail;
+            $OutdoorDetail->outdoor_id = $outdoor_id;
+            $OutdoorDetail->outdoor_product = $outdoor_product;
+            $OutdoorDetail->outdoor_unit = $request->outdoor_unit[$key];
+            $OutdoorDetail->outdoor_price = $request->outdoor_price[$key];
+            $OutdoorDetail->outdoor_total = $request->outdoor_total[$key];
+            $OutdoorDetail->save();
+        }
+
+        return redirect()->back()->with('index', 'Successful added a new outdoor record !');
     }
 
     public function edit($id)
     {
         $data = Outdoor::findOrFail($id);
+        $OutdoorData = OutdoorDetail::where('outdoor_id', '=', $id)->get();
         $today = Carbon::now();
 
-        return view('pages.backend.outdoor.edit', compact('data', 'today'));
+        return view('pages.backend.outdoor.edit', compact('data', 'today', 'OutdoorData'));
     }
 
     public function update(Request $request, $id)
@@ -69,6 +85,52 @@ class OutdoorController extends Controller
         $data->over_all_total = $request->get('over_all_total');
 
         $data->update();
+
+
+        $getinsertedOutdoors = OutdoorDetail::where('outdoor_id', '=', $id)->get();
+        $OutdoorProducts = array();
+        foreach ($getinsertedOutdoors as $key => $getinsertedOutdoor) {
+            $OutdoorProducts[] = $getinsertedOutdoor->id;
+        }
+        $updatedoutdoor = $request->outdoor_detailid;
+        $updatedoutdoors = array_filter($updatedoutdoor);
+        $different_ids = array_merge(array_diff($OutdoorProducts, $updatedoutdoors), array_diff($updatedoutdoors, $OutdoorProducts));
+
+        if (!empty($different_ids)) {
+            foreach ($different_ids as $key => $different_id) {
+                OutdoorDetail::where('id', $different_id)->delete();
+            }
+        }
+
+
+
+        foreach ($request->get('outdoor_detailid') as $key => $outdoor_detailid) {
+            if ($outdoor_detailid > 0) {
+                $ids = $outdoor_detailid;
+                $Outdoor_ID = $id;
+                $outdoor_product = $request->outdoor_product[$key];
+                $outdoor_unit = $request->outdoor_unit[$key];
+                $outdoor_price = $request->outdoor_price[$key];
+                $outdoor_total = $request->outdoor_total[$key];
+
+                DB::table('outdoor_details')->where('id', $ids)->update([
+                    'outdoor_id' => $Outdoor_ID,  'outdoor_product' => $outdoor_product,  'outdoor_unit' => $outdoor_unit,  'outdoor_price' => $outdoor_price, 'outdoor_total' => $outdoor_total
+                ]);
+            } else if ($outdoor_detailid == '') {
+                if ($request->outdoor_product[$key] > 0) {
+
+
+                    $OutdoorDetail = new OutdoorDetail;
+                    $OutdoorDetail->outdoor_id = $id;
+                    $OutdoorDetail->outdoor_product = $request->outdoor_product[$key];
+                    $OutdoorDetail->outdoor_unit = $request->outdoor_unit[$key];
+                    $OutdoorDetail->outdoor_price = $request->outdoor_price[$key];
+                    $OutdoorDetail->outdoor_total = $request->outdoor_total[$key];
+                    $OutdoorDetail->save();
+
+                }
+            }
+        }
 
         return redirect()->route('outdoor.index')->with('update', 'Outdoor record detail successfully changed !');
     }
@@ -111,39 +173,18 @@ class OutdoorController extends Controller
 
 
         $today = date('Y-m-d');
-        $data = Outdoor::where('id', '=', $id)->where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
+        $data = Outdoor::findOrFail($id);
+        $OutdoorData = OutdoorDetail::where('outdoor_id', '=', $id)->get();
         $index_arr = [];
 
-        foreach ($data as $datas) {
+        foreach ($OutdoorData as $OutdoorDatas) {
 
             $index_arr[] = array(
-                'name' => $datas->name,
-                'contact_number' => $datas->contact_number,
-                'address' => $datas->address,
-                'booking_date' => $datas->booking_date,
-                'delivery_date' => $datas->delivery_date,
-                'note' => $datas->note,
-                'field_title_1' => $datas->field_title_1,
-                'field_unit_1' => $datas->field_unit_1,
-                'field_title_2' => $datas->field_title_2,
-                'field_unit_2' => $datas->field_unit_2,
-                'field_title_3' => $datas->field_title_3,
-                'field_unit_3' => $datas->field_unit_3,
-                'field_title_4' => $datas->field_title_4,
-                'field_unit_4' => $datas->field_unit_4,
-                'field_title_5' => $datas->field_title_5,
-                'field_unit_5' => $datas->field_unit_5,
-                'field_title_6' => $datas->field_title_6,
-                'field_unit_6' => $datas->field_unit_6,
-                'field_title_7' => $datas->field_title_7,
-                'field_unit_7' => $datas->field_unit_7,
-                'field_title_8' => $datas->field_title_8,
-                'field_unit_8' => $datas->field_unit_8,
-                'field_title_9' => $datas->field_title_9,
-                'field_unit_9' => $datas->field_unit_9,
-                'field_title_10' => $datas->field_title_10,
-                'field_unit_10' => $datas->field_unit_10,
-                'id' => $datas->id,
+                'outdoor_product' => $OutdoorDatas->outdoor_product,
+                'outdoor_unit' => $OutdoorDatas->outdoor_unit,
+                'outdoor_price' => $OutdoorDatas->outdoor_price,
+                'outdoor_total' => $OutdoorDatas->outdoor_total,
+                'id' => $data->id,
             );
 
             // return view('pages.backend.outdoor.outdoor_export_pdf', compact('index_arr'));
@@ -152,13 +193,18 @@ class OutdoorController extends Controller
 
         }
 
-        $outdoordata = Outdoor::findOrFail($id);
+        
             $pdf = Pdf::loadView('pages.backend.outdoor.outdoor_export_pdf', [
                 'index_arr' => $index_arr,
-                'outdoor_name' => $outdoordata->name,
+                'outdoor_name' => $data->name,
+                'contact_number' => $data->contact_number,
+                'address' => $data->address,
+                'booking_date' => $data->booking_date,
+                'delivery_date' => $data->delivery_date,
+                'note' => $data->note,
             ]);
 
-            $name = $outdoordata->name . '_outdoor.' . 'pdf';
+            $name = $data->name . '_outdoor.' . 'pdf';
             return $pdf->download('.pdf');
     }
 }

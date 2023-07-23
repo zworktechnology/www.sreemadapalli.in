@@ -86,32 +86,39 @@
                                                 <div class="col-sm-3">
                                                     <p>Pricing</p>
                                                 </div>
-                                                <div class="col-sm-2">
-                                                    <input type="text" class="form-control" name="field_title_1"
-                                                        placeholder="Product Name">
+                                                <div class="col-sm-9">
+                                                    <div class="table-responsive col-lg-12 col-sm-12 col-12">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Product</th>
+                                                                    <th>Unit</th>
+                                                                    <th>Price</th>
+                                                                    <th>Total</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="product_fields">
+                                                                <tr>
+                                                                    <td><input type="hidden"id="outdoor_detailid"name="outdoor_detailid[]" />
+                                                                        <input type="text" class="form-control" name="outdoor_product[]" placeholder="Product Name"></td>
+                                                                    <td><input type="number" class="form-control outdoor_unit" name="outdoor_unit[]" id="outdoor_unit" placeholder="Unit" ></td>
+                                                                    <td><input type="number" class="form-control outdoor_price" name="outdoor_price[]" id="outdoor_price" placeholder="Price" ></td>
+                                                                    <td><input type="number" class="form-control outdoor_total" name="outdoor_total[]" readonly id="outdoor_total" placeholder="Total"></td>
+                                                                    <td><input type="button" id="addproductfields"  class="btn btn-success inner" value="+"/></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-2">
-                                                    <input type="number" class="form-control" name="field_unit_1"
-                                                        id="field_unit_1" placeholder="Unit" onchange="totalcalculate()">
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <input type="number" class="form-control" name="field_unit_price_1"
-                                                        id="field_unit_price_1" placeholder="Price"
-                                                        onchange="totalcalculate()">
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <input type="number" class="form-control" name="field_total_1"
-                                                        id="field_total_1" placeholder="Total" onchange="totalcalculate()">
-                                                </div>
-                                                <div class="col-sm-1">
-                                                            <input data-repeater-create type="button" class="btn btn-success inner" value="Add"/>
-                                                </div>
+                                                
+                                                
                                             </div>
                                             <div class="row mb-3 file-6">
                                                 <label for="note" class="col-sm-6 col-form-label">
                                                     Over All Total Amount</label>
                                                 <div class="col-sm-5">
-                                                    <input type="number" class="form-control" name="over_all_total"
+                                                    <input type="number" class="form-control over_all_total" name="over_all_total" readonly
                                                         id="over_all_total" placeholder="Total">
                                                 </div>
                                             </div>
@@ -130,4 +137,60 @@
 
         </div>
     </div>
+
+
+<script>
+    $(document).ready(function() {
+        $("#addproductfields").click(function() {
+            $("#product_fields").append(
+                    '<tr>' +
+                    '<td><input type="hidden"id="outdoor_detailid"name="outdoor_detailid[]" />' +
+                    '<input type="text" class="form-control" name="outdoor_product[]" placeholder="Product Name"></td>' +
+                    '<td><input type="number" class="form-control outdoor_unit" name="outdoor_unit[]" id="outdoor_unit" placeholder="Unit" ></td>' +
+                    '<td><input type="number" class="form-control outdoor_price" name="outdoor_price[]" id="outdoor_price" placeholder="Price" ></td>' +
+                    '<td><input type="number" class="form-control outdoor_total" readonly name="outdoor_total[]" id="outdoor_total" placeholder="Total"></td>' +
+                    '<td><button style="width: 35px;" class="text-white font-medium rounded-lg text-sm  text-center btn btn-danger remove-tr" type="button" >-</button></td>' +
+                    '</tr>'
+                );
+        });
+    });
+    $(document).on('click', '.remove-tr', function() {
+            $(this).parents('tr').remove();
+    });
+
+
+    $(document).on("blur", "input[name*=outdoor_price]", function() {
+        var outdoor_price = $(this).val();
+        var outdoor_unit = $(this).parents('tr').find('.outdoor_unit').val();
+        var total = outdoor_price * outdoor_unit;
+        $(this).parents('tr').find('.outdoor_total').val(total);
+
+        var totalAmount = 0;
+            $("input[name='outdoor_total[]']").each(
+                                    function() {
+                                        //alert($(this).val());
+                                        totalAmount = Number(totalAmount) +
+                                            Number($(this).val());
+                                        $('.over_all_total').val(
+                                            totalAmount);
+                                    });
+    });
+
+    $(document).on("blur", "input[name*=outdoor_unit]", function() {
+        var outdoor_unit = $(this).val();
+        var outdoor_price = $(this).parents('tr').find('.outdoor_price').val();
+        var total = outdoor_price * outdoor_unit;
+        $(this).parents('tr').find('.outdoor_total').val(total);
+
+        var totalAmount = 0;
+            $("input[name='outdoor_total[]']").each(
+                                    function() {
+                                        //alert($(this).val());
+                                        totalAmount = Number(totalAmount) +
+                                            Number($(this).val());
+                                        $('.over_all_total').val(
+                                            totalAmount);
+                                    });
+    });
+</script>
 @endsection
