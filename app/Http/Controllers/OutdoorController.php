@@ -43,6 +43,7 @@ class OutdoorController extends Controller
         $data->address = $request->get('address');
         $data->booking_date = $request->get('booking_date');
         $data->delivery_date = $request->get('delivery_date');
+        $data->delivery_time = $request->get('delivery_time');
         $data->note = $request->get('note');
         $data->over_all_total = $request->get('over_all_total');
 
@@ -60,7 +61,7 @@ class OutdoorController extends Controller
             $OutdoorDetail->save();
         }
 
-        return redirect()->back()->with('index', 'Successful added a new outdoor record !');
+        return redirect()->route('outdoor.index')->with('index', 'Successful added a new outdoor record !');
     }
 
     public function edit($id)
@@ -81,6 +82,7 @@ class OutdoorController extends Controller
         $data->address = $request->get('address');
         $data->booking_date = $request->get('booking_date');
         $data->delivery_date = $request->get('delivery_date');
+        $data->delivery_time = $request->get('delivery_time');
         $data->note = $request->get('note');
         $data->over_all_total = $request->get('over_all_total');
 
@@ -193,7 +195,7 @@ class OutdoorController extends Controller
 
         }
 
-        
+
             $pdf = Pdf::loadView('pages.backend.outdoor.outdoor_export_pdf', [
                 'index_arr' => $index_arr,
                 'outdoor_name' => $data->name,
@@ -201,6 +203,7 @@ class OutdoorController extends Controller
                 'address' => $data->address,
                 'booking_date' => $data->booking_date,
                 'delivery_date' => $data->delivery_date,
+                'delivery_time' => $data->delivery_time,
                 'note' => $data->note,
             ]);
 

@@ -79,7 +79,7 @@
                                                 <td>{{ $datas->name }}</td>
                                                 <td>{{ $datas->contact_number }}</td>
                                                 <td>{{ date('d-m-Y', strtotime($datas->booking_date)) }}</td>
-                                                <td>{{ date('d-m-Y | h:i A', strtotime($datas->delivery_date)) }}</td>
+                                                <td>{{ date('d-m-Y', strtotime($datas->delivery_date)) }} | {{ date('h:i A', strtotime($datas->delivery_time)) }}</td>
                                                 <td>
                                                     <ul class="list-unstyled hstack gap-1 mb-0">
                                                         <li>

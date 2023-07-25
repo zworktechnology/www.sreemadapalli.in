@@ -24,6 +24,7 @@ return new class extends Migration
             $table->longText('address')->nullable();
             $table->string('booking_date');
             $table->string('delivery_date');
+            $table->string('delivery_time');
             $table->string('status')->default(0);
             $table->longText('note');
             $table->string('over_all_total')->nullable();

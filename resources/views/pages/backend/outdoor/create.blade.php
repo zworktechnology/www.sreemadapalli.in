@@ -60,8 +60,12 @@
                                             <div class="row mb-2 col-6">
                                                 <label for="date" class="col-sm-3 col-form-label">
                                                     Delivery <span style="color: red;">*</span></label>
-                                                <div class="col-sm-9">
-                                                    <input type="datetime-local" class="form-control" name="delivery_date"
+                                                <div class="col-sm-5">
+                                                    <input type="date" class="form-control" name="delivery_date"
+                                                        placeholder="Enter Your " required>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="time" class="form-control" name="delivery_time"
                                                         placeholder="Enter Your " required>
                                                 </div>
                                             </div>
@@ -111,8 +115,8 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                
-                                                
+
+
                                             </div>
                                             <div class="row mb-3 file-6">
                                                 <label for="note" class="col-sm-6 col-form-label">

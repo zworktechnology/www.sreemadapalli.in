@@ -15,6 +15,7 @@ class Outdoor extends Model
         'address',
         'booking_date',
         'delivery_date',
+        'delivery_time',
         'status',
         'note',
         'soft_delete',

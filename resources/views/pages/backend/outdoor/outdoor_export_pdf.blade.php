@@ -93,7 +93,7 @@
     <table id="customers">
 
         <tbody id="customer_index">
-           
+
             <tr>
                 <td>NAME</td>
                 <td> {{$outdoor_name }}</td>
@@ -115,8 +115,8 @@
             </tr>
 
             <tr>
-                <td>DELIVERY DATE</td>
-                <td> {{ $delivery_date }}</td>
+                <td>DELIVERY DATE & TIME</td>
+                <td> {{ $delivery_date }} | {{ $delivery_time }}</td>
             </tr>
 
             <tr>
@@ -135,8 +135,8 @@
                 <td>{{ $index_array['outdoor_unit'] }}</td>
              </tr>
              @endforeach
-             
-            
+
+
         </tbody>
     </table>
 

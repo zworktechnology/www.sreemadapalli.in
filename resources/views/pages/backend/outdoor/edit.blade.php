@@ -65,13 +65,17 @@
                                         <div class="row mb-3">
                                             <label for="date" class="col-sm-3 col-form-label">
                                                 Delivery <span style="color: red;">*</span></label>
-                                            <div class="col-sm-9">
-                                                <input type="datetime-local" class="form-control" name="delivery_date"
+                                            <div class="col-sm-5">
+                                                <input type="date" class="form-control" name="delivery_date"
                                                     placeholder="Enter Your " required value="{{ $data->delivery_date }}">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="time" class="form-control" name="delivery_time"
+                                                    placeholder="Enter Your " required value="{{ $data->delivery_time }}">
                                             </div>
                                         </div>
                                         <hr>
-                                        
+
                                         <div class="row mb-3">
                                             <div class="col-sm-3">
                                                     <p>Pricing</p>
@@ -104,7 +108,7 @@
                                                         </table>
                                                     </div>
 
-                                                
+
                                             </div>
                                         </div>
                                         <div class="row mb-3 file-6">
