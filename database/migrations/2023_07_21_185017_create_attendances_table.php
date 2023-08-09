@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->string('date');
-            $table->string('a_status');
+            $table->string('month');
+            $table->string('attendence_status');
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
             $table->boolean('soft_delete')->default(0);

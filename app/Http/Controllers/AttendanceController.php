@@ -22,30 +22,32 @@ class AttendanceController extends Controller
         return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails'));
     }
 
-    public function present(Request $request)
+
+    public function create()
     {
         $today = Carbon::now()->format('Y-m-d');
+        $timenow = Carbon::now()->format('H:i');
+        $employees = Employee::where('soft_delete', '!=', 1)->get();
+        $time = strtotime($today);
+        $month = date("F",$time);
+        return view('pages.backend.attendence.create', compact('today', 'employees', 'month', 'time', 'timenow'));
+    }
 
-        $data = new Attendance();
 
-        $data->date = $today;
-        $data->a_status = $request->get('a_status');
-        $data->employee_id = $request->get('employee_id');
 
-        if ($request->get('a_status') == 1) {
 
-            $wdata = new Expence();
+    public function store(Request $request)
+    {
 
-            $wdata->date = $today;
-            $wdata->amount = $request->get('amount');
-            $wdata->employee_id = $request->get('employee_id');
-            $wdata->note = 'No';
-            $wdata->status = $request->get('status');
+        foreach ($request->get('employee_id') as $key => $employee_id) {
 
-            $wdata->save();
+            $Attendance = new Attendance();
+            $Attendance->date = $request->get('attendence_date');
+            $Attendance->month = $request->get('attendence_month');
+            $Attendance->employee_id = $employee_id;
+            $Attendance->attendence_status = $request->attendence_status[$key];
+            $Attendance->save();
         }
-
-        $data->save();
 
         return redirect()->route('attendence.index')->with('update', 'mark as present');
     }

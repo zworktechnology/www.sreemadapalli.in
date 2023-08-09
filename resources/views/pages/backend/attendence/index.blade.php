@@ -13,12 +13,11 @@
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0 font-size-18">Attendence</h4>
                             <div class="page-title-right">
-                                <div hidden>
-                                    <button type="button" class="btn btn-success w-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create</button>
-
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        {{-- @include('pages.backend.employee.create') --}}
-                                    </div>
+                                <div>
+                                        <a href="{{ route('attendence.create') }}">
+                                            <button type="button" class="btn btn-success w-md" data-bs-toggle="modal"
+                                                data-bs-target=".bs-example-modal-lg">Create</button>
+                                        </a>
                                 </div>
                             </div>
                         </div>

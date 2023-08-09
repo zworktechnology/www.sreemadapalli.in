@@ -327,8 +327,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/attendence', [AttendanceController::class, 'index'])->name('attendence.index');
+        // CREATE
+        Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/attendence/create', [AttendanceController::class, 'create'])->name('attendence.create');
         // STORE
-        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/attendence/present', [AttendanceController::class, 'present'])->name('attendence.store');
+        Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/attendence/store', [AttendanceController::class, 'store'])->name('attendence.store');
 
     });
 
