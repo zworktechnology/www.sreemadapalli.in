@@ -64,8 +64,8 @@
                                             </div>
                                           </div>
                                           <style>
-                                          .greenText{ background-color:green;color:white }
-                                          .redText{ background-color:red; color:white }
+                                          .greenText{ background-color:green;color:white;font-size:13px }
+                                          .redText{ background-color:red; color:white;font-size:13px  }
                                           </style> 
                                           <div class="row mb-2">
                                              <label for="date" class="col-sm-2 col-form-label">
@@ -90,11 +90,25 @@
                                                                            
                                                                      </td>
                                                                      <td>
-                                                                     <select class="form-control " onchange="this.className=this.options[this.selectedIndex].className" name="attendence_status[]"  required>
+                                                                     <select hidden class="form-control " onchange="this.className=this.options[this.selectedIndex].className" name="attendence_status[]"  >
                                                                         <option value="" disabled selected hiddden>Select</option>
                                                                         <option value="Present" class="greenText form-control">Present</option>
                                                                         <option value="Absent" class="redText form-control"  >Absent</option>
                                                                      </select>
+
+                                                                     
+                                                                     <div class="form-check form-check-inline">
+                                                                           <input class="form-check-input attendence_status{{ $employees_arr->id }}" type="radio" name="attendence_status[{{ $employees_arr->id }}]" id="present{{ $employees_arr->id }}" value="Present">
+                                                                           <label class="form-check-label" for="present{{ $employees_arr->id }}" style="color:green;font-size:13px">
+                                                                           Present
+                                                                           </label>
+                                                                     </div>
+                                                                     <div class="form-check form-check-inline">
+                                                                           <input class="form-check-input attendence_status{{ $employees_arr->id }}" type="radio" name="attendence_status[{{ $employees_arr->id }}]" id="absent{{ $employees_arr->id }}" value="Absent">
+                                                                           <label class="form-check-label" for="absent{{ $employees_arr->id }}" style="color:red;font-size:13px">
+                                                                           Absent
+                                                                           </label>
+                                                                     </div>
                                                                      </td>
 
                                                                   </tr>
@@ -103,6 +117,7 @@
                                                          </table>
                                                    </div>
                                                 </div>
+
                                           </div>
                                           <div class="modal-footer">
                                              <button type="submit" class="btn btn-success">Save</button>

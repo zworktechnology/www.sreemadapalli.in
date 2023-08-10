@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('date');
             $table->string('month');
+            $table->string('year');
             $table->string('attendence_status');
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');

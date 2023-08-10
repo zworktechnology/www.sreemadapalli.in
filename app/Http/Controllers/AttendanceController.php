@@ -14,12 +14,65 @@ class AttendanceController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $data = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', '0')->get();
+        $data = Employee::where('soft_delete', '!=', 1)->get();
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $notificationdetails = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->get();
 
-        return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails'));
+        $time = strtotime($today);
+        $current_month = date("F",$time);
+
+
+        $month = date("m",strtotime($today));
+        $year = date("Y",strtotime($today));
+
+        $list=array();
+        $monthdates = [];
+        for($d=1; $d<=31; $d++)
+        {
+            $times = mktime(12, 0, 0, $month, $d, $year);          
+            if (date('m', $times) == $month)   
+                $list[] = date('d', $times);    
+                $monthdates[] = date('Y-m-d', $times);
+        }
+
+
+
+
+        $attendence_Data = [];
+        foreach (($monthdates) as $key => $monthdate_arr) {
+
+            $employees = Employee::where('soft_delete', '!=', 1)->get();
+            foreach ($employees as $key => $employees_arr) {
+                $status = '';
+                $attendencedata = Attendance::where('soft_delete', '!=', 1)->where('employee_id', '=', $employees_arr->id)->where('date', '=', $monthdate_arr)->first();
+                if($attendencedata != ""){
+                    if($attendencedata->attendence_status == 'Present'){
+                        $status = 'P';
+                    }else {
+                        $status = 'A';
+                    }
+                }
+
+                    
+
+                $attendence_Data[] = array(
+                    'employee' => $employees_arr->name,  
+                    'empid' => $employees_arr->id,
+                    'attendence_status' => $status,
+                    'date' => date("d",strtotime($monthdate_arr))
+                );
+
+                
+                
+            }
+
+            
+        }
+        //dd($attendence_Data);
+
+        
+        return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails', 'current_month', 'list', 'attendence_Data', 'monthdates'));
     }
 
 
@@ -41,11 +94,14 @@ class AttendanceController extends Controller
 
         foreach ($request->get('employee_id') as $key => $employee_id) {
 
+            $year = date("Y",strtotime($request->get('attendence_date')));
+
             $Attendance = new Attendance();
             $Attendance->date = $request->get('attendence_date');
             $Attendance->month = $request->get('attendence_month');
+            $Attendance->year = $year;
             $Attendance->employee_id = $employee_id;
-            $Attendance->attendence_status = $request->attendence_status[$key];
+            $Attendance->attendence_status = $request->attendence_status[$employee_id];
             $Attendance->save();
         }
 
