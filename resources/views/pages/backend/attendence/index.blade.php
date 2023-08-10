@@ -64,8 +64,8 @@
                               <div class="card-body border" data-simplebar>
 
                                  <div class="row mb-3 file-1">
-                                    
-                                          
+
+
                                           <div class=" py-1 mb-3">
 
                                                 <div class="row " >
@@ -81,32 +81,38 @@
                                                       </thead>
                                                       <tbody>
 
-                                                            
+
                                                             @foreach ($data as $employee)
-                                                            
-                                                           
+
+
                                                                 <tr class="border">
                                                                    <td class="border">{{$employee->name}}</td>
-                                                                   
+
                                                                             @foreach ($attendence_Data as $attendence_Data_arr)
                                                                                 @if ($employee->id == $attendence_Data_arr['empid'])
-                                                                                    <td class="border"  >
+                                                                                    @if ($attendence_Data_arr['attendence_status'] != 'A')
+                                                                                    <td class="border" style="color:green">
                                                                                         {{ $attendence_Data_arr['attendence_status'] }}
                                                                                     </td>
+                                                                                    @else
+                                                                                    <td class="border" style="color:red">
+                                                                                        {{ $attendence_Data_arr['attendence_status'] }}
+                                                                                    </td>
+                                                                                    @endif
                                                                                 @endif
-                                                                            @endforeach   
-                                                                        
+                                                                            @endforeach
+
                                                                 </tr>
-                                                               
+
                                                             @endforeach
 
                                                       </tbody>
                                                    </table>
-                                                
+
                                                 </div>
 
                                           </div>
-                                       
+
                                  </div>
 
 
@@ -119,7 +125,7 @@
 
 
 
-                
+
             </div>
         </div>
 

@@ -61,6 +61,7 @@
                                         <tr>
                                             <th>Sl. No</th>
                                             <th>Name</th>
+                                            <th>Emp Type</th>
                                             <th>Phone No</th>
                                             <th>Action</th>
                                         </tr>
@@ -70,6 +71,11 @@
                                         <tr>
                                             <td>{{ ++$keydata }}</td>
                                             <td>{{ $datas->name }}</td>
+                                            @if ($datas->salary_amount == 1)
+                                            <td style="color:red;">Employee</td>
+                                            @else
+                                            <td>Supplier</td>
+                                            @endif
                                             <td>{{ $datas->contact_number }}</td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">

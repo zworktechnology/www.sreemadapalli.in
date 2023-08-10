@@ -14,7 +14,7 @@ class AttendanceController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $data = Employee::where('soft_delete', '!=', 1)->get();
+        $data = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', 0)->get();
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $notificationdetails = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->get();
@@ -30,9 +30,9 @@ class AttendanceController extends Controller
         $monthdates = [];
         for($d=1; $d<=31; $d++)
         {
-            $times = mktime(12, 0, 0, $month, $d, $year);          
-            if (date('m', $times) == $month)   
-                $list[] = date('d', $times);    
+            $times = mktime(12, 0, 0, $month, $d, $year);
+            if (date('m', $times) == $month)
+                $list[] = date('d', $times);
                 $monthdates[] = date('Y-m-d', $times);
         }
 
@@ -54,24 +54,24 @@ class AttendanceController extends Controller
                     }
                 }
 
-                    
+
 
                 $attendence_Data[] = array(
-                    'employee' => $employees_arr->name,  
+                    'employee' => $employees_arr->name,
                     'empid' => $employees_arr->id,
                     'attendence_status' => $status,
                     'date' => date("d",strtotime($monthdate_arr))
                 );
 
-                
-                
+
+
             }
 
-            
+
         }
         //dd($attendence_Data);
 
-        
+
         return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails', 'current_month', 'list', 'attendence_Data', 'monthdates'));
     }
 
@@ -80,7 +80,7 @@ class AttendanceController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $timenow = Carbon::now()->format('H:i');
-        $employees = Employee::where('soft_delete', '!=', 1)->get();
+        $employees = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', 0)->get();
         $time = strtotime($today);
         $month = date("F",$time);
         return view('pages.backend.attendence.create', compact('today', 'employees', 'month', 'time', 'timenow'));
