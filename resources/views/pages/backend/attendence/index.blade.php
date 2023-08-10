@@ -118,10 +118,10 @@
                                                                                 @if ($employee->id == $attendence_Data_arr['empid'])
                                                                                 @if ($attendence_Data_arr['attendence_status'] != 'A')
                                                                                     <td class="border" style="color:green" >
-                                                                                            {{ $attendence_Data_arr['attendence_status'] }}
+                                                                                        {{ $attendence_Data_arr['attendence_status'] }}
                                                                                     </td>
                                                                                     @else
-                                                                                    <td class="border" style="color:red">
+                                                                                    <td class="border" style="color:white; background-color:red">
                                                                                         {{ $attendence_Data_arr['attendence_status'] }}
                                                                                     </td>
                                                                                     @endif
