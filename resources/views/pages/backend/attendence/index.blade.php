@@ -95,6 +95,10 @@
                                                                                             data-bs-toggle="modal">
                                                                                             {{ $attendence_Data_arr['attendence_status'] }}</a>
                                                                                     </td>
+                                                                                    @else
+                                                                                    <td class="border" style="color:red">
+                                                                                        {{ $attendence_Data_arr['attendence_status'] }}
+                                                                                    </td>
                                                                                 @endif
 
 
@@ -107,7 +111,7 @@
                                                                                             <div class="modal-header">
                                                                                                 <h5 class="modal-title" id="staticBackdropLabel">Update Attendence</h5>
                                                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                            </div>  
+                                                                                            </div>
 
                                                                                             <form autocomplete="off" method="POST"
                                                                                                 action="{{ route('attendence.update', ['id' => $attendence_Data_arr['attendence_id']]) }}">
@@ -122,14 +126,17 @@
                                                                                                             <input type="text" class="form-control" name="empl" placeholder="Enter Your " required value="{{ $today }}">
                                                                                                         </div>
                                                                                                     </div>
-                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="modal-footer">
+                                                                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                                                                </div>
 
                                                                                             </form>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            @endforeach   
-                                                                        
+                                                                            @endforeach
+
                                                                 </tr>
                                                                
                                                             @endforeach
