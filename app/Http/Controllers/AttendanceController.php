@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Attendance;
 use App\Models\Employee;
 use App\Models\Expence;
@@ -49,7 +49,7 @@ class AttendanceController extends Controller
                 if($attendencedata != ""){
                     if($attendencedata->attendence_status == 'Present'){
                         $status = 'P';
-                    }else {
+                    }else if($attendencedata->attendence_status == 'Absent'){
                         $status = 'A';
                     }
                     $attendence_id = $attendencedata->id;
@@ -96,34 +96,68 @@ class AttendanceController extends Controller
 
     public function store(Request $request)
     {
+        $attend_dat = $request->get('attendence_date');
+        $attend_data = Attendance::where('date', '=', $attend_dat)->first();
 
-        foreach ($request->get('employee_id') as $key => $employee_id) {
+        if($attend_data == ""){
+            error_reporting(0);
+            foreach ($request->get('employee_id') as $key => $employee_id) {
+    
+                $year = date("Y",strtotime($request->get('attendence_date')));
+    
+                $Attendance = new Attendance();
+                $Attendance->date = $request->get('attendence_date');
+                $Attendance->month = $request->get('attendence_month');
+                $Attendance->year = $year;
+                $Attendance->employee_id = $employee_id;
+                $Attendance->attendence_status = $request->attendence_status[$employee_id];
+                $Attendance->save();
+            }
 
-            $year = date("Y",strtotime($request->get('attendence_date')));
-
-            $Attendance = new Attendance();
-            $Attendance->date = $request->get('attendence_date');
-            $Attendance->month = $request->get('attendence_month');
-            $Attendance->year = $year;
-            $Attendance->employee_id = $employee_id;
-            $Attendance->attendence_status = $request->attendence_status[$employee_id];
-            $Attendance->save();
+            return redirect()->route('attendence.index')->with('update', 'mark as present');
+        }else {
+            return redirect()->route('attendence.index')->with('exists', 'Data Already Existed');
         }
+        
 
-        return redirect()->route('attendence.index')->with('update', 'mark as present');
+        
     }
 
-    public function update(Request $request, $id)
+    public function edit($date)
     {
-        $data = Attendance::findOrFail($id);
+       
 
-        $data->date = $request->get('date');
-        $data->month = $request->get('month');
-        $data->employee_id = $request->get('employee_id');
-        $data->attendence_status = $request->get('attendence_status');
+        $employees = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', NULL)->get();
+        
+        $attend_data = Attendance::where('date', '=', $date)->get();
+        $attendenceData = Attendance::where('date', '=', $date)->first();
+        
+        
+        return view('pages.backend.attendence.edit', compact('date', 'employees', 'attendenceData', 'attend_data'));
+    }
 
-        $data->update();
-        return redirect()->route('attendence.index')->with('update', 'mark as absent');
+
+    public function update(Request $request, $date)
+    {
+        error_reporting(0);
+
+        $attend_data = Attendance::where('date', '=', $date)->get();
+        $employeeid = array();
+        foreach ($attend_data as $key => $attends_datas) {
+            $employeeid[] = $attends_datas->employee_id;
+        }
+
+        foreach ($employeeid as $key => $employeeids) {
+
+            $status = $request->attendence_status[$employeeids];
+            $attendence_id = $request->attendence_id[$key];
+
+            DB::table('attendances')->where('id', $attendence_id)->update([
+                'attendence_status' => $status,  'employee_id' => $employeeids,  'date' => $date
+            ]);
+        }
+
+        return redirect()->route('attendence.index')->with('update', 'Attendence Record  detail successfully changed !');
     }
 
     public function delete($id)

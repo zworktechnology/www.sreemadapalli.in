@@ -96,7 +96,7 @@
                                                                         <option value="Absent" class="redText form-control"  >Absent</option>
                                                                      </select>
 
-                                                                     
+                                                                     <input type="hidden" id="attendence_id" name="attendence_id[]" value=""/>
                                                                      <div class="form-check form-check-inline">
                                                                            <input class="form-check-input attendence_status{{ $employees_arr->id }}" type="radio" name="attendence_status[{{ $employees_arr->id }}]" id="present{{ $employees_arr->id }}" value="Present">
                                                                            <label class="form-check-label" for="present{{ $employees_arr->id }}" style="color:green;font-size:13px">
