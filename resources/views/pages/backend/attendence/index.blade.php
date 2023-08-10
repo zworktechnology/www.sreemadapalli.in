@@ -80,9 +80,17 @@
                                                         <thead><h4 style="text-transform: uppercase;text-align:center">{{ $current_month }}  |  {{ $current_year }}</h4></thead>
                                                       <thead>
                                                          <tr class="">
-                                                            <th class="border">Name</th>
+                                                            <th class="border">Date</th>
                                                             @foreach ($list as $lists)
                                                             <th class="border">{{ $lists }}</th>
+                                                            @endforeach
+                                                         </tr>
+                                                      </thead>
+                                                      <thead>
+                                                         <tr class="">
+                                                            <th class="border">Day</th>
+                                                            @foreach ($listday as $listdays)
+                                                            <th class="border">{{ substr($listdays, 0, 3) }}</th>
                                                             @endforeach
                                                          </tr>
                                                       </thead>
@@ -90,7 +98,7 @@
                                                       <tbody>
 
                                                         <tr>
-                                                            <td></td>
+                                                            <td class="border">Edit</td>
                                                             @foreach ($monthdates as $monthdate_arr)
                                                             <td><a href="{{ route('attendence.edit', ['date' => $monthdate_arr]) }}" class="btn btn-sm btn-soft-info">
                                                                 <i class="mdi mdi-pencil-outline"></i></a></td>

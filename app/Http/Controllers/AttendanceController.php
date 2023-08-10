@@ -14,7 +14,7 @@ class AttendanceController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $data = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', 0)->get();
+        $data = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '=', 1)->get();
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
         $notificationdetails = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->where('delivery_date', '=', $today)->get();
@@ -34,6 +34,7 @@ class AttendanceController extends Controller
             $times = mktime(12, 0, 0, $month, $d, $year);
             if (date('m', $times) == $month)
                 $list[] = date('d', $times);
+                $listday[] = date('l', $times);
                 $monthdates[] = date('Y-m-d', $times);
         }
 
@@ -78,7 +79,7 @@ class AttendanceController extends Controller
         //dd($attendence_Data);
 
 
-        return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails', 'current_month', 'list', 'attendence_Data', 'monthdates', 'current_year'));
+        return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails', 'current_month', 'list', 'listday', 'attendence_Data', 'monthdates', 'current_year'));
     }
 
 
@@ -86,7 +87,7 @@ class AttendanceController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $timenow = Carbon::now()->format('H:i');
-        $employees = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', 0)->get();
+        $employees = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '=', 1)->get();
         $time = strtotime($today);
         $month = date("F",$time);
         return view('pages.backend.attendence.create', compact('today', 'employees', 'month', 'time', 'timenow'));

@@ -66,7 +66,7 @@
                                           <style>
                                           .greenText{ background-color:green;color:white;font-size:13px }
                                           .redText{ background-color:red; color:white;font-size:13px  }
-                                          </style> 
+                                          </style>
                                           <div class="row mb-2">
                                              <label for="date" class="col-sm-2 col-form-label">
                                                 Employees <span style="color: red;">*</span></label>
@@ -75,19 +75,19 @@
                                                       <table class="table">
                                                                <thead>
                                                                   <tr>
-                                                                     <th style="width:60%">Name</th>
-                                                                     <th style="width:40%">Status</th>
+                                                                     <th style="width:40%">Name</th>
+                                                                     <th style="width:60%">Status</th>
                                                                   </tr>
                                                                </thead>
                                                                <tbody id="product_fields">
                                                                @foreach ($employees as $employees_arr)
                                                                   <tr>
                                                                      <td class="" >
-                                                                           
+
                                                                               <input type="hidden" id="employee_id" name="employee_id[]"value="{{ $employees_arr->id }}" />
                                                                                  <input type="text"class="form-control"style="color:black;font-size:13px" name="product_name[]"
                                                                                        value="{{ $employees_arr->name }}" readonly>
-                                                                           
+
                                                                      </td>
                                                                      <td>
                                                                      <select hidden class="form-control " onchange="this.className=this.options[this.selectedIndex].className" name="attendence_status[]"  >
@@ -97,15 +97,15 @@
                                                                      </select>
 
                                                                      <input type="hidden" id="attendence_id" name="attendence_id[]" value=""/>
-                                                                     <div class="form-check form-check-inline">
+                                                                     <div class="form-check form-check-inline" style="border: 2px solid yellow;margin: 5px;background-color: green;color: white;padding-top: 10px;padding-bottom: 10px;padding-right: 20px;padding-left: 30px;">
                                                                            <input class="form-check-input attendence_status{{ $employees_arr->id }}" type="radio" name="attendence_status[{{ $employees_arr->id }}]" id="present{{ $employees_arr->id }}" value="Present">
-                                                                           <label class="form-check-label" for="present{{ $employees_arr->id }}" style="color:green;font-size:13px">
+                                                                           <label class="form-check-label" for="present{{ $employees_arr->id }}" style="color:white;font-size:13px">
                                                                            Present
                                                                            </label>
                                                                      </div>
-                                                                     <div class="form-check form-check-inline">
+                                                                     <div class="form-check form-check-inline" style="border: 2px solid yellow;margin: 5px;background-color: red;color: white;padding-top: 10px;padding-bottom: 10px;padding-right: 20px;padding-left: 30px;">
                                                                            <input class="form-check-input attendence_status{{ $employees_arr->id }}" type="radio" name="attendence_status[{{ $employees_arr->id }}]" id="absent{{ $employees_arr->id }}" value="Absent">
-                                                                           <label class="form-check-label" for="absent{{ $employees_arr->id }}" style="color:red;font-size:13px">
+                                                                           <label class="form-check-label" for="absent{{ $employees_arr->id }}" style="color:white;font-size:13px">
                                                                            Absent
                                                                            </label>
                                                                      </div>
@@ -124,7 +124,7 @@
                                           </div>
                                        </form>
 
-                                                    
+
 
 
                               </div>
