@@ -64,8 +64,8 @@
                               <div class="card-body border" data-simplebar>
 
                                  <div class="row mb-3 file-1">
-                                    
-                                          
+
+
                                           <div class=" py-1 mb-3">
 
                                                 <div class="row " >
@@ -81,29 +81,31 @@
                                                       </thead>
                                                       <tbody>
 
-                                                            
+
                                                             @foreach ($data as $employee)
-                                                            
-                                                           
+
+
                                                                 <tr class="border">
                                                                    <td class="border">{{$employee->name}}</td>
-                                                                   
+
                                                                             @foreach ($attendence_Data as $attendence_Data_arr)
                                                                                 @if ($employee->id == $attendence_Data_arr['empid'])
-                                                                                    <td class="border"  >
+                                                                                @if ($attendence_Data_arr['attendence_status'] != 'A')
+                                                                                    <td class="border" style="color:green" >
                                                                                         <a href="#jobeditattendence{{ $attendence_Data_arr['attendence_id'] }}"
-                                                                                            data-bs-toggle="modal">
+                                                                                            data-bs-toggle="modal" style="color:green">
                                                                                             {{ $attendence_Data_arr['attendence_status'] }}</a>
                                                                                     </td>
                                                                                     @else
                                                                                     <td class="border" style="color:red">
                                                                                         {{ $attendence_Data_arr['attendence_status'] }}
                                                                                     </td>
+                                                                                    @endif
                                                                                 @endif
 
 
                                                                                 <div class="modal fade" id="jobeditattendence{{ $attendence_Data_arr['attendence_id'] }}"
-                                                                                    tabindex="-1" aria-labelledby="jobDeleteLabel"
+                                                                                    tabindex="-1" aria-labelledby="jobeditattendenceLabel"
                                                                                     aria-hidden="true">
                                                                                     <div class="modal-dialog modal-dialog-centered modal-sm">
                                                                                         <div class="modal-content">
@@ -123,7 +125,8 @@
                                                                                                         <label for="date" class="col-sm-4 col-form-label">
                                                                                                             Employee <span style="color: red;">*</span></label>
                                                                                                         <div class="col-sm-8">
-                                                                                                            <input type="text" class="form-control" name="empl" placeholder="Enter Your " required value="{{ $today }}">
+                                                                                                            <input type="text" class="form-control" name="employee" value="{{ $attendence_Data_arr['employee'] }}">
+                                                                                                            <input type="hidden" name="employee_id" value="{{ $attendence_Data_arr['empid'] }}"/>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -138,16 +141,16 @@
                                                                             @endforeach
 
                                                                 </tr>
-                                                               
+
                                                             @endforeach
 
                                                       </tbody>
                                                    </table>
-                                                
+
                                                 </div>
 
                                           </div>
-                                       
+
                                  </div>
 
 
@@ -160,7 +163,7 @@
 
 
 
-                
+
             </div>
         </div>
 
