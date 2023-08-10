@@ -91,9 +91,47 @@
                                                                             @foreach ($attendence_Data as $attendence_Data_arr)
                                                                                 @if ($employee->id == $attendence_Data_arr['empid'])
                                                                                     <td class="border"  >
-                                                                                        {{ $attendence_Data_arr['attendence_status'] }}
+                                                                                        <a href="#jobeditattendence{{ $attendence_Data_arr['attendence_id'] }}"
+                                                                                            data-bs-toggle="modal">
+                                                                                            {{ $attendence_Data_arr['attendence_status'] }}</a>
                                                                                     </td>
                                                                                 @endif
+
+
+                                                                                <div class="modal fade" id="jobeditattendence{{ $attendence_Data_arr['attendence_id'] }}"
+                                                                                    tabindex="-1" aria-labelledby="jobeditattendenceLabel"
+                                                                                    aria-hidden="true">
+                                                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                                                        <div class="modal-content">
+
+                                                                                            <div class="modal-header">
+                                                                                                <h5 class="modal-title" id="staticBackdropLabel">Update Attendence</h5>
+                                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                            </div>  
+
+                                                                                            <form autocomplete="off" method="POST"
+                                                                                                action="{{ route('attendence.update', ['id' => $attendence_Data_arr['attendence_id']]) }}">
+                                                                                                @method('PUT')
+                                                                                                @csrf
+
+                                                                                                <div class="modal-body">
+                                                                                                    <div class="row mb-4">
+                                                                                                        <label for="date" class="col-sm-4 col-form-label">
+                                                                                                            Employee <span style="color: red;">*</span></label>
+                                                                                                        <div class="col-sm-8">
+                                                                                                            <input type="text" class="form-control" name="employee" value="{{ $attendence_Data_arr['employee'] }}">
+                                                                                                            <input type="hidden" name="employee_id" value="{{ $attendence_Data_arr['empid'] }}"/>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="modal-footer">
+                                                                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                                                                </div>  
+
+                                                                                            </form>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                             @endforeach   
                                                                         
                                                                 </tr>

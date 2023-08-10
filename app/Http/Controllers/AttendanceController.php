@@ -52,6 +52,9 @@ class AttendanceController extends Controller
                     }else {
                         $status = 'A';
                     }
+                    $attendence_id = $attendencedata->id;
+                }else {
+                    $attendence_id = 0;
                 }
 
                     
@@ -59,8 +62,10 @@ class AttendanceController extends Controller
                 $attendence_Data[] = array(
                     'employee' => $employees_arr->name,  
                     'empid' => $employees_arr->id,
+                    'empname' => $employees_arr->name,
                     'attendence_status' => $status,
-                    'date' => date("d",strtotime($monthdate_arr))
+                    'date' => date("d",strtotime($monthdate_arr)),
+                    'attendence_id' => $attendence_id
                 );
 
                 
@@ -108,14 +113,16 @@ class AttendanceController extends Controller
         return redirect()->route('attendence.index')->with('update', 'mark as present');
     }
 
-    public function absent($id)
+    public function update(Request $request, $id)
     {
         $data = Attendance::findOrFail($id);
 
-        $data->a_status = 0;
+        $data->date = $request->get('date');
+        $data->month = $request->get('month');
+        $data->employee_id = $request->get('employee_id');
+        $data->attendence_status = $request->get('attendence_status');
 
         $data->update();
-
         return redirect()->route('attendence.index')->with('update', 'mark as absent');
     }
 
