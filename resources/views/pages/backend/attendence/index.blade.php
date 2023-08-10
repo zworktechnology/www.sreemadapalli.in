@@ -77,7 +77,7 @@
 
                                                 <div class="row " >
                                                    <table class="table border " >
-                                                        <thead><h4 style="text-transform: uppercase;text-align:center">{{ $current_month}}</h4></thead>
+                                                        <thead><h4 style="text-transform: uppercase;text-align:center">{{ $current_month }}  |  {{ $current_year }}</h4></thead>
                                                       <thead>
                                                          <tr class="">
                                                             <th class="border">Name</th>
@@ -88,7 +88,7 @@
                                                       </thead>
 
                                                       <tbody>
-                                                      
+
                                                         <tr>
                                                             <td></td>
                                                             @foreach ($monthdates as $monthdate_arr)

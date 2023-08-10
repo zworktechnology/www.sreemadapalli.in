@@ -21,6 +21,7 @@ class AttendanceController extends Controller
 
         $time = strtotime($today);
         $current_month = date("F",$time);
+        $current_year = date("Y",$time);
 
 
         $month = date("m",strtotime($today));
@@ -77,7 +78,7 @@ class AttendanceController extends Controller
         //dd($attendence_Data);
 
 
-        return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails', 'current_month', 'list', 'attendence_Data', 'monthdates'));
+        return view('pages.backend.attendence.index', compact('data', 'today', 'notificationcount', 'notificationdetails', 'current_month', 'list', 'attendence_Data', 'monthdates', 'current_year'));
     }
 
 
@@ -102,9 +103,9 @@ class AttendanceController extends Controller
         if($attend_data == ""){
             error_reporting(0);
             foreach ($request->get('employee_id') as $key => $employee_id) {
-    
+
                 $year = date("Y",strtotime($request->get('attendence_date')));
-    
+
                 $Attendance = new Attendance();
                 $Attendance->date = $request->get('attendence_date');
                 $Attendance->month = $request->get('attendence_month');
@@ -118,21 +119,21 @@ class AttendanceController extends Controller
         }else {
             return redirect()->route('attendence.index')->with('exists', 'Data Already Existed');
         }
-        
 
-        
+
+
     }
 
     public function edit($date)
     {
-       
+
 
         $employees = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', NULL)->get();
-        
+
         $attend_data = Attendance::where('date', '=', $date)->get();
         $attendenceData = Attendance::where('date', '=', $date)->first();
-        
-        
+
+
         return view('pages.backend.attendence.edit', compact('date', 'employees', 'attendenceData', 'attend_data'));
     }
 
