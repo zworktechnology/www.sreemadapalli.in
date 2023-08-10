@@ -44,10 +44,38 @@
                                         </div>
                                     </div>
                                     <div class="row mb-4">
-                                        <label for="salary_amount" class="col-sm-3 col-form-label">
-                                            Salary <span style="color: red;">*</span></label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="salary_amount" placeholder="Enter Your " value="{{ $data->salary_amount }}" required>
+                                        <div class="row mb-3">
+                                            <label for="salary_amount" class="col-sm-3 col-form-label">
+                                                Status</label>
+                                            <div class="col-sm-9" style="display: grid; grid-template-columns: 35% 35% 35%;">
+                                                @if ($data->salary_amount = 1)
+                                                <div style="background-color: #DBD9D9; border-style: solid; border-width: 1px; border-color: lightgray; margin-right: 10px; margin-bottom: 10px;">
+                                                    <input type="radio" name="salary_amount" id="salary_amount"
+                                                        value="1" style="margin-left: 5px; margin-top:10px;" checked>
+                                                    <label style="margin-right: 10px;"
+                                                        for="salary_amount">EMPL</label>
+                                                </div>
+                                                <div style="background-color: #DBD9D9; border-style: solid; border-width: 1px; border-color: lightgray; margin-right: 10px; margin-bottom: 10px;">
+                                                    <input type="radio" name="salary_amount" id="salary_amount"
+                                                        value="0" style="margin-left: 5px; margin-top:10px;">
+                                                    <label style="margin-right: 10px;"
+                                                        for="salary_amount">SUPP</label>
+                                                </div>
+                                                @else
+                                                <div style="background-color: #DBD9D9; border-style: solid; border-width: 1px; border-color: lightgray; margin-right: 10px; margin-bottom: 10px;">
+                                                    <input type="radio" name="salary_amount" id="salary_amount"
+                                                        value="1" style="margin-left: 5px; margin-top:10px;">
+                                                    <label style="margin-right: 10px;"
+                                                        for="salary_amount">EMPL</label>
+                                                </div>
+                                                <div style="background-color: #DBD9D9; border-style: solid; border-width: 1px; border-color: lightgray; margin-right: 10px; margin-bottom: 10px;">
+                                                    <input type="radio" name="salary_amount" id="salary_amount"
+                                                        value="0" style="margin-left: 5px; margin-top:10px;" checked>
+                                                    <label style="margin-right: 10px;"
+                                                        for="salary_amount">SUPP</label>
+                                                </div>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row mb-4">
