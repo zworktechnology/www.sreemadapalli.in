@@ -129,7 +129,7 @@ class AttendanceController extends Controller
     {
 
 
-        $employees = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '!=', NULL)->get();
+        $employees = Employee::where('soft_delete', '!=', 1)->where('salary_amount', '=', 1)->get();
 
         $attend_data = Attendance::where('date', '=', $date)->get();
         $attendenceData = Attendance::where('date', '=', $date)->first();
