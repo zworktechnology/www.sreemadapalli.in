@@ -96,14 +96,270 @@
                                     <a href="/export_customerorder_pdf/{{ $data->id }}" class="nofilter "><button
                                             type="button" class="btn btn-success w-md">Export as PDF</button></a>
 
-                                            <div style="margin-left: 10px;">
-                                                <a href="{{ route('customer.edit', ['id' => $data['id']]) }}">
-                                                    <button class="btn btn-success w-md">
-                                                        Edit</button>
-                                                </a>
-                                            </div>
+                                    <div style="margin-left: 10px;">
+                                        <a href="{{ route('customer.edit', ['id' => $data['id']]) }}">
+                                            <button class="btn btn-success w-md">
+                                                Edit</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="display: flex; overflow: auto;">
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-01-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-01-31">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            January</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-02-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-02-28">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            February</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-03-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-03-31">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            March</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-04-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-04-30">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            April</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-05-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-05-31">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            May</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-06-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-06-30">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            June</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-07-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-07-31">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            July</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-08-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-08-31">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            August</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-09-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-09-30">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            September</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-10-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-10-31">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            October</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-11-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-11-30">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            November</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form autocomplete="off" method="post"
+                                action="{{ route('customer.getdatewiseCustomerOrders') }}">
+                                @method('PUT')
+                                @csrf
+                                <div style="display: flex;">
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                            placeholder="Enter Your " required value="2023-12-01">
+                                    </div>
+                                    <div style="margin-right: 10px;" hidden>
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                            placeholder="Enter Your " required value="2023-12-31">
+                                        <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
+                                            value="{{ $data->id }}">
+                                    </div>
+                                    <div style="margin-right: 10px;">
+                                        <button type="submit" class="btn btn-success w-md">
+                                            December</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="row">
@@ -112,7 +368,8 @@
 
                                 <div class="card-body">
 
-                                    <table id="customer_datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    <table id="customer_datatable"
+                                        class="table table-bordered dt-responsive  nowrap w-100">
                                         <thead style="background: #CAF1DE">
                                             <tr>
                                                 <th>Sl. No</th>
