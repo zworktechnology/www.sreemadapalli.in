@@ -15,7 +15,8 @@ class OutdoorController extends Controller
     public function index()
     {
         $today = Carbon::now()->format('Y-m-d');
-        $data = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
+        // $data = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->get();
+        $data = Outdoor::where('soft_delete', '!=', 1)->get();
         $OutdoorData = OutdoorDetail::where('soft_delete', '!=', 1)->get();
 
         $notificationcount = Outdoor::where('soft_delete', '!=', 1)->where('status', '!=', 1)->whereDate('delivery_date', '=', $today)->count();
@@ -103,8 +104,6 @@ class OutdoorController extends Controller
                 OutdoorDetail::where('id', $different_id)->delete();
             }
         }
-
-
 
         foreach ($request->get('outdoor_detailid') as $key => $outdoor_detailid) {
             if ($outdoor_detailid > 0) {
