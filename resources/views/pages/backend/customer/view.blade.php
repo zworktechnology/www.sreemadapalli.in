@@ -79,7 +79,7 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;">
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-01-01">
+                                                    placeholder="Enter Your " required value="2024-01-01">
                                             </div>
                                             <div style="margin-right: 10px;">
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
@@ -117,11 +117,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-01-01">
+                                                    placeholder="Enter Your " required value="2024-01-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-01-31">
+                                                    placeholder="Enter Your " required value="2024-01-31">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -138,11 +138,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-02-01">
+                                                    placeholder="Enter Your " required value="2024-02-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-02-28">
+                                                    placeholder="Enter Your " required value="2024-02-28">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -159,11 +159,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-03-01">
+                                                    placeholder="Enter Your " required value="2024-03-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-03-31">
+                                                    placeholder="Enter Your " required value="2024-03-31">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -180,11 +180,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-04-01">
+                                                    placeholder="Enter Your " required value="2024-04-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-04-30">
+                                                    placeholder="Enter Your " required value="2024-04-30">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -201,11 +201,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-05-01">
+                                                    placeholder="Enter Your " required value="2024-05-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-05-31">
+                                                    placeholder="Enter Your " required value="2024-05-31">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -222,11 +222,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-06-01">
+                                                    placeholder="Enter Your " required value="2024-06-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-06-30">
+                                                    placeholder="Enter Your " required value="2024-06-30">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -243,11 +243,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-07-01">
+                                                    placeholder="Enter Your " required value="2024-07-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-07-31">
+                                                    placeholder="Enter Your " required value="2024-07-31">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -264,11 +264,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-08-01">
+                                                    placeholder="Enter Your " required value="2024-08-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-08-31">
+                                                    placeholder="Enter Your " required value="2024-08-31">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -285,11 +285,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-09-01">
+                                                    placeholder="Enter Your " required value="2024-09-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-09-30">
+                                                    placeholder="Enter Your " required value="2024-09-30">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -306,11 +306,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-10-01">
+                                                    placeholder="Enter Your " required value="2024-10-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-10-31">
+                                                    placeholder="Enter Your " required value="2024-10-31">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -327,11 +327,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-11-01">
+                                                    placeholder="Enter Your " required value="2024-11-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-11-30">
+                                                    placeholder="Enter Your " required value="2024-11-30">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
@@ -348,11 +348,11 @@
                                         <div style="display: flex;">
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="from_date" id="from_date"
-                                                    placeholder="Enter Your " required value="2023-12-01">
+                                                    placeholder="Enter Your " required value="2024-12-01">
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2023-12-31">
+                                                    placeholder="Enter Your " required value="2024-12-31">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
