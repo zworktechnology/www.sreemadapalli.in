@@ -142,7 +142,7 @@
                                             </div>
                                             <div style="margin-right: 10px;" hidden>
                                                 <input type="date" class="form-control" name="to_date" id="to_date"
-                                                    placeholder="Enter Your " required value="2024-02-28">
+                                                    placeholder="Enter Your " required value="2024-02-29">
                                                 <input type="hidden" name="customer_ids" id="customer_ids" class="customer_ids"
                                                     value="{{ $data->id }}">
                                             </div>
