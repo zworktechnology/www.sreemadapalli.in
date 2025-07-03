@@ -234,7 +234,7 @@ $(function() {
   $("#form").submit(function() {
     $.ajax({
       type: "POST",
-      url: "mail.php",
+      url: "/contact-store",
       data: $(this).serialize()
     }).done(function() {
       $('.sb-success-result').addClass('sb-active');
@@ -552,7 +552,7 @@ $(function() {
     $("#form").submit(function() {
       $.ajax({
         type: "POST",
-        url: "mail.php",
+        url: "/contact-store",
         data: $(this).serialize()
       }).done(function() {
         $('.sb-success-result').addClass('sb-active');

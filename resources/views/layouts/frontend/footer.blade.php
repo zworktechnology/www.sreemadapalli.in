@@ -7,10 +7,8 @@
                 <img src="{{ asset('assets/images/logo2.png') }}" alt="Sree Madapalli">
             </a>
             <ul class="sb-social">
-                <li><a href="#."><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#."><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#."><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#."><i class="fab fa-youtube"></i></a></li>
+                 <li><a href="https://www.instagram.com/sree_madapalli/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/sreemadapalli.official"><i class="fab fa-facebook-f"></i></a></li>
             </ul>
             <div class="sb-copy">&copy; 2023. All Rights Reserved From <span><a href="https://zworktechnology.com/" target="_blank">Zwork Technology</span>.</div>
         </div>

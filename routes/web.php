@@ -19,7 +19,9 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\WalletController;
 use App\Http\Controllers\AttendanceController;
-
+use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,13 +37,27 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/', function () {return view('pages.frontend.index');})->name('index');
-Route::get('/about-us', function () {return view('pages.frontend.about');})->name('about');
-Route::get('/menu', function () {return view('pages.frontend.menuitems');})->name('menu');
-Route::get('/contact', function () {return view('pages.frontend.contact');})->name('contact');
-Route::get('/srirangam', function () {return view('pages.frontend.srirangam');})->name('srirangam');
-Route::get('/outdoor-caterers', function () {return view('pages.frontend.outdoorcaterers');})->name('outdoorcaterers');
-
+Route::get('/', function () {
+    return view('pages.frontend.index');
+})->name('index');
+Route::get('/about-us', function () {
+    return view('pages.frontend.about');
+})->name('about');
+Route::get('/menu', function () {
+    return view('pages.frontend.menuitems');
+})->name('menu');
+Route::get('/contact', function () {
+    return view('pages.frontend.contact');
+})->name('contact');
+Route::get('/srirangam', function () {
+    return view('pages.frontend.srirangam');
+})->name('srirangam');
+Route::get('/outdoor-caterers', function () {
+    return view('pages.frontend.outdoorcaterers');
+})->name('outdoorcaterers');
+Route::get('/thankyou', function () {
+    return view('pages.frontend.thanks');
+})->name('thankyou');
 Auth::routes();
 
 // BACK END
@@ -93,7 +109,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
         // DESTROY
         Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/customer/destroy/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
-
     });
 
     // DELIVERY BOY CONTROLLER
@@ -291,8 +306,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->delete('/zwork-admin/outdoor/destroy/{id}', [OutdoorController::class, 'destroy'])->name('outdoor.destroy');
     });
 
-     // SALES CONTROLLER
-     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    // SALES CONTROLLER
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // INDEX
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/sales', [SalesController::class, 'index'])->name('sales.index');
         // DAILY FILTER
@@ -301,7 +316,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->get('/zwork-admin/sales/create', [SalesController::class, 'create'])->name('sales.create');
         // STORE
         Route::middleware(['auth:sanctum', 'verified'])->post('/zwork-admin/sales/store', [SalesController::class, 'store'])->name('sales.store');
-
     });
 
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -319,8 +333,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/update/{id}', [WalletController::class, 'update'])->name('wallet.update');
         // DELETE
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/delete/{id}', [WalletController::class, 'delete'])->name('wallet.delete');
-         // DAILY FILTER
-         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/wallet_dailyfilter', [WalletController::class, 'wallet_dailyfilter'])->name('wallet.wallet_dailyfilter');
+        // DAILY FILTER
+        Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/wallet/wallet_dailyfilter', [WalletController::class, 'wallet_dailyfilter'])->name('wallet.wallet_dailyfilter');
     });
 
     // ATTENDENCE CONTROLLER
@@ -336,7 +350,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // UPDATE
         Route::middleware(['auth:sanctum', 'verified'])->put('/zwork-admin/attendence/update/{date}', [AttendanceController::class, 'update'])->name('attendence.update');
     });
-
 });
 
 // INVITE ACCEPT
@@ -380,3 +393,24 @@ Route::get('/pdfbylunch/{date}', [SalesController::class, 'pdfbylunch']);
 Route::get('/pdfbydinner/{date}', [SalesController::class, 'pdfbydinner']);
 // SALES CONTROLLER // PDF EXPORT BY BREAKFAST & LUNCH
 Route::get('/pdfbybreakfastlunch/{date}', [SalesController::class, 'pdfbybreafastlunch']);
+
+//Contact Store
+Route::post('/contact-store', function (Request $request) {
+    $name = $request->get('name');
+    $email = $request->get('email');
+    $message = $request->get('message');
+
+    $template = 'Hi%20M/s%20Sree%20Madapalli%20-%20Admin%0A%0ANew%20contact%20request%20has%20submitted%20with%20the%20following%20information%0A%0A*Name*%20:%20' . $name  . '%0A*Email*%20:%20' . $email  . '%0A*Message*%20:%20' . $message . '%0A%0AGood luck!';
+
+
+    $access_token_key = '6846b47c20fee';
+    $instance_id_key = '6846B62860B93';
+
+    $response = http::post('https://mtechlivedemo.com/api/send?number=919025166000&type=text&message=' . $template . '&instance_id=' . $instance_id_key . '&access_token=' . $access_token_key . '');
+    //dd($response);
+    if ($response->successful()) {
+        return redirect()->route('thankyou')->with('success', 'Message sent successfully!');
+    } else {
+        return redirect()->route('contact');
+    }
+})->name('contact.store');
