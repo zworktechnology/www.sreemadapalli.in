@@ -27,7 +27,8 @@
                     <div class="sb-contact-form-frame">
                         <div class="sb-illustration-9">
                             {{-- <img src="{{ asset('frontend_styles/img/illustrations/envelope-1.png') }}" alt="envelope" class="sb-envelope-1"> --}}
-                            <img src="{{ asset('frontend_styles/img/illustrations/envelope-2.png') }}" alt="envelope" class="sb-envelope-2">
+                            <img src="{{ asset('frontend_styles/img/illustrations/envelope-2.png') }}" alt="envelope"
+                                class="sb-envelope-2">
                             <div class="sb-cirkle-1"></div>
                             <div class="sb-cirkle-2"></div>
                             <div class="sb-cirkle-3"></div>
@@ -35,7 +36,9 @@
                         <div class="sb-form-content">
                             <div class="sb-main-content">
                                 <h3 class="sb-mb-30">Send Message</h3>
-                                <form id="form">
+                                <form action="{{ route('contact.store') }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
                                     <div class="sb-group-input">
                                         <input type="text" name="name" required>
                                         <span class="sb-bar"></span>
@@ -47,16 +50,18 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="sb-group-input">
-                                        <textarea name="text" required></textarea>
+                                        <textarea name="message" required></textarea>
                                         <span class="sb-bar"></span>
                                         <label>Message</label>
                                     </div>
                                     <p class="sb-text sb-text-xs sb-mb-30">*We promise not to disclose your <br>personal
                                         information to third parties.</p>
                                     <!-- button -->
-                                    <button class="sb-btn sb-cf-submit sb-show-success">
+                                    <div class="col-md-12 d-flex justify-content-center"> <x-turnstile /></div>
+                                    <button type="submit" class="sb-btn sb-cf-submit sb-show-success">
                                         <span class="sb-icon">
-                                            <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}" alt="icon">
+                                            <img src="{{ asset('frontend_styles/img/ui/icons/arrow.svg') }}"
+                                                alt="icon">
                                         </span>
                                         <span>Send</span>
                                     </button>
@@ -123,8 +128,11 @@
 
     <!-- map -->
     <div class="sb-map-frame">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.364373814002!2d78.68837220998743!3d10.859866089249405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf6771c7a63c3%3A0xd9c7e2675128f463!2sSree%20Madapalli!5e0!3m2!1sen!2sin!4v1683905937073!5m2!1sen!2sin" style="border:0; height: 550px; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.364373814002!2d78.68837220998743!3d10.859866089249405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf6771c7a63c3%3A0xd9c7e2675128f463!2sSree%20Madapalli!5e0!3m2!1sen!2sin!4v1683905937073!5m2!1sen!2sin"
+            style="border:0; height: 550px; width: 100%;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- map end -->
 
-@include('layouts.frontend.footer')
+    @include('layouts.frontend.footer')

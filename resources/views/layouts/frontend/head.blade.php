@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('frontend_styles/css/style.css') }}">
     <!-- page title -->
     <title>Sree Madapalli | Divine Taste | Hotel | Outdoor Caterers | Services Apartments</title>
+    @turnstileScripts()
 </head>
 
 <body>
@@ -106,10 +107,10 @@
                 </div>
                 <div class="sb-info-bar-footer">
                     <ul class="sb-social">
-                        <li><a href="#."><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#."><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#."><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#."><i class="fab fa-youtube"></i></a></li>
+                      
+                        <li><a href="https://www.instagram.com/sree_madapalli/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/sreemadapalli.official"><i class="fab fa-facebook-f"></i></a></li>
+                        
                     </ul>
                 </div>
             </div>
